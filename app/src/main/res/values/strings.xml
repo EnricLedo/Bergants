@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Bergants</string>
+    <string name="forgottenPassword">M\'he oblidat la contrasenya</string>
+    <string name="logIn">Iniciar sessió</string>
+    <string name="keepLoggedIn">Mantenir sessió iniciada</string>
+    <string name="password">Contrasenya</string>
+    <string name="mail">Correu</string>
+    <string name="logo_bergants">logo bergants</string>
 </resources>
