@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logoBergant" />
+        app:srcCompat="@drawable/logo_bergants" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailTextInputLayout"
@@ -28,18 +28,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo"
-        app:boxBackgroundColor="@color/blanc"
-        >
+        app:boxBackgroundColor="@color/blanc">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email"
-            android:background="@color/blanc"
-            android:maxLength="9"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:inputType="text|textEmailAddress|textCapWords"
+            android:layout_gravity="center"
+            android:background="@color/blanc"
             android:hint="@string/mail"
-            android:layout_gravity="center">
+            android:inputType="text|textEmailAddress|textCapWords"
+            android:maxLength="9"
+            android:textColor="@color/grisFosc">
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -56,13 +56,14 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
-            android:background="@color/blanc"
-            android:maxLength="9"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:inputType="text|textEmailAddress|textCapWords"
+            android:layout_gravity="center"
+            android:background="@color/blanc"
             android:hint="@string/password"
-            android:layout_gravity="center">
+            android:inputType="text|textEmailAddress|textCapWords"
+            android:maxLength="9"
+            android:textColor="@color/grisFosc">
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -72,11 +73,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:gravity="center"
+        android:minHeight="48dp"
         android:text="@string/keepLoggedIn"
         android:thumbTint="@color/verdBergant"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordTextInputLayout"/>
+        app:layout_constraintTop_toBottomOf="@+id/passwordTextInputLayout"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <Button
         android:id="@+id/logIn"
@@ -85,6 +88,7 @@
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="@string/logIn"
+        android:textAllCaps="false"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

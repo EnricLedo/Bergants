@@ -6,4 +6,10 @@
     <string name="password">Contrasenya</string>
     <string name="mail">Correu</string>
     <string name="logo_bergants">logo bergants</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fotoPerfil">fotoPerfil</string>
+    <string name="nomUsuari">Joan Galindo Palacio</string>
+    <string name="fotoUsuari">fotoUsuari</string>
+    <string name="placesAnada">PLACES ANADA</string>
 </resources>
