@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Bergants</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="configuracio" />
+    <string name="config">Configuracio</string>
+    <string name="avissosAssajos"> Avissos d\'assajos</string>
+    <string name="avissosActuacions"> Avissos d\'actuacions</string>
+    <string name="notificacions">NOTIFICACIONS</string>
+    <string name="novetats"> Novetats del bloc de notícies</string>
+    <string name="informacio">INFORMACIÓ ADDICIONAL</string>
+    <string name="versio"> Versió de l\'aplicació</string>
+    <string name="adreca"> Adreça de contacte</string>
+    <string name="suport"> Suport</string>
+    <string name="num"> 1.0</string>
+    <string name="contacte"> info@bergants.cat</string>
+    <string name="sup"> app@bergants.cat</string>
+
 </resources>
