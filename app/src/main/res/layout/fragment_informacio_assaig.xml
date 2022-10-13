@@ -7,7 +7,7 @@
     tools:context=".InformacioAssaig">
 
     <TextView
-        android:id="@+id/TitolAssaigTW"
+        android:id="@+id/TitolAssaig"
         android:layout_width="wrap_content"
         android:layout_height="33dp"
         android:text="@string/nomAssaig"
@@ -20,22 +20,22 @@
         app:layout_constraintVertical_bias="0.1" />
 
     <TextView
-        android:id="@+id/dataAssaigTW"
+        android:id="@+id/dataAssaig"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:text="@string/dataAssaig"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TitolAssaigTW" />
+        app:layout_constraintTop_toBottomOf="@+id/TitolAssaig" />
 
     <ImageView
         android:id="@+id/botoSiVinc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="150dp"
         android:layout_marginEnd="50dp"
-        android:src="@drawable/calendari_si"
+        android:src="@drawable/calendari_si56"
         app:layout_constraintEnd_toStartOf="@+id/botoNoVinc"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,9 +46,9 @@
         android:id="@+id/botoNoVinc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="150dp"
         android:layout_marginStart="50dp"
-        android:src="@drawable/calendari_no"
+        android:src="@drawable/calendari_no56"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/botoSiVinc"
         app:layout_constraintTop_toTopOf="parent" />
@@ -75,7 +75,7 @@
         android:id="@+id/iconaRellotge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="250dp"
         android:layout_marginEnd="15dp"
         android:src="@drawable/rellotge24"
         app:layout_constraintEnd_toStartOf="@id/horaAssaig"
@@ -98,7 +98,7 @@
         android:id="@+id/iconaUbicacio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="270dp"
+        android:layout_marginTop="280dp"
         android:layout_marginEnd="15dp"
         android:src="@drawable/ubicacio24"
         app:layout_constraintEnd_toStartOf="@+id/ubicacioAssaig"

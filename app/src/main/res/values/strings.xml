@@ -16,10 +16,12 @@
     <string name="horaAssaig">20:00h</string>
     <string name="ubicacioAssaig">Pl. Campus</string>
 
-    <string name="nomActuacio">ACTUACIÓ A VIC EMBOIRATS</string>
+    <string name="nomActuacio">ACTUACIÓ EMBOIRATS, VIC </string>
     <string name="dataActuacio">DIJOUS 24 de Novembre del 2022</string>
     <string name="horaActuacio">16:00h</string>
     <string name="ubicacioActuacio">Universitat de Vic</string>
+    <string name="autocar">23 Places</string>
+    <string name="cotxe">Cotxes</string>
 
 
 </resources>
