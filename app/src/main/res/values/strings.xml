@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Bergants</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    //Texts que són prou definitius
+
+    <string name="vinc">Vinc</string>
+    <string name="noVinc">No vinc</string>
+
+
+    //String d'exemple perque encara no tenim base de dades
+
+    <string name="nomAssaig">ASSAIG ESPECIAL DE LA MERCÈ</string>
+    <string name="dataAssaig">DIVENDRES 23 de Setembre del 2022</string>
+    <string name="horaAssaig">20:00h</string>
+    <string name="ubicacioAssaig">Pl. Campus</string>
+
+    <string name="nomActuacio">ACTUACIÓ A VIC EMBOIRATS</string>
+    <string name="dataActuacio">DIJOUS 24 de Novembre del 2022</string>
+    <string name="horaActuacio">16:00h</string>
+    <string name="ubicacioActuacio">Universitat de Vic</string>
+
+
 </resources>
