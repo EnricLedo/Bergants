@@ -30,6 +30,6 @@
     <string name="rol">ROL</string>
     <string name="inputTelefon">666 666 666</string>
     <string name="inputrol">membre</string>
-    <string name="afegir">Afegir</string>
+    <string name="botoafegir">Afegir</string>
 
 </resources>
