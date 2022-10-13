@@ -12,4 +12,13 @@
     <string name="nomUsuari">Joan Galindo Palacio</string>
     <string name="fotoUsuari">fotoUsuari</string>
     <string name="placesAnada">PLACES ANADA</string>
+    <string name="desplegablePlacesAnada">desplegablePlacesAnada</string>
+    <string name="horaAnada">HORA ANADA</string>
+    <string name="ubicacio">UBICACIÓ</string>
+    <string name="tornada">TORNADA</string>
+    <string name="afegir">Afegir</string>
+    <string name="ubicacioCotxeEditText">Pl. Campus</string>
+    <string name="placesTornada">PLACES TORNADA</string>
+    <string name="editar">Editar</string>
+    <string name="boto_borrar">boto borrar</string>
 </resources>

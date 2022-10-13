@@ -4,11 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AfegirCotxe">
+    tools:context=".editar_cotxe">
 
-    <!-- TODO: Update blank fragment layout -->
-
-     <androidx.cardview.widget.CardView
+    <androidx.cardview.widget.CardView
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:elevation="12dp"
@@ -25,16 +23,27 @@
         android:shape="ring"
         android:thicknessRatio="1.9">
 
-         <ImageView
-             android:id="@+id/fotoUsuari"
-             android:layout_width="match_parent"
-             android:layout_height="100dp"
-             android:layout_alignParentTop="true"
-             android:layout_centerHorizontal="true"
-             android:contentDescription="@string/fotoUsuari"
-             android:src="@drawable/f1">
-         </ImageView>
+        <ImageView
+            android:id="@+id/fotoUsuari"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/fotoUsuari"
+            android:src="@drawable/f1">
+        </ImageView>
     </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/fotoPaperera"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/boto_borrar"
+        android:src="@drawable/iconopapelera"
+        tools:layout_editor_absoluteX="302dp"
+        tools:layout_editor_absoluteY="60dp" />
 
     <TextView
         android:id="@+id/nomUsuari"
@@ -185,9 +194,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:layout_marginTop="180dp"
-        android:layout_marginEnd="25dp"
-        android:text="@string/afegir"
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="28dp"
+        android:text="@string/editar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/booleanAdmin" />
 
@@ -241,6 +250,5 @@
         app:layout_constraintHorizontal_bias="0.068"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horaTornada" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
