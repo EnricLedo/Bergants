@@ -13,10 +13,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
+        android:layout_marginEnd="259dp"
+        android:layout_marginBottom="25dp"
         android:text="@string/notificacions"
         android:textColor="@color/negre"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/assajos"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,7 +46,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginBottom="25dp"
         android:text="@string/avissosActuacions"
+        app:layout_constraintBottom_toTopOf="@+id/novetats"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,10 +76,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
+        android:layout_marginEnd="174dp"
+        android:layout_marginBottom="40dp"
         android:text="@string/informacio"
         android:textColor="@color/negre"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/versio"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/novetats" />
 
@@ -86,6 +96,7 @@
         android:text="@string/versio"
         android:textColor="@color/negre"
         android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/num"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/informacio" />
 
@@ -95,9 +106,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="56dp"
+        android:layout_marginBottom="56dp"
         android:text="@string/adrecacontacte"
         android:textColor="@color/negre"
         android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/suport"
+        app:layout_constraintEnd_toStartOf="@+id/contacte"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/versio" />
 
@@ -110,6 +124,7 @@
         android:text="@string/suport"
         android:textColor="@color/negre"
         android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/sup"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/adreca" />
 
@@ -118,10 +133,14 @@
         android:layout_width="185dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="56dp"
         android:gravity="end"
         android:text="@string/num"
         android:textColor="@color/grisFosc"
         android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/contacte"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/versio"
         app:layout_constraintTop_toBottomOf="@+id/informacio" />
 
@@ -130,10 +149,12 @@
         android:layout_width="185dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
+        android:layout_marginEnd="20dp"
         android:gravity="end"
         android:text="@string/contacte"
         android:textColor="@color/grisFosc"
         android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/adreca"
         app:layout_constraintTop_toBottomOf="@+id/num" />
 
@@ -142,10 +163,14 @@
         android:layout_width="185dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="194dp"
         android:gravity="end"
         android:text="@string/sup"
         android:textColor="@color/grisFosc"
         android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/suport"
         app:layout_constraintTop_toBottomOf="@+id/contacte" />
 

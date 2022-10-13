@@ -12,7 +12,6 @@
     <string name="num"> 1.0</string>
     <string name="contacte"> info@bergants.cat</string>
     <string name="sup"> app@bergants.cat</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="fotoMembre">fotoMembre</string>
     <string name="nomMembre">Nom Cognom Cognom</string>
@@ -31,5 +30,8 @@
     <string name="inputTelefon">666 666 666</string>
     <string name="inputrol">membre</string>
     <string name="botoafegir">Afegir</string>
+    <string name="enric">Enric Ledo Muntal</string>
+    <string name="botoguardar">Guardar</string>
+    <string name="botoborrar">eliminar</string>
 
 </resources>
