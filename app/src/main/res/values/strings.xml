@@ -33,5 +33,13 @@
     <string name="enric">Enric Ledo Muntal</string>
     <string name="botoguardar">Guardar</string>
     <string name="botoborrar">eliminar</string>
+    <string name="nomPerfil">Enric Ledo Muntal</string>
+    <string name="fotoEnric">fotoenric</string>
+    <string name="malnomenric"> Muntal</string>
+    <string name="rolnomenric"> Membre</string>
+    <string name="dataalta">BERGANT DES DE</string>
+    <string name="dataenric"> 23-10-2019</string>
+    <string name="eliminarcompte">Eliminar compte</string>
+    <string name="eliminarperfil">Eliminar perfil</string>
 
 </resources>
