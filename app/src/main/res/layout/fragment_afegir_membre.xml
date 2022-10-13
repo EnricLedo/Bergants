@@ -232,6 +232,110 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/espatllesTextInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/correuTextInputLayout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/adrecaTextInputLayout"
+        android:layout_width="370dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        app:boxBackgroundColor="@color/blanc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adreca">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/adreça"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/blanc"
+            android:hint="@string/inputadreca"
+            android:inputType="text"
+            android:textColor="@color/grisClaretGentApuntada"></com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/telefon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/numerotel"
+        android:textColor="@color/negre"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adrecaTextInputLayout" />
+
+    <TextView
+        android:id="@+id/rol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/rol"
+        android:textColor="@color/negre"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/telefon"
+        app:layout_constraintTop_toBottomOf="@+id/adrecaTextInputLayout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/telefonTextInputLayout"
+        android:layout_width="170dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        app:boxBackgroundColor="@color/blanc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/telefon">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/numerotelefon"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/blanc"
+            android:hint="@string/inputTelefon"
+            android:inputType="text"
+            android:maxLength="9"
+            android:textColor="@color/grisClaretGentApuntada"></com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/rolTextInputLayout"
+        android:layout_width="170dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        app:boxBackgroundColor="@color/blanc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rol">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/rolmembre"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/blanc"
+            android:hint="@string/inputrol"
+            android:inputType="text"
+            android:maxLength="13"
+            android:textColor="@color/grisClaretGentApuntada"></com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/botoafegir"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rolTextInputLayout" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
