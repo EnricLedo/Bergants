@@ -40,10 +40,13 @@
         android:layout_height="48dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
         android:contentDescription="@string/boto_borrar"
         android:src="@drawable/iconopapelera"
-        tools:layout_editor_absoluteX="302dp"
-        tools:layout_editor_absoluteY="60dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/nomUsuari"
