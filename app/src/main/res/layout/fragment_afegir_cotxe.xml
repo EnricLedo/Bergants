@@ -181,13 +181,14 @@
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/afegir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:layout_marginTop="180dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="20dp"
         android:text="@string/afegir"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/booleanAdmin" />
 
