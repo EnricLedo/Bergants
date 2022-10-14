@@ -88,7 +88,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.068"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/placesAnada" />
+        app:layout_constraintTop_toBottomOf="@+id/placesAnada"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <TextView
         android:id="@+id/placesTornada"
@@ -96,13 +97,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:layout_marginStart="200dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="28dp"
         android:text="@string/placesTornada"
         android:textColor="@color/negre"
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nomUsuari" />
 
@@ -111,11 +112,11 @@
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_gravity="end"
-        android:layout_marginTop="15dp"
         android:layout_marginStart="200dp"
+        android:layout_marginTop="16dp"
         android:contentDescription="@string/desplegablePlacesAnada"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintHorizontal_bias="0.196"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/placesTornada" />
 
@@ -202,7 +203,8 @@
         android:text="@string/editar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/booleanAdmin" />
+        app:layout_constraintTop_toBottomOf="@+id/booleanAdmin"
+        tools:ignore="TextContrastCheck" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ubicacioTextInputLayout"
@@ -253,6 +255,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.068"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horaTornada" />
+        app:layout_constraintTop_toBottomOf="@+id/horaTornada"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -39,7 +39,9 @@
             android:hint="@string/mail"
             android:inputType="text|textEmailAddress|textCapWords"
             android:maxLength="9"
-            android:textColor="@color/negre">
+            android:textColor="@color/negre"
+            tools:ignore="TextContrastCheck">
+
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -63,7 +65,9 @@
             android:hint="@string/password"
             android:inputType="text|textEmailAddress|textCapWords"
             android:maxLength="9"
-            android:textColor="@color/negre">
+            android:textColor="@color/negre"
+            tools:ignore="TextContrastCheck">
+
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -98,12 +102,13 @@
         android:id="@+id/forgottenPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="@string/forgottenPassword"
+        android:textColor="@color/negre"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logIn"
-        android:gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="@string/forgottenPassword"
-        android:textColor="@color/negre"/>
+        app:layout_constraintTop_toBottomOf="@+id/logIn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
