@@ -57,6 +57,15 @@
     <string name="botoguardar">Guardar</string>
     <string name="UbicacioTitol">UBICACIÓ</string>
     <string name="inputUbicacio">Ubicació</string>
+    <string name="temaActuacio">TEMA DE L\'ACTUACIÓ</string>
+    <string name="inputTemaActuacio">Actuació Bergant</string>
+    <string name="AutocarTitol">AUTOCAR</string>
+    <string name="PlacesAutocar">Places</string>
+    <string name="desplegablePlacesAutocar">desplegablePlacesAutocar</string>
+    <string name="HoraSpinnerAutocar">Hora</string>
+    <string name="HoraTitolAutocar">HORA</string>
+    <string name="desplegableHoraAutocar">DesplegableHoraAutocar</string>
+    <string name="desplegableMinutAutocar">desplegableMinutAutocar</string>
 
 
 </resources>

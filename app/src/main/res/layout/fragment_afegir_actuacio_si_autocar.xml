@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AfegirAssaig"
+    tools:context=".afegirActuacioNoAutocar"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="8dp">
 
@@ -23,11 +23,11 @@
         app:layout_constraintGuide_begin="30dp" />
 
     <TextView
-        android:id="@+id/TemaAssaig"
+        android:id="@+id/TemaActuacio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="@string/temaAssaig"
+        android:text="@string/temaActuacio"
         android:textColor="@color/negre"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -35,7 +35,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/temaAssaigTextInputLayout"
+        android:id="@+id/temaActuacioTextInputLayout"
         android:layout_width="352dp"
         android:layout_height="48dp"
         android:layout_marginTop="82dp"
@@ -44,12 +44,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/TemaAssaigInputText"
+            android:id="@+id/TemaActuacioInputText"
             android:layout_width="352dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@color/blanc"
-            android:hint="@string/inputTemaAssaig"
+            android:hint="@string/inputTemaActuacio"
             android:inputType="text"
             android:maxLength="9"
             android:textColor="@color/grisClaretGentApuntada" />
@@ -223,6 +223,110 @@
             android:textColor="@color/grisClaretGentApuntada" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:id="@+id/AutocarTitol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="482dp"
+        android:text="@string/AutocarTitol"
+        android:textColor="@color/negre"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/liniaEsquerra"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/booleanAdmin"
+        style="@style/Switch"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/AutocarTitol"
+        app:layout_constraintBottom_toBottomOf="@id/AutocarTitol"
+        app:layout_constraintStart_toEndOf="@id/AutocarTitol"
+        android:layout_marginStart="8dp"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:id="@+id/PlacesEnMinuscules"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/liniaCentral"
+        app:layout_constraintTop_toTopOf="@id/spinnerPlacesAutocar"
+        app:layout_constraintBottom_toBottomOf="@id/spinnerPlacesAutocar"
+        android:textSize="16dp"
+        android:text="@string/PlacesAutocar" />
+
+    <Spinner
+        android:id="@+id/spinnerPlacesAutocar"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_gravity="start"
+        android:layout_marginTop="470dp"
+        android:layout_marginStart="8dp"
+        android:contentDescription="@string/desplegablePlacesAutocar"
+        app:layout_constraintStart_toEndOf="@id/PlacesEnMinuscules"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    //////////////////////////////
+
+    <TextView
+        android:id="@+id/HoraTitolAutocar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="526dp"
+        android:text="@string/HoraTitolAutocar"
+        android:textColor="@color/negre"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/liniaEsquerra"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/horaEnMinusculesAutocar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/liniaEsquerra"
+        app:layout_constraintTop_toTopOf="@id/spinnerHoraAnadaAutocar"
+        app:layout_constraintBottom_toBottomOf="@id/spinnerHoraAnadaAutocar"
+        android:textSize="16dp"
+        android:text="@string/HoraSpinnerAutocar"/>
+
+    <Spinner
+        android:id="@+id/spinnerHoraAnadaAutocar"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_gravity="start"
+        android:layout_marginTop="558dp"
+        android:layout_marginStart="8dp"
+        android:contentDescription="@string/desplegableHoraAutocar"
+        app:layout_constraintStart_toEndOf="@id/horaEnMinuscules"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/minutEnMinusculesAutocar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/liniaCentral"
+        app:layout_constraintTop_toTopOf="@id/spinnerMinutAnadaAutocar"
+        app:layout_constraintBottom_toBottomOf="@id/spinnerMinutAnadaAutocar"
+        android:textSize="16dp"
+        android:text="@string/MinutSpinner"/>
+
+    <Spinner
+        android:id="@+id/spinnerMinutAnadaAutocar"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_gravity="start"
+        android:layout_marginTop="558dp"
+        android:layout_marginStart="8dp"
+        android:contentDescription="@string/desplegableMinutAutocar"
+        app:layout_constraintStart_toEndOf="@id/minutEnMinusculesAutocar"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    ///////////////////////////
 
     <ImageView
         android:id="@+id/fotoPaperera"
