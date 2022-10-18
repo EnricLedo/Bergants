@@ -41,5 +41,7 @@
     <string name="dataenric"> 23-10-2019</string>
     <string name="eliminarcompte">Eliminar compte</string>
     <string name="eliminarperfil">Eliminar perfil</string>
+    <string name="inputtitol">Afegir títol</string>
+    <string name="inputnoticia">Contingut de la notícia</string>
 
 </resources>
