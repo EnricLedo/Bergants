@@ -55,7 +55,7 @@
         android:layout_gravity="start"
         android:layout_marginTop="@dimen/MargeAdalt"
         android:layout_marginEnd="@dimen/MargeDretaRecuperar"
-        android:text="Recuperar Contrasenya"
+        android:text="@string/recuperarContrasenya"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailTextInputLayout"

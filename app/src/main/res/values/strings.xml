@@ -31,4 +31,5 @@
     <string name="numHora">15</string>
     <string name="minut">Minut</string>
     <string name="numMinut">40</string>
+    <string name="recuperarContrasenya">Recuperar Contrasenya</string>
 </resources>
