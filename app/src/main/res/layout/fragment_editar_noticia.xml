@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/frameLayout4"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".editar_noticia">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/titolTextInputLayout"
+        android:layout_width="370dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        app:boxBackgroundColor="@color/blanc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editartitol"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/blanc"
+            android:hint="@string/inputtitoledit"
+            android:inputType="text"
+            android:textColorHint="@color/grisFosc"
+            android:textSize="18sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/noticiaTextInputLayout"
+        android:layout_width="370dp"
+        android:layout_height="578dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:boxBackgroundColor="@color/blanc"
+        app:layout_constraintBottom_toTopOf="@+id/botoafegir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titolTextInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editarnoticia"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:maxLines="40"
+            android:lines="40"
+            android:background="@color/blanc"
+            android:hint="@string/inputnoticiaedit"
+            android:inputType="textMultiLine"
+            android:singleLine="false"
+            android:textColorHint="#757575" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/fotoPaperera"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="15dp"
+        android:contentDescription="@string/botoborrar"
+        android:src="@drawable/iconopapelera" />
+
+    <ImageView
+        android:id="@+id/botoafegir"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/round_button"
+        android:gravity="center"
+        android:src="@drawable/iconcheck"
+        android:textColor="@color/blanc"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/check" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

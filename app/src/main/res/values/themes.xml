@@ -5,9 +5,14 @@
         <item name="colorPrimary">@color/verdBergant</item>
         <item name="colorPrimaryVariant">@color/verdClar</item>
         <item name="colorOnPrimary">@color/blanc</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/verdBergant</item>
+        <item name="colorSecondaryVariant">@color/verdBergant</item>
         <item name="colorOnSecondary">@color/negre</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="materialButtonStyle">@style/BergantsBoto</item>
     </style>
+
 </resources>

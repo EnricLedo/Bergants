@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Configuracio">
+
+    <TextView
+        android:id="@+id/notificacio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="259dp"
+        android:layout_marginBottom="25dp"
+        android:text="@string/notificacions"
+        android:textColor="@color/negre"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/assajos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/assajos"
+        style="@style/Switch"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/avissosAssajos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notificacio"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Switch
+        android:id="@+id/actuacions"
+        style="@style/Switch"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="25dp"
+        android:text="@string/avissosActuacions"
+        app:layout_constraintBottom_toTopOf="@+id/novetats"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/assajos"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Switch
+        android:id="@+id/novetats"
+        style="@style/Switch"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/novetats"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/actuacions"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:id="@+id/informacio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="174dp"
+        android:layout_marginBottom="40dp"
+        android:text="@string/informacio"
+        android:textColor="@color/negre"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/versio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/novetats" />
+
+    <TextView
+        android:id="@+id/versio"
+        android:layout_width="185dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/versio"
+        android:textColor="@color/negre"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/num"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/informacio" />
+
+    <TextView
+        android:id="@+id/adreca"
+        android:layout_width="185dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="56dp"
+        android:text="@string/adrecacontacte"
+        android:textColor="@color/negre"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/suport"
+        app:layout_constraintEnd_toStartOf="@+id/contacte"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/versio" />
+
+    <TextView
+        android:id="@+id/suport"
+        android:layout_width="185dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="56dp"
+        android:text="@string/suport"
+        android:textColor="@color/negre"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/sup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adreca" />
+
+    <TextView
+        android:id="@+id/num"
+        android:layout_width="185dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="56dp"
+        android:gravity="end"
+        android:text="@string/num"
+        android:textColor="@color/grisFosc"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/contacte"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/versio"
+        app:layout_constraintTop_toBottomOf="@+id/informacio" />
+
+    <TextView
+        android:id="@+id/contacte"
+        android:layout_width="185dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="end"
+        android:text="@string/contacte"
+        android:textColor="@color/grisFosc"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/adreca"
+        app:layout_constraintTop_toBottomOf="@+id/num" />
+
+    <TextView
+        android:id="@+id/sup"
+        android:layout_width="185dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="194dp"
+        android:gravity="end"
+        android:text="@string/sup"
+        android:textColor="@color/grisFosc"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/suport"
+        app:layout_constraintTop_toBottomOf="@+id/contacte" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
