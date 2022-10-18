@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="widthfoto">100dp</dimen>
+    <dimen name="heightfoto">100dp</dimen>
+    <dimen name="marginlateralfoto">72dp</dimen>
+    <dimen name="separacio">8dp</dimen>
+    <dimen name="margintopfoto">60dp</dimen>
+    <dimen name="marginendfoto">72dp</dimen>
+    <dimen name="cornerradius">50dp</dimen>
+    <dimen name="marginpag">20dp</dimen>
+    <dimen name="smallinputwidth">170dp</dimen>
+    <dimen name="smallinputheight">48dp</dimen>
+    <dimen name="switchwidth">48dp</dimen>
+    <dimen name="titlesize">20sp</dimen>
+    <dimen name="secondtitlesize">18sp</dimen>
+    <dimen name="marginpagebtn">68dp</dimen>
+    <dimen name="fullwidth">370dp</dimen>
+    <dimen name="separaciomig">15dp</dimen>
+    <dimen name="bigbtnwidth">150dp</dimen>
+    <dimen name="noticiaheight">578dp</dimen>
+    <dimen name="btncircle">60dp</dimen>
+    <dimen name="txtcircle">30sp</dimen>
+    <dimen name="separaciogran">25dp</dimen>
+    <dimen name="halfwidth">185dp</dimen>
+    <dimen name="separaciogegant">40dp</dimen>
+    <dimen name="text">14sp</dimen>
+    <dimen name="info">56dp</dimen>
+    <dimen name="iconcompte">36dp</dimen>
+</resources>
