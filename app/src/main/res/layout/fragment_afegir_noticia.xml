@@ -10,11 +10,11 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/titolTextInputLayout"
-        android:layout_width="370dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="20dp"
+        android:layout_width="@dimen/fullwidth"
+        android:layout_height="@dimen/smallinputheight"
+        android:layout_marginStart="@dimen/marginpag"
+        android:layout_marginTop="@dimen/marginpag"
+        android:layout_marginEnd="@dimen/marginpag"
         app:boxBackgroundColor="@color/blanc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,33 +22,32 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/afegirtitol"
-            android:layout_width="370dp"
+            android:layout_width="@dimen/fullwidth"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@color/blanc"
             android:hint="@string/inputtitol"
             android:inputType="text"
             android:textColorHint="@color/grisFosc"
-            android:textSize="18sp" />
+            android:textSize="@dimen/secondtitlesize" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/noticiaTextInputLayout"
-        android:layout_width="370dp"
-        android:layout_height="578dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_width="@dimen/fullwidth"
+        android:layout_height="@dimen/noticiaheight"
+        android:layout_marginStart="@dimen/marginpag"
+        android:layout_marginEnd="@dimen/marginpag"
         app:boxBackgroundColor="@color/blanc"
         app:layout_constraintBottom_toTopOf="@+id/botoafegir"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titolTextInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/afegirnoticia"
-            android:layout_width="370dp"
-            android:layout_height="578dp"
+            android:layout_width="@dimen/fullwidth"
+            android:layout_height="@dimen/noticiaheight"
             android:layout_gravity="top"
             android:background="@color/blanc"
             android:hint="@string/inputnoticia"
@@ -59,12 +58,12 @@
 
     <ImageView
         android:id="@+id/fotoPaperera"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="@dimen/smallinputheight"
+        android:layout_height="@dimen/smallinputheight"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginStart="@dimen/marginpag"
+        android:layout_marginBottom="@dimen/separaciomig"
         android:contentDescription="@string/botoborrar"
         android:src="@drawable/iconopapelera"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -72,15 +71,15 @@
 
     <Button
         android:id="@+id/botoafegir"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="15dp"
+        android:layout_width="@dimen/btncircle"
+        android:layout_height="@dimen/btncircle"
+        android:layout_marginEnd="@dimen/marginpag"
+        android:layout_marginBottom="@dimen/separaciomig"
         android:background="@drawable/round_button"
         android:gravity="center"
         android:text="@string/afegir"
         android:textColor="@color/blanc"
-        android:textSize="30sp"
+        android:textSize="@dimen/txtcircle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
