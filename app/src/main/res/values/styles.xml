@@ -3,4 +3,11 @@
     <style name="Widget.Bergants.Boto" parent="Widget.AppCompat.Button">
         <item name="backgroundTint">@color/verdBergant</item>
     </style>
+    <style name="Switch">
+        <item name="android:thumbTint">@color/verdBergant</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/negre</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
 </resources>

@@ -23,5 +23,40 @@
     <string name="autocar">23 Places</string>
     <string name="cotxe">Cotxes</string>
 
+    //Afegir Assaig
+    <string name="temaAssaig">TEMA DE L'ASSAIG</string>
+    <string name="inputTemaAssaig">Assaig Bergant</string>
+
+    //Destos del Joan per entendre el seu codi
+    <string name="administrador">ADMINISTRADOR</string>
+    <string name="espatlles">ALÇADA ESPATLLES</string>
+    <string name="inputalçada">cm</string>
+    <string name="mans">ALÇADA MANS</string>
+    <string name="correu">CORREU ELECTRÒNIC</string>
+    <string name="inputcorreu">\@gmail.com</string>
+    <string name="adreca">ADREÇA</string>
+    <string name="inputadreca">C/</string>
+    <string name="numerotel">NUMERO DE TELEFON</string>
+    <string name="rol">ROL</string>
+    <string name="inputTelefon">666 666 666</string>
+    <string name="inputrol">membre</string>
+    <string name="botoafegir">Afegir</string>
+    <string name="desplegableHora">desplegableHora</string>
+    <string name="HoraTitol">HORA</string>
+    <string name="HoraSpinner">Hora</string>
+    <string name="MinutSpinner">Minut</string>
+    <string name="DataTitol">DATA</string>
+    <string name="DiaSpinner">Dia</string>
+    <string name="desplegableMinut">desplegableMinut</string>
+    <string name="desplegableDia">desplegableDia</string>
+    <string name="MesSpinner">Mes</string>
+    <string name="desplegableMes">desplegableMes</string>
+    <string name="AnySpinner">Any</string>
+    <string name="desplegableAny">desplegableAny</string>
+    <string name="botoborrar">eliminar</string>
+    <string name="botoguardar">Guardar</string>
+    <string name="UbicacioTitol">UBICACIÓ</string>
+    <string name="inputUbicacio">Ubicació</string>
+
 
 </resources>
