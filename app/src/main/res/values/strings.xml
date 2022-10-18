@@ -21,4 +21,14 @@
     <string name="placesTornada">PLACES TORNADA</string>
     <string name="editar">Editar</string>
     <string name="boto_borrar">boto borrar</string>
+    <string name="tema_actuacio">TEMA DE L\'ACTUACIÓ</string>
+    <string name="recuperar_contrasenya">RECUPERAR CONTRASENYA</string>
+    <string name="correuContrasenya">correu@domini.com</string>
+    <string name="nombrePlaces">NOMBRE DE PLACES</string>
+    <string name="numPlaces">4 places</string>
+    <string name="pl_campus">Pl. Campus</string>
+    <string name="hora">Hora</string>
+    <string name="numHora">15</string>
+    <string name="minut">Minut</string>
+    <string name="numMinut">40</string>
 </resources>
