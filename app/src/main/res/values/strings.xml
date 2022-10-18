@@ -38,7 +38,7 @@
     <string name="malnomenric"> Muntal</string>
     <string name="rolnomenric"> Membre</string>
     <string name="dataalta">BERGANT DES DE</string>
-    <string name="dataenric"> 23-10-2019</string>
+    <string name="dataenric"> 23–10–2019</string>
     <string name="eliminarcompte">Eliminar compte</string>
     <string name="eliminarperfil">Eliminar perfil</string>
     <string name="inputtitol">Afegir títol</string>
@@ -50,5 +50,6 @@
 
     Moltes gràcies.</string>
     <string name="botocheck">guardar</string>
+    <string name="check">Correcte</string>
 
 </resources>

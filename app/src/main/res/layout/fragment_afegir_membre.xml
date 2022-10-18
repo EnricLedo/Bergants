@@ -103,7 +103,8 @@
             android:hint="@string/inputmalnom"
             android:inputType="text"
             android:maxLength="9"
-            android:textColor="@color/grisClaretGentApuntada" />
+            android:textColor="@color/grisClaretGentApuntada"
+            android:textColorHint="#757575" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Switch
@@ -170,7 +171,9 @@
             android:hint="@string/inputalçada"
             android:inputType="text"
             android:maxLength="3"
-            android:textColor="@color/grisClaretGentApuntada" />
+            android:textColor="@color/grisClaretGentApuntada"
+            android:textColorHint="#757575"
+            tools:ignore="DuplicateSpeakableTextCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -192,7 +195,8 @@
             android:hint="@string/inputalçada"
             android:inputType="text"
             android:maxLength="3"
-            android:textColor="@color/grisClaretGentApuntada" />
+            android:textColor="@color/grisClaretGentApuntada"
+            android:textColorHint="#757575" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -233,7 +237,8 @@
             android:hint="@string/inputcorreu"
             android:inputType="text|textEmailAddress|textCapWords"
             android:maxLength="9"
-            android:textColor="@color/grisClaretGentApuntada" />
+            android:textColor="@color/grisClaretGentApuntada"
+            android:textColorHint="#757575" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -273,7 +278,8 @@
             android:background="@color/blanc"
             android:hint="@string/inputadreca"
             android:inputType="text"
-            android:textColor="@color/grisClaretGentApuntada" />
+            android:textColor="@color/grisClaretGentApuntada"
+            android:textColorHint="#757575" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -351,7 +357,8 @@
             android:hint="@string/inputrol"
             android:inputType="text"
             android:maxLength="13"
-            android:textColor="@color/grisClaretGentApuntada" />
+            android:textColor="@color/grisClaretGentApuntada"
+            android:textColorHint="#757575" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -366,7 +373,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rolTextInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/rolTextInputLayout"
+        tools:ignore="TextContrastCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

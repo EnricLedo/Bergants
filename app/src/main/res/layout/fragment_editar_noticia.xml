@@ -81,6 +81,7 @@
         android:textColor="@color/blanc"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/check" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

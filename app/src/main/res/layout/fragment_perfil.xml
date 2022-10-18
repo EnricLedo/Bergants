@@ -139,31 +139,24 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iconoeliminarperfil" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/iconoeliminarperfil"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="291dp"
-        android:layout_marginTop="235dp"
-        android:layout_marginEnd="45dp"
-        android:layout_marginBottom="8dp"
-        android:elevation="12dp"
-        android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/eliminarcompte"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.64"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dataenric">
+        app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/eliminarperfil"
-            android:layout_width="match_parent"
+            android:layout_width="100dp"
             android:layout_height="100dp"
             android:contentDescription="@string/eliminarperfil"
-            android:src="@drawable/eliminarperfil" />
-    </androidx.cardview.widget.CardView>
+            android:src="@drawable/eliminarperfil"
+            android:layout_marginStart="291dp"
+            android:layout_marginTop="235dp"
+            android:layout_marginEnd="45dp"
+            android:layout_marginBottom="8dp"
+            android:elevation="12dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/eliminarcompte"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.64"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dataenric"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
