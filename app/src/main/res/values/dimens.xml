@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="TamanyImatgeLogo">300dp</dimen>
+    <dimen name="MargeImatge">72dp</dimen>
+    <dimen name="MargeTopImatge">60dp</dimen>
+    <dimen name="MargeFitxerImatge">30dp</dimen>
+    <dimen name="MargeLogin">20dp</dimen>
+    <dimen name="AlcadaSwitchLogin">48dp</dimen>
+    <dimen name="MargeTopBotoLogin">10dp</dimen>
+    <dimen name="TamanyLletraLogin">20sp</dimen>
+    <dimen name="TopRecordarContraLogin">10dp</dimen>
+    <dimen name="TamanyFotoCotxe">100dp</dimen>
+    <dimen name="elevacio">12dp</dimen>
+    <dimen name="margeImatge">72dp</dimen>
+    <dimen name="radiImatge">50dp</dimen>
+    <dimen name="MargeTextView">150dp</dimen>
+    <dimen name="MargeEsquerra">25dp</dimen>
+    <dimen name="MargeAdalt">30dp</dimen>
+    <dimen name="TamanyTextView">15sp</dimen>
+    <dimen name="AlcadaSpinner">48dp</dimen>
+    <dimen name="MargeAdaltSpinner">15dp</dimen>
+    <dimen name="MargeTextViewStart">200dp</dimen>
+    <dimen name="MargeTextViewEsquerra">30dp</dimen>
+    <dimen name="MargeAdaltSwitchCotxe">12dp</dimen>
+    <dimen name="MargeEndSwitchCotxe">52dp</dimen>
+    <dimen name="MargeBotóCotxe">130dp</dimen>
+    <dimen name="MargeEndBotoAfegir">20dp</dimen>
+    <dimen name="MargeTopInput">15dp</dimen>
+    <dimen name="AmpladaInputText">173dp</dimen>
+    <dimen name="TamanyBrossa">48dp</dimen>
+    <dimen name="AmpladTextView">150dp</dimen>
+    <dimen name="MargeTextViewUnirse">15dp</dimen>
+    <dimen name="AmpladaContraRecuperar">351dp</dimen>
+    <dimen name="MargeDretaRecuperar">36dp</dimen>
+</resources>

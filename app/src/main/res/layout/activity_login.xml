@@ -8,11 +8,11 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="72dp"
+        android:layout_width="@dimen/TamanyImatgeLogo"
+        android:layout_height="@dimen/TamanyImatgeLogo"
+        android:layout_marginStart="@dimen/MargeImatge"
+        android:layout_marginTop="@dimen/MargeTopImatge"
+        android:layout_marginEnd="@dimen/MargeImatge"
         android:contentDescription="@string/logo_bergants"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +24,7 @@
         android:id="@+id/emailTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/MargeFitxerImatge"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo"
@@ -32,24 +32,21 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email"
-            android:layout_width="300dp"
+            android:layout_width="@dimen/TamanyImatgeLogo"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@color/blanc"
             android:hint="@string/mail"
             android:inputType="text|textEmailAddress|textCapWords"
-            android:maxLength="9"
             android:textColor="@color/negre"
-            tools:ignore="TextContrastCheck">
-
-        </com.google.android.material.textfield.TextInputEditText>
+            tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/MargeLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailTextInputLayout"
@@ -58,13 +55,12 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
-            android:layout_width="300dp"
+            android:layout_width="@dimen/TamanyImatgeLogo"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@color/blanc"
             android:hint="@string/password"
             android:inputType="text|textEmailAddress|textCapWords"
-            android:maxLength="9"
             android:textColor="@color/negre"
             tools:ignore="TextContrastCheck">
 
@@ -75,9 +71,9 @@
         android:id="@+id/keepLoggedIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/MargeLogin"
         android:gravity="center"
-        android:minHeight="48dp"
+        android:minHeight="@dimen/AlcadaSwitchLogin"
         android:text="@string/keepLoggedIn"
         android:thumbTint="@color/verdBergant"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,11 +85,11 @@
         android:id="@+id/logIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/MargeTopBotoLogin"
         android:gravity="center"
         android:text="@string/logIn"
         android:textAllCaps="false"
-        android:textSize="20sp"
+        android:textSize="@dimen/TamanyLletraLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/keepLoggedIn" />
@@ -102,7 +98,7 @@
         android:id="@+id/forgottenPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/TopRecordarContraLogin"
         android:gravity="center"
         android:text="@string/forgottenPassword"
         android:textColor="@color/negre"
