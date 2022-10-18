@@ -43,5 +43,12 @@
     <string name="eliminarperfil">Eliminar perfil</string>
     <string name="inputtitol">Afegir títol</string>
     <string name="inputnoticia">Contingut de la notícia</string>
+    <string name="afegir">+</string>
+    <string name="inputtitoledit">Dinar de la Mercè</string>
+    <string name="inputnoticiaedit">Bergants! Els castellers de Barcelona ens conviden al dinar que organitzen després de l\'actuació de la Mercè. Es fa al parc del Clot (al costat del seu local). El dinar és una fideuà i té un preu de 6 euros, si no portes coberts ni gots els has de comprar per 1 euro. Hi ha opció vegana.
+    Després del dinar hi haura festa!
+
+    Moltes gràcies.</string>
+    <string name="botocheck">guardar</string>
 
 </resources>
