@@ -38,7 +38,7 @@
         app:layout_constraintBottom_toBottomOf="@id/botoSiVinc"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/iconaCotxe"
-        />
+        android:contentDescription="@string/imatgeactuacio" />
 
     <TextView
         android:id="@+id/autocarText"
@@ -59,7 +59,8 @@
         app:layout_constraintTop_toTopOf="@id/botoSiVinc"
         app:layout_constraintBottom_toBottomOf="@id/botoSiVinc"
         app:layout_constraintStart_toEndOf="@id/iconaAutocar"
-        app:layout_constraintEnd_toStartOf="@id/botoSiVinc" />
+        app:layout_constraintEnd_toStartOf="@id/botoSiVinc"
+        android:contentDescription="@string/imatgeactuacio" />
 
     <TextView
         android:id="@+id/cotxeText"
@@ -80,7 +81,8 @@
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintEnd_toStartOf="@+id/botoNoVinc"
         app:layout_constraintStart_toEndOf="@id/iconaCotxe"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/imatgeactuacio"/>
 
     <TextView
         android:id="@+id/vincText"
@@ -100,7 +102,8 @@
         android:src="@drawable/calendari_no56"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/botoSiVinc"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/imatgeactuacio" />
 
 
     <TextView
@@ -123,7 +126,8 @@
         app:layout_constraintEnd_toStartOf="@id/horaActuacio"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/imatgeactuacio" />
 
     <TextView
         android:id="@+id/horaActuacio"
@@ -146,7 +150,8 @@
         app:layout_constraintEnd_toStartOf="@+id/ubicacioActuacio"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/imatgeactuacio" />
 
     <TextView
         android:id="@+id/ubicacioActuacio"
@@ -167,7 +172,8 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="350dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/imatgeactuacio"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
