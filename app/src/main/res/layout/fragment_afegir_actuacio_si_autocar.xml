@@ -268,7 +268,6 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
-    //////////////////////////////
 
     <TextView
         android:id="@+id/HoraTitolAutocar"
@@ -326,7 +325,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
-    ///////////////////////////
+
 
     <ImageView
         android:id="@+id/fotoPaperera"

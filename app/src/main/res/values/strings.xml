@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Bergants</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     //Texts que són prou definitius
 
@@ -24,7 +23,7 @@
     <string name="cotxe">Cotxes</string>
 
     //Afegir Assaig
-    <string name="temaAssaig">TEMA DE L'ASSAIG</string>
+    <string name="temaAssaig">TEMA DE L\'ASSAIG</string>
     <string name="inputTemaAssaig">Assaig Bergant</string>
 
     //Destos del Joan per entendre el seu codi
@@ -53,8 +52,6 @@
     <string name="desplegableMes">desplegableMes</string>
     <string name="AnySpinner">Any</string>
     <string name="desplegableAny">desplegableAny</string>
-    <string name="botoborrar">eliminar</string>
-    <string name="botoguardar">Guardar</string>
     <string name="UbicacioTitol">UBICACIÓ</string>
     <string name="inputUbicacio">Ubicació</string>
     <string name="temaActuacio">TEMA DE L\'ACTUACIÓ</string>
@@ -116,19 +113,6 @@
     <string name="nomMembre">Nom Cognom Cognom</string>
     <string name="malnom">MALNOM</string>
     <string name="inputmalnom">malnom</string>
-    <string name="administrador">ADMINISTRADOR</string>
-    <string name="espatlles">ALÇADA ESPATLLES</string>
-    <string name="inputalçada">cm</string>
-    <string name="mans">ALÇADA MANS</string>
-    <string name="correu">CORREU ELECTRÒNIC</string>
-    <string name="inputcorreu">\@gmail.com</string>
-    <string name="adreca">ADREÇA</string>
-    <string name="inputadreca">C/</string>
-    <string name="numerotel">NUMERO DE TELEFON</string>
-    <string name="rol">ROL</string>
-    <string name="inputTelefon">666 666 666</string>
-    <string name="inputrol">membre</string>
-    <string name="botoafegir">Afegir</string>
     <string name="enric">Enric Ledo Muntal</string>
     <string name="botoguardar">Guardar</string>
     <string name="botoborrar">eliminar</string>

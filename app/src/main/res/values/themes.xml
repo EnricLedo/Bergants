@@ -11,9 +11,6 @@
         <item name="colorOnSecondary">@color/negre</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
-        <item name="android:textColor">@color/negre</item>
-        <item name="android:buttonStyle">@style/Widget.Bergants.Boto</item>
 
         <!-- BOTÓ -->
         <item name="materialButtonStyle">@style/BergantsBoto</item>
@@ -23,6 +20,5 @@
         <item name="android:editTextStyle">@style/BergantsEdit</item>
     </style>
 
-
-
 </resources>
+
