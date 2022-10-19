@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "701746060376",
+    "project_id": "bergants-dam",
+    "storage_bucket": "bergants-dam.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701746060376:android:a5ada2cb21016e9484be2d",
+        "android_client_info": {
+          "package_name": "cat.copernic.bergants"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701746060376-iridnngagg372oa0kbvl83t00akt9d0j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQqpH7AiNJbMGlpUfaWKVyJ4vZGDg6--E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "701746060376-iridnngagg372oa0kbvl83t00akt9d0j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

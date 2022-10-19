@@ -68,4 +68,87 @@
     <string name="desplegableMinutAutocar">desplegableMinutAutocar</string>
 
 
+    <string name="forgottenPassword">M\'he oblidat la contrasenya</string>
+    <string name="logIn">Iniciar sessió</string>
+    <string name="keepLoggedIn">Mantenir sessió iniciada</string>
+    <string name="password">Contrasenya</string>
+    <string name="mail">Correu</string>
+    <string name="logo_bergants">logo bergants</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="fotoPerfil">fotoPerfil</string>
+    <string name="nomUsuari">Joan Galindo Palacio</string>
+    <string name="fotoUsuari">fotoUsuari</string>
+    <string name="placesAnada">PLACES ANADA</string>
+    <string name="desplegablePlacesAnada">desplegablePlacesAnada</string>
+    <string name="horaAnada">HORA ANADA</string>
+    <string name="ubicacio">UBICACIÓ</string>
+    <string name="tornada">TORNADA</string>
+    <string name="afegirNom">Afegir</string>
+    <string name="ubicacioCotxeEditText">Pl. Campus</string>
+    <string name="placesTornada">PLACES TORNADA</string>
+    <string name="editar">Editar</string>
+    <string name="boto_borrar">boto borrar</string>
+    <string name="tema_actuacio">TEMA DE L\'ACTUACIÓ</string>
+    <string name="recuperar_contrasenya">RECUPERAR CONTRASENYA</string>
+    <string name="correuContrasenya">correu@domini.com</string>
+    <string name="nombrePlaces">NOMBRE DE PLACES</string>
+    <string name="numPlaces">4 places</string>
+    <string name="pl_campus">Pl. Campus</string>
+    <string name="hora">Hora</string>
+    <string name="numHora">15</string>
+    <string name="minut">Minut</string>
+    <string name="numMinut">40</string>
+    <string name="recuperarContrasenya">Recuperar Contrasenya</string>
+    <string name="config">Configuracio</string>
+    <string name="avissosAssajos"> Avissos d\'assajos</string>
+    <string name="avissosActuacions"> Avissos d\'actuacions</string>
+    <string name="notificacions">NOTIFICACIONS</string>
+    <string name="novetats"> Novetats del bloc de notícies</string>
+    <string name="informacio">INFORMACIÓ ADDICIONAL</string>
+    <string name="versio"> Versió de l\'aplicació</string>
+    <string name="adrecacontacte"> Adreça de contacte</string>
+    <string name="suport"> Suport</string>
+    <string name="num"> 1.0</string>
+    <string name="contacte"> info@bergants.cat</string>
+    <string name="sup"> app@bergants.cat</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fotoMembre">fotoMembre</string>
+    <string name="nomMembre">Nom Cognom Cognom</string>
+    <string name="malnom">MALNOM</string>
+    <string name="inputmalnom">malnom</string>
+    <string name="administrador">ADMINISTRADOR</string>
+    <string name="espatlles">ALÇADA ESPATLLES</string>
+    <string name="inputalçada">cm</string>
+    <string name="mans">ALÇADA MANS</string>
+    <string name="correu">CORREU ELECTRÒNIC</string>
+    <string name="inputcorreu">\@gmail.com</string>
+    <string name="adreca">ADREÇA</string>
+    <string name="inputadreca">C/</string>
+    <string name="numerotel">NUMERO DE TELEFON</string>
+    <string name="rol">ROL</string>
+    <string name="inputTelefon">666 666 666</string>
+    <string name="inputrol">membre</string>
+    <string name="botoafegir">Afegir</string>
+    <string name="enric">Enric Ledo Muntal</string>
+    <string name="botoguardar">Guardar</string>
+    <string name="botoborrar">eliminar</string>
+    <string name="nomPerfil">Enric Ledo Muntal</string>
+    <string name="fotoEnric">fotoenric</string>
+    <string name="malnomenric"> Muntal</string>
+    <string name="rolnomenric"> Membre</string>
+    <string name="dataalta">BERGANT DES DE</string>
+    <string name="dataenric"> 23–10–2019</string>
+    <string name="eliminarcompte">Eliminar compte</string>
+    <string name="eliminarperfil">Eliminar perfil</string>
+    <string name="inputtitol">Afegir títol</string>
+    <string name="inputnoticia">Contingut de la notícia</string>
+    <string name="afegir">+</string>
+    <string name="inputtitoledit">Dinar de la Mercè</string>
+    <string name="inputnoticiaedit">Bergants! Els castellers de Barcelona ens conviden al dinar que organitzen després de l\'actuació de la Mercè. Es fa al parc del Clot (al costat del seu local). El dinar és una fideuà i té un preu de 6 euros, si no portes coberts ni gots els has de comprar per 1 euro. Hi ha opció vegana.
+    Després del dinar hi haura festa!
+
+    Moltes gràcies.</string>
+    <string name="botocheck">guardar</string>
+    <string name="check">Correcte</string>
+
 </resources>

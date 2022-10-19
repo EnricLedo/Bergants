@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="verdBergant">#FF009736</color>
+    <color name="verdBergant">#FF078F3B</color>
     <color name="verdClar">#FF7EC090</color>
     <color name="blanc">#FFFFFFFF</color>
     <color name="grisClaretGentApuntada">#FFE5E5E5</color>
+    <color name="grisFosc">#515151</color>
     <color name="negre">#FF000000</color>
 </resources>
