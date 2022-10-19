@@ -1,5 +1,36 @@
 <resources>
     <string name="app_name">Bergants</string>
+    <string name="forgottenPassword">M\'he oblidat la contrasenya</string>
+    <string name="logIn">Iniciar sessió</string>
+    <string name="keepLoggedIn">Mantenir sessió iniciada</string>
+    <string name="password">Contrasenya</string>
+    <string name="mail">Correu</string>
+    <string name="logo_bergants">logo bergants</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="fotoPerfil">fotoPerfil</string>
+    <string name="nomUsuari">Joan Galindo Palacio</string>
+    <string name="fotoUsuari">fotoUsuari</string>
+    <string name="placesAnada">PLACES ANADA</string>
+    <string name="desplegablePlacesAnada">desplegablePlacesAnada</string>
+    <string name="horaAnada">HORA ANADA</string>
+    <string name="ubicacio">UBICACIÓ</string>
+    <string name="tornada">TORNADA</string>
+    <string name="afegirNom">Afegir</string>
+    <string name="ubicacioCotxeEditText">Pl. Campus</string>
+    <string name="placesTornada">PLACES TORNADA</string>
+    <string name="editar">Editar</string>
+    <string name="boto_borrar">boto borrar</string>
+    <string name="tema_actuacio">TEMA DE L\'ACTUACIÓ</string>
+    <string name="recuperar_contrasenya">RECUPERAR CONTRASENYA</string>
+    <string name="correuContrasenya">correu@domini.com</string>
+    <string name="nombrePlaces">NOMBRE DE PLACES</string>
+    <string name="numPlaces">4 places</string>
+    <string name="pl_campus">Pl. Campus</string>
+    <string name="hora">Hora</string>
+    <string name="numHora">15</string>
+    <string name="minut">Minut</string>
+    <string name="numMinut">40</string>
+    <string name="recuperarContrasenya">Recuperar Contrasenya</string>
     <string name="config">Configuracio</string>
     <string name="avissosAssajos"> Avissos d\'assajos</string>
     <string name="avissosActuacions"> Avissos d\'actuacions</string>
