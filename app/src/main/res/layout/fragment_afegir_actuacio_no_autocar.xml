@@ -74,7 +74,7 @@ tools:layout_editor_absoluteY="8dp">
     app:layout_constraintStart_toStartOf="@id/liniaEsquerra"
     app:layout_constraintTop_toTopOf="@id/spinnerHoraAnada"
     app:layout_constraintBottom_toBottomOf="@id/spinnerHoraAnada"
-    android:textSize="16dp"
+    android:textSize="16sp"
     android:text="@string/HoraSpinner"/>
 
 <Spinner
@@ -97,7 +97,7 @@ tools:layout_editor_absoluteY="8dp">
     app:layout_constraintStart_toEndOf="@id/liniaCentral"
     app:layout_constraintTop_toTopOf="@id/spinnerMinutAnada"
     app:layout_constraintBottom_toBottomOf="@id/spinnerMinutAnada"
-    android:textSize="16dp"
+    android:textSize="16sp"
     android:text="@string/MinutSpinner"/>
 
 <Spinner
@@ -131,7 +131,7 @@ tools:layout_editor_absoluteY="8dp">
     app:layout_constraintStart_toStartOf="@id/liniaEsquerra"
     app:layout_constraintTop_toTopOf="@id/spinnerDiaAnada"
     app:layout_constraintBottom_toBottomOf="@id/spinnerDiaAnada"
-    android:textSize="16dp"
+    android:textSize="16sp"
     android:text="@string/DiaSpinner" />
 
 <Spinner
@@ -153,7 +153,7 @@ tools:layout_editor_absoluteY="8dp">
     app:layout_constraintStart_toStartOf="@id/liniaEsquerra"
     app:layout_constraintTop_toTopOf="@id/spinnerMesAnada"
     app:layout_constraintBottom_toBottomOf="@id/spinnerMesAnada"
-    android:textSize="16dp"
+    android:textSize="16sp"
     android:text="@string/MesSpinner" />
 
 <Spinner
@@ -175,7 +175,7 @@ tools:layout_editor_absoluteY="8dp">
     app:layout_constraintStart_toStartOf="@id/liniaCentral"
     app:layout_constraintTop_toTopOf="@id/spinnerAnyAnada"
     app:layout_constraintBottom_toBottomOf="@id/spinnerAnyAnada"
-    android:textSize="16dp"
+    android:textSize="16sp"
     android:text="@string/AnySpinner" />
 
 <Spinner
