@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanc"
+    tools:context=".AfegirNoticia">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/titolTextInputLayout"
+        android:layout_width="@dimen/fullwidth"
+        android:layout_height="@dimen/smallinputheight"
+        android:layout_marginStart="@dimen/marginpag"
+        android:layout_marginTop="@dimen/marginpag"
+        android:layout_marginEnd="@dimen/marginpag"
+        app:boxBackgroundColor="@color/blanc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/afegirtitol"
+            android:layout_width="@dimen/fullwidth"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/blanc"
+            android:hint="@string/inputtitol"
+            android:inputType="text"
+            android:textColorHint="@color/grisFosc"
+            android:textSize="@dimen/secondtitlesize" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/noticiaTextInputLayout"
+        android:layout_width="@dimen/fullwidth"
+        android:layout_height="@dimen/noticiaheight"
+        android:layout_marginStart="@dimen/marginpag"
+        android:layout_marginEnd="@dimen/marginpag"
+        app:boxBackgroundColor="@color/blanc"
+        app:layout_constraintBottom_toTopOf="@+id/botoafegir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titolTextInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/afegirnoticia"
+            android:layout_width="@dimen/fullwidth"
+            android:layout_height="@dimen/noticiaheight"
+            android:layout_gravity="top"
+            android:background="@color/blanc"
+            android:hint="@string/inputnoticia"
+            android:inputType="textMultiLine"
+            android:textColorHint="#757575" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <ImageView
+        android:id="@+id/fotoPaperera"
+        android:layout_width="@dimen/smallinputheight"
+        android:layout_height="@dimen/smallinputheight"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/marginpag"
+        android:layout_marginBottom="@dimen/separaciomig"
+        android:contentDescription="@string/botoborrar"
+        android:src="@drawable/iconopapelera"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/botoafegir"
+        android:layout_width="@dimen/btncircle"
+        android:layout_height="@dimen/btncircle"
+        android:layout_marginEnd="@dimen/marginpag"
+        android:layout_marginBottom="@dimen/separaciomig"
+        android:background="@drawable/round_button"
+        android:gravity="center"
+        android:text="@string/afegir"
+        android:textColor="@color/blanc"
+        android:textSize="@dimen/txtcircle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

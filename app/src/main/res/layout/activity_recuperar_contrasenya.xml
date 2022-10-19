@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecuperarContrasenya">
+
+    <TextView
+        android:id="@+id/RecuperarContrasenya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="@dimen/MargeEsquerra"
+        android:layout_marginTop="@dimen/MargeAdalt"
+        android:text="@string/recuperar_contrasenya"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/TamanyTextView"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailTextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MargeAdalt"
+        android:layout_marginStart="@dimen/MargeEsquerra"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RecuperarContrasenya"
+        app:boxBackgroundColor="@color/blanc">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailContrasenya"
+            android:layout_width="@dimen/AmpladaContraRecuperar"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@color/blanc"
+            android:hint="@string/correuContrasenya"
+            android:inputType="text|textEmailAddress|textCapWords"
+            android:maxLength="9"
+            android:textColor="@color/negre"
+            tools:ignore="TextContrastCheck">
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/editar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginTop="@dimen/MargeAdalt"
+        android:layout_marginEnd="@dimen/MargeDretaRecuperar"
+        android:text="@string/recuperarContrasenya"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailTextInputLayout"
+        app:layout_constraintVertical_bias="0.03"
+        tools:ignore="TextContrastCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

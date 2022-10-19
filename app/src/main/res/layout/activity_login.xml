@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="@dimen/TamanyImatgeLogo"
+        android:layout_height="@dimen/TamanyImatgeLogo"
+        android:layout_marginStart="@dimen/MargeImatge"
+        android:layout_marginTop="@dimen/MargeTopImatge"
+        android:layout_marginEnd="@dimen/MargeImatge"
+        android:contentDescription="@string/logo_bergants"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_bergants" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailTextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MargeFitxerImatge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        app:boxBackgroundColor="@color/blanc">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email"
+            android:layout_width="@dimen/TamanyImatgeLogo"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/blanc"
+            android:hint="@string/mail"
+            android:inputType="text|textEmailAddress|textCapWords"
+            android:textColor="@color/negre"
+            tools:ignore="TextContrastCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordTextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MargeLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailTextInputLayout"
+        app:boxBackgroundColor="@color/blanc"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password"
+            android:layout_width="@dimen/TamanyImatgeLogo"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/blanc"
+            android:hint="@string/password"
+            android:inputType="text|textEmailAddress|textCapWords"
+            android:textColor="@color/negre"
+            tools:ignore="TextContrastCheck">
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Switch
+        android:id="@+id/keepLoggedIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MargeLogin"
+        android:gravity="center"
+        android:minHeight="@dimen/AlcadaSwitchLogin"
+        android:text="@string/keepLoggedIn"
+        android:thumbTint="@color/verdBergant"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordTextInputLayout"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Button
+        android:id="@+id/logIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MargeTopBotoLogin"
+        android:gravity="center"
+        android:text="@string/logIn"
+        android:textAllCaps="false"
+        android:textSize="@dimen/TamanyLletraLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/keepLoggedIn" />
+
+    <TextView
+        android:id="@+id/forgottenPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/TopRecordarContraLogin"
+        android:gravity="center"
+        android:text="@string/forgottenPassword"
+        android:textColor="@color/negre"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logIn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
