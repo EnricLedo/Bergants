@@ -135,5 +135,9 @@
     <string name="botocheck">guardar</string>
     <string name="check">Correcte</string>
     <string name="imatgeactuacio">imatgeActuacio</string>
+    <string name="botodesivinc">BotoDeSiVinc</string>
+    <string name="botodenovinc">BotoDeNoVinc</string>
+    <string name="iconarellotge">IconaRellotge</string>
+    <string name="iconaubicacio">IconaUbicacio</string>
 
 </resources>
