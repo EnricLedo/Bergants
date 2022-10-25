@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".afegirActuacioNoAutocar">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/liniaCentral"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/liniaEsquerra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/LiniaEsquerra30dp" />
+
+    <TextView
+        android:id="@+id/TemaActuacio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margeTop50dp"
+        android:text="@string/temaActuacio"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/TitolGordo18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/liniaEsquerra"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/temaActuacioTextInputLayout"
+        android:layout_width="@dimen/llargadaTextField382dp"
+        android:layout_height="@dimen/alcadaTextField48dp"
+        android:layout_marginTop="@dimen/margeNormal8dp"
+        app:boxBackgroundColor="@color/blanc"
+        app:layout_constraintStart_toStartOf="@id/liniaEsquerra"
+        app:layout_constraintTop_toBottomOf="@+id/TemaActuacio">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/TemaActuacioInputText"
+            android:layout_width="@dimen/llargadaTextField382dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/blanc"
+            android:hint="@string/inputTemaActuacio"
+            android:inputType="text"
+            android:maxLength="9"
+            android:textColor="@color/grisClaretGentApuntada" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/HoraTitol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margeTop150dp"
+        android:text="@string/HoraTitol"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/TitolGordo18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/liniaEsquerra"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/horaEnMinuscules"
+        app:layout_constraintStart_toStartOf="@id/liniaEsquerra"
+        app:layout_constraintTop_toTopOf="@id/spinnerHoraAnada"
+        app:layout_constraintBottom_toBottomOf="@id/spinnerHoraAnada"
+        android:textSize="@dimen/LletraNormal16sp"
+        android:text="@string/HoraSpinner"/>
+
+    <Spinner
+        android:id="@+id/spinnerHoraAnada"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/alcadaTextField48dp"
+        android:layout_gravity="start"
+        android:layout_marginTop="@dimen/margeTop182dp"
+        android:layout_marginStart="@dimen/margeNormal8dp"
+        android:contentDescription="@string/desplegableHora"
+        app:layout_constraintStart_toEndOf="@id/horaEnMinuscules"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <TextView
+
+        android:id="@+id/minutEnMinuscules"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/liniaCentral"
+        app:layout_constraintTop_toTopOf="@id/spinnerMinutAnada"
+        app:layout_constraintBottom_toBottomOf="@id/spinnerMinutAnada"
+        android:textSize="@dimen/LletraNormal16sp"
+        android:text="@string/MinutSpinner"/>
+
+    <Spinner
+        android:id="@+id/spinnerMinutAnada"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/alcadaTextField48dp"
+        android:layout_gravity="start"
+        android:layout_marginTop="@dimen/margeTop182dp"
+        android:layout_marginStart="@dimen/margeNormal8dp"
+        android:contentDescription="@string/desplegableMinut"
+        app:layout_constraintStart_toEndOf="@id/minutEnMinuscules"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/DataTitol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MargeTop238dp"
+        android:text="@string/DataTitol"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/TitolGordo18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/liniaEsquerra"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/DiaEnMinuscules"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/liniaEsquerra"
+        app:layout_constraintTop_toTopOf="@id/spinnerDiaAnada"
+        app:layout_constraintBottom_toBottomOf="@id/spinnerDiaAnada"
+        android:textSize="@dimen/LletraNormal16sp"
+        android:text="@string/DiaSpinner" />
+
+    <Spinner
+        android:id="@+id/spinnerDiaAnada"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/alcadaTextField48dp"
+        android:layout_gravity="start"
+        android:layout_marginTop="@dimen/margeTop270dp"
+        android:layout_marginStart="@dimen/margeNormal8dp"
+        android:contentDescription="@string/desplegableDia"
+        app:layout_constraintStart_toEndOf="@id/DiaEnMinuscules"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/MesEnMinuscules"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/liniaEsquerra"
+        app:layout_constraintTop_toTopOf="@id/spinnerMesAnada"
+        app:layout_constraintBottom_toBottomOf="@id/spinnerMesAnada"
+        android:textSize="@dimen/LletraNormal16sp"
+        android:text="@string/MesSpinner" />
+
+    <Spinner
+        android:id="@+id/spinnerMesAnada"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/alcadaTextField48dp"
+        android:layout_gravity="start"
+        android:layout_marginTop="@dimen/MargeTop326dp"
+        android:layout_marginStart="@dimen/margeNormal8dp"
+        android:contentDescription="@string/desplegableMes"
+        app:layout_constraintStart_toEndOf="@id/MesEnMinuscules"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/AnyEnMinuscules"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/liniaCentral"
+        app:layout_constraintTop_toTopOf="@id/spinnerAnyAnada"
+        app:layout_constraintBottom_toBottomOf="@id/spinnerAnyAnada"
+        android:textSize="@dimen/LletraNormal16sp"
+        android:text="@string/AnySpinner" />
+
+    <Spinner
+        android:id="@+id/spinnerAnyAnada"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/alcadaTextField48dp"
+        android:layout_gravity="start"
+        android:layout_marginTop="@dimen/margeTop270dp"
+        android:layout_marginStart="@dimen/margeNormal8dp"
+        android:contentDescription="@string/desplegableAny"
+        app:layout_constraintStart_toEndOf="@id/AnyEnMinuscules"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/UbicacioTitol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MargeTop382dp"
+        android:text="@string/UbicacioTitol"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/TitolGordo18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/liniaEsquerra"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/UbicacioTitolTextInputLayout"
+        android:layout_width="352dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="414dp"
+        app:boxBackgroundColor="@color/blanc"
+        app:layout_constraintStart_toStartOf="@id/liniaEsquerra"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/UbicacioTitolInputText"
+            android:layout_width="@dimen/llargadaTextField382dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/blanc"
+            android:hint="@string/inputUbicacio"
+            android:inputType="text"
+            android:maxLength="9"
+            android:textColor="@color/grisClaretGentApuntada" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/AutocarTitol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MargeTop482dp"
+        android:text="@string/AutocarTitol"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/TitolGordo18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/liniaEsquerra"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/booleanAdmin"
+        style="@style/Switch"
+        android:layout_width="@dimen/alcadaTextField48dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/AutocarTitol"
+        app:layout_constraintBottom_toBottomOf="@id/AutocarTitol"
+        app:layout_constraintStart_toEndOf="@id/AutocarTitol"
+        android:layout_marginStart="@dimen/margeNormal8dp"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:id="@+id/PlacesEnMinuscules"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/liniaCentral"
+        app:layout_constraintTop_toTopOf="@id/spinnerPlacesAutocar"
+        app:layout_constraintBottom_toBottomOf="@id/spinnerPlacesAutocar"
+        android:textSize="@dimen/LletraNormal16sp"
+        android:text="@string/PlacesAutocar" />
+
+    <Spinner
+        android:id="@+id/spinnerPlacesAutocar"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/alcadaTextField48dp"
+        android:layout_gravity="start"
+        android:layout_marginTop="@dimen/MargeTop470dp"
+        android:layout_marginStart="@dimen/margeNormal8dp"
+        android:contentDescription="@string/desplegablePlacesAutocar"
+        app:layout_constraintStart_toEndOf="@id/PlacesEnMinuscules"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+
+    <TextView
+        android:id="@+id/HoraTitolAutocar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MargeTop526dp"
+        android:text="@string/HoraTitolAutocar"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/TitolGordo18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/liniaEsquerra"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/horaEnMinusculesAutocar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/liniaEsquerra"
+        app:layout_constraintTop_toTopOf="@id/spinnerHoraAnadaAutocar"
+        app:layout_constraintBottom_toBottomOf="@id/spinnerHoraAnadaAutocar"
+        android:textSize="@dimen/LletraNormal16sp"
+        android:text="@string/HoraSpinnerAutocar"/>
+
+    <Spinner
+        android:id="@+id/spinnerHoraAnadaAutocar"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/alcadaTextField48dp"
+        android:layout_gravity="start"
+        android:layout_marginTop="@dimen/MargeTop558dp"
+        android:layout_marginStart="@dimen/margeNormal8dp"
+        android:contentDescription="@string/desplegableHoraAutocar"
+        app:layout_constraintStart_toEndOf="@id/horaEnMinuscules"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/minutEnMinusculesAutocar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/liniaCentral"
+        app:layout_constraintTop_toTopOf="@id/spinnerMinutAnadaAutocar"
+        app:layout_constraintBottom_toBottomOf="@id/spinnerMinutAnadaAutocar"
+        android:textSize="@dimen/LletraNormal16sp"
+        android:text="@string/MinutSpinner"/>
+
+    <Spinner
+        android:id="@+id/spinnerMinutAnadaAutocar"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/alcadaTextField48dp"
+        android:layout_gravity="start"
+        android:layout_marginTop="@dimen/MargeTop558dp"
+        android:layout_marginStart="@dimen/margeNormal8dp"
+        android:contentDescription="@string/desplegableMinutAutocar"
+        app:layout_constraintStart_toEndOf="@id/minutEnMinusculesAutocar"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+
+
+    <ImageView
+        android:id="@+id/fotoPaperera"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/MargePapereraEsquerra20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/MargePapereraAbaix15dp"
+        android:layout_width="@dimen/DimensioPaperera48dp"
+        android:layout_height="@dimen/DimensioPaperera48dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/botoborrar"
+        android:src="@drawable/iconopapelera" />
+
+    <Button
+        android:id="@+id/botoguardar"
+        android:layout_width="@dimen/AmpleBotoGuardar150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/MargeDretaBotoGuardar20dp"
+        android:layout_marginBottom="@dimen/MargeAbaixBotoGuardar33dp"
+        android:text="@string/botoguardar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
