@@ -68,9 +68,9 @@ class Login : AppCompatActivity() {
                     //Anem al mainActivity des d'aquesta pantalla
                     startActivity(Intent(this,MainActivity::class.java))
                     finish() //Alliberem memòria un cop finalitzada aquesta tasca.
-                }else{ //El loguin (task) ha fallat...
+                }else{ //El login (task) ha fallat...
                     //Mostrem un missatge a l'usuari mitjançant un Toast
-                    Toast.makeText(applicationContext,"El loguin ha fallat!", Toast.LENGTH_LONG).show()
+                    Toast.makeText(applicationContext,"El login ha fallat!", Toast.LENGTH_LONG).show()
                 }
             }
     }
