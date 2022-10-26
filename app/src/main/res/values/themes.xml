@@ -19,6 +19,5 @@
         <!-- EDIT TEXT -->
         <item name="android:editTextStyle">@style/BergantsEdit</item>
     </style>
-
 </resources>
 
