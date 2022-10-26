@@ -1,5 +1,4 @@
 <resources>
-    <?xml version="1.0" encoding="utf-8"?>
     <style name="Switch">
         <item name="android:thumbTint">@color/verdBergant</item>
         <item name="android:textSize">14sp</item>
