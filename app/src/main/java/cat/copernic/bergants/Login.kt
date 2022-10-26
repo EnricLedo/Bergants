@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -19,6 +20,7 @@ class Login : AppCompatActivity() {
     private lateinit var correuLogin:EditText
     private lateinit var contrasenyaLogin:EditText
     private lateinit var botoLogin:Button
+    private lateinit var textRecuperarContrasenya: TextView
 
     //Declarem un atribut de tipus FirebaseAuth
     private lateinit var auth: FirebaseAuth
@@ -31,6 +33,7 @@ class Login : AppCompatActivity() {
         correuLogin = findViewById(R.id.email)
         contrasenyaLogin = findViewById(R.id.password)
         botoLogin = findViewById(R.id.logIn)
+        textRecuperarContrasenya = findViewById(R.id.forgottenPassword)
 
         //Inicialitzem la variable de tipus FirebaseAuth amb una instància d'aquesta classe
         auth= Firebase.auth
@@ -48,6 +51,11 @@ class Login : AppCompatActivity() {
                 //Loguinem a l'usuari mitjançant la funció loguinar creada per nosaltres
                 loguinar(correu, contrasenya)
             }
+        }
+        textRecuperarContrasenya.setOnClickListener {
+            //Anem a l'activity del registre
+            startActivity(Intent(this,RecuperarContrasenya::class.java))
+            finish() //Alliberem memòria un cop finalitzada aquesta tasca.
         }
     }
 
