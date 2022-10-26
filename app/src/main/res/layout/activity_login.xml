@@ -37,7 +37,7 @@
             android:layout_gravity="center"
             android:background="@color/blanc"
             android:hint="@string/mail"
-            android:inputType="text|textEmailAddress|textCapWords"
+            android:inputType="textEmailAddress"
             android:textColor="@color/negre"
             tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -60,7 +60,7 @@
             android:layout_gravity="center"
             android:background="@color/blanc"
             android:hint="@string/password"
-            android:inputType="text|textEmailAddress|textCapWords"
+            android:inputType="textPassword"
             android:textColor="@color/negre"
             tools:ignore="TextContrastCheck">
 
