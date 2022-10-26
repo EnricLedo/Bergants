@@ -1,27 +1,19 @@
 <resources>
     <string name="app_name">Bergants</string>
-    <!-- TODO: Remove or change this placeholder text -->
-
     //Texts que són prou definitius
-
     <string name="vinc">Vinc</string>
     <string name="noVinc">No vinc</string>
-
-
     //String d'exemple perque encara no tenim base de dades
-
     <string name="nomAssaig">ASSAIG ESPECIAL DE LA MERCÈ</string>
     <string name="dataAssaig">DIVENDRES 23 de Setembre del 2022</string>
     <string name="horaAssaig">20:00h</string>
     <string name="ubicacioAssaig">Pl. Campus</string>
-
     <string name="nomActuacio">ACTUACIÓ EMBOIRATS, VIC </string>
     <string name="dataActuacio">DIJOUS 24 de Novembre del 2022</string>
     <string name="horaActuacio">16:00h</string>
     <string name="ubicacioActuacio">Universitat de Vic</string>
     <string name="autocar">23 Places</string>
     <string name="cotxe">Cotxes</string>
-
     //Afegir Assaig
     <string name="temaAssaig">TEMA DE L\'ASSAIG</string>
     <string name="inputTemaAssaig">Assaig Bergant</string>
@@ -63,15 +55,12 @@
     <string name="HoraTitolAutocar">HORA</string>
     <string name="desplegableHoraAutocar">DesplegableHoraAutocar</string>
     <string name="desplegableMinutAutocar">desplegableMinutAutocar</string>
-
-
     <string name="forgottenPassword">M\'he oblidat la contrasenya</string>
     <string name="logIn">Iniciar sessió</string>
     <string name="keepLoggedIn">Mantenir sessió iniciada</string>
     <string name="password">Contrasenya</string>
     <string name="mail">Correu</string>
     <string name="logo_bergants">logo bergants</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="fotoPerfil">fotoPerfil</string>
     <string name="nomUsuari">Joan Galindo Palacio</string>
     <string name="fotoUsuari">fotoUsuari</string>
