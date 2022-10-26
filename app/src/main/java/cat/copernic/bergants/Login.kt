@@ -50,6 +50,9 @@ class Login : AppCompatActivity() {
             if(correu.isNotEmpty()&&contrasenya.isNotEmpty()){
                 //Loguinem a l'usuari mitjançant la funció loguinar creada per nosaltres
                 loguinar(correu, contrasenya)
+            }else{ //El login (task) ha fallat...
+                //Mostrem un missatge a l'usuari mitjançant un Toast
+                Toast.makeText(applicationContext,"Introdueix un correu i una contrasenya", Toast.LENGTH_LONG).show()
             }
         }
         textRecuperarContrasenya.setOnClickListener {
