@@ -18,6 +18,10 @@
         <item name="android:textViewStyle">@style/BergantsView</item>
         <!-- EDIT TEXT -->
         <item name="android:editTextStyle">@style/BergantsEdit</item>
+        <!-- TextInputLayout-->
+        <item name="textInputStyle">@style/BergantsTextInput</item>
     </style>
+
+
 </resources>
 

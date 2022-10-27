@@ -27,19 +27,19 @@
         android:layout_marginTop="@dimen/MargeFitxerImatge"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo"
-        app:boxBackgroundColor="@color/blanc">
+        app:layout_constraintTop_toBottomOf="@+id/logo">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email"
             android:layout_width="@dimen/TamanyImatgeLogo"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@color/blanc"
             android:hint="@string/mail"
             android:inputType="textEmailAddress"
             android:textColor="@color/negre"
-            tools:ignore="TextContrastCheck" />
+            tools:ignore="TextContrastCheck"
+            android:textSize="@dimen/LletraNormal16sp"/>
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -49,20 +49,18 @@
         android:layout_marginTop="@dimen/MargeLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailTextInputLayout"
-        app:boxBackgroundColor="@color/blanc"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/emailTextInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
             android:layout_width="@dimen/TamanyImatgeLogo"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@color/blanc"
             android:hint="@string/password"
             android:inputType="textPassword"
             android:textColor="@color/negre"
-            tools:ignore="TextContrastCheck">
+            tools:ignore="TextContrastCheck"
+            android:textSize="@dimen/LletraNormal16sp">
 
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
@@ -101,10 +99,11 @@
         android:layout_marginTop="@dimen/TopRecordarContraLogin"
         android:gravity="center"
         android:text="@string/forgottenPassword"
-        android:textColor="@color/negre"
+        android:textColor="@color/grisFosc"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logIn" />
+        app:layout_constraintTop_toBottomOf="@+id/logIn"
+        android:textSize="16sp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
