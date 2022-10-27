@@ -92,4 +92,5 @@
     <dimen name="ImatgeWidthMapa270dp">270dp</dimen>
     <dimen name="ImatgeHeightMapa318dp">318dp</dimen>
     <dimen name="MargeTopImatge350dp">350dp</dimen>
+    <dimen name="paddingDeTextViews4dp">4dp</dimen>
 </resources>
