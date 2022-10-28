@@ -94,4 +94,5 @@
     <dimen name="MargeTopImatge350dp">350dp</dimen>
     <dimen name="paddingDeTextViews4dp">4dp</dimen>
     <dimen name="MargeEsquerra60dpLogin">60dp</dimen>
+    <dimen name="TopRecordarContraLogin">10dp</dimen>
 </resources>

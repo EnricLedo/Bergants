@@ -26,6 +26,8 @@ class Login : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        Thread.sleep(3000)
+        setTheme(R.style.Theme_Bergants)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
@@ -62,9 +64,9 @@ class Login : AppCompatActivity() {
         }
     }
 
-    //Funció per loguinar a un usuari mitjançant Firebase Authentication
+    //Funció per loginar a un usuari mitjançant Firebase Authentication
     fun loguinar(correu: String, contrasenya: String){
-        //Loguinem a l'usuari
+        //Loginem a l'usuari
         auth.signInWithEmailAndPassword(correu,contrasenya)
             .addOnCompleteListener(this) {task ->
                 if(task.isSuccessful){ //El loguin (task) s'ha completat amb exit...
