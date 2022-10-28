@@ -1,14 +1,22 @@
 package cat.copernic.bergants
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import cat.copernic.bergants.adapter.NoticiaAdapter
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        initRecyclerView()
+    }
 
-        Log.d("TAG", "aixo es una prova")
+    private fun initRecyclerView(){
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerNoticies)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = NoticiaAdapter(NoticiaProvider.noticiaList)
     }
 } 

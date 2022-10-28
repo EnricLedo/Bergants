@@ -18,7 +18,12 @@
         <item name="android:textViewStyle">@style/BergantsView</item>
         <!-- EDIT TEXT -->
         <item name="android:editTextStyle">@style/BergantsEdit</item>
+        <!-- TextInputLayout-->
+        <item name="textInputStyle">@style/BergantsTextInput</item>
     </style>
 
+    <style name="SplashTheme" parent="Theme.Bergants">
+        <item name="android:windowBackground">@drawable/splashscreen</item>
+    </style>
 </resources>
 

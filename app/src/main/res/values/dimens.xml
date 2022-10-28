@@ -3,12 +3,12 @@
     <dimen name="TamanyImatgeLogo">300dp</dimen>
     <dimen name="MargeImatge">72dp</dimen>
     <dimen name="MargeTopImatge">60dp</dimen>
-    <dimen name="MargeFitxerImatge">30dp</dimen>
-    <dimen name="MargeLogin">20dp</dimen>
+    <dimen name="MargeFitxerImatge">20dp</dimen>
+    <dimen name="MargeLogin">30dp</dimen>
     <dimen name="AlcadaSwitchLogin">48dp</dimen>
     <dimen name="MargeTopBotoLogin">10dp</dimen>
     <dimen name="TamanyLletraLogin">20sp</dimen>
-    <dimen name="TopRecordarContraLogin">10dp</dimen>
+    <dimen name="BottomRecordarContraLogin">20dp</dimen>
     <dimen name="TamanyFotoCotxe">100dp</dimen>
     <dimen name="elevacio">12dp</dimen>
     <dimen name="margeImatge">72dp</dimen>
@@ -92,4 +92,7 @@
     <dimen name="ImatgeWidthMapa270dp">270dp</dimen>
     <dimen name="ImatgeHeightMapa318dp">318dp</dimen>
     <dimen name="MargeTopImatge350dp">350dp</dimen>
+    <dimen name="paddingDeTextViews4dp">4dp</dimen>
+    <dimen name="MargeEsquerra60dpLogin">60dp</dimen>
+    <dimen name="TopRecordarContraLogin">10dp</dimen>
 </resources>
