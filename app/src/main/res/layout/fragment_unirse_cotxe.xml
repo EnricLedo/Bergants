@@ -38,7 +38,7 @@
         android:id="@+id/nomUsuari"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/TopRecordarContraLogin"
+        android:layout_marginTop="@dimen/MargeDretaBotoGuardar20dp"
         android:gravity="center"
         android:text="@string/nomUsuari"
         android:textColor="@color/negre"
