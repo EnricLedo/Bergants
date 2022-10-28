@@ -46,8 +46,7 @@ class afegirActuacioNoAutocar : Fragment() {
          * @param param2 Parameter 2.
          * @return A new instance of fragment afegirActuacioNoAutocar.
          */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
+
         fun newInstance(param1: String, param2: String) =
             afegirActuacioNoAutocar().apply {
                 arguments = Bundle().apply {
