@@ -28,11 +28,7 @@ class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        try {
-            this.supportActionBar!!.hide()
-        } // catch block to handle NullPointerException
-        catch (e: NullPointerException) {
-        }
+        this.supportActionBar!!.hide()
 
         //Inicalitzem els atributs amb els components corresponents a l'id passat per paràmetre
         correuLogin = findViewById(R.id.email)
