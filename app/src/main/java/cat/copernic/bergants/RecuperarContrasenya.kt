@@ -29,6 +29,8 @@ class RecuperarContrasenya : AppCompatActivity() {
             if(correu.isNotEmpty()){
                 Toast.makeText(applicationContext,"Revisa el teu correu per a recuperar la contrasenya.", Toast.LENGTH_LONG).show()
                 startActivity(Intent(this,Login::class.java))
+            }else{
+                Toast.makeText(applicationContext,"Introdueix un correu!", Toast.LENGTH_LONG).show()
             }
         }
 
