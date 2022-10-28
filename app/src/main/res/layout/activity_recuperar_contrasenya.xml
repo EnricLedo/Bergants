@@ -40,8 +40,7 @@
             android:layout_gravity="start"
             android:background="@color/blanc"
             android:hint="@string/correuContrasenya"
-            android:inputType="text|textEmailAddress|textCapWords"
-            android:maxLength="9"
+            android:inputType="textEmailAddress"
             android:textColor="@color/negre"
             tools:ignore="TextContrastCheck">
 

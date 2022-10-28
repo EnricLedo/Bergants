@@ -24,4 +24,10 @@
         <item name="android:textAllCaps">false</item>
         <item name="boxStrokeColor">@color/negre</item>
     </style>
+    <!-- TextImputLayout -->
+    <style name="BergantsTextInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/verdBergant</item>
+        <item name="background">@color/grisClaretGentApuntada</item>
+    </style>
 </resources>
+

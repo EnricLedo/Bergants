@@ -55,7 +55,7 @@
     <string name="HoraTitolAutocar">HORA</string>
     <string name="desplegableHoraAutocar">DesplegableHoraAutocar</string>
     <string name="desplegableMinutAutocar">desplegableMinutAutocar</string>
-    <string name="forgottenPassword">M\'he oblidat la contrasenya</string>
+    <string name="forgottenPassword">Has oblidat la contrasenya?</string>
     <string name="logIn">Iniciar sessió</string>
     <string name="keepLoggedIn">Mantenir sessió iniciada</string>
     <string name="password">Contrasenya</string>
