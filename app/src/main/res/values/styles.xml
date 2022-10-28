@@ -28,9 +28,5 @@
         <item name="boxStrokeColor">@color/verdBergant</item>
         <item name="background">@color/grisClaretGentApuntada</item>
     </style>
-
-    <style name="SplashTheme" parent="Theme.Bergants">
-        <item name="android:windowBackground">@drawable/splashscreen</item>
-    </style>
 </resources>
 
