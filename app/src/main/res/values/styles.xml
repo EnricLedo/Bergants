@@ -18,9 +18,10 @@
         <item name="android:textAllCaps">false</item>
     </style>
 
-    <style name="BergantsEdit" parent="Widget.MaterialComponents.TimePicker.Display.TextInputEditText">
+    <style name="BergantsEdit" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/grisFosc</item>
         <item name="android:textAllCaps">false</item>
+        <item name="boxStrokeColor">@color/negre</item>
     </style>
 </resources>

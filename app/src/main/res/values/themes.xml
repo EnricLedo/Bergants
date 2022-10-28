@@ -17,7 +17,7 @@
         <!-- TEXT SIZE -->
         <item name="android:textViewStyle">@style/BergantsView</item>
         <!-- EDIT TEXT -->
-        <item name="android:editTextStyle">@style/BergantsEdit</item>
+        <item name="textInputStyle">@style/BergantsEdit</item>
     </style>
 
 </resources>
