@@ -1,6 +1,7 @@
 package cat.copernic.bergants
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -29,6 +30,7 @@ class Login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         this.supportActionBar!!.hide()
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         //Inicalitzem els atributs amb els components corresponents a l'id passat per paràmetre
         correuLogin = findViewById(R.id.email)
