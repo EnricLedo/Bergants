@@ -21,9 +21,5 @@
         <!-- TextInputLayout-->
         <item name="textInputStyle">@style/BergantsTextInput</item>
     </style>
-
-    <style name="SplashTheme" parent="Theme.Bergants">
-        <item name="android:windowBackground">@drawable/splashscreen</item>
-    </style>
 </resources>
 
