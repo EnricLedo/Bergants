@@ -2,7 +2,7 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@color/blanc"/>
     <item>
-        <bitmap android:src="@drawable/logo_bergants"
+        <bitmap android:src="@drawable/splashlogo"
             android:gravity="center"/>
     </item>
 </layer-list>
