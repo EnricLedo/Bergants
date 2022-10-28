@@ -23,7 +23,7 @@ class RecuperarContrasenya : AppCompatActivity() {
         recuperarContrasenya.setOnClickListener {
 
             //Guardem les dades introduïdes per l'usuari en el formulari mitjançant text i les transformem amb un String (toString())
-            var correu = correuRecuperar.text.toString()
+            val correu = correuRecuperar.text.toString()
 
             //Comprovem que els camps no estan buit
             if(correu.isNotEmpty()){

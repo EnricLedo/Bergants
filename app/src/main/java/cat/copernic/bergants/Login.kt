@@ -49,8 +49,8 @@ class Login : AppCompatActivity() {
         botoLogin.setOnClickListener {
 
             //Guardem les dades introduïdes per l'usuari en el formulari mitjançant text i les transformem amb un String (toString())
-            var correu = correuLogin.text.toString()
-            var contrasenya = contrasenyaLogin.text.toString()
+            val correu = correuLogin.text.toString()
+            val contrasenya = contrasenyaLogin.text.toString()
 
             //Comprovem que els camps no estan buit
             if(correu.isNotEmpty()&&contrasenya.isNotEmpty()){
@@ -68,9 +68,9 @@ class Login : AppCompatActivity() {
         }
     }
 
-    //Funció per loguinar a un usuari mitjançant Firebase Authentication
-    fun loguinar(correu: String, contrasenya: String){
-        //Loguinem a l'usuari
+    //Funció per loginar a un usuari mitjançant Firebase Authentication
+    private fun loguinar(correu: String, contrasenya: String){
+        //Loginem a l'usuari
         auth.signInWithEmailAndPassword(correu,contrasenya)
             .addOnCompleteListener(this) {task ->
                 if(task.isSuccessful){ //El loguin (task) s'ha completat amb exit...
