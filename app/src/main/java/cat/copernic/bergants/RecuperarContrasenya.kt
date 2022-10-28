@@ -23,12 +23,14 @@ class RecuperarContrasenya : AppCompatActivity() {
         recuperarContrasenya.setOnClickListener {
 
             //Guardem les dades introduïdes per l'usuari en el formulari mitjançant text i les transformem amb un String (toString())
-            var correu = correuRecuperar.text.toString()
+            val correu = correuRecuperar.text.toString()
 
             //Comprovem que els camps no estan buit
             if(correu.isNotEmpty()){
                 Toast.makeText(applicationContext,"Revisa el teu correu per a recuperar la contrasenya.", Toast.LENGTH_LONG).show()
                 startActivity(Intent(this,Login::class.java))
+            }else{
+                Toast.makeText(applicationContext,"Introdueix un correu!", Toast.LENGTH_LONG).show()
             }
         }
 
