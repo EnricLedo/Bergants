@@ -19,7 +19,7 @@ class SplashActivity : AppCompatActivity() {
             val i = Intent(this@SplashActivity, Login::class.java)
             startActivity(i)
             finish()
-        }, 3000)
+        }, 1000)
 
 //if you want to change your splash screen stay 5 second or more then just  edit 5000
     }
