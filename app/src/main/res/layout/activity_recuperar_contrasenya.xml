@@ -22,11 +22,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/emailTextInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/emailTextInputLayout"
+        android:text="@string/mail"
+        android:textSize="@dimen/LletraNormal16sp" />
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/MargeAdalt"
+        android:layout_marginTop="@dimen/RecuperarContrasenya40dp"
         android:layout_marginStart="@dimen/MargeEsquerra"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,16 +42,14 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/emailContrasenya"
-            android:layout_width="@dimen/AmpladaContraRecuperar"
+            android:layout_width="@dimen/TamanyImatgeLogo"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:background="@color/blanc"
-            android:hint="@string/correuContrasenya"
             android:inputType="textEmailAddress"
             android:textColor="@color/negre"
-            tools:ignore="TextContrastCheck">
+            tools:ignore="TextContrastCheck"
+            android:textSize="@dimen/LletraNormal16sp"/>
 
-        </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

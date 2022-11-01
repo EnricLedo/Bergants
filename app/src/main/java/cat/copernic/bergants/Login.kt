@@ -1,8 +1,11 @@
 package cat.copernic.bergants
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -11,6 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
+@Suppress("DEPRECATION")
 class Login : AppCompatActivity() {
 
     /*Declarem els atributs que inicialitzarem més tard (lateinit) per guardar els components del formulari del activity_login.
@@ -28,6 +32,11 @@ class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        this.supportActionBar!!.hide()
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        //Hide status bar
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
         //Inicalitzem els atributs amb els components corresponents a l'id passat per paràmetre
         correuLogin = findViewById(R.id.email)
