@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <color name="verdBergant">#FF078F3B</color>
     <color name="verdClar">#FF7EC090</color>
     <color name="blanc">#FFFFFFFF</color>
     <color name="grisClaretGentApuntada">#FFE5E5E5</color>
     <color name="grisFosc">#515151</color>
     <color name="negre">#FF000000</color>
+    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">@color/verdBergant</color>
 </resources>
