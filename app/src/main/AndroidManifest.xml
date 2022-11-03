@@ -9,10 +9,19 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.Bergants"
-        android:screenOrientation="portrait"
         tools:targetApi="31">
+        <activity
+            android:name=".MenuDesplegableNoticies"
+            android:exported="false"
+            android:label="@string/title_activity_menu_desplegable_noticies"
+            android:theme="@style/Theme.Bergants.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".SplashActivity"
             android:exported="true">
@@ -21,11 +30,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".RecuperarContrasenya"
             android:exported="false">
@@ -36,9 +45,7 @@
         <activity
             android:name=".Login"
             android:exported="false"
-            android:theme="@style/Theme.Bergants">
-
-        </activity>
+            android:theme="@style/Theme.Bergants"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="false">
