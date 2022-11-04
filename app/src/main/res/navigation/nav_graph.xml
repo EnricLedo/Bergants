@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/perfil">
+    app:startDestination="@id/perfil_fragment">
 
     <fragment
-        android:id="@+id/perfil"
+        android:id="@+id/perfil_fragment"
         android:name="cat.copernic.bergants.perfil"
         android:label="fragment_perfil"
         tools:layout="@layout/fragment_perfil" />
     <fragment
-        android:id="@+id/configuracio"
+        android:id="@+id/configuracio_fragment"
         android:name="cat.copernic.bergants.Configuracio"
         android:label="fragment_configuracio"
         tools:layout="@layout/fragment_configuracio" />
