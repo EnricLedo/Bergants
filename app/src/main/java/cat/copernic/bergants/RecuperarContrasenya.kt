@@ -14,41 +14,49 @@ import com.google.firebase.ktx.Firebase
 
 
 class RecuperarContrasenya : AppCompatActivity() {
+    private lateinit var correu: EditText
+    private lateinit var botoRestaurarContrassenya: Button
+
     private lateinit var auth: FirebaseAuth
-    private lateinit var correuRecuperar: EditText
-    private lateinit var recuperarContrasenya: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recuperar_contrasenya)
 
-        correuRecuperar = findViewById(R.id.emailContrasenya)
-        recuperarContrasenya = findViewById(R.id.editar)
-        val correu = correuRecuperar.text.toString()
+        correu = findViewById(R.id.emailContrasenya)
+        botoRestaurarContrassenya = findViewById(R.id.editar)
 
+        auth= Firebase.auth
 
-        recuperarContrasenya.setOnClickListener {
+        botoRestaurarContrassenya.setOnClickListener {
 
-            //Guardem les dades introduïdes per l'usuari en el formulari mitjançant text i les transformem amb un String (toString())
+            var correu = this.correu.text.toString() //Guardem el correu introduït per l'usuari
 
-            //Comprovem que els camps no estan buit
-            if(correu.isNotEmpty()){
-                resetPassword(correu)
-            }else{
-                Toast.makeText(applicationContext,"Introdueix un correu!", Toast.LENGTH_LONG).show()
+            if(correu.isNotEmpty()){ //Si l'usuari ha introduït el correu....
+                //Restaurem la contrasenya mitjançant el mètode restaurarContrasenya que hem creat, el qual enviarà
+                //al correu passat per paràmetre un missatge de restauració. El correu ha d'estar donat d'alta a
+                //Authentication, és a dir, ha de ser el correu que s'ha fet servir per registrar a l'usuari que
+                //vol restaurar la seva contrasenya.
+                restaurarContrasenya(correu)
             }
+
         }
     }
-    private fun resetPassword(correu: String){
-        auth.sendPasswordResetEmail(correu)
-            .addOnCompleteListener {task ->
-                if(task.isSuccessful){
-                    Toast.makeText(applicationContext,"Revisa el teu correu per a recuperar la contrasenya.", Toast.LENGTH_LONG).show()
-                    startActivity(Intent(this,Login::class.java))
-                    finish()
-                }else{
-                    Toast.makeText(applicationContext,"El reseteig ha fallat", Toast.LENGTH_LONG).show()
-                }
+
+
+    fun restaurarContrasenya(correu: String){
+
+        //Li indiquem al sistema en quin llenguatge ha de ser el correu de restauració de contrasenya que li enviarem a l'usuari. En el nostre cas català ("ca")
+        auth.setLanguageCode("ca")
+
+        //Enviem a l'usuari el correu d'autenticació al correu passat per paràmetre. Aquest mètode comprova que el correu sigui el correu d'un dels registres.
+        auth.sendPasswordResetEmail(correu).addOnCompleteListener { task ->
+
+            if(task.isSuccessful){
+                Toast.makeText(applicationContext,"Contrasenya restaurada amb èxit. Rebràs un correu.", Toast.LENGTH_LONG).show()
+            }else{
+                Toast.makeText(applicationContext,"No s'ha pogut restaurar la contrasenya!!", Toast.LENGTH_LONG).show()
             }
+        }
     }
 }
