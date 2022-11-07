@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/perfil_fragment">
+    app:startDestination="@id/noticia_canvi">
 
     <fragment
         android:id="@+id/perfil_fragment"
@@ -15,4 +15,9 @@
         android:name="cat.copernic.bergants.Configuracio"
         android:label="fragment_configuracio"
         tools:layout="@layout/fragment_configuracio" />
+    <fragment
+        android:id="@+id/noticia_canvi"
+        android:name="cat.copernic.bergants.noticia_canvi"
+        android:label="fragment_noticia_canvi"
+        tools:layout="@layout/fragment_noticia_canvi" />
 </navigation>
