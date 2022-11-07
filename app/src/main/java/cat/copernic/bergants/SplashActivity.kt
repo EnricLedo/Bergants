@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -11,11 +12,10 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         //title bar hide
         supportActionBar!!.hide() //hide the title bar
-        Handler().postDelayed({ // This method will be executed once the timer is over
+        Handler(Looper.myLooper()!!).postDelayed({ // This method will be executed once the timer is over
             val i = Intent(this@SplashActivity, Login::class.java)
             startActivity(i)
             finish()

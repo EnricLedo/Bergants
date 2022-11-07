@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="ACTUACIONS"/>
+
+    <item
+        android:title="ASSAJOS"/>
+
+    <item
+        android:title="NOTÍCIES"/>
+
+    <item
+        android:title="MEMBRES"/>
+
+    <item
+        android:id="@+id/perfil_fragment"
+        android:title="PERFIL"/>
+
+    <item
+        android:id="@+id/configuracio_fragment"
+        android:title="CONFIGURACIÓ"/>
+
+</menu>
