@@ -13,15 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Bergants"
         tools:targetApi="31">
-        <activity
-            android:name=".MenuDesplegableNoticies"
-            android:exported="false"
-            android:label="@string/title_activity_menu_desplegable_noticies"
-            android:theme="@style/Theme.Bergants.NoActionBar">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
         <activity
             android:name=".SplashActivity"
             android:exported="true">
@@ -48,7 +40,8 @@
             android:theme="@style/Theme.Bergants"></activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false">
+            android:exported="false"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
