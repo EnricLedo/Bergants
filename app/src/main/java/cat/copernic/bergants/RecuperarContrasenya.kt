@@ -41,10 +41,9 @@ class RecuperarContrasenya : AppCompatActivity() {
         }
     }
     private fun resetPassword(correu: String){
-        auth.setLanguageCode("es");
-        auth.sendPasswordResetEmail(correu) .addOnCompleteListener {
-            task -> if (task.isSuccessful) {
-            Toast.makeText(applicationContext,"Revisa el teu correu per a recuperar la contrasenya.", Toast.LENGTH_LONG).show()
+        auth.sendPasswordResetEmail(correu) .addOnCompleteListener {task ->
+            if(task.isSuccessful){
+                Toast.makeText(applicationContext,"Revisa el teu correu per a recuperar la contrasenya.", Toast.LENGTH_LONG).show()
                 startActivity(Intent(this,Login::class.java))
             }else{
                 Toast.makeText(applicationContext,"El reseteig ha fallat", Toast.LENGTH_LONG).show()
