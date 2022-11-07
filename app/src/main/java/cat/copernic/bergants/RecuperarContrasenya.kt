@@ -24,6 +24,8 @@ class RecuperarContrasenya : AppCompatActivity() {
 
         correuRecuperar = findViewById(R.id.emailContrasenya)
         recuperarContrasenya = findViewById(R.id.editar)
+        val correu = correuRecuperar.text.toString()
+
 
         recuperarContrasenya.setOnClickListener {
 
@@ -32,10 +34,20 @@ class RecuperarContrasenya : AppCompatActivity() {
 
             //Comprovem que els camps no estan buit
             if(correu.isNotEmpty()){
-                Toast.makeText(applicationContext,"Revisa el teu correu per a recuperar la contrasenya.", Toast.LENGTH_LONG).show()
-                startActivity(Intent(this,Login::class.java))
+                resetPassword(correu)
             }else{
                 Toast.makeText(applicationContext,"Introdueix un correu!", Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+    private fun resetPassword(correu: String){
+        auth.setLanguageCode("es");
+        auth.sendPasswordResetEmail(correu) .addOnCompleteListener {
+            task -> if (task.isSuccessful) {
+            Toast.makeText(applicationContext,"Revisa el teu correu per a recuperar la contrasenya.", Toast.LENGTH_LONG).show()
+                startActivity(Intent(this,Login::class.java))
+            }else{
+                Toast.makeText(applicationContext,"El reseteig ha fallat", Toast.LENGTH_LONG).show()
             }
         }
     }
