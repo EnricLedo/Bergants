@@ -54,4 +54,4 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = NoticiaAdapter(NoticiaProvider.noticiaList)
     }
      */
-} 
+}
