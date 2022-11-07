@@ -38,7 +38,9 @@ class RecuperarContrasenya : AppCompatActivity() {
                 //Authentication, és a dir, ha de ser el correu que s'ha fet servir per registrar a l'usuari que
                 //vol restaurar la seva contrasenya.
                 restaurarContrasenya(correu)
-            }
+            }else{
+            Toast.makeText(applicationContext,"Introdueix un correu!!!", Toast.LENGTH_LONG).show()
+        }
 
         }
     }
@@ -54,6 +56,8 @@ class RecuperarContrasenya : AppCompatActivity() {
 
             if(task.isSuccessful){
                 Toast.makeText(applicationContext,"Contrasenya restaurada amb èxit. Rebràs un correu.", Toast.LENGTH_LONG).show()
+                startActivity(Intent(this,Login::class.java))
+                finish() //Alliberem memòria un cop finalitzada aquesta tasca.
             }else{
                 Toast.makeText(applicationContext,"No s'ha pogut restaurar la contrasenya!!", Toast.LENGTH_LONG).show()
             }
