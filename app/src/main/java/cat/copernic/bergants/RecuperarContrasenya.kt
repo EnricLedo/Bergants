@@ -30,7 +30,6 @@ class RecuperarContrasenya : AppCompatActivity() {
         recuperarContrasenya.setOnClickListener {
 
             //Guardem les dades introduïdes per l'usuari en el formulari mitjançant text i les transformem amb un String (toString())
-            val correu = correuRecuperar.text.toString()
 
             //Comprovem que els camps no estan buit
             if(correu.isNotEmpty()){
@@ -46,6 +45,7 @@ class RecuperarContrasenya : AppCompatActivity() {
                 if(task.isSuccessful){
                     Toast.makeText(applicationContext,"Revisa el teu correu per a recuperar la contrasenya.", Toast.LENGTH_LONG).show()
                     startActivity(Intent(this,Login::class.java))
+                    finish()
                 }else{
                     Toast.makeText(applicationContext,"El reseteig ha fallat", Toast.LENGTH_LONG).show()
                 }
