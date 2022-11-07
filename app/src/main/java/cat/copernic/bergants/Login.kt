@@ -32,13 +32,6 @@ class Login : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         this.supportActionBar!!.hide()
         val user = FirebaseAuth.getInstance().currentUser
-        if (user != null) {
-            // User is signed in
-            val i = Intent(this@Login, MainActivity::class.java)
-            i.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            startActivity(i)
-        }
-
 
         //Inicalitzem els atributs amb els components corresponents a l'id passat per paràmetre
         correuLogin = findViewById(R.id.email)
