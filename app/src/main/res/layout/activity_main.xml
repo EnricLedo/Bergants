@@ -42,11 +42,9 @@
         app:menu="@menu/menu_desplegable_noticies"/>
 
 
-
-<!--
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerNoticies"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
--->
+
 </androidx.drawerlayout.widget.DrawerLayout>
