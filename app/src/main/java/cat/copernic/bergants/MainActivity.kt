@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         initRecyclerView()
     }
 
+
     private fun initRecyclerView(){
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerNoticies)
         recyclerView.layoutManager = LinearLayoutManager(this)

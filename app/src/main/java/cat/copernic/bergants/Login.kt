@@ -57,7 +57,7 @@ class Login : AppCompatActivity() {
             val contrasenya = contrasenyaLogin.text.toString()
 
             //Comprovem que els camps no estan buit
-            if(correu.isNotEmpty()&&contrasenya.isNotEmpty()){
+            if(campEsBuit(correu, contrasenya)){
                 //Loguinem a l'usuari mitjançant la funció loguinar creada per nosaltres
                 loguinar(correu, contrasenya)
             }else{ //El login (task) ha fallat...
@@ -71,10 +71,20 @@ class Login : AppCompatActivity() {
         }
     }
 
+    override fun onStart() {
+        super.onStart() //Cridem al la funció onStart() perquè ens mostri per pantalla l'activity
+        //currentUser és un atribut de la classe FirebaseAuth que guarda l'usuari autenticat. Si aquest no està autenticat, el seu valor serà null.
+        val currentUser = auth.currentUser
+        if(currentUser != null){ //Sí l'usuari no ha tancat sessió (està autenticat)...
+            //Anem al mainActivity des d'aquesta pantalla
+            startActivity(Intent(this,MainActivity::class.java))
+            finish() //Alliberem memòria un cop finalitzada aquesta tasca.
+        }
+    }
+
     //Funció per loginar a un usuari mitjançant Firebase Authentication
     private fun loguinar(correu: String, contrasenya: String){
         //Loginem a l'usuari
-
         auth.signInWithEmailAndPassword(correu,contrasenya)
             .addOnCompleteListener(this) {task ->
                 if(task.isSuccessful){ //El loguin (task) s'ha completat amb exit...
@@ -86,5 +96,10 @@ class Login : AppCompatActivity() {
                     Snackbar.make(loginpage,"ERROR! El login ha fallat!", Snackbar.LENGTH_LONG).show()
                 }
             }
+    }
+
+
+    fun campEsBuit(correu:String,contrasenya:String):Boolean{
+        return correu.isNotEmpty()&&contrasenya.isNotEmpty()
     }
 }
