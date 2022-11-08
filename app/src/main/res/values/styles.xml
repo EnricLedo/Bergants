@@ -7,6 +7,12 @@
         <item name="android:minWidth">48dp</item>
     </style>
 
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/verdBergant</item>
+        <item name="colorPrimaryDark">@color/verdBergant</item>
+        <item name="colorAccent">@color/verdBergant</item>
+    </style>
+
     <style name="BergantsBoto" parent="Widget.MaterialComponents.Button">
         <item name="android:backgroundTint">@color/verdBergant</item>
         <item name="android:textSize">18sp</item>
