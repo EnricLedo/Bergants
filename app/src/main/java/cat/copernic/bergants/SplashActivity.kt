@@ -39,13 +39,11 @@ class SplashActivity : AppCompatActivity() {
         //set Animations on elements
         backgroundImage.animation = sideAnim
 
-        Handler().postDelayed({
-            var intent: Intent
-            intent = Intent(applicationContext, Login::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+        Handler(Looper.myLooper()!!).postDelayed({ // This method will be executed once the timer is over
+            val i = Intent(this@SplashActivity, Login::class.java)
+            startActivity(i)
             finish()
-
         }, SPLASH_TIMER)
+
     }
 }
