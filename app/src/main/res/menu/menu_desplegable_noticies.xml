@@ -4,40 +4,34 @@
 
     <item
         android:id="@+id/actuacions_fragment"
-        android:checked="true"
-        android:checkable="true"
+        app:showAsAction="never"
         android:title="ACTUACIONS"
         />
 
     <item
         android:id="@+id/assajos_fragment"
-        android:checked="true"
-        android:checkable="true"
+        app:showAsAction="never"
         android:title="ASSAJOS"/>
 
     <item
         android:id="@+id/noticia_fragment"
-        android:checked="true"
-        android:checkable="true"
+        app:showAsAction="never"
         android:title="NOTÍCIES"
         />
 
     <item
         android:id="@+id/membres_fragment"
-        android:checked="true"
-        android:checkable="true"
+        app:showAsAction="never"
         android:title="MEMBRES"/>
 
     <item
         android:id="@+id/perfil_fragment"
-        android:checked="true"
-        android:checkable="true"
+        app:showAsAction="never"
         android:title="PERFIL"/>
 
     <item
         android:id="@+id/configuracio_fragment"
-        android:checked="true"
-        android:checkable="true"
+        app:showAsAction="never"
         android:title="CONFIGURACIÓ"/>
 
 </menu>
