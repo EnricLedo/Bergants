@@ -32,6 +32,14 @@ class Login : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onStart() //Cridem al la funció onStart() perquè ens mostri per pantalla l'activity
+        //currentUser és un atribut de la classe FirebaseAuth que guarda l'usuari autenticat. Si aquest no està autenticat, el seu valor serà null.
+        val currentUser = auth.currentUser
+        if(currentUser != null){ //Sí l'usuari no ha tancat sessió (està autenticat)...
+            //Anem al MainActivity mitjançant la funció anarMainActivity() creada per nosaltres
+            startActivity(Intent(this,MainActivity::class.java))
+            finish()
+        }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         this.supportActionBar!!.hide()
@@ -74,7 +82,6 @@ class Login : AppCompatActivity() {
     //Funció per loginar a un usuari mitjançant Firebase Authentication
     private fun loguinar(correu: String, contrasenya: String){
         //Loginem a l'usuari
-
         auth.signInWithEmailAndPassword(correu,contrasenya)
             .addOnCompleteListener(this) {task ->
                 if(task.isSuccessful){ //El loguin (task) s'ha completat amb exit...
