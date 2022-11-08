@@ -9,10 +9,12 @@ import cat.copernic.bergants.adapter.NoticiaAdapter
 
 class MainActivity : AppCompatActivity() {
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initRecyclerView()
+        supportActionBar!!.hide() //hide the title bar
     }
 
 
