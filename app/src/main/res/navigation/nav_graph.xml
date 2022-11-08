@@ -31,7 +31,7 @@
         android:label="fragment_actuacio"
         tools:layout="@layout/fragment_actuacio" />
     <fragment
-        android:id="@+id/membres"
+        android:id="@+id/membres_fragment"
         android:name="cat.copernic.bergants.membres"
         android:label="fragment_membres"
         tools:layout="@layout/fragment_membres" />
