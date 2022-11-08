@@ -3,11 +3,13 @@ package cat.copernic.bergants
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -24,6 +26,7 @@ class Login : AppCompatActivity() {
     private lateinit var contrasenyaLogin:EditText
     private lateinit var botoLogin:Button
     private lateinit var textRecuperarContrasenya: TextView
+    private lateinit var loginpage: View
 
     //Declarem un atribut de tipus FirebaseAuth
     private lateinit var auth: FirebaseAuth
@@ -39,6 +42,8 @@ class Login : AppCompatActivity() {
         contrasenyaLogin = findViewById(R.id.password)
         botoLogin = findViewById(R.id.logIn)
         textRecuperarContrasenya = findViewById(R.id.forgottenPassword)
+        loginpage = findViewById(android.R.id.content)
+
 
         //Inicialitzem la variable de tipus FirebaseAuth amb una instància d'aquesta classe
         auth= Firebase.auth
@@ -61,7 +66,6 @@ class Login : AppCompatActivity() {
             }
         }
         textRecuperarContrasenya.setOnClickListener {
-            //Anem a l'activity del registre
             startActivity(Intent(this,RecuperarContrasenya::class.java))
             finish() //Alliberem memòria un cop finalitzada aquesta tasca.
         }
@@ -78,7 +82,7 @@ class Login : AppCompatActivity() {
                     finish() //Alliberem memòria un cop finalitzada aquesta tasca.
                 }else{ //El login (task) ha fallat...
                     //Mostrem un missatge a l'usuari mitjançant un Toast
-                    Toast.makeText(applicationContext,"El login ha fallat!", Toast.LENGTH_LONG).show()
+                    Snackbar.make(loginpage,"ERROR! El login ha fallat!", Snackbar.LENGTH_LONG).show()
                 }
             }
     }
