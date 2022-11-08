@@ -44,5 +44,6 @@ class SplashActivity : AppCompatActivity() {
             startActivity(i)
             finish()
         }, SPLASH_TIMER)
+
     }
 }
