@@ -3,23 +3,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:title="ACTUACIONS"/>
+        android:id="@+id/actuacions_fragment"
+        android:checked="true"
+        android:checkable="true"
+        android:title="ACTUACIONS"
+        />
 
     <item
+        android:id="@+id/assajos_fragment"
+        android:checked="true"
+        android:checkable="true"
         android:title="ASSAJOS"/>
 
     <item
-        android:title="NOTÍCIES"/>
+        android:id="@+id/noticia_fragment"
+        android:checked="true"
+        android:checkable="true"
+        android:title="NOTÍCIES"
+        />
 
     <item
+        android:id="@+id/membres_fragment"
+        android:checked="true"
+        android:checkable="true"
         android:title="MEMBRES"/>
 
     <item
         android:id="@+id/perfil_fragment"
+        android:checked="true"
+        android:checkable="true"
         android:title="PERFIL"/>
 
     <item
         android:id="@+id/configuracio_fragment"
+        android:checked="true"
+        android:checkable="true"
         android:title="CONFIGURACIÓ"/>
 
 </menu>

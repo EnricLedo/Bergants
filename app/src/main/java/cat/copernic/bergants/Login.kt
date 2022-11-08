@@ -8,10 +8,11 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-
 
 class Login : AppCompatActivity() {
 
@@ -73,8 +74,8 @@ class Login : AppCompatActivity() {
             .addOnCompleteListener(this) {task ->
                 if(task.isSuccessful){ //El loguin (task) s'ha completat amb exit...
                     //Anem al mainActivity des d'aquesta pantalla
-                    startActivity(Intent(this,MainActivity::class.java))
-                    finish() //Alliberem memòria un cop finalitzada aquesta tasca.
+                     //Alliberem memòria un cop finalitzada aquesta tasca.
+                    findNavController().navigate(R.id.action_to_noticia_fragment)
                 }else{ //El login (task) ha fallat...
                     //Mostrem un missatge a l'usuari mitjançant un Toast
                     Toast.makeText(applicationContext,"El login ha fallat!", Toast.LENGTH_LONG).show()

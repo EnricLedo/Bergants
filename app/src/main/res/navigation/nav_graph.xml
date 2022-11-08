@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/noticia_canvi">
+    app:startDestination="@id/noticia_fragment">
 
     <fragment
         android:id="@+id/perfil_fragment"
@@ -16,8 +16,30 @@
         android:label="fragment_configuracio"
         tools:layout="@layout/fragment_configuracio" />
     <fragment
-        android:id="@+id/noticia_canvi"
+        android:id="@+id/noticia_fragment"
         android:name="cat.copernic.bergants.noticia_canvi"
         android:label="fragment_noticia_canvi"
         tools:layout="@layout/fragment_noticia_canvi" />
+    <fragment
+        android:id="@+id/assajos_fragment"
+        android:name="cat.copernic.bergants.assajos"
+        android:label="fragment_assajos"
+        tools:layout="@layout/fragment_assajos" />
+    <fragment
+        android:id="@+id/actuacions_fragment"
+        android:name="cat.copernic.bergants.actuacio"
+        android:label="fragment_actuacio"
+        tools:layout="@layout/fragment_actuacio" />
+    <fragment
+        android:id="@+id/membres"
+        android:name="cat.copernic.bergants.membres"
+        android:label="fragment_membres"
+        tools:layout="@layout/fragment_membres" />
+
+    <action
+        android:id="@+id/action_to_noticia_fragment"
+        app:destination="@id/noticia_fragment"
+        app:enterAnim="@anim/fragment_fade_enter"
+        app:exitAnim="@anim/fragment_fade_exit" />
+
 </navigation>
