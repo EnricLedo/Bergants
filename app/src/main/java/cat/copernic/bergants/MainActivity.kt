@@ -7,26 +7,39 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.Toast
+import android.widget.Toolbar
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.navigation.NavController
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import cat.copernic.bergants.adapter.NoticiaAdapter
+import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
     //Atribut de tipus Button per tancar la sessió
-    private lateinit var botoLogout: Button
+    //private lateinit var botoLogout: Button
 
     //Declarem un atribut de tipus FirebaseAuth
     private lateinit var auth: FirebaseAuth
-
+    private lateinit var toolbar: androidx.appcompat.widget.Toolbar
+    private lateinit var drawerLayout: DrawerLayout
+    private lateinit var navigationView: NavigationView
+    private lateinit var navController: NavController
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        this.supportActionBar!!.hide()
+
+        toolbar = findViewById(R.id.myToolbar)
+        setSupportActionBar(toolbar)
+
         /**
         //initRecyclerView()
         //Inicialitzem l'atribut botologout amb el component de l'XML corresponent
@@ -46,23 +59,6 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
          */
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_desplegable_noticies, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.actuacions_fragment-> Toast.makeText(this, "Actuacions", Toast.LENGTH_SHORT).show()
-            R.id.assajos_fragment-> Toast.makeText(this, "Assajos", Toast.LENGTH_SHORT).show()
-            R.id.noticia_fragment-> Toast.makeText(this, "Noticies", Toast.LENGTH_SHORT).show()
-            R.id.membres_fragment-> Toast.makeText(this, "Membres", Toast.LENGTH_SHORT).show()
-            R.id.perfil_fragment-> Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT).show()
-            R.id.configuracio_fragment-> Toast.makeText(this, "Configuracio", Toast.LENGTH_SHORT).show()
-        }
-        return super.onOptionsItemSelected(item)
     }
     /**
     private fun initRecyclerView(){
