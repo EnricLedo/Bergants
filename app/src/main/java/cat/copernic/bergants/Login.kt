@@ -74,6 +74,7 @@ class Login : AppCompatActivity() {
     //Funció per loginar a un usuari mitjançant Firebase Authentication
     private fun loguinar(correu: String, contrasenya: String){
         //Loginem a l'usuari
+
         auth.signInWithEmailAndPassword(correu,contrasenya)
             .addOnCompleteListener(this) {task ->
                 if(task.isSuccessful){ //El loguin (task) s'ha completat amb exit...
