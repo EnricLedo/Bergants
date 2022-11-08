@@ -3,26 +3,17 @@ package cat.copernic.bergants
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.widget.Button
-import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.navigation.NavController
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import cat.copernic.bergants.adapter.NoticiaAdapter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import cat.copernic.bergants.databinding.ActivityMainBinding
-import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
     //Atribut de tipus Button per tancar la sessió
-    private lateinit var binding: ActivityMainBinding
     private lateinit var botoLogout: Button
 
     //Declarem un atribut de tipus FirebaseAuth
@@ -32,11 +23,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
-        this.supportActionBar!!.hide()
         /**
         //initRecyclerView()
         //Inicialitzem l'atribut botologout amb el component de l'XML corresponent
@@ -48,23 +34,23 @@ class MainActivity : AppCompatActivity() {
         //Listener per quan l'usuari cliqui el botó de tancar sessió
         botoLogout.setOnClickListener {
 
-        //Tanquem la sessió mitjançant el mètode signOut() de la classe FirebaseAuth
-        auth.signOut()
-        //Tornem a la pàgina de loguin
-        startActivity(Intent(this,Login::class.java))
-        //Alliberem memòria
-        finish()
+            //Tanquem la sessió mitjançant el mètode signOut() de la classe FirebaseAuth
+            auth.signOut()
+            //Tornem a la pàgina de loguin
+            startActivity(Intent(this,Login::class.java))
+            //Alliberem memòria
+            finish()
         }
          */
     }
 
     /**
     private fun initRecyclerView(){
-    val recyclerView = findViewById<RecyclerView>(R.id.recyclerNoticies)
-    recyclerView.layoutManager = LinearLayoutManager(this)
-    recyclerView.adapter = NoticiaAdapter(NoticiaProvider.noticiaList)
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerNoticies)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = NoticiaAdapter(NoticiaProvider.noticiaList)
     }
-     */
+    */
 
 }
 
