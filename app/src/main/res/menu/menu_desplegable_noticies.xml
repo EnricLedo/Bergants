@@ -4,8 +4,7 @@
 
     <item
         android:id="@+id/actuacions_fragment"
-        android:title="@string/actuacions_menu"
-        />
+        android:title="@string/actuacions_menu"/>
 
     <item
         android:id="@+id/assajos_fragment"
@@ -13,8 +12,7 @@
 
     <item
         android:id="@+id/noticia_fragment"
-        android:title="@string/noticies_menu"
-        />
+        android:title="@string/noticies_menu"/>
 
     <item
         android:id="@+id/membres_fragment"

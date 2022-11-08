@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         toolbar = findViewById(R.id.myToolbar)
         setSupportActionBar(toolbar)
 
+
         /**
         //initRecyclerView()
         //Inicialitzem l'atribut botologout amb el component de l'XML corresponent
