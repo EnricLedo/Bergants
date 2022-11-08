@@ -145,4 +145,7 @@
     <string name="membres_menu">MEMBRES</string>
     <string name="perfil_menu">PERFIL</string>
     <string name="configuracio_menu">CONFIGURACIÓ</string>
+    <string name="tancar_sessio">TANCAR SESSIÓ</string>
+    <string name="tancar_sessioo">TANCAR SESSIÓ</string>
+    <string name="tancar_sessi">Tancar sessió</string>
 </resources>
