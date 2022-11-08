@@ -12,7 +12,9 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import cat.copernic.bergants.adapter.NoticiaAdapter
@@ -42,6 +44,10 @@ class MainActivity : AppCompatActivity() {
 
         drawerLayout = findViewById(R.id.drawer)
         navigationView = findViewById(R.id.navigationView)
+
+        navController = findNavController(R.id.fragmentContainerView)
+        appBarConfiguration = AppBarConfiguration(setOf(R.id.actuacions_fragment, R.id.assajos_fragment, R.id.noticia_fragment, R.id.membres_fragment, R.id.perfil_fragment, R.id.configuracio_fragment), drawerLayout)
+        setupActionBarWithNavController(navController, drawerLayout)
 
         /**
         //initRecyclerView()
