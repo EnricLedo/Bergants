@@ -3,7 +3,10 @@ package cat.copernic.bergants
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -23,6 +26,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        this.supportActionBar!!.hide()
         /**
         //initRecyclerView()
         //Inicialitzem l'atribut botologout amb el component de l'XML corresponent
@@ -44,6 +48,22 @@ class MainActivity : AppCompatActivity() {
          */
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_desplegable_noticies, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.actuacions_fragment-> Toast.makeText(this, "Actuacions", Toast.LENGTH_SHORT).show()
+            R.id.assajos_fragment-> Toast.makeText(this, "Assajos", Toast.LENGTH_SHORT).show()
+            R.id.noticia_fragment-> Toast.makeText(this, "Noticies", Toast.LENGTH_SHORT).show()
+            R.id.membres_fragment-> Toast.makeText(this, "Membres", Toast.LENGTH_SHORT).show()
+            R.id.perfil_fragment-> Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT).show()
+            R.id.configuracio_fragment-> Toast.makeText(this, "Configuracio", Toast.LENGTH_SHORT).show()
+        }
+        return super.onOptionsItemSelected(item)
+    }
     /**
     private fun initRecyclerView(){
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerNoticies)
