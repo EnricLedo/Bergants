@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -56,7 +57,7 @@ class Login : AppCompatActivity() {
                 loguinar(correu, contrasenya)
             }else{ //El login (task) ha fallat...
                 //Mostrem un missatge a l'usuari mitjançant un Toast
-                Toast.makeText(applicationContext,"Introdueix un correu i una contrasenya", Toast.LENGTH_LONG).show()
+                Snackbar.make(it,"Introdueix un correu i una contrasenya", Snackbar.LENGTH_LONG).show()
             }
         }
         textRecuperarContrasenya.setOnClickListener {
