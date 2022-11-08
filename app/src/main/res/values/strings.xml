@@ -140,5 +140,11 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="temporada_2022">TEMPORADA 2022</string>
+    <string name="actuacions_menu">ACTUACIONS</string>
+    <string name="assajos_menu">ASSAJOS</string>
+    <string name="noticies_menu">NOTÍCIES</string>
+    <string name="membres_menu">MEMBRES</string>
+    <string name="perfil_menu">PERFIL</string>
+    <string name="configuracio_menu">CONFIGURACIÓ</string>
 
 </resources>

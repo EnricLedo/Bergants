@@ -4,34 +4,28 @@
 
     <item
         android:id="@+id/actuacions_fragment"
-        app:showAsAction="never"
-        android:title="ACTUACIONS"
+        android:title="@string/actuacions_menu"
         />
 
     <item
         android:id="@+id/assajos_fragment"
-        app:showAsAction="never"
-        android:title="ASSAJOS"/>
+        android:title="@string/assajos_menu"/>
 
     <item
         android:id="@+id/noticia_fragment"
-        app:showAsAction="never"
-        android:title="NOTÍCIES"
+        android:title="@string/noticies_menu"
         />
 
     <item
         android:id="@+id/membres_fragment"
-        app:showAsAction="never"
-        android:title="MEMBRES"/>
+        android:title="@string/membres_menu"/>
 
     <item
         android:id="@+id/perfil_fragment"
-        app:showAsAction="never"
-        android:title="PERFIL"/>
+        android:title="@string/perfil_menu"/>
 
     <item
         android:id="@+id/configuracio_fragment"
-        app:showAsAction="never"
-        android:title="CONFIGURACIÓ"/>
+        android:title="@string/configuracio_menu"/>
 
 </menu>
