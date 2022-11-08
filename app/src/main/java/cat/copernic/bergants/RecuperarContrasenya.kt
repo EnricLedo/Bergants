@@ -8,6 +8,8 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import cat.copernic.bergants.databinding.ActivityMainBinding
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -39,8 +41,8 @@ class RecuperarContrasenya : AppCompatActivity() {
                 //vol restaurar la seva contrasenya.
                 restaurarContrasenya(correu)
             }else{
-            Toast.makeText(applicationContext,"Introdueix un correu!!!", Toast.LENGTH_LONG).show()
-        }
+                Snackbar.make(it,"Introdueix un correu!!!",Snackbar.LENGTH_LONG).show()
+            }
 
         }
     }
