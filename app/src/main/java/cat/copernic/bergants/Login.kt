@@ -24,8 +24,8 @@ class Login : AppCompatActivity() {
 
     private lateinit var correuLogin:EditText
     private lateinit var contrasenyaLogin:EditText
-    private lateinit var botoLogin:Button
     private lateinit var textRecuperarContrasenya: TextView
+    private lateinit var botoLogin:Button
     private lateinit var loginpage: View
 
     //Declarem un atribut de tipus FirebaseAuth
