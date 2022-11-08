@@ -57,7 +57,7 @@ class Login : AppCompatActivity() {
             val contrasenya = contrasenyaLogin.text.toString()
 
             //Comprovem que els camps no estan buit
-            if(correu.isNotEmpty()&&contrasenya.isNotEmpty()){
+            if(campEsBuit(correu, contrasenya)){
                 //Loguinem a l'usuari mitjançant la funció loguinar creada per nosaltres
                 loguinar(correu, contrasenya)
             }else{ //El login (task) ha fallat...
@@ -96,5 +96,9 @@ class Login : AppCompatActivity() {
                     Snackbar.make(loginpage,"ERROR! El login ha fallat!", Snackbar.LENGTH_LONG).show()
                 }
             }
+    }
+
+    fun campEsBuit(correu:String,contrasenya:String):Boolean{
+        return correu.isNotEmpty()&&contrasenya.isNotEmpty()
     }
 }
