@@ -49,7 +49,6 @@ class Login : AppCompatActivity() {
         auth= Firebase.auth
 
         //Implementem els listeners per quan l'usuari cliqui un dels botons
-
         botoLogin.setOnClickListener {
 
             //Guardem les dades introduïdes per l'usuari en el formulari mitjançant text i les transformem amb un String (toString())
