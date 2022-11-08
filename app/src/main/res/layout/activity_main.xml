@@ -41,10 +41,16 @@
         app:headerLayout="@layout/header_layout"
         app:menu="@menu/menu_desplegable_noticies"/>
 
-
+<!--
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerNoticies"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    -->
+    <Button
+        android:id="@+id/botoLogout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Tancar sessió"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>
