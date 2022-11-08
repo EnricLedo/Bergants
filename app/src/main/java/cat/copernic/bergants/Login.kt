@@ -3,11 +3,16 @@ package cat.copernic.bergants
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
+import cat.copernic.bergants.databinding.ActivityLoginBinding
+import cat.copernic.bergants.databinding.ActivityMainBinding
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -19,10 +24,8 @@ class Login : AppCompatActivity() {
       És recomanable per seguretat i facilitar-nos la feina que els noms d'aquests atributs siguin els mateixos que els noms dels
       id dels components del fitxer xml*/
 
-    private lateinit var correuLogin:EditText
-    private lateinit var contrasenyaLogin:EditText
-    private lateinit var botoLogin:Button
-    private lateinit var textRecuperarContrasenya: TextView
+    private lateinit var loginpage: View
+    private lateinit var binding: ActivityLoginBinding
 
     //Declarem un atribut de tipus FirebaseAuth
     private lateinit var auth: FirebaseAuth
@@ -34,21 +37,20 @@ class Login : AppCompatActivity() {
         val user = FirebaseAuth.getInstance().currentUser
 
         //Inicalitzem els atributs amb els components corresponents a l'id passat per paràmetre
-        correuLogin = findViewById(R.id.email)
-        contrasenyaLogin = findViewById(R.id.password)
-        botoLogin = findViewById(R.id.logIn)
-        textRecuperarContrasenya = findViewById(R.id.forgottenPassword)
+
+        loginpage = findViewById(android.R.id.content)
+
 
         //Inicialitzem la variable de tipus FirebaseAuth amb una instància d'aquesta classe
         auth= Firebase.auth
 
         //Implementem els listeners per quan l'usuari cliqui un dels botons
 
-        botoLogin.setOnClickListener {
+        binding.logIn.setOnClickListener {
 
             //Guardem les dades introduïdes per l'usuari en el formulari mitjançant text i les transformem amb un String (toString())
-            val correu = correuLogin.text.toString()
-            val contrasenya = contrasenyaLogin.text.toString()
+            val correu = binding.email.text.toString()
+            val contrasenya = binding.password.text.toString()
 
             //Comprovem que els camps no estan buit
             if(correu.isNotEmpty()&&contrasenya.isNotEmpty()){
@@ -56,11 +58,10 @@ class Login : AppCompatActivity() {
                 loguinar(correu, contrasenya)
             }else{ //El login (task) ha fallat...
                 //Mostrem un missatge a l'usuari mitjançant un Toast
-                Toast.makeText(applicationContext,"Introdueix un correu i una contrasenya", Toast.LENGTH_LONG).show()
+                Snackbar.make(it,"Introdueix un correu i una contrasenya", Snackbar.LENGTH_LONG).show()
             }
         }
-        textRecuperarContrasenya.setOnClickListener {
-            //Anem a l'activity del registre
+        binding.forgottenPassword.setOnClickListener {
             startActivity(Intent(this,RecuperarContrasenya::class.java))
             finish() //Alliberem memòria un cop finalitzada aquesta tasca.
         }
@@ -77,7 +78,7 @@ class Login : AppCompatActivity() {
                     finish() //Alliberem memòria un cop finalitzada aquesta tasca.
                 }else{ //El login (task) ha fallat...
                     //Mostrem un missatge a l'usuari mitjançant un Toast
-                    Toast.makeText(applicationContext,"El login ha fallat!", Toast.LENGTH_LONG).show()
+                    Snackbar.make(loginpage,"ERROR! El login ha fallat!", Snackbar.LENGTH_LONG).show()
                 }
             }
     }
