@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        /**
         //initRecyclerView()
         //Inicialitzem l'atribut botologout amb el component de l'XML corresponent
         botoLogout = findViewById(R.id.botoLogout)
@@ -40,6 +41,7 @@ class MainActivity : AppCompatActivity() {
             //Alliberem memòria
             finish()
         }
+         */
     }
 
     /**
