@@ -5,6 +5,7 @@
         <item name="colorPrimary">@color/verdBergant</item>
         <item name="colorPrimaryVariant">@color/verdClar</item>
         <item name="colorOnPrimary">@color/blanc</item>
+        <item name="android:windowActionBar">false</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/verdBergant</item>
         <item name="colorSecondaryVariant">@color/verdBergant</item>
@@ -21,5 +22,9 @@
         <!-- TextInputLayout-->
         <item name="textInputStyle">@style/BergantsTextInput</item>
     </style>
+
+    <style name="Theme.Bergants.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Bergants.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
 

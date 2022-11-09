@@ -1,18 +1,20 @@
 package cat.copernic.bergants
 
 import android.content.Intent
-import android.content.pm.ActivityInfo
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
-import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+
 
 class Login : AppCompatActivity() {
 
@@ -22,8 +24,9 @@ class Login : AppCompatActivity() {
 
     private lateinit var correuLogin:EditText
     private lateinit var contrasenyaLogin:EditText
-    private lateinit var botoLogin:Button
     private lateinit var textRecuperarContrasenya: TextView
+    private lateinit var botoLogin:Button
+    private lateinit var loginpage: View
 
     //Declarem un atribut de tipus FirebaseAuth
     private lateinit var auth: FirebaseAuth
@@ -32,13 +35,15 @@ class Login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         this.supportActionBar!!.hide()
-
+        val user = FirebaseAuth.getInstance().currentUser
 
         //Inicalitzem els atributs amb els components corresponents a l'id passat per paràmetre
         correuLogin = findViewById(R.id.email)
         contrasenyaLogin = findViewById(R.id.password)
         botoLogin = findViewById(R.id.logIn)
         textRecuperarContrasenya = findViewById(R.id.forgottenPassword)
+        loginpage = findViewById(android.R.id.content)
+
 
         //Inicialitzem la variable de tipus FirebaseAuth amb una instància d'aquesta classe
         auth= Firebase.auth
@@ -52,17 +57,27 @@ class Login : AppCompatActivity() {
             val contrasenya = contrasenyaLogin.text.toString()
 
             //Comprovem que els camps no estan buit
-            if(correu.isNotEmpty()&&contrasenya.isNotEmpty()){
+            if(campEsBuit(correu, contrasenya)){
                 //Loguinem a l'usuari mitjançant la funció loguinar creada per nosaltres
                 loguinar(correu, contrasenya)
             }else{ //El login (task) ha fallat...
                 //Mostrem un missatge a l'usuari mitjançant un Toast
-                Toast.makeText(applicationContext,"Introdueix un correu i una contrasenya", Toast.LENGTH_LONG).show()
+                Snackbar.make(it,"Introdueix un correu i una contrasenya", Snackbar.LENGTH_LONG).show()
             }
         }
         textRecuperarContrasenya.setOnClickListener {
-            //Anem a l'activity del registre
             startActivity(Intent(this,RecuperarContrasenya::class.java))
+            finish() //Alliberem memòria un cop finalitzada aquesta tasca.
+        }
+    }
+
+    override fun onStart() {
+        super.onStart() //Cridem al la funció onStart() perquè ens mostri per pantalla l'activity
+        //currentUser és un atribut de la classe FirebaseAuth que guarda l'usuari autenticat. Si aquest no està autenticat, el seu valor serà null.
+        val currentUser = auth.currentUser
+        if(currentUser != null){ //Sí l'usuari no ha tancat sessió (està autenticat)...
+            //Anem al mainActivity des d'aquesta pantalla
+            startActivity(Intent(this,MainActivity::class.java))
             finish() //Alliberem memòria un cop finalitzada aquesta tasca.
         }
     }
@@ -78,8 +93,13 @@ class Login : AppCompatActivity() {
                     finish() //Alliberem memòria un cop finalitzada aquesta tasca.
                 }else{ //El login (task) ha fallat...
                     //Mostrem un missatge a l'usuari mitjançant un Toast
-                    Toast.makeText(applicationContext,"El login ha fallat!", Toast.LENGTH_LONG).show()
+                    Snackbar.make(loginpage,"ERROR! El login ha fallat!", Snackbar.LENGTH_LONG).show()
                 }
             }
+    }
+
+
+    fun campEsBuit(correu:String,contrasenya:String):Boolean{
+        return correu.isNotEmpty()&&contrasenya.isNotEmpty()
     }
 }

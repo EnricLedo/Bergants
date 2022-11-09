@@ -5,6 +5,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import cat.copernic.bergants.Noticia
 import cat.copernic.bergants.R
+import cat.copernic.bergants.noticia_canvi
 
 class NoticiaViewHolder(view:View):RecyclerView.ViewHolder(view) {
 

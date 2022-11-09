@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout7"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".membres"
+    android:padding="@dimen/MargeEsquerra60dpLogin">
+
+    <Button
+        android:id="@+id/botoAfegirMembre"
+        android:layout_width="@dimen/btncircle"
+        android:layout_height="@dimen/btncircle"
+        android:background="@drawable/round_button"
+        android:gravity="center"
+        android:text="@string/afegir"
+        android:textColor="@color/blanc"
+        android:textSize="@dimen/txtcircle"
+        app:layout_constraintEnd_toEndOf="@+id/membres"
+        app:layout_constraintStart_toStartOf="@+id/membres"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/membres"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginpag"
+        android:background="@color/grisClaretGentApuntada"
+        android:gravity="center_horizontal"
+        android:text="@string/membres"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/botoAfegirMembre"
+        tools:layout_editor_absoluteX="60dp" />
+    <TextView
+        android:id="@+id/exempleMembre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Enric Ledo"
+        app:layout_constraintTop_toBottomOf="@id/membres"
+        tools:layout_editor_absoluteX="60dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

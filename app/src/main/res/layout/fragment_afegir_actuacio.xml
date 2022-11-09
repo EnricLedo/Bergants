@@ -338,7 +338,7 @@
         android:src="@drawable/iconopapelera" />
 
     <Button
-        android:id="@+id/botoguardar"
+        android:id="@+id/botoGuardarActuacio"
         android:layout_width="@dimen/AmpleBotoGuardar150dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/MargeDretaBotoGuardar20dp"
