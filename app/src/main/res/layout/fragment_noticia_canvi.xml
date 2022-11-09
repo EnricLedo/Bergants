@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout9"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="@dimen/marginpag"
-    tools:context=".noticia_canvi">
+    tools:context=".noticia_canvi"
+    android:padding="@dimen/marginpag">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewNoticies"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
         android:backgroundTint="@color/blanc"
-        app:cardCornerRadius="5dp"
-        app:cardElevation="5dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/cardViewNoticiesInterior"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:scaleType="centerCrop" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/testtest"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/titlenotice"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="Dinar de la Mercè"
-                android:gravity="center_vertical"
+                android:layout_height="wrap_content"
                 android:background="@color/grisClaretGentApuntada"
+                android:gravity="center_vertical"
+                android:text="Dinar de la Mercè"
                 android:textColor="@color/negre"
-                android:textSize="@dimen/TamanyLletraLogin"
-                android:textStyle="normal"
+                android:textSize="@dimen/TitolGordo18sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -53,13 +53,26 @@
                 android:id="@+id/data"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="20/09/2022"
                 android:background="@color/grisClaretGentApuntada"
+                android:text="20/09/2022"
                 android:textColor="@color/grisFosc"
                 android:textSize="@dimen/LletraNormal16sp"
-                app:layout_constraintTop_toBottomOf="@+id/contingut"/>
+                app:layout_constraintTop_toBottomOf="@+id/contingut" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
-</FrameLayout>
+    <Button
+        android:id="@+id/botoAfegirNoticia"
+        android:layout_width="@dimen/btncircle"
+        android:layout_height="@dimen/btncircle"
+        android:layout_marginEnd="@dimen/marginpag"
+        android:layout_marginBottom="@dimen/separaciomig"
+        android:background="@drawable/round_button"
+        android:gravity="center"
+        android:text="@string/afegir"
+        android:textColor="@color/blanc"
+        android:textSize="@dimen/txtcircle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

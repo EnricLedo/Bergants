@@ -79,6 +79,7 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.fragmentContainerView)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
     /**
     private fun initRecyclerView(){
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerNoticies)

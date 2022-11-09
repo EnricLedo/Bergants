@@ -42,7 +42,7 @@
         <activity
             android:name=".Login"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.Bergants"></activity>
 
     </application>
 

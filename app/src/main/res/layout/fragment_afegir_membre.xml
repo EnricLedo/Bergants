@@ -346,7 +346,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/botoafegir"
+        android:id="@+id/botoGuardarMembre"
         android:layout_width="@dimen/bigbtnwidth"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/separaciomig"
