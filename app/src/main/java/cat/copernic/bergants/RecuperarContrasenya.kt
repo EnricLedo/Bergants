@@ -9,7 +9,9 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import cat.copernic.bergants.databinding.ActivityLoginBinding
 import cat.copernic.bergants.databinding.ActivityMainBinding
+import cat.copernic.bergants.databinding.ActivityRecuperarContrasenyaBinding
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -17,25 +19,26 @@ import com.google.firebase.ktx.Firebase
 
 
 class RecuperarContrasenya : AppCompatActivity() {
-    private lateinit var correu: EditText
-    private lateinit var botoRestaurarContrassenya: Button
     private lateinit var passwordpage: View
+
+    private lateinit var binding: ActivityRecuperarContrasenyaBinding
 
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recuperar_contrasenya)
+        binding = ActivityRecuperarContrasenyaBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        val user = FirebaseAuth.getInstance().currentUser
 
-        correu = findViewById(R.id.emailContrasenya)
-        botoRestaurarContrassenya = findViewById(R.id.editar)
         passwordpage = findViewById(android.R.id.content)
 
         auth= Firebase.auth
 
-        botoRestaurarContrassenya.setOnClickListener {
+        binding.editar.setOnClickListener {
 
-            var correu = this.correu.text.toString() //Guardem el correu introduït per l'usuari
+            var correu = this.binding.emailContrasenya.text.toString() //Guardem el correu introduït per l'usuari
 
             if(correu.isNotEmpty()){ //Si l'usuari ha introduït el correu....
                 //Restaurem la contrasenya mitjançant el mètode restaurarContrasenya que hem creat, el qual enviarà
