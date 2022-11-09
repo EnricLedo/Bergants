@@ -42,7 +42,6 @@ class Login : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         //Inicialitzem la variable de tipus FirebaseAuth amb una instància d'aquesta classe
         auth= Firebase.auth
 

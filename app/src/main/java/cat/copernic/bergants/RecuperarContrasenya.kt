@@ -61,7 +61,6 @@ class RecuperarContrasenya : AppCompatActivity() {
 
         //Enviem a l'usuari el correu d'autenticació al correu passat per paràmetre. Aquest mètode comprova que el correu sigui el correu d'un dels registres.
         auth.sendPasswordResetEmail(correu).addOnCompleteListener { task ->
-
             if(task.isSuccessful){
                 Snackbar.make(passwordpage,"Contrasenya restaurada amb èxit. Rebràs un correu.",Snackbar.LENGTH_LONG).show()
                 startActivity(Intent(this,Login::class.java))
