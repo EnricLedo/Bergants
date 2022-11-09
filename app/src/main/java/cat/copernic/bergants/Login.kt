@@ -24,8 +24,6 @@ class Login : AppCompatActivity() {
       És recomanable per seguretat i facilitar-nos la feina que els noms d'aquests atributs siguin els mateixos que els noms dels
       id dels components del fitxer xml*/
 
-    private lateinit var correuLogin:EditText
-    private lateinit var contrasenyaLogin:EditText
     private lateinit var loginpage: View
     private lateinit var binding: ActivityLoginBinding
 

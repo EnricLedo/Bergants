@@ -19,8 +19,6 @@ import com.google.firebase.ktx.Firebase
 
 
 class RecuperarContrasenya : AppCompatActivity() {
-    private lateinit var correu: EditText
-    private lateinit var botoRestaurarContrassenya: Button
     private lateinit var passwordpage: View
 
     private lateinit var binding: ActivityRecuperarContrasenyaBinding
@@ -31,7 +29,7 @@ class RecuperarContrasenya : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recuperar_contrasenya)
         binding = ActivityRecuperarContrasenyaBinding.inflate(layoutInflater)
-        val view = binding.root
+        setContentView(binding.root)
         val user = FirebaseAuth.getInstance().currentUser
 
         passwordpage = findViewById(android.R.id.content)
