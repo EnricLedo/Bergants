@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/noticia_canvi">
+    app:startDestination="@id/noticia_fragment">
 
     <fragment
         android:id="@+id/perfil_fragment"
@@ -16,8 +16,147 @@
         android:label="fragment_configuracio"
         tools:layout="@layout/fragment_configuracio" />
     <fragment
-        android:id="@+id/noticia_canvi"
+        android:id="@+id/noticia_fragment"
         android:name="cat.copernic.bergants.noticia_canvi"
         android:label="fragment_noticia_canvi"
-        tools:layout="@layout/fragment_noticia_canvi" />
+        tools:layout="@layout/fragment_noticia_canvi" >
+        <action
+            android:id="@+id/action_noticia_fragment_to_afegirNoticia"
+            app:destination="@id/afegirNoticia" />
+        <action
+            android:id="@+id/action_noticia_fragment_to_editar_noticia"
+            app:destination="@id/editar_noticia" />
+    </fragment>
+    <fragment
+        android:id="@+id/assajos_fragment"
+        android:name="cat.copernic.bergants.assajos"
+        android:label="fragment_assajos"
+        tools:layout="@layout/fragment_assajos" >
+        <action
+            android:id="@+id/action_assajos_fragment_to_afegir_assaig_fragment"
+            app:destination="@id/afegir_assaig_fragment" />
+        <action
+            android:id="@+id/action_assajos_fragment_to_informacioAssaig"
+            app:destination="@id/informacioAssaig" />
+    </fragment>
+    <fragment
+        android:id="@+id/actuacions_fragment"
+        android:name="cat.copernic.bergants.actuacio"
+        android:label="fragment_actuacio"
+        tools:layout="@layout/fragment_actuacio" >
+        <action
+            android:id="@+id/action_actuacions_fragment_to_afegir_actuacio_fragment"
+            app:destination="@id/afegir_actuacio_fragment" />
+        <action
+            android:id="@+id/action_actuacions_fragment_to_informacioActuacio"
+            app:destination="@id/informacioActuacio" />
+    </fragment>
+    <fragment
+        android:id="@+id/membres_fragment"
+        android:name="cat.copernic.bergants.membres"
+        android:label="fragment_membres"
+        tools:layout="@layout/fragment_membres" >
+        <action
+            android:id="@+id/action_membres_fragment_to_afegirMembre"
+            app:destination="@id/afegirMembre" />
+        <action
+            android:id="@+id/action_membres_fragment_to_editarMembre2"
+            app:destination="@id/editarMembre" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_to_noticia_fragment"
+        app:destination="@id/noticia_fragment"
+        app:enterAnim="@anim/fragment_fade_enter"
+        app:exitAnim="@anim/fragment_fade_exit" />
+    <fragment
+        android:id="@+id/afegir_assaig_fragment"
+        android:name="cat.copernic.bergants.AfegirAssaig"
+        android:label="fragment_afegir_assaig"
+        tools:layout="@layout/fragment_afegir_assaig" >
+        <action
+            android:id="@+id/action_afegir_assaig_fragment_to_assajos_fragment"
+            app:destination="@id/assajos_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/afegir_actuacio_fragment"
+        android:name="cat.copernic.bergants.AfegirActuacio"
+        android:label="fragment_afegir_actuacio"
+        tools:layout="@layout/fragment_afegir_actuacio" >
+        <action
+            android:id="@+id/action_afegir_actuacio_fragment_to_actuacions_fragment"
+            app:destination="@id/actuacions_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/afegirNoticia"
+        android:name="cat.copernic.bergants.AfegirNoticia"
+        android:label="fragment_afegir_noticia"
+        tools:layout="@layout/fragment_afegir_noticia" >
+        <action
+            android:id="@+id/action_afegirNoticia_to_noticia_fragment"
+            app:destination="@id/noticia_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/informacioActuacio"
+        android:name="cat.copernic.bergants.InformacioActuacio"
+        android:label="fragment_informacio_actuacio"
+        tools:layout="@layout/fragment_informacio_actuacio" >
+        <action
+            android:id="@+id/action_informacioActuacio_to_afegirCotxe"
+            app:destination="@id/afegirCotxe" />
+        <action
+            android:id="@+id/action_informacioActuacio_to_editar_cotxe"
+            app:destination="@id/editar_cotxe" />
+    </fragment>
+    <fragment
+        android:id="@+id/informacioAssaig"
+        android:name="cat.copernic.bergants.InformacioAssaig"
+        android:label="fragment_informacio_assaig"
+        tools:layout="@layout/fragment_informacio_assaig" />
+    <fragment
+        android:id="@+id/afegirMembre"
+        android:name="cat.copernic.bergants.afegirMembre"
+        android:label="fragment_afegir_membre"
+        tools:layout="@layout/fragment_afegir_membre" >
+        <action
+            android:id="@+id/action_afegirMembre_to_membres_fragment"
+            app:destination="@id/membres_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editarMembre"
+        android:name="cat.copernic.bergants.editarMembre"
+        android:label="editarMembre" >
+        <action
+            android:id="@+id/action_editarMembre_to_membres_fragment2"
+            app:destination="@id/membres_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editar_noticia"
+        android:name="cat.copernic.bergants.editar_noticia"
+        android:label="fragment_editar_noticia"
+        tools:layout="@layout/fragment_editar_noticia" >
+        <action
+            android:id="@+id/action_editar_noticia_to_noticia_fragment"
+            app:destination="@id/noticia_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/afegirCotxe"
+        android:name="cat.copernic.bergants.AfegirCotxe"
+        android:label="fragment_afegir_cotxe"
+        tools:layout="@layout/fragment_afegir_cotxe" >
+        <action
+            android:id="@+id/action_afegirCotxe_to_informacioActuacio"
+            app:destination="@id/informacioActuacio" />
+    </fragment>
+    <fragment
+        android:id="@+id/editar_cotxe"
+        android:name="cat.copernic.bergants.editar_cotxe"
+        android:label="fragment_editar_cotxe"
+        tools:layout="@layout/fragment_editar_cotxe" >
+        <action
+            android:id="@+id/action_editar_cotxe_to_informacioActuacio"
+            app:destination="@id/informacioActuacio" />
+    </fragment>
+
 </navigation>

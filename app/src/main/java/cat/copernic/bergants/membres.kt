@@ -8,14 +8,14 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
 
-class afegirMembre : Fragment(R.layout.fragment_afegir_membre) {
+class membres : Fragment(R.layout.fragment_membres) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val btnSaveMem = requireView().findViewById<Button>(R.id.botoGuardarMembre)
+        val btnAddMem = requireView().findViewById<Button>(R.id.botoAfegirMembre)
 
-        btnSaveMem.setOnClickListener {
-            findNavController().navigate(R.id.action_afegirMembre_to_membres_fragment)
+        btnAddMem.setOnClickListener{
+            findNavController().navigate(R.id.action_membres_fragment_to_afegirMembre)
         }
     }
 }

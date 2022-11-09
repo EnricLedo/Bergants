@@ -98,6 +98,7 @@ class Login : AppCompatActivity() {
             }
     }
 
+
     fun campEsBuit(correu:String,contrasenya:String):Boolean{
         return correu.isNotEmpty()&&contrasenya.isNotEmpty()
     }

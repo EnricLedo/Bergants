@@ -70,7 +70,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/botoafegir"
+        android:id="@+id/botoGuardarNoticia"
         android:layout_width="@dimen/btncircle"
         android:layout_height="@dimen/btncircle"
         android:layout_marginEnd="@dimen/marginpag"

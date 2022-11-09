@@ -5,23 +5,29 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import androidx.cardview.widget.CardView
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.RecyclerView
 
 
 class noticia_canvi : Fragment() {
 
-    data class Noticia(
-        val titolNoticia: String,
-        val contingutNoticia: String,
-        val dataNoticia: String
-    )
-
-    private lateinit var titolNoticia: String
-    private lateinit var contingutNoticia: String
-    private lateinit var dataNoticia: String
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
+        }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val btnAddNot = requireView().findViewById<Button>(R.id.botoAfegirNoticia)
+
+        btnAddNot.setOnClickListener{
+            findNavController().navigate(R.id.action_noticia_fragment_to_afegirNoticia)
         }
     }
 

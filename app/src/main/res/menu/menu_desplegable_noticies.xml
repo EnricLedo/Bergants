@@ -3,23 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:title="ACTUACIONS"/>
+        android:id="@+id/actuacions_fragment"
+        android:title="@string/actuacions_menu"/>
 
     <item
-        android:title="ASSAJOS"/>
+        android:id="@+id/assajos_fragment"
+        android:title="@string/assajos_menu"/>
 
     <item
-        android:title="NOTÍCIES"/>
+        android:id="@+id/noticia_fragment"
+        android:title="@string/noticies_menu"/>
 
     <item
-        android:title="MEMBRES"/>
+        android:id="@+id/membres_fragment"
+        android:title="@string/membres_menu"/>
 
     <item
         android:id="@+id/perfil_fragment"
-        android:title="PERFIL"/>
+        android:title="@string/perfil_menu"/>
 
     <item
         android:id="@+id/configuracio_fragment"
-        android:title="CONFIGURACIÓ"/>
+        android:title="@string/configuracio_menu"/>
 
 </menu>
