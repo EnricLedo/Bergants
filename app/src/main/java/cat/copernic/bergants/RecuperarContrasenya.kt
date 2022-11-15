@@ -53,7 +53,6 @@ class RecuperarContrasenya : AppCompatActivity() {
         }
     }
 
-
     fun restaurarContrasenya(correu: String){
 
         //Li indiquem al sistema en quin llenguatge ha de ser el correu de restauració de contrasenya que li enviarem a l'usuari. En el nostre cas català ("ca")
