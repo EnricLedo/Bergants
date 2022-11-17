@@ -22,10 +22,10 @@
         tools:layout="@layout/fragment_noticia_canvi" >
         <action
             android:id="@+id/action_noticia_fragment_to_afegirNoticia"
-            app:destination="@id/afegirNoticia" />
+            app:destination="@id/afegir_noticia_fragment" />
         <action
             android:id="@+id/action_noticia_fragment_to_editar_noticia"
-            app:destination="@id/editar_noticia" />
+            app:destination="@id/editar_noticia_fragment" />
     </fragment>
     <fragment
         android:id="@+id/assajos_fragment"
@@ -37,7 +37,7 @@
             app:destination="@id/afegir_assaig_fragment" />
         <action
             android:id="@+id/action_assajos_fragment_to_informacioAssaig"
-            app:destination="@id/informacioAssaig" />
+            app:destination="@id/informacio_assaig_fragment" />
     </fragment>
     <fragment
         android:id="@+id/actuacions_fragment"
@@ -49,7 +49,7 @@
             app:destination="@id/afegir_actuacio_fragment" />
         <action
             android:id="@+id/action_actuacions_fragment_to_informacioActuacio"
-            app:destination="@id/informacioActuacio" />
+            app:destination="@id/informacio_actuacio_fragment" />
     </fragment>
     <fragment
         android:id="@+id/membres_fragment"
@@ -58,10 +58,10 @@
         tools:layout="@layout/fragment_membres" >
         <action
             android:id="@+id/action_membres_fragment_to_afegirMembre"
-            app:destination="@id/afegirMembre" />
+            app:destination="@id/afegir_membre_fragment" />
         <action
             android:id="@+id/action_membres_fragment_to_editarMembre2"
-            app:destination="@id/editarMembre" />
+            app:destination="@id/editar_membre_fragment" />
     </fragment>
 
     <action
@@ -89,7 +89,7 @@
             app:destination="@id/actuacions_fragment" />
     </fragment>
     <fragment
-        android:id="@+id/afegirNoticia"
+        android:id="@+id/afegir_noticia_fragment"
         android:name="cat.copernic.bergants.AfegirNoticia"
         android:label="fragment_afegir_noticia"
         tools:layout="@layout/fragment_afegir_noticia" >
@@ -98,24 +98,27 @@
             app:destination="@id/noticia_fragment" />
     </fragment>
     <fragment
-        android:id="@+id/informacioActuacio"
+        android:id="@+id/informacio_actuacio_fragment"
         android:name="cat.copernic.bergants.InformacioActuacio"
         android:label="fragment_informacio_actuacio"
         tools:layout="@layout/fragment_informacio_actuacio" >
         <action
             android:id="@+id/action_informacioActuacio_to_afegirCotxe"
-            app:destination="@id/afegirCotxe" />
+            app:destination="@id/afegir_cotxe_fragment" />
         <action
             android:id="@+id/action_informacioActuacio_to_editar_cotxe"
-            app:destination="@id/editar_cotxe" />
+            app:destination="@id/editar_cotxe_fragment" />
+        <action
+            android:id="@+id/action_informacioActuacio_to_unirseCotxe2"
+            app:destination="@id/unirse_cotxe_fragment" />
     </fragment>
     <fragment
-        android:id="@+id/informacioAssaig"
+        android:id="@+id/informacio_assaig_fragment"
         android:name="cat.copernic.bergants.InformacioAssaig"
         android:label="fragment_informacio_assaig"
         tools:layout="@layout/fragment_informacio_assaig" />
     <fragment
-        android:id="@+id/afegirMembre"
+        android:id="@+id/afegir_membre_fragment"
         android:name="cat.copernic.bergants.afegirMembre"
         android:label="fragment_afegir_membre"
         tools:layout="@layout/fragment_afegir_membre" >
@@ -124,7 +127,7 @@
             app:destination="@id/membres_fragment" />
     </fragment>
     <fragment
-        android:id="@+id/editarMembre"
+        android:id="@+id/editar_membre_fragment"
         android:name="cat.copernic.bergants.editarMembre"
         android:label="editarMembre" >
         <action
@@ -132,7 +135,7 @@
             app:destination="@id/membres_fragment" />
     </fragment>
     <fragment
-        android:id="@+id/editar_noticia"
+        android:id="@+id/editar_noticia_fragment"
         android:name="cat.copernic.bergants.editar_noticia"
         android:label="fragment_editar_noticia"
         tools:layout="@layout/fragment_editar_noticia" >
@@ -141,22 +144,31 @@
             app:destination="@id/noticia_fragment" />
     </fragment>
     <fragment
-        android:id="@+id/afegirCotxe"
+        android:id="@+id/afegir_cotxe_fragment"
         android:name="cat.copernic.bergants.AfegirCotxe"
         android:label="fragment_afegir_cotxe"
         tools:layout="@layout/fragment_afegir_cotxe" >
         <action
             android:id="@+id/action_afegirCotxe_to_informacioActuacio"
-            app:destination="@id/informacioActuacio" />
+            app:destination="@id/informacio_actuacio_fragment" />
     </fragment>
     <fragment
-        android:id="@+id/editar_cotxe"
+        android:id="@+id/editar_cotxe_fragment"
         android:name="cat.copernic.bergants.editar_cotxe"
         android:label="fragment_editar_cotxe"
         tools:layout="@layout/fragment_editar_cotxe" >
         <action
             android:id="@+id/action_editar_cotxe_to_informacioActuacio"
-            app:destination="@id/informacioActuacio" />
+            app:destination="@id/informacio_actuacio_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/unirse_cotxe_fragment"
+        android:name="cat.copernic.bergants.UnirseCotxe"
+        android:label="fragment_unirse_cotxe"
+        tools:layout="@layout/fragment_unirse_cotxe" >
+        <action
+            android:id="@+id/action_unirseCotxe2_to_informacioActuacio"
+            app:destination="@id/informacio_actuacio_fragment" />
     </fragment>
 
 </navigation>

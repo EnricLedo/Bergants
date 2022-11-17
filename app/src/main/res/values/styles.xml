@@ -11,13 +11,16 @@
         <item name="colorPrimary">@color/verdBergant</item>
         <item name="colorPrimaryDark">@color/verdBergant</item>
         <item name="colorAccent">@color/verdBergant</item>
+        <item name="colorSecondary">@color/verdClar</item>
+        <item name="android:buttonStyle">@style/BergantsBoto</item>
     </style>
 
     <style name="BergantsBoto" parent="Widget.MaterialComponents.Button">
         <item name="android:backgroundTint">@color/verdBergant</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">@dimen/TitolGordo18sp</item>
+        <item name="background">@color/verdBergant</item>
         <item name="android:textColor">@color/blanc</item>
-        <item name="android:minHeight">48dp</item>
+        <item name="android:minHeight">@dimen/alcadaTextField48dp</item>
     </style>
 
     <style name="BergantsView" parent="Widget.MaterialComponents.TextView">
