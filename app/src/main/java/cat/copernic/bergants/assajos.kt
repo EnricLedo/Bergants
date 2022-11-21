@@ -23,7 +23,6 @@ class assajos : Fragment(R.layout.fragment_assajos) {
         super.onViewCreated(view, savedInstanceState)
 
         val btnAddAss = requireView().findViewById<Button>(R.id.botoAfegirAssaig)
-        val imgInfoAss = requireView().findViewById<CardView>(R.id.cardViewAssajosInterior)
 
         btnAddAss.setOnClickListener{
             findNavController().navigate(R.id.action_assajos_fragment_to_afegir_assaig_fragment)

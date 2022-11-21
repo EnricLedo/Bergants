@@ -9,9 +9,30 @@ import android.widget.Button
 import androidx.cardview.widget.CardView
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import cat.copernic.bergants.adapter.ActuacioRecyclerAdapter
+import cat.copernic.bergants.databinding.FragmentActuacioBinding
+import cat.copernic.bergants.model.Actuacio
 
-class actuacio : Fragment(R.layout.fragment_actuacio) {
+class actuacio : Fragment() {
+
+    private lateinit var binding: FragmentActuacioBinding
+
+    private val myAdapter: ActuacioRecyclerAdapter = ActuacioRecyclerAdapter()
+
+    private fun setupRecyclerView(){
+        binding.recyclerActuacions.setHasFixedSize(true)
+
+        //indiquem que el RV es mostrarà en format llista
+        binding.recyclerActuacions.layoutManager = LinearLayoutManager(context)
+
+        //generem el adapter
+        myAdapter.ActuacioRecyclerAdapter(getActuacions(),requireActivity())
+        //assignem el adapter al RV
+        binding.recyclerActuacions.adapter = myAdapter
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -21,10 +42,21 @@ class actuacio : Fragment(R.layout.fragment_actuacio) {
             findNavController().navigate(R.id.action_actuacions_fragment_to_afegir_actuacio_fragment)
         }
     }
-    fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        holder.itemView.findViewById<CardView>(R.id.cardViewActuacions).setOnClickListener {
-            val action = actuacioDirections.actionActuacionsFragmentToInformacioActuacio()
-            holder.itemView.findNavController().navigate(action)
-        }
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        binding = FragmentActuacioBinding.inflate(inflater, container, false)
+
+        setupRecyclerView()
+        return binding.root
+    }
+
+    private fun getActuacions():MutableList<Actuacio>{
+        val actuacions: MutableList<Actuacio> = arrayListOf()
+        actuacions.add(Actuacio("FM DE FOSTON","DISSABTE 24 de Setembre de 2022","16:30h Estació Busos Doré (Terrassa)","18:00h Plaça de l'Ajuntament - Calella","NO VINC"))
+        actuacions.add(Actuacio("LA MERCÈ","DISSABTE 25 de Setembre","10:15h Parc dels Catalans (FGC)","12:00h Pl. Sant Jaume","SENSE RESPOSTA"))
+        actuacions.add(Actuacio("ACTUACIÓ COMERCIAL HOTEL LA MOLA","DIJOUS 29 de Setembre del 2022","16:30h Estació Busos Doré (Terrassa)","18:00h Hotel la Mola","SENSE RESPOSTA"))
+
+        return actuacions
     }
 }
