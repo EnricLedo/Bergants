@@ -69,9 +69,6 @@ class AfegirNoticia : Fragment() {
             }
         */
         }
-
-
-
         return binding.root
     }
 
