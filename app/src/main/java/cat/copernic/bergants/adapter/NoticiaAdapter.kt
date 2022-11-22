@@ -2,17 +2,10 @@ package cat.copernic.bergants.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.cardview.widget.CardView
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import cat.copernic.bergants.model.Noticia
-import cat.copernic.bergants.R
+import cat.copernic.bergants.Noticia
 import cat.copernic.bergants.databinding.DisenyNoticiaBinding
-import cat.copernic.bergants.databinding.FragmentNoticiaCanviBinding
-import cat.copernic.bergants.noticia_canvi
 
 class NoticiaRecyclerAdapter : RecyclerView.Adapter<NoticiaRecyclerAdapter.ViewHolder>(){
     var noticies: MutableList<Noticia> = ArrayList()

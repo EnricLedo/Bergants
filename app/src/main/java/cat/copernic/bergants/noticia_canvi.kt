@@ -10,7 +10,6 @@ import androidx.navigation.fragment.findNavController
 import cat.copernic.bergants.adapter.NoticiaRecyclerAdapter
 import cat.copernic.bergants.databinding.FragmentNoticiaCanviBinding
 import androidx.recyclerview.widget.LinearLayoutManager
-import cat.copernic.bergants.model.Noticia
 
 
 class noticia_canvi : Fragment() {

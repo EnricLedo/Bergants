@@ -57,16 +57,14 @@
         android:onClick="imageClick" />
 
     <Button
-        android:id="@+id/botoGuardarNoticia"
-        android:layout_width="@dimen/btncircle"
-        android:layout_height="@dimen/btncircle"
-        android:layout_marginEnd="@dimen/marginpag"
-        android:layout_marginBottom="@dimen/separaciomig"
-        android:background="@drawable/round_button"
+        android:id="@+id/botoAfegirNoticia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/MargeDretaBotoGuardar20dp"
+        android:layout_marginBottom="@dimen/MargeDretaRellotge15dp"
         android:gravity="center"
-        android:text="@string/afegir"
-        android:textColor="@color/blanc"
-        android:textSize="@dimen/txtcircle"
+        android:text="afegir"
+        android:textSize="@dimen/TitolGordo18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
