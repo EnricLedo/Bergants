@@ -88,13 +88,27 @@ class AfegirNoticia : Fragment() {
         //Seleccionem la col.lecció on volem afegir la notícia mitjançant la funció collection("Noticies"), si no existeix la col.lecció
         //es crearà, si no la sobreescriurà. Afegim la notícia a la col.lecció seleccionada amb un id que genera automàticament Firestore
         // mitjançant la funció add(departament). Si el departament existeix, es sobreescriurà, sinó es crearà de nou.
-        bd.collection("Notícies").add(noticia)
+        /**bd.collection("Notícies").add(noticia)
             .addOnSuccessListener { //S'ha afegir la noticia...
                 Toast.makeText(requireActivity(),"La notícia s'ha afegit correctament", Toast.LENGTH_LONG).show()
             }
             .addOnFailureListener{
                 Toast.makeText(requireActivity(),"La notícia no s'ha afegit", Toast.LENGTH_LONG).show()
             }
+        */
+        bd.collection("Noticies").document(titolNoticia.text.toString()).set(
+            hashMapOf(
+                "titol" to titolNoticia.text.toString(), //Atribut nom amb el valor introduït per l'usuari
+                "contingut" to contingutNoticia.text.toString(), //Atribut planta amb el valor introduït per l'usuari
+                "data" to dataNoticia.text.toString()
+            ))
+            .addOnSuccessListener { //S'ha afegit el departament...
+                Toast.makeText(requireActivity(),"El Deparatment s'ha afegit correctament", Toast.LENGTH_LONG).show()
+            }
+            .addOnFailureListener{ //No s'ha afegit el departament...
+                Toast.makeText(requireActivity(),"El Deparatment no s'ha afegit", Toast.LENGTH_LONG).show()
+            }
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
