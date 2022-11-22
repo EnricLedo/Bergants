@@ -6,20 +6,32 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
-import androidx.cardview.widget.CardView
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.RecyclerView
+import cat.copernic.bergants.adapter.NoticiaRecyclerAdapter
+import cat.copernic.bergants.databinding.FragmentNoticiaCanviBinding
+import androidx.recyclerview.widget.LinearLayoutManager
+import cat.copernic.bergants.model.Noticia
 
 
 class noticia_canvi : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-        }
+    private lateinit var binding: FragmentNoticiaCanviBinding
+
+    private val myAdapter: NoticiaRecyclerAdapter = NoticiaRecyclerAdapter()
+
+    private fun setupRecyclerView() {
+        binding.recyclerNoticies.setHasFixedSize(true)
+
+
+        //indiquem que el RV es mostrarà en format llista
+        binding.recyclerNoticies.layoutManager = LinearLayoutManager(context)
+
+        //generem el adapter
+        myAdapter.NoticiesRecyclerAdapter(getNoticies(),requireActivity())
+        //assignem el adapter al RV
+        binding.recyclerNoticies.adapter = myAdapter
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -31,11 +43,26 @@ class noticia_canvi : Fragment() {
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_noticia_canvi, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        binding = FragmentNoticiaCanviBinding.inflate(inflater, container, false)
+
+        setupRecyclerView()
+        return binding.root
     }
+
+    private fun getNoticies():MutableList<Noticia>{
+        val noticies: MutableList<Noticia> = arrayListOf()
+        noticies.add(Noticia("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
+        noticies.add(Noticia("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
+        noticies.add(Noticia("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
+        noticies.add(Noticia("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
+        noticies.add(Noticia("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
+        noticies.add(Noticia("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
+        noticies.add(Noticia("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
+
+        return noticies
+
+    }
+
 }

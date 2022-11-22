@@ -19,7 +19,8 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import cat.copernic.bergants.adapter.NoticiaAdapter
+import cat.copernic.bergants.databinding.ActivityMainBinding
+import cat.copernic.bergants.model.Noticia
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -28,7 +29,7 @@ import com.google.firebase.ktx.Firebase
 class MainActivity : AppCompatActivity() {
     //Atribut de tipus Button per tancar la sessió
     //private lateinit var botoLogout: Button
-
+    private lateinit var binding: ActivityMainBinding
     //Declarem un atribut de tipus FirebaseAuth
     private lateinit var auth: FirebaseAuth
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar
@@ -39,7 +40,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        //setupRecyclerView()
 
         toolbar = findViewById(R.id.myToolbar)
         setSupportActionBar(toolbar)
@@ -74,11 +78,42 @@ class MainActivity : AppCompatActivity() {
         }
          */
     }
+/**
+    private fun setupRecyclerView(){
+        //Especifiquem que els fills del RV seran del mateix tamany i així optimitzem la seva creació
+        binding.recyclerNoticies.setHasFixedSize(true)
+
+        //indiquem que el RV es mostrarà en format llista
+        binding.recyclerNoticies.layoutManager = LinearLayoutManager(this)
+
+        //generem el adapter
+        myAdapter.NoticiesRecyclerAdapter(getNoticies(),this)
+
+        //assignem el adapter al RV
+        binding.recyclerNoticies.adapter = myAdapter
+    }
+    */
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.fragmentContainerView)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
+    /**
+    private fun getNoticies():MutableList<Noticia>{
+        val noticies: MutableList<Noticia> = arrayListOf()
+        noticies.add(Noticia("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
+        noticies.add(Noticia("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
+        noticies.add(Noticia("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
+        noticies.add(Noticia("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
+        noticies.add(Noticia("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
+        noticies.add(Noticia("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
+        noticies.add(Noticia("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
+
+        return noticies
+
+    }
+    */
 
     /**
     private fun initRecyclerView(){
