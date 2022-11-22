@@ -1,4 +1,4 @@
-package cat.copernic.bergants.model
+package cat.copernic.bergants
 
 data class Noticia(val title:String, val content:String, val date: String) {
     var titolNoticia: String? = null
