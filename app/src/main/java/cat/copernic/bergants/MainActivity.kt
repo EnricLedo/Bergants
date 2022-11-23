@@ -1,6 +1,14 @@
 package cat.copernic.bergants
 
+import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Button
+import android.widget.Toast
+import android.widget.Toolbar
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
@@ -9,13 +17,14 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import cat.copernic.bergants.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
     //Atribut de tipus Button per tancar la sessió
     //private lateinit var botoLogout: Button
-
+    private lateinit var binding: ActivityMainBinding
     //Declarem un atribut de tipus FirebaseAuth
     private lateinit var auth: FirebaseAuth
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar
@@ -26,7 +35,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        //setupRecyclerView()
 
         toolbar = findViewById(R.id.myToolbar)
         setSupportActionBar(toolbar)

@@ -1,8 +1,13 @@
 package cat.copernic.bergants
 
+data class Noticia(val title:String, val content:String, val date: String) {
+    var titolNoticia: String? = null
+    var contingutNoticia: String?=null
+    var dataNoticia: String? = null
 
-data class Noticia(
-    val titolNoticia: String,
-    val contingutNoticia: String,
-    val dataNoticia: String
-)
+    init {
+        this.titolNoticia = title
+        this.contingutNoticia = content
+        this.dataNoticia = date
+    }
+}

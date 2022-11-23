@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat.startActivity
 import cat.copernic.bergants.databinding.ActivityLoginBinding
 import cat.copernic.bergants.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
@@ -72,10 +73,12 @@ class Login : AppCompatActivity() {
         super.onStart() //Cridem al la funció onStart() perquè ens mostri per pantalla l'activity
         //currentUser és un atribut de la classe FirebaseAuth que guarda l'usuari autenticat. Si aquest no està autenticat, el seu valor serà null.
         val currentUser = auth.currentUser
-        if(currentUser != null){ //Sí l'usuari no ha tancat sessió (està autenticat)...
-            //Anem al mainActivity des d'aquesta pantalla
-            startActivity(Intent(this,MainActivity::class.java))
-            finish() //Alliberem memòria un cop finalitzada aquesta tasca.
+        if(currentUser != null){
+             //Sí l'usuari no ha tancat sessió (està autenticat)...
+                //Anem al mainActivity des d'aquesta pantalla
+                startActivity(Intent(this,MainActivity::class.java))
+                //finish() //Alliberem memòria un cop finalitzada aquesta tasca.
+
         }
     }
 

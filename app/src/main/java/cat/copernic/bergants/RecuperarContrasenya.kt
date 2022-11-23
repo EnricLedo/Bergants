@@ -27,7 +27,6 @@ class RecuperarContrasenya : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_recuperar_contrasenya)
         binding = ActivityRecuperarContrasenyaBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val user = FirebaseAuth.getInstance().currentUser
@@ -52,7 +51,6 @@ class RecuperarContrasenya : AppCompatActivity() {
 
         }
     }
-
 
     fun restaurarContrasenya(correu: String){
 
