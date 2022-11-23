@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import cat.copernic.bergants.databinding.DisenyAssaigBinding
-import cat.copernic.bergants.model.Assaig
+import cat.copernic.bergants.Assaig
 
 class AssaigRecyclerAdapter : RecyclerView.Adapter<AssaigRecyclerAdapter.ViewHolder>() {
     var assajos: MutableList<Assaig> = ArrayList()

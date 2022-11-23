@@ -5,14 +5,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import cat.copernic.bergants.databinding.DisenyActuacioBinding
-import cat.copernic.bergants.model.Actuacio
+import cat.copernic.bergants.ActuacioRv
 
 class ActuacioRecyclerAdapter : RecyclerView.Adapter<ActuacioRecyclerAdapter.ViewHolder>() {
-    var actuacions: MutableList<Actuacio> = ArrayList()
+    var actuacions: MutableList<ActuacioRv> = ArrayList()
     lateinit var context: Context
 
     //constructor de la classe on es passa la font de dades i el context sobre el que es mostrarà
-    fun ActuacioRecyclerAdapter(actuacionsList:MutableList<Actuacio>,contxt: Context){
+    fun ActuacioRecyclerAdapter(actuacionsList:MutableList<ActuacioRv>, contxt: Context){
         this.actuacions = actuacionsList
         this.context = contxt
     }
@@ -52,7 +52,7 @@ class ActuacioRecyclerAdapter : RecyclerView.Adapter<ActuacioRecyclerAdapter.Vie
 
     class ViewHolder(val binding: DisenyActuacioBinding): RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(actuacio: Actuacio) {
+        fun bind(actuacio: ActuacioRv) {
 
         }
 

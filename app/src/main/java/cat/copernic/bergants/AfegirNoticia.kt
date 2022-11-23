@@ -24,7 +24,6 @@ class AfegirNoticia : Fragment() {
 
     //Atribut de tipus Button per afegir una nova noticia
     private lateinit var botoAfegir: Button
-    private lateinit var botoEliminar: ImageView
 
     //Declarem els atributs on guardarem les noticies
     private lateinit var noticies: NoticiaModel
@@ -76,7 +75,6 @@ class AfegirNoticia : Fragment() {
         contingutNoticia = binding.contingutNoticia
         dataNoticia = binding.dataNoticia
         botoAfegir = binding.botoGuardarNoticia
-        botoEliminar = binding.fotoPaperera
 
         botoAfegir.setOnClickListener {
             llegirDades()

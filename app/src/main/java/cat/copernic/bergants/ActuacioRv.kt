@@ -1,6 +1,6 @@
-package cat.copernic.bergants.model
+package cat.copernic.bergants
 
-data class Actuacio(val title:String, val data:String, val bus:String, val lloc:String, val assistencia:String){
+data class ActuacioRv(val title:String, val data:String, val bus:String, val lloc:String, val assistencia:String){
     var titolActuacio: String? = null
     var dataActuacio: String? = null
     var busActuacio: String? = null
@@ -16,4 +16,3 @@ data class Actuacio(val title:String, val data:String, val bus:String, val lloc:
         this.assistenciaActuacio = assistencia
     }
 }
-

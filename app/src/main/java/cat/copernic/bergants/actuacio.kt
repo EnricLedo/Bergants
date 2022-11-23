@@ -6,14 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import androidx.cardview.widget.CardView
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import cat.copernic.bergants.adapter.ActuacioRecyclerAdapter
 import cat.copernic.bergants.databinding.FragmentActuacioBinding
-import cat.copernic.bergants.model.Actuacio
 
 class actuacio : Fragment() {
 
@@ -51,11 +47,11 @@ class actuacio : Fragment() {
         return binding.root
     }
 
-    private fun getActuacions():MutableList<Actuacio>{
-        val actuacions: MutableList<Actuacio> = arrayListOf()
-        actuacions.add(Actuacio("FM DE FOSTON","DISSABTE 24 de Setembre de 2022","16:30h Estació Busos Doré (Terrassa)","18:00h Plaça de l'Ajuntament - Calella","NO VINC"))
-        actuacions.add(Actuacio("LA MERCÈ","DISSABTE 25 de Setembre","10:15h Parc dels Catalans (FGC)","12:00h Pl. Sant Jaume","SENSE RESPOSTA"))
-        actuacions.add(Actuacio("ACTUACIÓ COMERCIAL HOTEL LA MOLA","DIJOUS 29 de Setembre del 2022","16:30h Estació Busos Doré (Terrassa)","18:00h Hotel la Mola","SENSE RESPOSTA"))
+    private fun getActuacions():MutableList<ActuacioRv>{
+        val actuacions: MutableList<ActuacioRv> = arrayListOf()
+        actuacions.add(ActuacioRv("FM DE FOSTON","DISSABTE 24 de Setembre de 2022","16:30h Estació Busos Doré (Terrassa)","18:00h Plaça de l'Ajuntament - Calella","NO VINC"))
+        actuacions.add(ActuacioRv("LA MERCÈ","DISSABTE 25 de Setembre","10:15h Parc dels Catalans (FGC)","12:00h Pl. Sant Jaume","SENSE RESPOSTA"))
+        actuacions.add(ActuacioRv("ACTUACIÓ COMERCIAL HOTEL LA MOLA","DIJOUS 29 de Setembre del 2022","16:30h Estació Busos Doré (Terrassa)","18:00h Hotel la Mola","SENSE RESPOSTA"))
 
         return actuacions
     }

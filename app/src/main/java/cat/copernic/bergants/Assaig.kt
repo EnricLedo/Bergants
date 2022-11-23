@@ -1,4 +1,4 @@
-package cat.copernic.bergants.model
+package cat.copernic.bergants
 
 data class Assaig(val title: String, val data: String, val lloc: String, val assistencia: String){
     var titolAssaig: String? = null

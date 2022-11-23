@@ -6,17 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.cardview.widget.CardView
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.adapter.FragmentViewHolder
 import cat.copernic.bergants.adapter.AssaigRecyclerAdapter
 import cat.copernic.bergants.databinding.FragmentAssajosBinding
-import cat.copernic.bergants.model.Assaig
 
 class assajos : Fragment() {
 

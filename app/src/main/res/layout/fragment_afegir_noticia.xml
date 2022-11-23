@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@id/contingutNoticia" />
 
 
-
+    <!--
     <ImageView
         android:id="@+id/fotoPaperera"
         android:layout_width="@dimen/smallinputheight"
@@ -55,9 +55,10 @@
         app:layout_constraintStart_toStartOf="parent"
         android:clickable="true"
         android:onClick="imageClick" />
+    -->
 
     <Button
-        android:id="@+id/botoAfegirNoticia"
+        android:id="@+id/botoGuardarNoticia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/MargeDretaBotoGuardar20dp"
