@@ -20,15 +20,15 @@ import com.google.firebase.firestore.FirebaseFirestore
 class AfegirAssaig : Fragment() {
     private lateinit var binding: FragmentAfegirAssaigBinding
 
-    //EditText per introduïr les dades de la nova noticia a afegir
+    //EditText per introduïr les dades del nou assaig a afegir
     private lateinit var titolAssaig: EditText
     private lateinit var dataAssaig: EditText
     private lateinit var llocAssaig: EditText
 
-    //Atribut de tipus Button per afegir una nova noticia
+    //Atribut de tipus Button per afegir un nou assaig
     private lateinit var botoAfegir: Button
 
-    //Declarem els atributs on guardarem les noticies
+    //Declarem els atributs on guardarem els assajos
     private lateinit var assajos: AssaigModel
 
     //Declarem i incialitzem un atribut de tipus FirebaseFirestore, classe on trobarem els mètodes per treballar amb la base de dades Firestore
@@ -53,19 +53,19 @@ class AfegirAssaig : Fragment() {
     }
 
     fun afegirAssaig(assaig: AssaigModel) {
-        //Seleccionem la col.lecció on volem afegir la notícia mitjançant la funció collection("Noticies"), si no existeix la col.lecció
-        //es crearà, si no la sobreescriurà. Afegim la notícia a la col.lecció seleccionada amb un id que genera automàticament Firestore
-        // mitjançant la funció add(departament). Si el departament existeix, es sobreescriurà, sinó es crearà de nou.
+        //Seleccionem la col.lecció on volem afegir l'assaig mitjançant la funció collection("Assajos"), si no existeix la col.lecció
+        //es crearà, si no la sobreescriurà. Afegim l'assaig a la col.lecció seleccionada amb un id que genera automàticament Firestore
+        // mitjançant la funció add(assaig). Si l'assaig existeix, es sobreescriurà, sinó es crearà de nou.
         bd.collection("Assajos").add(assaig)
-            .addOnSuccessListener { //S'ha afegir la noticia...
+            .addOnSuccessListener { //S'ha afegir l'assaig...
                 Toast.makeText(
                     requireActivity(),
-                    "La notícia s'ha afegit correctament",
+                    "L'assaig s'ha afegit correctament",
                     Toast.LENGTH_LONG
                 ).show()
             }
             .addOnFailureListener {
-                Toast.makeText(requireActivity(), "La notícia no s'ha afegit", Toast.LENGTH_LONG)
+                Toast.makeText(requireActivity(), "L'assaig no s'ha afegit", Toast.LENGTH_LONG)
                     .show()
             }
     }
@@ -80,7 +80,7 @@ class AfegirAssaig : Fragment() {
 
         botoAfegir.setOnClickListener {
             llegirDades()
-            var assaig = llegirDades() //Noticia introduida per l'usuari
+            var assaig = llegirDades() //Assaig introduït per l'usuari
             if (assaig.titolAssaig?.isNotEmpty() == true && assaig.dataAssaig?.isNotEmpty() == true && assaig.llocAssaig?.isNotEmpty() == true) {
                 afegirAssaig(assaig)
             } else {

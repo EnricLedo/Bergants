@@ -53,8 +53,8 @@ class AfegirNoticia : Fragment() {
     fun afegirNoticia(noticia: NoticiaModel) {
         //Seleccionem la col.lecció on volem afegir la notícia mitjançant la funció collection("Noticies"), si no existeix la col.lecció
         //es crearà, si no la sobreescriurà. Afegim la notícia a la col.lecció seleccionada amb un id que genera automàticament Firestore
-        // mitjançant la funció add(departament). Si el departament existeix, es sobreescriurà, sinó es crearà de nou.
-        bd.collection("Notícies").add(noticia)
+        // mitjançant la funció add(noticia). Si la notícia existeix, es sobreescriurà, sinó es crearà de nou.
+        bd.collection("Noticies").add(noticia)
             .addOnSuccessListener { //S'ha afegir la noticia...
                 Toast.makeText(
                     requireActivity(),
