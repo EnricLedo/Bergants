@@ -1,7 +1,4 @@
 package cat.copernic.bergants.model
 
-data class NoticiaModel(val title:String, val content:String, val date: String) {
-    var titolNoticia: String? = null
-    var contingutNoticia: String?=null
-    var dataNoticia: String? = null
+data class NoticiaModel(val titolNoticia:String, val contingutNoticia:String, val dataNoticia: String) {
 }
