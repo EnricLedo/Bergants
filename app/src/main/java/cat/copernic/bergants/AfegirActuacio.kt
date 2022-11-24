@@ -25,7 +25,7 @@ class AfegirActuacio : Fragment() {
     private lateinit var dataActuacio: EditText
     private lateinit var llocActuacio: EditText
 
-    //Atribut de tipus Button per afegir una nov actuacio
+    //Atribut de tipus Button per afegir una nova actuacio
     private lateinit var botoAfegir: Button
 
     //Declarem els atributs on guardarem les actuacions

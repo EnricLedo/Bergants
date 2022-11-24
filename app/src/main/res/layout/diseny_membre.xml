@@ -44,7 +44,7 @@
         <TextView
             android:id="@+id/nomMembre"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:text="Nom i cognoms del membre"
             android:textColor="@color/negre"

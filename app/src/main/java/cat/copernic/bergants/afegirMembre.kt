@@ -9,13 +9,26 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.navigation.fragment.findNavController
 import cat.copernic.bergants.databinding.FragmentAfegirMembreBinding
+import cat.copernic.bergants.model.ActuacioModel
 
 class afegirMembre : Fragment() {
     private lateinit var binding: FragmentAfegirMembreBinding
 
     //EditText per introduïr les dades del nou membre a afegir
     private lateinit var nomMembre: EditText
-    private lateinit var contingutNoticia: EditText
+    private lateinit var malnom: EditText
+    private lateinit var alcadaEspatlles: EditText
+    private lateinit var AlcadaMans: EditText
+    private lateinit var correuMembre: EditText
+    private lateinit var adrecaMembre: EditText
+    private lateinit var telefonMembre: EditText
+    private lateinit var rolMembre: EditText
+
+    //Atribut de tipus Button per afegir un nou membre
+    private lateinit var botoAfegir: Button
+
+    //Declarem els atributs on guardarem les actuacions
+    private lateinit var actuacions: ActuacioModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
