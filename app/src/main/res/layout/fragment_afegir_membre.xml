@@ -34,13 +34,13 @@
             android:src="@drawable/fotomembre" />
     </androidx.cardview.widget.CardView>
 
-    <TextView
+    <EditText
         android:id="@+id/nomMembre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/separacio"
         android:gravity="center"
-        android:text="@string/nomMembre"
+        android:hint="@string/nomMembre"
         android:textColor="@color/negre"
         android:textSize="@dimen/titlesize"
         android:textStyle="bold"
@@ -76,30 +76,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nomMembre" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/malnomTextInputLayout"
+    <EditText
+        android:id="@+id/malnomMembre"
         android:layout_width="@dimen/smallinputwidth"
         android:layout_height="@dimen/smallinputheight"
         android:layout_marginStart="@dimen/marginpag"
         android:layout_marginTop="@dimen/separacio"
         android:layout_marginBottom="@dimen/separacio"
-        app:boxBackgroundColor="@color/blanc"
+        android:hint="malnom"
+        android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/espatlles"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MALNOM">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/malnom"
-            android:layout_width="@dimen/smallinputwidth"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@color/blanc"
-            android:hint="@string/inputmalnom"
-            android:inputType="text"
-            android:maxLength="9"
-            android:textColor="@color/grisClaretGentApuntada"
-            android:textColorHint="#757575" />
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/MALNOM" />
 
     <Switch
         android:id="@+id/booleanAdmin"
@@ -123,7 +111,7 @@
         android:textSize="@dimen/secondtitlesize"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/malnomTextInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/malnomMembre" />
 
     <TextView
         android:id="@+id/mans"
@@ -140,54 +128,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/booleanAdmin" />
 
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/espatllesTextInputLayout"
         android:layout_width="@dimen/smallinputwidth"
         android:layout_height="@dimen/smallinputheight"
         android:layout_marginStart="@dimen/marginpag"
         android:layout_marginTop="@dimen/separacio"
         android:layout_marginBottom="@dimen/separacio"
-        app:boxBackgroundColor="@color/blanc"
+        android:hint="@string/inputalçada"
+        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/email"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/espatlles">
+        app:layout_constraintTop_toBottomOf="@+id/espatlles" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/alcadaespatlles"
-            android:layout_width="@dimen/smallinputwidth"
-            android:layout_height="@dimen/smallinputheight"
-            android:layout_gravity="center"
-            android:background="@color/blanc"
-            android:hint="@string/inputalçada"
-            android:inputType="text"
-            android:maxLength="3"
-            android:textColor="@color/grisClaretGentApuntada"
-            android:textColorHint="#757575"
-            tools:ignore="DuplicateSpeakableTextCheck" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/mansTextInputLayout"
         android:layout_width="@dimen/smallinputwidth"
         android:layout_height="@dimen/smallinputheight"
         android:layout_marginTop="@dimen/separacio"
         android:layout_marginEnd="@dimen/marginpag"
-        app:boxBackgroundColor="@color/blanc"
+        android:hint="@string/inputalçada"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mans">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/alcadamans"
-            android:layout_width="@dimen/smallinputwidth"
-            android:layout_height="@dimen/smallinputheight"
-            android:layout_gravity="center"
-            android:background="@color/blanc"
-            android:hint="@string/inputalçada"
-            android:inputType="text"
-            android:maxLength="3"
-            android:textColor="@color/grisClaretGentApuntada"
-            android:textColorHint="#757575" />
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/mans" />
 
     <TextView
         android:id="@+id/email"
@@ -204,7 +167,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/espatllesTextInputLayout" />
 
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/correuTextInputLayout"
         android:layout_width="@dimen/fullwidth"
         android:layout_height="@dimen/smallinputheight"
@@ -212,24 +175,12 @@
         android:layout_marginTop="@dimen/separacio"
         android:layout_marginEnd="@dimen/marginpag"
         android:layout_marginBottom="@dimen/marginpag"
-        app:boxBackgroundColor="@color/blanc"
+        android:hint="@string/inputcorreu"
+        android:inputType="textEmailAddress"
         app:layout_constraintBottom_toTopOf="@+id/adreca"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/correu"
-            android:layout_width="@dimen/fullwidth"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@color/blanc"
-            android:hint="@string/inputcorreu"
-            android:inputType="text|textEmailAddress|textCapWords"
-            android:maxLength="9"
-            android:textColor="@color/grisClaretGentApuntada"
-            android:textColorHint="#757575" />
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <TextView
         android:id="@+id/adreca"
@@ -246,7 +197,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/correuTextInputLayout" />
 
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/adrecaTextInputLayout"
         android:layout_width="@dimen/fullwidth"
         android:layout_height="@dimen/smallinputheight"
@@ -255,22 +206,12 @@
         android:layout_marginEnd="@dimen/marginpag"
         android:layout_marginBottom="@dimen/separacio"
         app:boxBackgroundColor="@color/blanc"
+        android:hint="@string/inputadreca"
+        android:inputType="textPostalAddress"
         app:layout_constraintBottom_toTopOf="@+id/telefon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adreca">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/adreça"
-            android:layout_width="@dimen/fullwidth"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@color/blanc"
-            android:hint="@string/inputadreca"
-            android:inputType="text"
-            android:textColor="@color/grisClaretGentApuntada"
-            android:textColorHint="#757575" />
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/adreca" />
 
     <TextView
         android:id="@+id/telefon"
@@ -300,50 +241,29 @@
         app:layout_constraintStart_toEndOf="@+id/telefon"
         app:layout_constraintTop_toBottomOf="@+id/adrecaTextInputLayout" />
 
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/telefonTextInputLayout"
         android:layout_width="@dimen/smallinputwidth"
         android:layout_height="@dimen/smallinputheight"
         android:layout_marginStart="@dimen/marginpag"
         android:layout_marginTop="@dimen/separacio"
+        android:hint="@string/inputTelefon"
+        android:inputType="phone"
         app:boxBackgroundColor="@color/blanc"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/telefon">
+        app:layout_constraintTop_toBottomOf="@+id/telefon" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/numerotelefon"
-            android:layout_width="@dimen/smallinputwidth"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@color/blanc"
-            android:hint="@string/inputTelefon"
-            android:inputType="text"
-            android:maxLength="9"
-            android:textColor="@color/grisClaretGentApuntada" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/rolTextInputLayout"
         android:layout_width="@dimen/smallinputwidth"
         android:layout_height="@dimen/smallinputheight"
         android:layout_marginTop="@dimen/separacio"
         android:layout_marginEnd="@dimen/marginpag"
+        android:hint="@string/inputrol"
+        android:inputType="text"
         app:boxBackgroundColor="@color/blanc"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rol">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/rolmembre"
-            android:layout_width="@dimen/smallinputwidth"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@color/blanc"
-            android:hint="@string/inputrol"
-            android:inputType="text"
-            android:maxLength="13"
-            android:textColor="@color/grisClaretGentApuntada"
-            android:textColorHint="#757575" />
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/rol" />
 
     <Button
         android:id="@+id/botoGuardarMembre"

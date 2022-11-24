@@ -97,7 +97,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nomMembre" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/malnomTextInputLayout"
+        android:id="@+id/malnomMembre"
         android:layout_width="@dimen/smallinputwidth"
         android:layout_height="@dimen/smallinputheight"
         android:layout_marginStart="@dimen/marginpag"
@@ -143,7 +143,7 @@
         android:textSize="@dimen/secondtitlesize"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/malnomTextInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/malnomMembre" />
 
     <TextView
         android:id="@+id/mans"
