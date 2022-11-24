@@ -1,4 +1,4 @@
-package cat.copernic.bergants.adapter_noticia
+package cat.copernic.bergants.adapter
 
 import android.content.Context
 import android.view.LayoutInflater

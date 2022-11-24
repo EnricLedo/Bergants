@@ -9,7 +9,7 @@ import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import cat.copernic.bergants.databinding.FragmentNoticiaCanviBinding
 import androidx.recyclerview.widget.LinearLayoutManager
-import cat.copernic.bergants.adapter_noticia.NoticiaRecyclerAdapter
+import cat.copernic.bergants.adapter.NoticiaRecyclerAdapter
 
 
 class noticia_canvi : Fragment() {
