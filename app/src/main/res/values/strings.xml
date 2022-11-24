@@ -149,4 +149,6 @@
     <string name="tancar_sessioo">TANCAR SESSIÓ</string>
     <string name="tancar_sessi">Tancar sessió</string>
     <string name="membres">MEMBRES</string>
+    <string name="BotoCanviarVisioPinyes">Pinyes</string>
+    <string name="Boto_afegir_pinya">Afegir Pinya</string>
 </resources>

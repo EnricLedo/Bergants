@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InformacioAssaig">
+
+    <TextView
+        android:id="@+id/TitolAssaig"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/AlcadaTextViewTitolActuacio33dp"
+        android:text="@string/nomAssaig"
+        android:textSize="@dimen/TitolActuacio23sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <TextView
+        android:id="@+id/dataAssaig"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/AlcadaTextViewDataAssaig30dp"
+        android:text="@string/dataAssaig"
+        android:textSize="@dimen/LletraNormal16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TitolAssaig" />
+
+    <ImageView
+        android:contentDescription="@string/botodesivinc"
+        android:id="@+id/botoSiVinc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MargeTopInformacio150dpInformacio"
+        android:layout_marginEnd="@dimen/MargeDretaInformacio50dp"
+        android:src="@drawable/calendari_si56"
+        app:layout_constraintEnd_toStartOf="@+id/botoNoVinc"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/botoNoVinc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MargeTopInformacio150dpInformacio"
+        android:layout_marginStart="@dimen/MargeDretaInformacio50dp"
+        android:src="@drawable/calendari_no56"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/botoSiVinc"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/botodenovinc" />
+
+    <TextView
+        android:id="@+id/vincText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/vinc"
+        app:layout_constraintEnd_toEndOf="@+id/botoSiVinc"
+        app:layout_constraintStart_toStartOf="@+id/botoSiVinc"
+        app:layout_constraintTop_toBottomOf="@id/botoSiVinc"/>
+
+    <TextView
+        android:id="@+id/noVincText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/noVinc"
+        app:layout_constraintEnd_toEndOf="@+id/botoNoVinc"
+        app:layout_constraintStart_toStartOf="@+id/botoNoVinc"
+        app:layout_constraintTop_toBottomOf="@id/botoNoVinc" />
+
+    <ImageView
+        android:id="@+id/iconaRellotge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MargeTopIconaRellotge250dp"
+        android:layout_marginEnd="@dimen/MargeDretaRellotge15dp"
+        android:src="@drawable/rellotge24"
+        app:layout_constraintEnd_toStartOf="@id/horaAssaig"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/iconarellotge" />
+
+    <TextView
+        android:id="@+id/horaAssaig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/horaAssaig"
+        android:textSize="@dimen/LletraNormal16sp"
+        app:layout_constraintBottom_toBottomOf="@id/iconaRellotge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iconaRellotge"
+        app:layout_constraintTop_toTopOf="@id/iconaRellotge" />
+
+    <ImageView
+        android:id="@+id/iconaUbicacio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MargeTopIconaUbicacio280dp"
+        android:layout_marginEnd="@dimen/MargeDretaRellotge15dp"
+        android:src="@drawable/ubicacio24"
+        app:layout_constraintEnd_toStartOf="@+id/ubicacioAssaig"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/iconaubicacio" />
+
+    <TextView
+        android:id="@+id/ubicacioAssaig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ubicacioAssaig"
+        android:textSize="@dimen/LletraNormal16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iconaUbicacio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iconaUbicacio"
+        app:layout_constraintTop_toTopOf="@+id/iconaUbicacio" />
+
+    <Button
+        android:id="@+id/CanviarVisioDePinyes"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="320dp"
+        android:text="@string/BotoCanviarVisioPinyes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/AfegirUnaPinya"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="650dp"
+        android:text="@string/Boto_afegir_pinya"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_goneMarginEnd="20dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

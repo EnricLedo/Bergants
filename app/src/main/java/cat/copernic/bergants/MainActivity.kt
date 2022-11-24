@@ -1,6 +1,14 @@
 package cat.copernic.bergants
 
+import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Button
+import android.widget.Toast
+import android.widget.Toolbar
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
@@ -65,42 +73,11 @@ class MainActivity : AppCompatActivity() {
         }
          */
     }
-/**
-    private fun setupRecyclerView(){
-        //Especifiquem que els fills del RV seran del mateix tamany i així optimitzem la seva creació
-        binding.recyclerNoticies.setHasFixedSize(true)
-
-        //indiquem que el RV es mostrarà en format llista
-        binding.recyclerNoticies.layoutManager = LinearLayoutManager(this)
-
-        //generem el adapter
-        myAdapter.NoticiesRecyclerAdapter(getNoticies(),this)
-
-        //assignem el adapter al RV
-        binding.recyclerNoticies.adapter = myAdapter
-    }
-    */
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.fragmentContainerView)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
-
-    /**
-    private fun getNoticies():MutableList<Noticia>{
-        val noticies: MutableList<Noticia> = arrayListOf()
-        noticies.add(Noticia("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
-        noticies.add(Noticia("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
-        noticies.add(Noticia("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
-        noticies.add(Noticia("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
-        noticies.add(Noticia("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
-        noticies.add(Noticia("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
-        noticies.add(Noticia("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
-
-        return noticies
-
-    }
-    */
 
     /**
     private fun initRecyclerView(){
