@@ -124,12 +124,12 @@
         android:textColor="@color/negre"
         android:textSize="@dimen/secondtitlesize"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/mansTextInputLayout"
+        app:layout_constraintBottom_toTopOf="@+id/mansMembre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/booleanAdmin" />
 
     <EditText
-        android:id="@+id/espatllesTextInputLayout"
+        android:id="@+id/espatllesMembre"
         android:layout_width="@dimen/smallinputwidth"
         android:layout_height="@dimen/smallinputheight"
         android:layout_marginStart="@dimen/marginpag"
@@ -142,7 +142,7 @@
         app:layout_constraintTop_toBottomOf="@+id/espatlles" />
 
     <EditText
-        android:id="@+id/mansTextInputLayout"
+        android:id="@+id/mansMembre"
         android:layout_width="@dimen/smallinputwidth"
         android:layout_height="@dimen/smallinputheight"
         android:layout_marginTop="@dimen/separacio"
@@ -165,10 +165,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/espatllesTextInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/espatllesMembre" />
 
     <EditText
-        android:id="@+id/correuTextInputLayout"
+        android:id="@+id/correuMembre"
         android:layout_width="@dimen/fullwidth"
         android:layout_height="@dimen/smallinputheight"
         android:layout_marginStart="@dimen/marginpag"
@@ -195,10 +195,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/correuTextInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/correuMembre" />
 
     <EditText
-        android:id="@+id/adrecaTextInputLayout"
+        android:id="@+id/adrecaMembre"
         android:layout_width="@dimen/fullwidth"
         android:layout_height="@dimen/smallinputheight"
         android:layout_marginStart="@dimen/marginpag"
@@ -224,7 +224,7 @@
         android:textSize="@dimen/secondtitlesize"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adrecaTextInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/adrecaMembre" />
 
     <TextView
         android:id="@+id/rol"
@@ -237,12 +237,12 @@
         android:textColor="@color/negre"
         android:textSize="@dimen/secondtitlesize"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/rolTextInputLayout"
+        app:layout_constraintBottom_toTopOf="@+id/rolMembre"
         app:layout_constraintStart_toEndOf="@+id/telefon"
-        app:layout_constraintTop_toBottomOf="@+id/adrecaTextInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/adrecaMembre" />
 
     <EditText
-        android:id="@+id/telefonTextInputLayout"
+        android:id="@+id/telefonMembre"
         android:layout_width="@dimen/smallinputwidth"
         android:layout_height="@dimen/smallinputheight"
         android:layout_marginStart="@dimen/marginpag"
@@ -254,7 +254,7 @@
         app:layout_constraintTop_toBottomOf="@+id/telefon" />
 
     <EditText
-        android:id="@+id/rolTextInputLayout"
+        android:id="@+id/rolMembre"
         android:layout_width="@dimen/smallinputwidth"
         android:layout_height="@dimen/smallinputheight"
         android:layout_marginTop="@dimen/separacio"
@@ -273,7 +273,7 @@
         android:layout_marginEnd="@dimen/marginpag"
         android:text="@string/botoafegir"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rolTextInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/rolMembre"
         tools:ignore="TextContrastCheck" />
 
 
