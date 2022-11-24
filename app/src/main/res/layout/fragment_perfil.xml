@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout2"
+    android:padding="25dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".perfil">
@@ -12,7 +13,7 @@
         android:layout_width="@dimen/widthfoto"
         android:layout_height="@dimen/heightfoto"
         android:layout_marginStart="@dimen/marginendfoto"
-        android:layout_marginTop="@dimen/margintopfoto"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="@dimen/marginendfoto"
         android:gravity="center"
         android:shape="ring"
@@ -48,7 +49,6 @@
         android:id="@+id/MALNOM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/marginpag"
         android:layout_marginTop="@dimen/marginpag"
         android:text="@string/malnom"
         android:textColor="@color/negre"
@@ -59,58 +59,61 @@
 
     <TextView
         android:id="@+id/malnomenric"
-        android:layout_width="@dimen/fullwidth"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/marginpag"
         android:layout_marginTop="@dimen/marginpag"
-        android:layout_marginEnd="@dimen/marginpag"
+        android:layout_marginStart="5dp"
         android:text="@string/malnomenric"
         android:textColor="@color/negre"
         android:textSize="@dimen/secondtitlesize"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/MALNOM" />
 
     <TextView
-        android:id="@+id/rolenric"
-        android:layout_width="@dimen/fullwidth"
+        android:id="@+id/textViewRolMembre"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/marginpag"
         android:layout_marginTop="@dimen/marginpag"
-        android:layout_marginEnd="@dimen/marginpag"
+        android:text="@string/titolRol"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/secondtitlesize"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/malnomenric" />
+
+    <TextView
+        android:id="@+id/rolenric"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginpag"
+        android:layout_marginStart="5dp"
         android:text="@string/rolnomenric"
         android:textColor="@color/negre"
         android:textSize="@dimen/secondtitlesize"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/malnomenric" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewRolMembre" />
 
     <TextView
         android:id="@+id/dataalta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/marginpag"
         android:layout_marginTop="@dimen/marginpag"
-        android:layout_marginBottom="@dimen/marginpag"
         android:text="@string/dataalta"
         android:textColor="@color/negre"
         android:textSize="@dimen/secondtitlesize"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/dataenric"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rolenric" />
 
     <TextView
         android:id="@+id/dataenric"
-        android:layout_width="@dimen/fullwidth"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/marginpag"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="@dimen/marginpag"
-        android:layout_marginEnd="@dimen/marginpag"
         android:text="@string/dataenric"
         android:textColor="@color/negre"
         android:textSize="@dimen/secondtitlesize"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dataalta" />
 
@@ -118,8 +121,6 @@
         android:id="@+id/eliminarcompte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/marginpag"
-        android:layout_marginBottom="@dimen/marginpag"
         android:text="@string/eliminarcompte"
         android:textColor="@color/negre"
         android:textSize="@dimen/secondtitlesize"
@@ -131,7 +132,7 @@
         android:id="@+id/eliminarperfil"
         android:layout_width="@dimen/widthfoto"
         android:layout_height="@dimen/heightfoto"
-        android:layout_marginEnd="@dimen/iconcompte"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="@dimen/separacio"
         android:contentDescription="@string/eliminarperfil"
         android:gravity="center"
