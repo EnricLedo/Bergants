@@ -65,4 +65,8 @@ dependencies {
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation 'com.google.firebase:firebase-storage-ktx'
     implementation 'com.google.firebase:firebase-firestore-ktx:24.4.1'
+
+    //picasso
+    implementation 'io.coil-kt:coil:0.11.0'
+
 }
