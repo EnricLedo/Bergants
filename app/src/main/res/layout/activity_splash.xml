@@ -10,7 +10,6 @@
     android:background="@color/blanc"
     tools:context=".SplashActivity">
 
-
     <ProgressBar
         android:layout_gravity="center"
         android:layout_width="wrap_content"
