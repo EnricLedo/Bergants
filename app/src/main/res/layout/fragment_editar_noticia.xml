@@ -7,76 +7,51 @@
     android:layout_height="match_parent"
     tools:context=".editar_noticia">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/titolTextInputLayout"
+    <EditText
+        android:id="@+id/editartitol"
         android:layout_width="@dimen/fullwidth"
         android:layout_height="@dimen/smallinputheight"
         android:layout_marginStart="@dimen/marginpag"
         android:layout_marginTop="@dimen/marginpag"
         android:layout_marginEnd="@dimen/marginpag"
-        app:boxBackgroundColor="@color/blanc"
+        android:text="@string/inputtitoledit"
+        android:inputType="text"
+        android:textColorHint="@color/negre"
+        android:textSize="@dimen/secondtitlesize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"/>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editartitol"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/blanc"
-            android:hint="@string/inputtitoledit"
-            android:inputType="text"
-            android:textColorHint="@color/grisFosc"
-            android:textSize="@dimen/secondtitlesize" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/noticiaTextInputLayout"
+    <EditText
+        android:id="@+id/editarnoticia"
         android:layout_width="@dimen/fullwidth"
-        android:layout_height="@dimen/noticiaheight"
-        android:layout_marginStart="@dimen/marginpag"
-        android:layout_marginEnd="@dimen/marginpag"
-        app:boxBackgroundColor="@color/blanc"
-        app:layout_constraintBottom_toTopOf="@+id/botoafegir"
+        android:layout_height="wrap_content"
+        android:text="@string/inputnoticiaedit"
+        android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titolTextInputLayout">
+        app:layout_constraintTop_toBottomOf="@+id/editartitol"/>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editarnoticia"
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:maxLines="40"
-            android:lines="40"
-            android:background="@color/blanc"
-            android:hint="@string/inputnoticiaedit"
-            android:inputType="textMultiLine"
-            android:singleLine="false"
-            android:textColorHint="#757575" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <ImageView
-        android:id="@+id/fotoPaperera"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <EditText
+        android:id="@+id/editardata"
+        android:layout_width="@dimen/fullwidth"
+        android:layout_height="wrap_content"
+        android:text="27-10-22 9:27"
+        android:inputType="datetime"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_width="@dimen/smallinputheight"
-        android:layout_height="@dimen/smallinputheight"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="@dimen/marginpag"
-        android:layout_marginBottom="@dimen/separaciomig"
-        android:contentDescription="@string/botoborrar"
-        android:src="@drawable/iconopapelera" />
+        app:layout_constraintTop_toBottomOf="@id/editarnoticia"/>
 
-    <ImageView
+    <Button
         android:id="@+id/botoafegir"
         android:layout_width="@dimen/btncircle"
         android:layout_height="@dimen/btncircle"
         android:layout_marginEnd="@dimen/marginpag"
+        android:text="+"
+        android:textSize="30sp"
         android:layout_marginBottom="@dimen/separaciomig"
-        android:src="@drawable/iconcheck"
+        android:background="@drawable/round_button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:contentDescription="@string/check" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

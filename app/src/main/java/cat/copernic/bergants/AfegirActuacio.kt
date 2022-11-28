@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Switch
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import cat.copernic.bergants.databinding.FragmentActuacioBinding
@@ -14,6 +15,7 @@ import cat.copernic.bergants.databinding.FragmentAfegirActuacioBinding
 import cat.copernic.bergants.databinding.FragmentAfegirAssaigBinding
 import cat.copernic.bergants.model.ActuacioModel
 import cat.copernic.bergants.model.AssaigModel
+import cat.copernic.bergants.model.BusModel
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -24,6 +26,7 @@ class AfegirActuacio : Fragment() {
     private lateinit var titolActuacio: EditText
     private lateinit var dataActuacio: EditText
     private lateinit var llocActuacio: EditText
+
 
     //Atribut de tipus Button per afegir una nova actuacio
     private lateinit var botoAfegir: Button
@@ -77,6 +80,12 @@ class AfegirActuacio : Fragment() {
         dataActuacio = binding.dataActuacio
         llocActuacio = binding.llocActuacio
         botoAfegir = binding.botoGuardarActuacio
+
+        val btnAddBus = requireView().findViewById<Button>(R.id.autocarBoolean)
+
+        btnAddBus.setOnClickListener{
+            findNavController().navigate(R.id.action_afegir_actuacio_fragment_to_afegir_actuacio_bus_fragment)
+        }
 
         botoAfegir.setOnClickListener {
             llegirDades()

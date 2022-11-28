@@ -1,59 +1,124 @@
 package cat.copernic.bergants
 
 import android.os.Bundle
+import android.content.Intent
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.navigation.fragment.findNavController
+import cat.copernic.bergants.databinding.FragmentAfegirActuacioBusBinding
+import cat.copernic.bergants.model.ActuacioBusModel
+import cat.copernic.bergants.model.BusModel
+import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.firestore.FirebaseFirestore
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [afegir_actuacio_bus.newInstance] factory method to
- * create an instance of this fragment.
- */
 class afegir_actuacio_bus : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var binding: FragmentAfegirActuacioBusBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    //EditText per introduïr les dades de la nova actuacio a afegir
+    private lateinit var titolActuacio: EditText
+    private lateinit var dataActuacio: EditText
+    private lateinit var llocActuacio: EditText
+    private lateinit var ubicacioBus: EditText
+    private lateinit var horariBus: EditText
+    private lateinit var placesBus: EditText
+
+    //Atribut de tipus Button per afegir una nova actuacio
+    private lateinit var botoAfegir: Button
+
+    //Declarem els atributs on guardarem les actuacions i els autocars
+    private lateinit var actuacions: ActuacioBusModel
+    private lateinit var autocar: ArrayList<BusModel>
+
+    //Declarem i incialitzem un atribut de tipus FirebaseFirestore, classe on trobarem els mètodes per treballar amb la base de dades Firestore
+    private var bd = FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_afegir_actuacio_bus, container, false)
+        savedInstanceState: Bundle?): View? {
+        binding = FragmentAfegirActuacioBusBinding.inflate(inflater, container, false)
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment afegir_actuacio_bus.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            afegir_actuacio_bus().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    fun llegirDades(): ActuacioBusModel {
+        //Guardem les dades introduïdes per l'usuari
+        var titolActuacio = titolActuacio.text.toString()
+        var dataActuacio = dataActuacio.text.toString()
+        var llocActuacio = llocActuacio.text.toString()
+        var ubicacioBus = ubicacioBus.text.toString()
+        var horariBus = horariBus.text.toString()
+        var placesBus = placesBus.text.toString()
+
+        //Afegim l'autocar introduït per l'usuari a l'atribut autocar
+        autocar.add(BusModel(ubicacioBus, horariBus, placesBus))
+
+        return ActuacioBusModel(titolActuacio, dataActuacio, llocActuacio, autocar)
+    }
+
+    fun afegirActuacio(actuacio: ActuacioBusModel) {
+        //Seleccionem la col.lecció on volem afegir l'actuació mitjançant la funció collection("Actuacions"), si no existeix la col.lecció
+        //es crearà, si no la sobreescriurà. Afegim l'actuació a la col.lecció seleccionada amb un id que genera automàticament Firestore
+        // mitjançant la funció add(actuacio). Si l'actuació existeix, es sobreescriurà, sinó es crearà de nou.
+        bd.collection("Actuacions").document(titolActuacio.text.toString()).set(
+            hashMapOf(
+                "dataActuacio" to dataActuacio.text.toString(), //Atribut dataActuacio amb el valor introduït per l'usuari
+                "llocActuacio" to llocActuacio.text.toString() //Atribut llocActuacio amb el valor introduït per l'usuari
+            )
+        )
+            .addOnSuccessListener { //S'ha afegir l'actuació...
+                Toast.makeText(
+                    requireActivity(),
+                    "L'actuació s'ha afegit correctament",
+                    Toast.LENGTH_LONG
+                ).show()
             }
+            .addOnFailureListener {
+                Toast.makeText(requireActivity(), "L'actuació no s'ha afegit", Toast.LENGTH_LONG)
+                    .show()
+            }
+        bd.collection("Actuacions").document(actuacio.titolActuacio).collection("Autocar")//Col.lecció
+            .document(actuacio.autocar.get(+1).ubicacioBus).set(hashMapOf("horariBus" to actuacio.autocar.get(+1).horariBus,
+                "placesBus" to actuacio.autocar.get(+1).placesBus)) //Subcol.lecció
+            .addOnSuccessListener { //S'ha afegit l'actuacio...
+                Toast.makeText(requireActivity(),"L'actuació s'ha afegit correctament", Toast.LENGTH_LONG).show()
+            }
+            .addOnFailureListener{ //No s'ha afegit l'actuacio...
+                Toast.makeText(requireActivity(),"L'actuació no s'ha afegit", Toast.LENGTH_LONG).show()
+            }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        titolActuacio = binding.titolActuacio
+        dataActuacio = binding.dataActuacio
+        llocActuacio = binding.llocActuacio
+        ubicacioBus = binding.ubicacioAutocar
+        horariBus = binding.horaAutocar
+        placesBus = binding.placesAutocar
+        botoAfegir = binding.botoGuardarActuacio
+
+        autocar = arrayListOf()
+
+        val btnNoBus = requireView().findViewById<Button>(R.id.autocarBoolean)
+
+        btnNoBus.setOnClickListener{
+            findNavController().navigate(R.id.action_afegir_actuacio_bus_fragment_to_afegir_actuacio_fragment)
+        }
+
+        botoAfegir.setOnClickListener {
+            llegirDades()
+            var actuacio = llegirDades() //Actuacio introduida per l'usuari
+            if (actuacio.titolActuacio?.isNotEmpty() == true && actuacio.dataActuacio?.isNotEmpty() == true && actuacio.llocActuacio?.isNotEmpty() == true) {
+                afegirActuacio(actuacio)
+            } else {
+                Snackbar.make(it, "Falta indroduir parametres!!!", Snackbar.LENGTH_LONG).show()
+            }
+        }
     }
 }
