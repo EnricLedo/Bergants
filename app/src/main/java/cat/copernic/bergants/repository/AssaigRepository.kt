@@ -1,6 +1,8 @@
 package cat.copernic.bergants.repository
 
+import androidx.lifecycle.MutableLiveData
 import cat.copernic.bergants.Assaig
+import cat.copernic.bergants.assajos
 import cat.copernic.bergants.model.AssaigModel
 import com.google.firebase.database.*
 
@@ -18,7 +20,7 @@ class AssaigRepository {
         }
     }
 
-    fun carregarAssaig(assajos: MutableList<AssaigModel>){
+    fun carregarAssaig(assajos: MutableLiveData<List<AssaigModel>>){
         databaseReference.addListenerForSingleValueEvent(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 try {
