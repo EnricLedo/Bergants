@@ -64,7 +64,6 @@ class noticia_canvi : Fragment() {
     }
 
 
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         binding = FragmentNoticiaCanviBinding.inflate(inflater, container, false)
