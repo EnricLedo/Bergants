@@ -65,6 +65,8 @@
         android:layout_marginBottom="@dimen/MargeDretaRellotge15dp"
         android:gravity="center"
         android:text="afegir"
+        android:backgroundTint="@color/verdBergant"
+        android:textColor="@color/blanc"
         android:textSize="@dimen/TitolGordo18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

@@ -373,6 +373,7 @@
         android:layout_marginEnd="@dimen/marginpag"
         android:text="@string/botoguardar"
         android:textColor="@color/blanc"
+        android:backgroundTint="@color/verdBergant"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rolMembre"
         tools:ignore="TextContrastCheck" />

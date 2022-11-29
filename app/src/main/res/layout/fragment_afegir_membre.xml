@@ -249,6 +249,7 @@
         android:layout_marginTop="@dimen/separacio"
         android:hint="@string/inputTelefon"
         android:inputType="phone"
+        android:maxLength="9"
         app:boxBackgroundColor="@color/blanc"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/telefon" />
@@ -272,6 +273,8 @@
         android:layout_marginTop="@dimen/separaciomig"
         android:layout_marginEnd="@dimen/marginpag"
         android:text="@string/botoafegir"
+        android:backgroundTint="@color/verdBergant"
+        android:textColor="@color/blanc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rolMembre"
         tools:ignore="TextContrastCheck" />

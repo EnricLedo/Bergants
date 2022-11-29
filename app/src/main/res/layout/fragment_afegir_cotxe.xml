@@ -185,6 +185,8 @@
         android:id="@+id/afegirNom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/verdBergant"
+        android:textColor="@color/blanc"
         android:layout_gravity="start"
         android:layout_marginTop="@dimen/MargeBotóCotxe"
         android:layout_marginEnd="@dimen/MargeEndBotoAfegir"

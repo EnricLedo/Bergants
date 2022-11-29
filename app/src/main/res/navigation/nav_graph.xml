@@ -87,6 +87,9 @@
         <action
             android:id="@+id/action_afegir_actuacio_fragment_to_actuacions_fragment"
             app:destination="@id/actuacions_fragment" />
+        <action
+            android:id="@+id/action_afegir_actuacio_fragment_to_afegir_actuacio_bus_fragment"
+            app:destination="@id/afegir_actuacio_bus_fragment" />
     </fragment>
     <fragment
         android:id="@+id/afegir_noticia_fragment"
@@ -139,6 +142,9 @@
         android:name="cat.copernic.bergants.editar_noticia"
         android:label="fragment_editar_noticia"
         tools:layout="@layout/fragment_editar_noticia" >
+        <argument
+            android:name="CurrentNoticia"
+            app:argType="cat.copernic.bergants.model.NoticiaModel" />
         <action
             android:id="@+id/action_editar_noticia_to_noticia_fragment"
             app:destination="@id/noticia_fragment" />
@@ -169,6 +175,17 @@
         <action
             android:id="@+id/action_unirseCotxe2_to_informacioActuacio"
             app:destination="@id/informacio_actuacio_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/afegir_actuacio_bus_fragment"
+        android:name="cat.copernic.bergants.afegir_actuacio_bus"
+        android:label="fragment_afegir_actuacio_bus" >
+        <action
+            android:id="@+id/action_afegir_actuacio_bus_fragment_to_actuacions_fragment"
+            app:destination="@id/actuacions_fragment" />
+        <action
+            android:id="@+id/action_afegir_actuacio_bus_fragment_to_afegir_actuacio_fragment"
+            app:destination="@id/afegir_actuacio_fragment" />
     </fragment>
 
 </navigation>
