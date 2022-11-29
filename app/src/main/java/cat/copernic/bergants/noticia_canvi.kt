@@ -89,6 +89,7 @@ class noticia_canvi : Fragment() {
                         }
                     }
                 }
+
                 binding.recyclerNoticies.layoutManager = LinearLayoutManager(context)
                 binding.recyclerNoticies.adapter = NoticiaRecyclerAdapter(myAdapter.noticies.toList())
             }
