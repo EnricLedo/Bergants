@@ -6,11 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import cat.copernic.bergants.databinding.FragmentNoticiaCanviBinding
 import androidx.recyclerview.widget.LinearLayoutManager
 import cat.copernic.bergants.adapter.NoticiaRecyclerAdapter
 import cat.copernic.bergants.model.NoticiaModel
+import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.launch
 
 
 class noticia_canvi : Fragment() {
@@ -18,6 +21,7 @@ class noticia_canvi : Fragment() {
     private lateinit var binding: FragmentNoticiaCanviBinding
 
     private val myAdapter: NoticiaRecyclerAdapter = NoticiaRecyclerAdapter()
+    private var bd = FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
 
     private fun setupRecyclerView() {
         binding.recyclerNoticies.setHasFixedSize(true)
@@ -63,6 +67,32 @@ class noticia_canvi : Fragment() {
 
         return noticies
 
+    }
+
+    private fun rellenarCircularsProvider() {
+
+        lifecycleScope.launch {
+            bd.collection("Noticies").get().addOnSuccessListener { documents ->
+                for (document in documents) {
+                    val wallItem = NoticiaModel(
+                        title = document["titolNoticia"].toString(),
+                        content = document["contingutNoticia"].toString(),
+                        date = document["dataNoticia"].toString()
+                    )
+                    if (myAdapter.noticies.isEmpty()) {
+                        myAdapter.noticies.add(wallItem)
+                    } else {
+                        for (i in myAdapter.noticies) {
+                            if (wallItem.title != i.title) {
+                                myAdapter.noticies.add(wallItem)
+                            }
+                        }
+                    }
+                }
+                binding.recyclerNoticies.layoutManager = LinearLayoutManager(context)
+                binding.recyclerNoticies.adapter = NoticiaRecyclerAdapter(myAdapter.noticies.toList())
+            }
+        }
     }
 
 }
