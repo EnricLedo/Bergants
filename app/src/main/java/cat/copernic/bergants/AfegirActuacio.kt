@@ -59,7 +59,13 @@ class AfegirActuacio : Fragment() {
         //Seleccionem la col.lecció on volem afegir l'actuació mitjançant la funció collection("Actuacions"), si no existeix la col.lecció
         //es crearà, si no la sobreescriurà. Afegim l'actuació a la col.lecció seleccionada amb un id que genera automàticament Firestore
         // mitjançant la funció add(actuacio). Si l'actuació existeix, es sobreescriurà, sinó es crearà de nou.
-        bd.collection("Actuacions").add(actuacio)
+        bd.collection("Actuacions").document(titolActuacio.text.toString()).set(
+            hashMapOf(
+                "titolActuacio" to titolActuacio.text.toString(),
+                "dataActuacio" to dataActuacio.text.toString(), //Atribut dataActuacio amb el valor introduït per l'usuari
+                "llocActuacio" to llocActuacio.text.toString() //Atribut llocActuacio amb el valor introduït per l'usuari
+            )
+        )
             .addOnSuccessListener { //S'ha afegir l'actuació...
                 Toast.makeText(
                     requireActivity(),

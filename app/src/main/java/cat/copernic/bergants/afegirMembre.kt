@@ -63,8 +63,19 @@ class afegirMembre : Fragment() {
         //Seleccionem la col.lecció on volem afegir el Membre mitjançant la funció collection("Membres"), si no existeix la col.lecció
         //es crearà, si no la sobreescriurà. Afegim el membre a la col.lecció seleccionada amb un id que genera automàticament Firestore
         // mitjançant la funció add(membre). Si el membre existeix, es sobreescriurà, sinó es crearà de nou.
-        bd.collection("Membres").add(membre)
-            .addOnSuccessListener { //S'ha afegit el membre...
+        bd.collection("Membres").document(nomMembre.text.toString()).set(
+            hashMapOf(
+                "nomMembre" to nomMembre.text.toString(),
+                "malnom" to malnom.text.toString(),
+                "alcadaEspatlles" to alcadaEspatlles.text.toString(),
+                "alcadaMans" to alcadaMans.text.toString(),
+                "correuMembre" to correuMembre.text.toString(),
+                "adrecaMembre" to adrecaMembre.text.toString(),
+                "telefonMembre" to telefonMembre.text.toString(),
+                "rolMembre" to rolMembre.text.toString()
+            )
+        )
+            .addOnSuccessListener { //S'ha afegir l'assaig...
                 Toast.makeText(
                     requireActivity(),
                     "El membre s'ha afegit correctament",

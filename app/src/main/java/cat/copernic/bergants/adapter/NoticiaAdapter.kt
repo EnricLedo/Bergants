@@ -3,16 +3,20 @@ package cat.copernic.bergants.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import cat.copernic.bergants.Noticia
+import cat.copernic.bergants.R
 import cat.copernic.bergants.databinding.DisenyNoticiaBinding
+import cat.copernic.bergants.model.NoticiaModel
+import cat.copernic.bergants.noticia_canviDirections
 
 class NoticiaRecyclerAdapter : RecyclerView.Adapter<NoticiaRecyclerAdapter.ViewHolder>(){
-    var noticies: MutableList<Noticia> = ArrayList()
+    var noticies: MutableList<NoticiaModel> = ArrayList()
     lateinit var context: Context
 
     //constructor de la classe on es passa la font de dades i el context sobre el que es mostrarà
-    fun NoticiesRecyclerAdapter(noticiesList:MutableList<Noticia>, contxt: Context){
+    fun NoticiesRecyclerAdapter(noticiesList:MutableList<NoticiaModel>, contxt: Context){
         this.noticies = noticiesList
         this.context = contxt
     }
@@ -41,6 +45,8 @@ class NoticiaRecyclerAdapter : RecyclerView.Adapter<NoticiaRecyclerAdapter.ViewH
 
         //establim un listener
         holder.itemView.setOnClickListener{
+            val action = noticia_canviDirections.actionNoticiaFragmentToEditarNoticia(item)
+            holder.itemView.findNavController().navigate(action)
         }
     }
 
@@ -50,7 +56,7 @@ class NoticiaRecyclerAdapter : RecyclerView.Adapter<NoticiaRecyclerAdapter.ViewH
 
     class ViewHolder(val binding: DisenyNoticiaBinding): RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(noticia: Noticia) {
+        fun bind(noticia: NoticiaModel) {
 
         }
 

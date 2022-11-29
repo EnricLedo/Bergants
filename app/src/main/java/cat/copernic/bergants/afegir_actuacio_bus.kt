@@ -66,6 +66,7 @@ class afegir_actuacio_bus : Fragment() {
         // mitjançant la funció add(actuacio). Si l'actuació existeix, es sobreescriurà, sinó es crearà de nou.
         bd.collection("Actuacions").document(titolActuacio.text.toString()).set(
             hashMapOf(
+                "titolActuacio" to titolActuacio.text.toString(),
                 "dataActuacio" to dataActuacio.text.toString(), //Atribut dataActuacio amb el valor introduït per l'usuari
                 "llocActuacio" to llocActuacio.text.toString() //Atribut llocActuacio amb el valor introduït per l'usuari
             )
@@ -82,7 +83,9 @@ class afegir_actuacio_bus : Fragment() {
                     .show()
             }
         bd.collection("Actuacions").document(actuacio.titolActuacio).collection("Autocar")//Col.lecció
-            .document(actuacio.autocar.get(+1).ubicacioBus).set(hashMapOf("horariBus" to actuacio.autocar.get(+1).horariBus,
+            .document(actuacio.autocar.get(+1).ubicacioBus).
+            set(hashMapOf("ubicacioBus" to actuacio.autocar.get(+1).ubicacioBus,
+                "horariBus" to actuacio.autocar.get(+1).horariBus,
                 "placesBus" to actuacio.autocar.get(+1).placesBus)) //Subcol.lecció
             .addOnSuccessListener { //S'ha afegit l'actuacio...
                 Toast.makeText(requireActivity(),"L'actuació s'ha afegit correctament", Toast.LENGTH_LONG).show()

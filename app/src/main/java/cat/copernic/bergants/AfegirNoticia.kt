@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageView
 import android.widget.Toast
 import cat.copernic.bergants.databinding.FragmentAfegirNoticiaBinding
 import cat.copernic.bergants.model.NoticiaModel
@@ -54,16 +53,22 @@ class AfegirNoticia : Fragment() {
         //Seleccionem la col.lecció on volem afegir la notícia mitjançant la funció collection("Noticies"), si no existeix la col.lecció
         //es crearà, si no la sobreescriurà. Afegim la notícia a la col.lecció seleccionada amb un id que genera automàticament Firestore
         // mitjançant la funció add(noticia). Si la notícia existeix, es sobreescriurà, sinó es crearà de nou.
-        bd.collection("Noticies").add(noticia)
-            .addOnSuccessListener { //S'ha afegir la noticia...
+        bd.collection("Noticies").document(titolNoticia.text.toString()).set(
+            hashMapOf(
+                "titolNoticia" to titolNoticia.text.toString(), //Atribut titolNoticia amb el valor introduït per l'usuari
+                "contingutNoticia" to contingutNoticia.text.toString(), //Atribut contingutNoticia amb el valor introduït per l'usuari
+                "dataNoticia" to dataNoticia.text.toString() //Atribut dataNoticia amb el valor introduït per l'usuari
+            )
+        )
+            .addOnSuccessListener { //S'ha afegir l'assaig...
                 Toast.makeText(
                     requireActivity(),
-                    "La notícia s'ha afegit correctament",
+                    "L'assaig s'ha afegit correctament",
                     Toast.LENGTH_LONG
                 ).show()
             }
             .addOnFailureListener {
-                Toast.makeText(requireActivity(), "La notícia no s'ha afegit", Toast.LENGTH_LONG)
+                Toast.makeText(requireActivity(), "L'assaig no s'ha afegit", Toast.LENGTH_LONG)
                     .show()
             }
     }
