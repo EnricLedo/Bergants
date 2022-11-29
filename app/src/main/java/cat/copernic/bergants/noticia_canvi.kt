@@ -21,6 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
+import java.util.stream.Collectors.toList
 
 
 class noticia_canvi : Fragment() {
@@ -57,6 +58,8 @@ class noticia_canvi : Fragment() {
         }
     }
 
+
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         binding = FragmentNoticiaCanviBinding.inflate(inflater, container, false)
@@ -64,6 +67,7 @@ class noticia_canvi : Fragment() {
         setupRecyclerView()
         return binding.root
     }
+
 
     private fun getNoticies():MutableList<NoticiaModel>{
         val noticies: MutableList<NoticiaModel> = arrayListOf()
