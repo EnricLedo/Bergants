@@ -2,10 +2,13 @@ package cat.copernic.bergants.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import cat.copernic.bergants.databinding.DisenyAssaigBinding
 import cat.copernic.bergants.Assaig
+import cat.copernic.bergants.R
 
 class AssaigRecyclerAdapter : RecyclerView.Adapter<AssaigRecyclerAdapter.ViewHolder>() {
     var assajos: MutableList<Assaig> = ArrayList()

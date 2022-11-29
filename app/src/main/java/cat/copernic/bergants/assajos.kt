@@ -48,10 +48,10 @@ class assajos : Fragment() {
 
     private fun getAssajos():MutableList<Assaig>{
         val assajos: MutableList<Assaig> = arrayListOf()
-        assajos.add(Assaig("ASSAIG ESPECIAL DE LA MERCÈ","DISSABTE 23 de Setembre del 2022","20:00h Local de la colla","SENSE RESPOSTA"))
-        assajos.add(Assaig("ASSAIG GENERAL","DIMECRES 28 de Setembre del 2022","20:00h Local de la colla","SENSE RESPOSTA"))
-        assajos.add(Assaig("ASSAIG GENERAL","DIVENDRES 30 de Setembre del 2022","20:00h Local de la colla","SENSE RESPOSTA"))
-        assajos.add(Assaig("ASSAIG GENERAL","DILLUNS 3 d'Octubre del 2022","20:00h Local de la colla","SENSE RESPOSTA"))
+        //assajos.add(Assaig("ASSAIG ESPECIAL DE LA MERCÈ","DISSABTE 23 de Setembre del 2022","20:00h Local de la colla","SENSE RESPOSTA"))
+        //assajos.add(Assaig("ASSAIG GENERAL","DIMECRES 28 de Setembre del 2022","20:00h Local de la colla","SENSE RESPOSTA"))
+        //assajos.add(Assaig("ASSAIG GENERAL","DIVENDRES 30 de Setembre del 2022","20:00h Local de la colla","SENSE RESPOSTA"))
+        //assajos.add(Assaig("ASSAIG GENERAL","DILLUNS 3 d'Octubre del 2022","20:00h Local de la colla","SENSE RESPOSTA"))
 
         return assajos
     }
