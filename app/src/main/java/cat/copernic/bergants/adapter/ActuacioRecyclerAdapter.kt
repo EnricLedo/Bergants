@@ -3,16 +3,19 @@ package cat.copernic.bergants.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import cat.copernic.bergants.actuacioDirections
+import cat.copernic.bergants.assajosDirections
 import cat.copernic.bergants.databinding.DisenyActuacioBinding
-import cat.copernic.bergants.ActuacioRv
+import cat.copernic.bergants.model.ActuacioModel
 
 class ActuacioRecyclerAdapter : RecyclerView.Adapter<ActuacioRecyclerAdapter.ViewHolder>() {
-    var actuacions: MutableList<ActuacioRv> = ArrayList()
+    var actuacions: MutableList<ActuacioModel> = ArrayList()
     lateinit var context: Context
 
     //constructor de la classe on es passa la font de dades i el context sobre el que es mostrarà
-    fun ActuacioRecyclerAdapter(actuacionsList:MutableList<ActuacioRv>, contxt: Context){
+    fun ActuacioRecyclerAdapter(actuacionsList:MutableList<ActuacioModel>, contxt: Context){
         this.actuacions = actuacionsList
         this.context = contxt
     }
@@ -33,9 +36,7 @@ class ActuacioRecyclerAdapter : RecyclerView.Adapter<ActuacioRecyclerAdapter.Vie
             with(actuacions.get(position)){
                 binding.titleActuacio.text = this.titolActuacio
                 binding.dataActuacio.text = this.dataActuacio
-                binding.busActuacio.text = this.busActuacio
                 binding.llocActuacio.text = this.llocActuacio
-                binding.assistenciaActuacio.text = this.assistencia
             }
         }
         val item = actuacions.get(position)
@@ -43,6 +44,8 @@ class ActuacioRecyclerAdapter : RecyclerView.Adapter<ActuacioRecyclerAdapter.Vie
 
         //establim un listener
         holder.itemView.setOnClickListener{
+            val action = actuacioDirections.actionActuacionsFragmentToInformacioActuacio(item)
+            holder.itemView.findNavController().navigate(action)
         }
     }
 
@@ -52,7 +55,7 @@ class ActuacioRecyclerAdapter : RecyclerView.Adapter<ActuacioRecyclerAdapter.Vie
 
     class ViewHolder(val binding: DisenyActuacioBinding): RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(actuacio: ActuacioRv) {
+        fun bind(actuacio: ActuacioModel) {
 
         }
 

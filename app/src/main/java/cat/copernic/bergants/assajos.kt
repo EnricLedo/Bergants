@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import cat.copernic.bergants.adapter.AssaigRecyclerAdapter
 import cat.copernic.bergants.databinding.FragmentAssajosBinding
+import cat.copernic.bergants.model.AssaigModel
 
 class assajos : Fragment() {
 
@@ -46,12 +47,12 @@ class assajos : Fragment() {
         return binding.root
     }
 
-    private fun getAssajos():MutableList<Assaig>{
-        val assajos: MutableList<Assaig> = arrayListOf()
-        //assajos.add(Assaig("ASSAIG ESPECIAL DE LA MERCÈ","DISSABTE 23 de Setembre del 2022","20:00h Local de la colla","SENSE RESPOSTA"))
-        //assajos.add(Assaig("ASSAIG GENERAL","DIMECRES 28 de Setembre del 2022","20:00h Local de la colla","SENSE RESPOSTA"))
-        //assajos.add(Assaig("ASSAIG GENERAL","DIVENDRES 30 de Setembre del 2022","20:00h Local de la colla","SENSE RESPOSTA"))
-        //assajos.add(Assaig("ASSAIG GENERAL","DILLUNS 3 d'Octubre del 2022","20:00h Local de la colla","SENSE RESPOSTA"))
+    private fun getAssajos():MutableList<AssaigModel>{
+        val assajos: MutableList<AssaigModel> = arrayListOf()
+        assajos.add(AssaigModel("ASSAIG ESPECIAL DE LA MERCÈ","DISSABTE 23 de Setembre del 2022 20:00h","Local de la colla"))
+        assajos.add(AssaigModel("ASSAIG GENERAL","DIMECRES 28 de Setembre del 2022 20:00h","Local de la colla"))
+        assajos.add(AssaigModel("ASSAIG GENERAL","DIVENDRES 30 de Setembre del 2022 20:00h","Local de la colla"))
+        assajos.add(AssaigModel("ASSAIG GENERAL","DILLUNS 3 d'Octubre del 2022 20:00h","Local de la colla"))
 
         return assajos
     }

@@ -6,14 +6,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
+import androidx.core.view.plusAssign
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import cat.copernic.bergants.databinding.FragmentNoticiaCanviBinding
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import cat.copernic.bergants.adapter.NoticiaRecyclerAdapter
 import cat.copernic.bergants.model.NoticiaModel
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
 
 
 class noticia_canvi : Fragment() {
@@ -21,7 +28,10 @@ class noticia_canvi : Fragment() {
     private lateinit var binding: FragmentNoticiaCanviBinding
 
     private val myAdapter: NoticiaRecyclerAdapter = NoticiaRecyclerAdapter()
-    private var bd = FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
+
+    //Declarem i incialitzem un atribut de tipus FirebaseFirestore, classe on trobarem els mètodes per treballar amb la base de dades Firestore
+    private var bd =
+        FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
 
     private fun setupRecyclerView() {
         binding.recyclerNoticies.setHasFixedSize(true)
@@ -41,7 +51,7 @@ class noticia_canvi : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val btnAddNot = requireView().findViewById<Button>(R.id.botoAfegirNoticia)
-
+        mostrarNoticies()
         btnAddNot.setOnClickListener{
             findNavController().navigate(R.id.action_noticia_fragment_to_afegirNoticia)
         }
@@ -57,20 +67,11 @@ class noticia_canvi : Fragment() {
 
     private fun getNoticies():MutableList<NoticiaModel>{
         val noticies: MutableList<NoticiaModel> = arrayListOf()
-        rellenarCircularsProvider()
-        //noticies.add(NoticiaModel("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
-        //noticies.add(NoticiaModel("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
-        //noticies.add(NoticiaModel("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
-        //noticies.add(NoticiaModel("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
-        //noticies.add(NoticiaModel("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
-        //noticies.add(NoticiaModel("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
-        //noticies.add(NoticiaModel("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
 
         return noticies
-
     }
 
-    private fun rellenarCircularsProvider() {
+    private fun mostrarNoticies() {
 
         lifecycleScope.launch {
             bd.collection("Noticies").get().addOnSuccessListener { documents ->
@@ -78,19 +79,18 @@ class noticia_canvi : Fragment() {
                     val wallItem = NoticiaModel(
                         title = document["titolNoticia"].toString(),
                         content = document["contingutNoticia"].toString(),
-                        date = document["dataNoticia"].toString()
+                        date = document["dateNoticia"].toString()
                     )
-                    if (myAdapter.noticies.isEmpty()) {
-                        myAdapter.noticies.add(wallItem)
+                    if (getNoticies().isEmpty()) {
+                        getNoticies().add(wallItem)
                     } else {
-                        for (i in myAdapter.noticies) {
-                            if (wallItem.title != i.title) {
-                                myAdapter.noticies.add(wallItem)
+                        for (i in getNoticies()) {
+                            if (wallItem.titolNoticia != i.titolNoticia) {
+                                getNoticies().add(wallItem)
                             }
                         }
                     }
                 }
-                binding.recyclerNoticies.layoutManager = LinearLayoutManager(context)
             }
         }
     }

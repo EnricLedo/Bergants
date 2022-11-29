@@ -8,7 +8,7 @@
     tools:context=".editar_noticia">
 
     <EditText
-        android:id="@+id/editartitol"
+        android:id="@+id/editarTitol"
         android:layout_width="@dimen/fullwidth"
         android:layout_height="@dimen/smallinputheight"
         android:layout_marginStart="@dimen/marginpag"
@@ -23,27 +23,27 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
-        android:id="@+id/editarnoticia"
+        android:id="@+id/editarNoticia"
         android:layout_width="@dimen/fullwidth"
         android:layout_height="wrap_content"
         android:text="@string/inputnoticiaedit"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editartitol"/>
+        app:layout_constraintTop_toBottomOf="@+id/editarTitol"/>
 
     <EditText
-        android:id="@+id/editardata"
+        android:id="@+id/editarData"
         android:layout_width="@dimen/fullwidth"
         android:layout_height="wrap_content"
         android:text="27-10-22 9:27"
         android:inputType="datetime"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editarnoticia"/>
+        app:layout_constraintTop_toBottomOf="@id/editarNoticia"/>
 
     <Button
-        android:id="@+id/botoafegir"
+        android:id="@+id/botoEditarNoticia"
         android:layout_width="@dimen/btncircle"
         android:layout_height="@dimen/btncircle"
         android:layout_marginEnd="@dimen/marginpag"

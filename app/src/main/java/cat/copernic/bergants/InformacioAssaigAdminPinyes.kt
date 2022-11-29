@@ -9,16 +9,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import cat.copernic.bergants.databinding.FragmentInformacioAssaigAdminPinyesBinding
+import cat.copernic.bergants.databinding.FragmentInformacioAssaigBinding
+import cat.copernic.bergants.model.AssaigModel
 import com.google.firebase.storage.FirebaseStorage
 
 class InformacioAssaigAdminPinyes : Fragment() {
 
     //Atribut de tipus Button per afegir una imatge
     private lateinit var AfegirUnaPinya: Button
+    private lateinit var titolAssaig: TextView
+    private lateinit var dataAssaig: TextView
+    private lateinit var llocAssaig: TextView
+    private lateinit var assaig: AssaigModel
+
+    private val args by navArgs<InformacioAssaigAdminPinyesArgs>()
 
     private lateinit var binding: FragmentInformacioAssaigAdminPinyesBinding
 
@@ -42,7 +52,7 @@ class InformacioAssaigAdminPinyes : Fragment() {
     //Si s'instància amb reference, la referència apuntarà a l'arrel i si utilitzem el mètode child, podem situarnos en un directori del núvol
     //diferent a l'arrel i que serà el que passem per paràmetre de child.
     private var storageRef = storage.reference.child("image/imatges") //Inicialitzem mitjançant la crida a l'atribut reference de la classe FirebaseStorage
-
+    /*
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -57,6 +67,8 @@ class InformacioAssaigAdminPinyes : Fragment() {
 
         }
     }
+
+     */
 
 
 
@@ -73,5 +85,25 @@ class InformacioAssaigAdminPinyes : Fragment() {
                     Toast.makeText(requireActivity(),"La imatge s'ha pujat amb èxit", Toast.LENGTH_LONG).show()
                 }
         }
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentInformacioAssaigAdminPinyesBinding.inflate(inflater, container, false)
+
+        AfegirUnaPinya = binding.AfegirUnaPinya
+
+        //Listeners al boto afegir imatge
+        AfegirUnaPinya.setOnClickListener {
+            //Afegim la imatge mitjançant el mètode afegirImatge creat per nosaltres
+            afegirImatge()
+        }
+
+        binding.TitolAssaig.setText(args.currentAssaig.titolAssaig)
+        binding.ubicacioAssaig.setText(args.currentAssaig.llocAssaig)
+        binding.DataAssaig.setText(args.currentAssaig.dataAssaig)
+        return binding.root
     }
 }
