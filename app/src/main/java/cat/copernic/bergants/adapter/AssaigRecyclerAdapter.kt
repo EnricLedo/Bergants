@@ -3,16 +3,19 @@ package cat.copernic.bergants.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import cat.copernic.bergants.assajosDirections
 import cat.copernic.bergants.databinding.DisenyAssaigBinding
-import cat.copernic.bergants.Assaig
+import cat.copernic.bergants.model.AssaigModel
+import cat.copernic.bergants.noticia_canviDirections
 
 class AssaigRecyclerAdapter : RecyclerView.Adapter<AssaigRecyclerAdapter.ViewHolder>() {
-    var assajos: MutableList<Assaig> = ArrayList()
+    var assajos: MutableList<AssaigModel> = ArrayList()
     lateinit var context: Context
 
     //constructor de la classe on es passa la font de dades i el context sobre el que es mostrarà
-    fun AssaigRecyclerAdapter(assajosList: MutableList<Assaig>, contxt: Context) {
+    fun AssaigRecyclerAdapter(assajosList: MutableList<AssaigModel>, contxt: Context) {
         this.assajos = assajosList
         this.context = contxt
     }
@@ -34,7 +37,6 @@ class AssaigRecyclerAdapter : RecyclerView.Adapter<AssaigRecyclerAdapter.ViewHol
                 binding.titleAssaig.text = this.titolAssaig
                 binding.dataAssaig.text = this.titolAssaig
                 binding.llocAssaig.text = this.llocAssaig
-                binding.assistenciaAssaig.text = this.assistenciaAssaig
             }
         }
         val item = assajos.get(position)
@@ -42,6 +44,8 @@ class AssaigRecyclerAdapter : RecyclerView.Adapter<AssaigRecyclerAdapter.ViewHol
 
         //establim un listener
         holder.itemView.setOnClickListener{
+            val action = assajosDirections.actionAssajosFragmentToInformacioAssaigAdminPinyes(item)
+            holder.itemView.findNavController().navigate(action)
         }
     }
 
@@ -51,7 +55,7 @@ class AssaigRecyclerAdapter : RecyclerView.Adapter<AssaigRecyclerAdapter.ViewHol
 
     class ViewHolder(val binding: DisenyAssaigBinding): RecyclerView.ViewHolder(binding.root){
 
-        fun bind(assaig: Assaig){
+        fun bind(assaig: AssaigModel){
 
         }
     }

@@ -1,6 +1,6 @@
 package cat.copernic.bergants.model
 
-data class NoticiaModel (val title: String, val content: String, val date: String):java.io.Serializable {
+data class NoticiaModel (var title: String, var content: String, var date: String):java.io.Serializable {
     var titolNoticia: String? = null
     var contingutNoticia: String?=null
     var dataNoticia: String? = null

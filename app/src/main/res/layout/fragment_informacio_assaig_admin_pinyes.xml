@@ -19,16 +19,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.1" />
 
-    <TextView
-        android:id="@+id/dataAssaig"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/AlcadaTextViewDataAssaig30dp"
-        android:text="@string/dataAssaig"
-        android:textSize="@dimen/LletraNormal16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TitolAssaig" />
-
     <ImageView
         android:contentDescription="@string/botodesivinc"
         android:id="@+id/botoSiVinc"
@@ -80,14 +70,14 @@
         android:layout_marginTop="@dimen/MargeTopIconaRellotge250dp"
         android:layout_marginEnd="@dimen/MargeDretaRellotge15dp"
         android:src="@drawable/rellotge24"
-        app:layout_constraintEnd_toStartOf="@id/horaAssaig"
+        app:layout_constraintEnd_toStartOf="@id/DataAssaig"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:contentDescription="@string/iconarellotge" />
 
     <TextView
-        android:id="@+id/horaAssaig"
+        android:id="@+id/DataAssaig"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/horaAssaig"

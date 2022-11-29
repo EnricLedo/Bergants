@@ -5,8 +5,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import cat.copernic.bergants.Noticia
-import cat.copernic.bergants.R
 import cat.copernic.bergants.databinding.DisenyNoticiaBinding
 import cat.copernic.bergants.model.NoticiaModel
 import cat.copernic.bergants.noticia_canviDirections

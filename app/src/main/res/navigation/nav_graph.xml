@@ -36,8 +36,8 @@
             android:id="@+id/action_assajos_fragment_to_afegir_assaig_fragment"
             app:destination="@id/afegir_assaig_fragment" />
         <action
-            android:id="@+id/action_assajos_fragment_to_informacioAssaig"
-            app:destination="@id/informacio_assaig_fragment" />
+            android:id="@+id/action_assajos_fragment_to_informacio_assaig_admin_pinyes"
+            app:destination="@id/informacio_assaig_admin_pinyes" />
     </fragment>
     <fragment
         android:id="@+id/actuacions_fragment"
@@ -105,6 +105,9 @@
         android:name="cat.copernic.bergants.InformacioActuacio"
         android:label="fragment_informacio_actuacio"
         tools:layout="@layout/fragment_informacio_actuacio" >
+        <argument
+            android:name="CurrentActuacio"
+            app:argType="cat.copernic.bergants.model.ActuacioModel" />
         <action
             android:id="@+id/action_informacioActuacio_to_afegirCotxe"
             app:destination="@id/afegir_cotxe_fragment" />
@@ -115,11 +118,6 @@
             android:id="@+id/action_informacioActuacio_to_unirseCotxe2"
             app:destination="@id/unirse_cotxe_fragment" />
     </fragment>
-    <fragment
-        android:id="@+id/informacio_assaig_fragment"
-        android:name="cat.copernic.bergants.InformacioAssaig"
-        android:label="fragment_informacio_assaig"
-        tools:layout="@layout/fragment_informacio_assaig" />
     <fragment
         android:id="@+id/afegir_membre_fragment"
         android:name="cat.copernic.bergants.afegirMembre"
@@ -186,6 +184,17 @@
         <action
             android:id="@+id/action_afegir_actuacio_bus_fragment_to_afegir_actuacio_fragment"
             app:destination="@id/afegir_actuacio_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/informacio_assaig_admin_pinyes"
+        android:name="cat.copernic.bergants.InformacioAssaigAdminPinyes"
+        android:label="fragment_informacio_assaig_admin_pinyes">
+        <argument
+            android:name="CurrentAssaig"
+            app:argType="cat.copernic.bergants.model.AssaigModel" />
+        <action
+            android:id="@+id/action_informacio_assaig_admin_pinyes_to_assajos_fragment"
+            app:destination="@id/assajos_fragment" />
     </fragment>
 
 </navigation>

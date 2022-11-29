@@ -60,7 +60,7 @@ class AfegirNoticia : Fragment() {
                 "dataNoticia" to dataNoticia.text.toString() //Atribut dataNoticia amb el valor introduït per l'usuari
             )
         )
-            .addOnSuccessListener { //S'ha afegir l'assaig...
+            .addOnSuccessListener { //S'ha afegir la noticia...
                 Toast.makeText(
                     requireActivity(),
                     "L'assaig s'ha afegit correctament",
@@ -76,9 +76,6 @@ class AfegirNoticia : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        titolNoticia = binding.titolNoticia
-        contingutNoticia = binding.contingutNoticia
-        dataNoticia = binding.dataNoticia
         botoAfegir = binding.botoGuardarNoticia
 
         botoAfegir.setOnClickListener {

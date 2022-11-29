@@ -5,55 +5,38 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.navigation.fragment.navArgs
+import cat.copernic.bergants.databinding.FragmentAfegirNoticiaBinding
+import cat.copernic.bergants.databinding.FragmentInformacioAssaigBinding
+import cat.copernic.bergants.model.AssaigModel
+import com.google.firebase.firestore.FirebaseFirestore
+import org.w3c.dom.Text
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [InformacioAssaig.newInstance] factory method to
- * create an instance of this fragment.
- */
 class InformacioAssaig : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var binding: FragmentInformacioAssaigBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var titolAssaig: TextView
+    private lateinit var dataAssaig: TextView
+    private lateinit var llocAssaig: TextView
+    private lateinit var assaig: AssaigModel
+
+    //Declarem i incialitzem un atribut de tipus FirebaseFirestore, classe on trobarem els mètodes per treballar amb la base de dades Firestore
+    private var bd = FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
+
+    //private val args by navArgs<InformacioAssaigArgs>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_informacio_assaig, container, false)
-    }
+        binding = FragmentInformacioAssaigBinding.inflate(inflater, container, false)
+/*
+        binding.TitolAssaig.setText(args.currentAssaig.titolAssaig)
+        binding.ubicacioAssaig.setText(args.currentAssaig.llocAssaig)
+        binding.dataAssaig.setText(args.currentAssaig.dataAssaig)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment InformacioAssaig.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            InformacioAssaig().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+ */
+        return binding.root
     }
 }
