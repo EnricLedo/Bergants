@@ -71,7 +71,7 @@ class assajos : Fragment() {
     private fun mostrarAssajos() {
 
         lifecycleScope.launch {
-            bd.collection("Noticies").get().addOnSuccessListener { documents ->
+            bd.collection("Assajos").get().addOnSuccessListener { documents ->
                 for (document in documents) {
                     val wallItem = AssaigModel(
                         title = document["titolAssaig"].toString(),

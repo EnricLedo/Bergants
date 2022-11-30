@@ -72,7 +72,7 @@ class actuacio : Fragment() {
     private fun mostrarActuacions() {
 
         lifecycleScope.launch {
-            bd.collection("Noticies").get().addOnSuccessListener { documents ->
+            bd.collection("Actuacions").get().addOnSuccessListener { documents ->
                 for (document in documents) {
                     val wallItem = ActuacioModel(
                         title = document["titolActuacio"].toString(),
