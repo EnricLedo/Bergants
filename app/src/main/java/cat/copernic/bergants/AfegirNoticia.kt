@@ -51,7 +51,7 @@ class AfegirNoticia : Fragment() {
 
     fun afegirNoticia(noticia: NoticiaModel) {
         //Seleccionem la col.lecció on volem afegir la notícia mitjançant la funció collection("Noticies"), si no existeix la col.lecció
-        //es crearà, si no la sobreescriurà. Afegim la notícia a la col.lecció seleccionada amb un id que genera automàticament Firestore
+        //es crearà, si no la sobreescriurà. Afegim la notícia a la col.lecció seleccionada amb un id que generà automàticament Firestore
         // mitjançant la funció add(noticia). Si la notícia existeix, es sobreescriurà, sinó es crearà de nou.
         bd.collection("Noticies").document(titolNoticia.text.toString()).set(
             hashMapOf(
