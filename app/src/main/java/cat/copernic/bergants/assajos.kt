@@ -25,21 +25,22 @@ class assajos : Fragment() {
     private var bd =
         FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
 
-    private fun setupRecyclerView(){
+    private fun setupRecyclerView() {
         if (getAssajos().isEmpty()) {
             mostrarAssajos()
-        }else {
-        binding.recyclerAssajos.setHasFixedSize(true)
+        } else {
+            binding.recyclerAssajos.setHasFixedSize(true)
 
-        //indiquem que el RV es mostrarà en format llista
-        binding.recyclerAssajos.layoutManager = LinearLayoutManager(context)
+            //indiquem que el RV es mostrarà en format llista
+            binding.recyclerAssajos.layoutManager = LinearLayoutManager(context)
 
-        //generem el adapter
-        myAdapter.AssaigRecyclerAdapter(getAssajos(),requireActivity())
-        //assignem el adapter al RV
-        binding.recyclerAssajos.adapter = myAdapter
+            //generem el adapter
+            myAdapter.AssaigRecyclerAdapter(getAssajos(), requireActivity())
+            //assignem el adapter al RV
+            binding.recyclerAssajos.adapter = myAdapter
         }
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -50,20 +51,46 @@ class assajos : Fragment() {
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         binding = FragmentAssajosBinding.inflate(inflater, container, false)
 
         setupRecyclerView()
         return binding.root
     }
 
-    private fun getAssajos():MutableList<AssaigModel>{
+    private fun getAssajos(): MutableList<AssaigModel> {
         val assajos: MutableList<AssaigModel> = arrayListOf()
-        assajos.add(AssaigModel("ASSAIG ESPECIAL DE LA MERCÈ","DISSABTE 23 de Setembre del 2022 20:00h","Local de la colla"))
-        assajos.add(AssaigModel("ASSAIG GENERAL","DIMECRES 28 de Setembre del 2022 20:00h","Local de la colla"))
-        assajos.add(AssaigModel("ASSAIG GENERAL","DIVENDRES 30 de Setembre del 2022 20:00h","Local de la colla"))
-        assajos.add(AssaigModel("ASSAIG GENERAL","DILLUNS 3 d'Octubre del 2022 20:00h","Local de la colla"))
+        assajos.add(
+            AssaigModel(
+                "ASSAIG ESPECIAL DE LA MERCÈ",
+                "DISSABTE 23 de Setembre del 2022 20:00h",
+                "Local de la colla"
+            )
+        )
+        assajos.add(
+            AssaigModel(
+                "ASSAIG GENERAL",
+                "DIMECRES 28 de Setembre del 2022 20:00h",
+                "Local de la colla"
+            )
+        )
+        assajos.add(
+            AssaigModel(
+                "ASSAIG GENERAL",
+                "DIVENDRES 30 de Setembre del 2022 20:00h",
+                "Local de la colla"
+            )
+        )
+        assajos.add(
+            AssaigModel(
+                "ASSAIG GENERAL",
+                "DILLUNS 3 d'Octubre del 2022 20:00h",
+                "Local de la colla"
+            )
+        )
 
         return assajos
     }
@@ -92,7 +119,7 @@ class assajos : Fragment() {
                 binding.recyclerAssajos.layoutManager = LinearLayoutManager(context)
 
                 //generem el adapter
-                myAdapter.AssaigRecyclerAdapter(getAssajos(),requireActivity())
+                myAdapter.AssaigRecyclerAdapter(getAssajos(), requireActivity())
                 //assignem el adapter al RV
                 binding.recyclerAssajos.adapter = myAdapter
             }

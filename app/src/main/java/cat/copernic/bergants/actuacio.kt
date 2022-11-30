@@ -26,19 +26,19 @@ class actuacio : Fragment() {
     private var bd =
         FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
 
-    private fun setupRecyclerView(){
+    private fun setupRecyclerView() {
         if (getActuacions().isEmpty()) {
             mostrarActuacions()
-        }else {
-        binding.recyclerActuacions.setHasFixedSize(true)
+        } else {
+            binding.recyclerActuacions.setHasFixedSize(true)
 
-        //indiquem que el RV es mostrarà en format llista
-        binding.recyclerActuacions.layoutManager = LinearLayoutManager(context)
+            //indiquem que el RV es mostrarà en format llista
+            binding.recyclerActuacions.layoutManager = LinearLayoutManager(context)
 
-        //generem el adapter
-        myAdapter.ActuacioRecyclerAdapter(getActuacions(),requireActivity())
-        //assignem el adapter al RV
-        binding.recyclerActuacions.adapter = myAdapter
+            //generem el adapter
+            myAdapter.ActuacioRecyclerAdapter(getActuacions(), requireActivity())
+            //assignem el adapter al RV
+            binding.recyclerActuacions.adapter = myAdapter
         }
     }
 
@@ -47,20 +47,22 @@ class actuacio : Fragment() {
 
         val btnAddAct = requireView().findViewById<Button>(R.id.botoAfegirActuacio)
 
-        btnAddAct.setOnClickListener{
+        btnAddAct.setOnClickListener {
             findNavController().navigate(R.id.action_actuacions_fragment_to_afegir_actuacio_fragment)
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         binding = FragmentActuacioBinding.inflate(inflater, container, false)
 
         setupRecyclerView()
         return binding.root
     }
 
-    private fun getActuacions():MutableList<ActuacioModel>{
+    private fun getActuacions(): MutableList<ActuacioModel> {
         val actuacions: MutableList<ActuacioModel> = arrayListOf()
         //actuacions.add(ActuacioModel("FM DE FOSTON","DISSABTE 24 de Setembre de 2022 18:00h","Plaça de l'Ajuntament - Calella"))
         //actuacions.add(ActuacioModel("LA MERCÈ","DISSABTE 25 de Setembre 18:00h","Pl. Sant Jaume"))
@@ -93,7 +95,7 @@ class actuacio : Fragment() {
                 binding.recyclerActuacions.layoutManager = LinearLayoutManager(context)
 
                 //generem el adapter
-                myAdapter.ActuacioRecyclerAdapter(getActuacions(),requireActivity())
+                myAdapter.ActuacioRecyclerAdapter(getActuacions(), requireActivity())
                 //assignem el adapter al RV
                 binding.recyclerActuacions.adapter = myAdapter
             }
