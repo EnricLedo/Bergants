@@ -6,18 +6,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import cat.copernic.bergants.adapter.MembreRecyclerAdapter
 import cat.copernic.bergants.databinding.FragmentMembresBinding
 import cat.copernic.bergants.databinding.FragmentNoticiaCanviBinding
+import cat.copernic.bergants.model.AssaigModel
+import cat.copernic.bergants.model.MembreModel
+import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.launch
 
 class membres : Fragment() {
     private lateinit var binding: FragmentMembresBinding
 
     private val myAdapter: MembreRecyclerAdapter = MembreRecyclerAdapter()
+    private var bd =
+        FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
 
     private fun setupRecyclerView() {
+        /*if (getMembres().isEmpty()) {
+            mostrarMembres()
+        }else {*/
         binding.recyclerMembres.setHasFixedSize(true)
 
 
@@ -28,6 +38,7 @@ class membres : Fragment() {
         myAdapter.MembreRecyclerAdapter(getMembres(),requireActivity())
         //assignem el adapter al RV
         binding.recyclerMembres.adapter = myAdapter
+        //}
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -62,5 +73,41 @@ class membres : Fragment() {
         return membres
 
     }
+
+    /*private fun mostrarMembres() {
+
+        lifecycleScope.launch {
+            bd.collection("Noticies").get().addOnSuccessListener { documents ->
+                for (document in documents) {
+                    val wallItem = MembreModel(
+                        nomMembre = document["nomMembre"].toString(),
+                        malnom = document["malnom"].toString(),
+                        alcadaEspatlles = document["alcadaEspatlles"].toString(),
+                        alcadaMans = document["alcadaMans"].toString(),
+                        correuMembre = document["correuMembre"].toString(),
+                        adrecaMembre = document["adrecaMembre"].toString(),
+                        telefonMembre = document["telefonMembre"].toString(),
+                        rolMembre = document["rolMembre"].toString()
+                    )
+                    if (getMembres().isEmpty()) {
+                        getMembres().add(wallItem)
+                    } else {
+                        for (i in getMembres()) {
+                            if (wallItem.nomMembre != i.nomMembre) {
+                                getMembres().add(wallItem)
+                            }
+                        }
+                    }
+                }
+                //indiquem que el RV es mostrarà en format llista
+                binding.recyclerMembres.layoutManager = LinearLayoutManager(context)
+
+                //generem el adapter
+                myAdapter.MembreRecyclerAdapter(getMembres(),requireActivity())
+                //assignem el adapter al RV
+                binding.recyclerMembres.adapter = myAdapter
+            }
+        }
+    }*/
 
 }

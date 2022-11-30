@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Switch
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import cat.copernic.bergants.databinding.FragmentActuacioBinding
@@ -14,6 +15,7 @@ import cat.copernic.bergants.databinding.FragmentAfegirActuacioBinding
 import cat.copernic.bergants.databinding.FragmentAfegirAssaigBinding
 import cat.copernic.bergants.model.ActuacioModel
 import cat.copernic.bergants.model.AssaigModel
+import cat.copernic.bergants.model.BusModel
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -24,6 +26,7 @@ class AfegirActuacio : Fragment() {
     private lateinit var titolActuacio: EditText
     private lateinit var dataActuacio: EditText
     private lateinit var llocActuacio: EditText
+
 
     //Atribut de tipus Button per afegir una nova actuacio
     private lateinit var botoAfegir: Button
@@ -56,7 +59,13 @@ class AfegirActuacio : Fragment() {
         //Seleccionem la col.lecció on volem afegir l'actuació mitjançant la funció collection("Actuacions"), si no existeix la col.lecció
         //es crearà, si no la sobreescriurà. Afegim l'actuació a la col.lecció seleccionada amb un id que genera automàticament Firestore
         // mitjançant la funció add(actuacio). Si l'actuació existeix, es sobreescriurà, sinó es crearà de nou.
-        bd.collection("Actuacions").add(actuacio)
+        bd.collection("Actuacions").document(titolActuacio.text.toString()).set(
+            hashMapOf(
+                "titolActuacio" to titolActuacio.text.toString(),
+                "dataActuacio" to dataActuacio.text.toString(), //Atribut dataActuacio amb el valor introduït per l'usuari
+                "llocActuacio" to llocActuacio.text.toString() //Atribut llocActuacio amb el valor introduït per l'usuari
+            )
+        )
             .addOnSuccessListener { //S'ha afegir l'actuació...
                 Toast.makeText(
                     requireActivity(),
@@ -77,6 +86,12 @@ class AfegirActuacio : Fragment() {
         dataActuacio = binding.dataActuacio
         llocActuacio = binding.llocActuacio
         botoAfegir = binding.botoGuardarActuacio
+
+        val btnAddBus = requireView().findViewById<Button>(R.id.autocarBoolean)
+
+        btnAddBus.setOnClickListener{
+            findNavController().navigate(R.id.action_afegir_actuacio_fragment_to_afegir_actuacio_bus_fragment)
+        }
 
         botoAfegir.setOnClickListener {
             llegirDades()

@@ -56,7 +56,13 @@ class AfegirAssaig : Fragment() {
         //Seleccionem la col.lecció on volem afegir l'assaig mitjançant la funció collection("Assajos"), si no existeix la col.lecció
         //es crearà, si no la sobreescriurà. Afegim l'assaig a la col.lecció seleccionada amb un id que genera automàticament Firestore
         // mitjançant la funció add(assaig). Si l'assaig existeix, es sobreescriurà, sinó es crearà de nou.
-        bd.collection("Assajos").add(assaig)
+        bd.collection("Assajos").document(titolAssaig.text.toString()).set(
+            hashMapOf(
+                "titolAssaig" to titolAssaig.text.toString(),
+                "dataAssaig" to dataAssaig.text.toString(), //Atribut dataAssaig amb el valor introduït per l'usuari
+                "llocAssaig" to llocAssaig.text.toString() //Atribut llocAssaig amb el valor introduït per l'usuari
+            )
+        )
             .addOnSuccessListener { //S'ha afegir l'assaig...
                 Toast.makeText(
                     requireActivity(),

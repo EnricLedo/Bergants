@@ -53,16 +53,22 @@ class AfegirNoticia : Fragment() {
         //Seleccionem la col.lecció on volem afegir la notícia mitjançant la funció collection("Noticies"), si no existeix la col.lecció
         //es crearà, si no la sobreescriurà. Afegim la notícia a la col.lecció seleccionada amb un id que genera automàticament Firestore
         // mitjançant la funció add(noticia). Si la notícia existeix, es sobreescriurà, sinó es crearà de nou.
-        bd.collection("Noticies").add(noticia)
+        bd.collection("Noticies").document(titolNoticia.text.toString()).set(
+            hashMapOf(
+                "titolNoticia" to titolNoticia.text.toString(), //Atribut titolNoticia amb el valor introduït per l'usuari
+                "contingutNoticia" to contingutNoticia.text.toString(), //Atribut contingutNoticia amb el valor introduït per l'usuari
+                "dataNoticia" to dataNoticia.text.toString() //Atribut dataNoticia amb el valor introduït per l'usuari
+            )
+        )
             .addOnSuccessListener { //S'ha afegir la noticia...
                 Toast.makeText(
                     requireActivity(),
-                    "La notícia s'ha afegit correctament",
+                    "L'assaig s'ha afegit correctament",
                     Toast.LENGTH_LONG
                 ).show()
             }
             .addOnFailureListener {
-                Toast.makeText(requireActivity(), "La notícia no s'ha afegit", Toast.LENGTH_LONG)
+                Toast.makeText(requireActivity(), "L'assaig no s'ha afegit", Toast.LENGTH_LONG)
                     .show()
             }
     }
@@ -70,9 +76,6 @@ class AfegirNoticia : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        titolNoticia = binding.titolNoticia
-        contingutNoticia = binding.contingutNoticia
-        dataNoticia = binding.dataNoticia
         botoAfegir = binding.botoGuardarNoticia
 
         botoAfegir.setOnClickListener {
