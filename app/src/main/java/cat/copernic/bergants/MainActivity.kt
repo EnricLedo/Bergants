@@ -17,18 +17,14 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import cat.copernic.bergants.adapter.NoticiaAdapter
+import cat.copernic.bergants.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
     //Atribut de tipus Button per tancar la sessió
     //private lateinit var botoLogout: Button
-
+    private lateinit var binding: ActivityMainBinding
     //Declarem un atribut de tipus FirebaseAuth
     private lateinit var auth: FirebaseAuth
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar
@@ -39,7 +35,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        //setupRecyclerView()
 
         toolbar = findViewById(R.id.myToolbar)
         setSupportActionBar(toolbar)

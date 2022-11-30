@@ -19,16 +19,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.1" />
 
-    <TextView
-        android:id="@+id/dataActuacio"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/AlcadaTextViewDataAssaig30dp"
-        android:text="@string/dataActuacio"
-        android:textSize="@dimen/LletraNormal16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TitolActuacio" />
-
     <ImageView
         android:id="@+id/iconaAutocar"
         android:layout_width="wrap_content"
@@ -44,7 +34,7 @@
         android:id="@+id/autocarText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/autocar"
+        android:text="Autocar"
         android:textSize="@dimen/LletraNormal16sp"
         app:layout_constraintEnd_toEndOf="@+id/iconaAutocar"
         app:layout_constraintStart_toStartOf="@+id/iconaAutocar"
@@ -123,14 +113,14 @@
         android:layout_marginTop="@dimen/MargeTopIconaRellotge250dp"
         android:layout_marginEnd="@dimen/MargeDretaRellotge15dp"
         android:src="@drawable/rellotge24"
-        app:layout_constraintEnd_toStartOf="@id/horaActuacio"
+        app:layout_constraintEnd_toStartOf="@id/DataActuacio"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:contentDescription="@string/imatgeactuacio" />
 
     <TextView
-        android:id="@+id/horaActuacio"
+        android:id="@+id/DataActuacio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/horaActuacio"

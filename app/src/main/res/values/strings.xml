@@ -12,7 +12,7 @@
     <string name="dataActuacio">DIJOUS 24 de Novembre del 2022</string>
     <string name="horaActuacio">16:00h</string>
     <string name="ubicacioActuacio">Universitat de Vic</string>
-    <string name="autocar">23 Places</string>
+    <string name="autocar">0 Places</string>
     <string name="cotxe">Cotxes</string>
     //Afegir Assaig
     <string name="temaAssaig">TEMA DE L\'ASSAIG</string>
@@ -149,4 +149,6 @@
     <string name="tancar_sessioo">TANCAR SESSIÓ</string>
     <string name="tancar_sessi">Tancar sessió</string>
     <string name="membres">MEMBRES</string>
+    <string name="BotoCanviarVisioPinyes">Pinyes</string>
+    <string name="Boto_afegir_pinya">Afegir Pinya</string>
 </resources>

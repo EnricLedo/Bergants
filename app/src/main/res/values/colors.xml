@@ -4,6 +4,7 @@
     <color name="verdClar">#FF7EC090</color>
     <color name="blanc">#FFFFFFFF</color>
     <color name="grisClaretGentApuntada">#FFE5E5E5</color>
+    <color name="vermellEliminar">#FF3721</color>
     <color name="grisFosc">#515151</color>
     <color name="negre">#FF000000</color>
     <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">@color/verdBergant</color>
