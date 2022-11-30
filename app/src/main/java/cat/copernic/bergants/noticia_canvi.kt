@@ -21,6 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
+import java.util.stream.Collectors.toList
 
 
 class noticia_canvi : Fragment() {
@@ -38,7 +39,7 @@ class noticia_canvi : Fragment() {
 
         if (getNoticies().isEmpty()) {
             mostrarNoticies()
-        }else {
+        } else {
             binding.recyclerNoticies.setHasFixedSize(true)
             //indiquem que el RV es mostrarà en format llista
             binding.recyclerNoticies.layoutManager = LinearLayoutManager(context)
@@ -57,24 +58,28 @@ class noticia_canvi : Fragment() {
         mostrarNoticies()
         setupRecyclerView()
 
-        btnAddNot.setOnClickListener{
+        btnAddNot.setOnClickListener {
             findNavController().navigate(R.id.action_noticia_fragment_to_afegirNoticia)
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         binding = FragmentNoticiaCanviBinding.inflate(inflater, container, false)
 
         return binding.root
     }
 
-    private fun getNoticies():MutableList<NoticiaModel>{
+
+    private fun getNoticies(): MutableList<NoticiaModel> {
         val noticies: MutableList<NoticiaModel> = arrayListOf()
         noticies.add(NoticiaModel("Noticia important", "Aquesta noticia es molt important!!!", "09/07/2021"))
         noticies.add(NoticiaModel("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
-        noticies.add(NoticiaModel("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
-        noticies.add(NoticiaModel("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
+        noticies.add(NoticiaModel("Anem d'excursió", "Recordeu que avui anirem al concert d'Adri Navarro. Porteu-vos: el merch de Cucurella i moltes ganes de passar-ho bé.", "12-10-22 19:37h"))
+        noticies.add(NoticiaModel("Felicitats", "Avui Glupy Disco fa 40 anys! Felicitats!!!", "04-11-22 9:27h"))
         noticies.add(NoticiaModel("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
         noticies.add(NoticiaModel("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
         noticies.add(NoticiaModel("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
@@ -107,7 +112,7 @@ class noticia_canvi : Fragment() {
                 binding.recyclerNoticies.layoutManager = LinearLayoutManager(context)
 
                 //generem el adapter
-                myAdapter.NoticiesRecyclerAdapter(getNoticies(),requireActivity())
+                myAdapter.NoticiesRecyclerAdapter(getNoticies(), requireActivity())
                 //assignem el adapter al RV
                 binding.recyclerNoticies.adapter = myAdapter
             }
