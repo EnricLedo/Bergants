@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import cat.copernic.bergants.databinding.DisenyAssaigBinding
-import cat.copernic.bergants.Assaig
 import cat.copernic.bergants.R
 import cat.copernic.bergants.model.AssaigModel
 
