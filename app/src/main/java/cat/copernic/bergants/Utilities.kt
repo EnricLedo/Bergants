@@ -1,6 +1,6 @@
-package cat.copernic.bergants;
+package cat.copernic.bergants
 
-public class utilities {
+class Utilities {
     fun campEsBuit(correu:String,contrasenya:String):Boolean{
         return correu.isNotEmpty()&&contrasenya.isNotEmpty()
     }
