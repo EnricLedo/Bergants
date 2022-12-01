@@ -67,12 +67,12 @@ class editar_noticia : Fragment() {
             .addOnSuccessListener { //S'ha afegir la noticia...
                 Toast.makeText(
                     requireActivity(),
-                    "L'assaig s'ha afegit correctament",
+                    "La notícia s'ha afegit correctament",
                     Toast.LENGTH_LONG
                 ).show()
             }
             .addOnFailureListener {
-                Toast.makeText(requireActivity(), "L'assaig no s'ha afegit", Toast.LENGTH_LONG)
+                Toast.makeText(requireActivity(), "La notícia no s'ha afegit", Toast.LENGTH_LONG)
                     .show()
             }
     }

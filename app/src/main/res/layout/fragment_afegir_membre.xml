@@ -7,32 +7,25 @@
     android:layout_height="match_parent"
     tools:context=".afegirMembre">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/fotoPerfil"
-        android:layout_width="@dimen/widthfoto"
-        android:layout_height="@dimen/heightfoto"
-        android:layout_marginStart="@dimen/marginlateralfoto"
-        android:layout_marginTop="@dimen/margintopfoto"
-        android:layout_marginEnd="@dimen/marginendfoto"
-        android:layout_marginBottom="@dimen/separacio"
-        android:gravity="center"
-        android:shape="ring"
-        android:thicknessRatio="1.9"
-        app:cardCornerRadius="@dimen/cornerradius"
-        app:layout_constraintBottom_toTopOf="@+id/nomMembre"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/fotoUsuari"
-            android:layout_width="match_parent"
+
+        <ImageButton
+            android:id="@+id/imgMembre"
+            android:layout_width="@dimen/widthfoto"
             android:layout_height="@dimen/heightfoto"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:contentDescription="@string/fotoMembre"
+            android:layout_marginStart="@dimen/marginlateralfoto"
+            android:layout_marginTop="@dimen/MargePapereraEsquerra20dp"
+            android:layout_marginEnd="@dimen/marginendfoto"
+            android:layout_marginBottom="@dimen/separacio"
+            android:gravity="center"
+            android:shape="ring"
+            android:thicknessRatio="1.9"
+            app:cardCornerRadius="@dimen/cornerradius"
+            app:layout_constraintBottom_toTopOf="@+id/nomMembre"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:src="@drawable/fotomembre" />
-    </androidx.cardview.widget.CardView>
 
     <EditText
         android:id="@+id/nomMembre"
@@ -46,7 +39,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fotoPerfil" />
+        app:layout_constraintTop_toBottomOf="@+id/imgMembre" />
 
     <TextView
         android:id="@+id/MALNOM"
@@ -266,11 +259,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rol" />
 
+    <TextView
+        android:id="@+id/dataAlta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginpag"
+        android:layout_marginTop="@dimen/separacio"
+        android:text="DATA D'ALTA"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/secondtitlesize"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/telefonMembre" />
+
+    <EditText
+        android:id="@+id/altaMembre"
+        android:layout_width="@dimen/smallinputwidth"
+        android:layout_height="@dimen/smallinputheight"
+        android:layout_marginStart="@dimen/marginpag"
+        android:layout_marginTop="@dimen/separacio"
+        android:hint="dd/mm/aaaa"
+        android:inputType="date"
+        app:boxBackgroundColor="@color/blanc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dataAlta" />
+
     <Button
         android:id="@+id/botoGuardarMembre"
         android:layout_width="@dimen/bigbtnwidth"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/separaciomig"
+        android:layout_marginTop="@dimen/RecuperarContrasenya40dp"
         android:layout_marginEnd="@dimen/marginpag"
         android:text="@string/botoafegir"
         android:backgroundTint="@color/verdBergant"
