@@ -11,8 +11,8 @@
 
         <ImageButton
             android:id="@+id/imgMembre"
-            android:layout_width="@dimen/widthfoto"
-            android:layout_height="@dimen/heightfoto"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:layout_marginStart="@dimen/marginlateralfoto"
             android:layout_marginTop="@dimen/MargePapereraEsquerra20dp"
             android:layout_marginEnd="@dimen/marginendfoto"
@@ -20,7 +20,7 @@
             android:gravity="center"
             android:shape="ring"
             android:thicknessRatio="1.9"
-            app:cardCornerRadius="@dimen/cornerradius"
+            app:cardCornerRadius="25dp"
             app:layout_constraintBottom_toTopOf="@+id/nomMembre"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -111,7 +111,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/separacio"
-        android:layout_marginEnd="@dimen/marginpagebtn"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="@dimen/separacio"
         android:text="@string/mans"
         android:textColor="@color/negre"
@@ -175,43 +175,104 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email" />
 
+    <Button
+        android:id="@+id/botoGuardarMembre"
+        android:layout_width="@dimen/bigbtnwidth"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="28dp"
+        android:backgroundTint="@color/verdBergant"
+        android:text="@string/botoafegir"
+        android:textColor="@color/blanc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rolMembre"
+        tools:ignore="TextContrastCheck" />
+
     <TextView
         android:id="@+id/adreca"
-        android:layout_width="@dimen/fullwidth"
+        android:layout_width="@dimen/smallinputwidth"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/marginpag"
-        android:layout_marginTop="@dimen/separacio"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="@dimen/marginpag"
         android:text="@string/adreca"
         android:textColor="@color/negre"
         android:textSize="@dimen/secondtitlesize"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/correuMembre" />
 
     <EditText
         android:id="@+id/adrecaMembre"
-        android:layout_width="@dimen/fullwidth"
+        android:layout_width="@dimen/smallinputwidth"
         android:layout_height="@dimen/smallinputheight"
         android:layout_marginStart="@dimen/marginpag"
         android:layout_marginTop="@dimen/separacio"
         android:layout_marginEnd="@dimen/marginpag"
         android:layout_marginBottom="@dimen/separacio"
-        app:boxBackgroundColor="@color/blanc"
         android:hint="@string/inputadreca"
         android:inputType="textPostalAddress"
+        app:boxBackgroundColor="@color/blanc"
         app:layout_constraintBottom_toTopOf="@+id/telefon"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/adreca" />
+
+    <TextView
+        android:id="@+id/passwordOk"
+        android:layout_width="@dimen/smallinputwidth"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginpag"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="@dimen/marginpag"
+        android:text="Contrasenya"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/secondtitlesize"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/correuMembre" />
+
+    <EditText
+        android:id="@+id/passwordOkMembre"
+        android:layout_width="@dimen/smallinputwidth"
+        android:layout_height="@dimen/smallinputheight"
+        android:layout_marginStart="@dimen/MargeEsquerra"
+        android:layout_marginTop="@dimen/separacio"
+        android:layout_marginEnd="@dimen/MargeEsquerra"
+        android:layout_marginBottom="@dimen/separacio"
+        android:hint="Afegir contrasenya"
+        app:boxBackgroundColor="@color/blanc"
+        app:layout_constraintBottom_toTopOf="@+id/telefon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.984"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adreca"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/telefonMembre"
+        android:layout_width="@dimen/smallinputwidth"
+        android:layout_height="@dimen/smallinputheight"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/inputTelefon"
+        android:inputType="phone"
+        android:maxLength="9"
+        app:boxBackgroundColor="@color/blanc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/telefon" />
 
     <TextView
         android:id="@+id/telefon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/marginpag"
-        android:layout_marginTop="@dimen/separacio"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
         android:text="@string/numerotel"
         android:textColor="@color/negre"
         android:textSize="@dimen/secondtitlesize"
@@ -223,7 +284,7 @@
         android:id="@+id/rol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/marginpag"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="@dimen/separacio"
         android:layout_marginBottom="@dimen/separacio"
         android:text="@string/rol"
@@ -234,37 +295,12 @@
         app:layout_constraintStart_toEndOf="@+id/telefon"
         app:layout_constraintTop_toBottomOf="@+id/adrecaMembre" />
 
-    <EditText
-        android:id="@+id/telefonMembre"
-        android:layout_width="@dimen/smallinputwidth"
-        android:layout_height="@dimen/smallinputheight"
-        android:layout_marginStart="@dimen/marginpag"
-        android:layout_marginTop="@dimen/separacio"
-        android:hint="@string/inputTelefon"
-        android:inputType="phone"
-        android:maxLength="9"
-        app:boxBackgroundColor="@color/blanc"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/telefon" />
-
-    <EditText
-        android:id="@+id/rolMembre"
-        android:layout_width="@dimen/smallinputwidth"
-        android:layout_height="@dimen/smallinputheight"
-        android:layout_marginTop="@dimen/separacio"
-        android:layout_marginEnd="@dimen/marginpag"
-        android:hint="@string/inputrol"
-        android:inputType="text"
-        app:boxBackgroundColor="@color/blanc"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rol" />
-
     <TextView
         android:id="@+id/dataAlta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/marginpag"
-        android:layout_marginTop="@dimen/separacio"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
         android:text="DATA D'ALTA"
         android:textColor="@color/negre"
         android:textSize="@dimen/secondtitlesize"
@@ -276,26 +312,25 @@
         android:id="@+id/altaMembre"
         android:layout_width="@dimen/smallinputwidth"
         android:layout_height="@dimen/smallinputheight"
-        android:layout_marginStart="@dimen/marginpag"
-        android:layout_marginTop="@dimen/separacio"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
         android:hint="dd/mm/aaaa"
         android:inputType="date"
         app:boxBackgroundColor="@color/blanc"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dataAlta" />
 
-    <Button
-        android:id="@+id/botoGuardarMembre"
-        android:layout_width="@dimen/bigbtnwidth"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/RecuperarContrasenya40dp"
-        android:layout_marginEnd="@dimen/marginpag"
-        android:text="@string/botoafegir"
-        android:backgroundTint="@color/verdBergant"
-        android:textColor="@color/blanc"
+    <EditText
+        android:id="@+id/rolMembre"
+        android:layout_width="@dimen/smallinputwidth"
+        android:layout_height="@dimen/smallinputheight"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/inputrol"
+        android:inputType="text"
+        app:boxBackgroundColor="@color/blanc"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rolMembre"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/rol" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

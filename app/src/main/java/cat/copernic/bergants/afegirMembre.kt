@@ -17,6 +17,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import cat.copernic.bergants.databinding.FragmentAfegirMembreBinding
 import cat.copernic.bergants.model.MembreModel
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 
@@ -30,6 +31,7 @@ class afegirMembre : Fragment() {
     private lateinit var alcadaEspatlles: EditText
     private lateinit var alcadaMans: EditText
     private lateinit var correuMembre: EditText
+    private lateinit var passwordOkMembre: EditText
     private lateinit var adrecaMembre: EditText
     private lateinit var telefonMembre: EditText
     private lateinit var rolMembre: EditText
@@ -40,6 +42,7 @@ class afegirMembre : Fragment() {
 
     //Declarem els atributs on guardarem els membres
     private lateinit var membres: MembreModel
+    private lateinit var auth: FirebaseAuth
 
     //Atribut on guardarem l'URI de la imatge que volem afegir. L'inicialitzem com a null, ja que encara no hem seleccionat la imatge
     private var photoSelectedUri: Uri?=null
@@ -151,6 +154,14 @@ class afegirMembre : Fragment() {
             }
     }
 
+    fun registrar(correu: String, contrasenya: String){
+        //Regsitrem a un usuari mitjançant el seu correu i contrasenya amb el mètode d'Authentication createUserWithEmailAndPassword passant com
+        //a paràmetres el seu correu i contrasenya.
+
+        //El registre d'un usuari és una tasca asincrona. El mètode addOnCompleteListener ens permet controlar quan finalitza el registre i com finalitza
+        auth.createUserWithEmailAndPassword(correu,contrasenya)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -164,9 +175,18 @@ class afegirMembre : Fragment() {
         rolMembre = binding.rolMembre
         altaMembre = binding.altaMembre
         botoAfegir = binding.botoGuardarMembre
+        passwordOkMembre = binding.passwordOkMembre
 
         botoAfegir.setOnClickListener {
             llegirDades()
+            var correuMembre = correuMembre.text.toString()
+            var passwordOkMembre = passwordOkMembre.text.toString()
+            if (correuMembre.isNotEmpty()&&passwordOkMembre.isNotEmpty()){
+                registrar(correuMembre, passwordOkMembre,)
+            }else {
+                Snackbar.make(it, "Falta indroduir un correu i una contrasenya!!!", Snackbar.LENGTH_LONG).show()
+            }
+
             var membre = llegirDades() //Membre introduit per l'usuari
             if (membre.nomMembre?.isNotEmpty() == true && membre.malnom?.isNotEmpty() == true && membre.alcadaEspatlles?.isNotEmpty() == true
                 && membre.alcadaMans?.isNotEmpty() == true && membre.correuMembre?.isNotEmpty() == true

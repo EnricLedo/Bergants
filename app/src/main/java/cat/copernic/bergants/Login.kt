@@ -13,6 +13,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat.startActivity
 import cat.copernic.bergants.databinding.ActivityLoginBinding
 import cat.copernic.bergants.databinding.ActivityMainBinding
+import cat.copernic.bergants.Utilities
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
