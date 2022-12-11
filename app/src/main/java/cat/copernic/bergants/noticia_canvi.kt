@@ -31,6 +31,7 @@ class noticia_canvi : Fragment() {
     private lateinit var binding: FragmentNoticiaCanviBinding
 
     private val myAdapter: NoticiaRecyclerAdapter = NoticiaRecyclerAdapter()
+    private lateinit var auth: FirebaseAuth
 
 
     //Declarem i incialitzem un atribut de tipus FirebaseFirestore, classe on trobarem els mètodes per treballar amb la base de dades Firestore
@@ -40,15 +41,7 @@ class noticia_canvi : Fragment() {
     private fun setupRecyclerView() {
 
         if (getNoticies().isEmpty()) {
-            lifecycleScope.launch{ //mentres duri el cicle de vida de l'Activity s'executarà...
-                /*ESTEM AL FIL PRINCIPAL*/
-                //Mostrem el resultat en el TextView departaments, assignant aquest resultat al TextView on el volem mostrar
-                //(departaments.text).
-                //Com mostrarDepartaments() és una consulta a una base de dades, canviarem de fil, i l'executarem en el fil IO (withContext(Dispatchers.IO)),
-                //quedant bloquejades les operacions d'entrades i sortides fins que no finalitzi l'execució de la corrutina, però d'aquesta manera el fil principal
-                //quedarà lliure perquè continuï executant altres tasques.
-                mostrarNoticies() //Executem la funció de suspensió
-            }
+            mostrarNoticies() //Executem la funció de suspensió
 
         } else {
             binding.recyclerNoticies.setHasFixedSize(true)
@@ -101,31 +94,41 @@ class noticia_canvi : Fragment() {
     }
 
     private fun mostrarNoticies() {
-            bd.collection("Noticies").get().addOnSuccessListener { documents ->
-                for (document in documents) {
-                    val wallItem = NoticiaModel(
-                        title = document["titolNoticia"].toString(),
-                        content = document["contingutNoticia"].toString(),
-                        date = document["dateNoticia"].toString()
-                    )
-                    if (getNoticies().isEmpty()) {
-                        getNoticies().add(wallItem)
-                    } else {
-                        for (i in getNoticies()) {
-                            if (wallItem.titolNoticia != i.titolNoticia) {
+        auth = Firebase.auth
+        var actual = auth.currentUser
+        lifecycleScope.launch {
+            withContext(Dispatchers.IO){
+                bd.collection("Users").document(actual!!.email.toString()).collection("Noticies").get().addOnSuccessListener { documents ->
+                    for (document in documents) {
+                        val wallItem = NoticiaModel(
+                            title = document["titolNoticia"].toString(),
+                            content = document["contingutNoticia"].toString(),
+                            date = document["dataNoticia"].toString()
+                        )
+                        if (getNoticies().isEmpty()) {
+                            getNoticies().add(wallItem)
+                        } else {
+                            var contador = 0
+                            for (i in getNoticies()) {
+                                if (wallItem.title == i.title) {
+                                    contador++
+                                }
+                            }
+                            if(contador <1){
                                 getNoticies().add(wallItem)
                             }
                         }
                     }
-                }
-                //indiquem que el RV es mostrarà en format llista
-                binding.recyclerNoticies.layoutManager = LinearLayoutManager(context)
+                    binding.recyclerNoticies.layoutManager = LinearLayoutManager(context)
+                    //generem el adapter
+                    myAdapter.NoticiesRecyclerAdapter(getNoticies(), requireActivity())
+                    //assignem el adapter al RV
+                    binding.recyclerNoticies.adapter = myAdapter
 
-                //generem el adapter
-                myAdapter.NoticiesRecyclerAdapter(getNoticies(), requireActivity())
-                //assignem el adapter al RV
-                binding.recyclerNoticies.adapter = myAdapter
+                }
             }
+        }
+
     }
 
 }
