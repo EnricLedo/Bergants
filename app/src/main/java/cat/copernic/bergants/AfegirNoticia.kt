@@ -75,7 +75,9 @@ class AfegirNoticia : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        titolNoticia = binding.titolNoticia
+        contingutNoticia = binding.contingutNoticia
+        dataNoticia = binding.dataNoticia
         botoAfegir = binding.botoGuardarNoticia
 
         botoAfegir.setOnClickListener {
