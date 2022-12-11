@@ -13,6 +13,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import cat.copernic.bergants.databinding.FragmentInformacioAssaigAdminPinyesBinding
 import cat.copernic.bergants.databinding.FragmentInformacioAssaigBinding
@@ -97,5 +98,24 @@ class InformacioAssaigAdminPinyes : Fragment() {
             afegirImatge()
         }
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val btnEditarAssaigBinding = requireView().findViewById<Button>(R.id.botoEditarAssaig)
+
+        btnEditarAssaigBinding.setOnClickListener {
+
+            val localtitle = binding.TitolAssaig.text.toString()
+            val localdate = binding.DataAssaig.text.toString()
+            val localubi = binding.ubicacioAssaig.text.toString()
+
+            val directions = InformacioAssaigAdminPinyesDirections.actionInformacioAssaigAdminPinyesToEditarAssaig(localtitle, localdate, localubi)
+
+            //findNavController().navigate(R.id.action_informacio_assaig_admin_pinyes_to_editar_assaig)
+
+            findNavController().navigate(directions)
+        }
     }
 }
