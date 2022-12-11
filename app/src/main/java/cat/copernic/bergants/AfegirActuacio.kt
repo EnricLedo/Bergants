@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Switch
 import android.widget.Toast
+import android.widget.Toast.makeText
 import androidx.navigation.fragment.findNavController
 import cat.copernic.bergants.databinding.FragmentActuacioBinding
 import cat.copernic.bergants.databinding.FragmentAfegirActuacioBinding
