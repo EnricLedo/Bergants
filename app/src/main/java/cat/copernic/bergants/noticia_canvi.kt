@@ -31,6 +31,7 @@ class noticia_canvi : Fragment() {
     private lateinit var binding: FragmentNoticiaCanviBinding
 
     private val myAdapter: NoticiaRecyclerAdapter = NoticiaRecyclerAdapter()
+    private lateinit var auth: FirebaseAuth
 
 
     //Declarem i incialitzem un atribut de tipus FirebaseFirestore, classe on trobarem els mètodes per treballar amb la base de dades Firestore
@@ -100,31 +101,37 @@ class noticia_canvi : Fragment() {
     }
 
     private fun mostrarNoticies() {
-            bd.collection("Noticies").get().addOnSuccessListener { documents ->
-                for (document in documents) {
-                    val wallItem = NoticiaModel(
-                        title = document["titolNoticia"].toString(),
-                        content = document["contingutNoticia"].toString(),
-                        date = document["dateNoticia"].toString()
-                    )
-                    if (getNoticies().isEmpty()) {
-                        getNoticies().add(wallItem)
-                    } else {
-                        for (i in getNoticies()) {
-                            if (wallItem.titolNoticia != i.titolNoticia) {
-                                getNoticies().add(wallItem)
+        auth = Firebase.auth
+        var actual = auth.currentUser
+        lifecycleScope.launch {
+            withContext(Dispatchers.IO){
+                bd.collection("Users").document(actual!!.email.toString()).collection("Resenas").get().addOnSuccessListener { documents ->
+                    for (document in documents) {
+                        val wallItem = dataPerfilUsuarioResena(
+                            img_user = R.drawable.foto_perfil,
+                            tlt_nom_user = document["Nombre"].toString(),
+                            ratingBarResena = Integer.valueOf(document["ratingBar"].toString())
+                        )
+                        if (perfilUsuarioResenaList.usuarioResena.isEmpty()) {
+                            perfilUsuarioResenaList.usuarioResena.add(wallItem)
+                        } else {
+                            var contador = 0
+                            for (i in perfilUsuarioResenaList.usuarioResena) {
+                                if (wallItem.tlt_nom_user == i.tlt_nom_user) {
+                                    contador++
+                                }
+                            }
+                            if(contador <1){
+                                perfilUsuarioResenaList.usuarioResena.add(wallItem)
                             }
                         }
                     }
+                    binding.recyclerPerfilUsuarioResena.layoutManager = LinearLayoutManager(context)
+                    binding.recyclerPerfilUsuarioResena.adapter = perfilUsuarioResenaAdapter(perfilUsuarioResenaList.usuarioResena.toList())
                 }
-                //indiquem que el RV es mostrarà en format llista
-                binding.recyclerNoticies.layoutManager = LinearLayoutManager(context)
-
-                //generem el adapter
-                myAdapter.NoticiesRecyclerAdapter(getNoticies(), requireActivity())
-                //assignem el adapter al RV
-                binding.recyclerNoticies.adapter = myAdapter
             }
+        }
+
     }
 
 }
