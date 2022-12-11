@@ -41,15 +41,7 @@ class noticia_canvi : Fragment() {
     private fun setupRecyclerView() {
 
         if (getNoticies().isEmpty()) {
-            lifecycleScope.launch{ //mentres duri el cicle de vida de l'Activity s'executarà...
-                /*ESTEM AL FIL PRINCIPAL*/
-                //Mostrem el resultat en el TextView departaments, assignant aquest resultat al TextView on el volem mostrar
-                //(departaments.text).
-                //Com mostrarDepartaments() és una consulta a una base de dades, canviarem de fil, i l'executarem en el fil IO (withContext(Dispatchers.IO)),
-                //quedant bloquejades les operacions d'entrades i sortides fins que no finalitzi l'execució de la corrutina, però d'aquesta manera el fil principal
-                //quedarà lliure perquè continuï executant altres tasques.
-                mostrarNoticies() //Executem la funció de suspensió
-            }
+            mostrarNoticies() //Executem la funció de suspensió
 
         } else {
             binding.recyclerNoticies.setHasFixedSize(true)
@@ -106,29 +98,33 @@ class noticia_canvi : Fragment() {
         var actual = auth.currentUser
         lifecycleScope.launch {
             withContext(Dispatchers.IO){
-                bd.collection("Users").document(actual!!.email.toString()).collection("Resenas").get().addOnSuccessListener { documents ->
+                bd.collection("Users").document(actual!!.email.toString()).collection("Noticies").get().addOnSuccessListener { documents ->
                     for (document in documents) {
-                        val wallItem = dataPerfilUsuarioResena(
-                            img_user = R.drawable.foto_perfil,
-                            tlt_nom_user = document["Nombre"].toString(),
-                            ratingBarResena = Integer.valueOf(document["ratingBar"].toString())
+                        val wallItem = NoticiaModel(
+                            title = document["titolNoticia"].toString(),
+                            content = document["contingutNoticia"].toString(),
+                            date = document["dataNoticia"].toString()
                         )
-                        if (perfilUsuarioResenaList.usuarioResena.isEmpty()) {
-                            perfilUsuarioResenaList.usuarioResena.add(wallItem)
+                        if (getNoticies().isEmpty()) {
+                            getNoticies().add(wallItem)
                         } else {
                             var contador = 0
-                            for (i in perfilUsuarioResenaList.usuarioResena) {
-                                if (wallItem.tlt_nom_user == i.tlt_nom_user) {
+                            for (i in getNoticies()) {
+                                if (wallItem.title == i.title) {
                                     contador++
                                 }
                             }
                             if(contador <1){
-                                perfilUsuarioResenaList.usuarioResena.add(wallItem)
+                                getNoticies().add(wallItem)
                             }
                         }
                     }
-                    binding.recyclerPerfilUsuarioResena.layoutManager = LinearLayoutManager(context)
-                    binding.recyclerPerfilUsuarioResena.adapter = perfilUsuarioResenaAdapter(perfilUsuarioResenaList.usuarioResena.toList())
+                    binding.recyclerNoticies.layoutManager = LinearLayoutManager(context)
+                    //generem el adapter
+                    myAdapter.NoticiesRecyclerAdapter(getNoticies(), requireActivity())
+                    //assignem el adapter al RV
+                    binding.recyclerNoticies.adapter = myAdapter
+
                 }
             }
         }
