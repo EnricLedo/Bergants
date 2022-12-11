@@ -87,7 +87,7 @@ class afegir_actuacio_bus : Fragment() {
             set(hashMapOf("ubicacioBus" to actuacio.autocar.get(+1).ubicacioBus,
                 "horariBus" to actuacio.autocar.get(+1).horariBus,
                 "placesBus" to actuacio.autocar.get(+1).placesBus)) //Subcol.lecció
-            .addOnSuccessListener { //S'ha afegit l'actuacio...
+            .addOnSuccessListener {
                 Toast.makeText(requireActivity(),"L'actuació s'ha afegit correctament", Toast.LENGTH_LONG).show()
             }
             .addOnFailureListener{ //No s'ha afegit l'actuacio...
