@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".editar_assaig"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="8dp"
+    android:padding="@dimen/marginpag">
+
+
+    <TextView
+        android:id="@+id/TemaAssaig"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/temaAssaig"
+        android:textColor="@color/negre"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/titolAssaig"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/separacio"
+        android:text="Assaig molt guay"
+        android:inputType="text"
+        android:minHeight="@dimen/DimensioPaperera48dp"
+        app:layout_constraintTop_toBottomOf="@id/TemaAssaig" />
+
+    <TextView
+        android:id="@+id/dateAssaig"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DATA I HORA DE L'ASSAIG"
+        android:layout_marginTop="@dimen/MargePapereraEsquerra20dp"
+        android:textStyle="bold"
+        android:textSize="@dimen/TitolGordo18sp"
+        app:layout_constraintTop_toBottomOf="@id/titolAssaig" />
+
+    <EditText
+        android:id="@+id/dataAssaig"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/separacio"
+        android:text="25/07/2023 18:30"
+        android:inputType="datetime"
+        android:minHeight="@dimen/DimensioPaperera48dp"
+        app:layout_constraintTop_toBottomOf="@id/dateAssaig" />
+
+    <TextView
+        android:id="@+id/ubicacio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MargePapereraEsquerra20dp"
+        android:text="@string/UbicacioTitol"
+        android:textColor="@color/negre"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/dataAssaig"/>
+
+    <EditText
+        android:id="@+id/ubicacioAssaig"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Carrer Mola Mogollón"
+        android:layout_marginTop="@dimen/separacio"
+        android:inputType="text"
+        android:minHeight="@dimen/DimensioPaperera48dp"
+        app:layout_constraintTop_toBottomOf="@id/ubicacio" />
+
+
+    <Button
+        android:id="@+id/botoEliminarAssaig"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/btncircle"
+        android:layout_marginStart="@dimen/MargePapereraEsquerra20dp"
+        android:layout_marginBottom="@dimen/MargeDretaRellotge15dp"
+        android:text="ELIMINAR"
+        android:textSize="@dimen/TitolGordo18sp"
+        android:backgroundTint="@color/vermellEliminar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/botoEditarAssaig"
+        android:layout_width="@dimen/btncircle"
+        android:layout_height="@dimen/btncircle"
+        android:layout_marginEnd="@dimen/marginpag"
+        android:text="+"
+        android:textSize="30sp"
+        android:textColor="@color/blanc"
+        android:layout_marginBottom="@dimen/separaciomig"
+        android:background="@drawable/round_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
