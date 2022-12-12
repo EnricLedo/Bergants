@@ -154,7 +154,7 @@
         app:layout_constraintStart_toEndOf="@id/iconaUbicacio"
         app:layout_constraintTop_toTopOf="@+id/iconaUbicacio" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/maps_exemple"
         android:layout_width="@dimen/ImatgeWidthMapa270dp"
         android:layout_height="@dimen/ImatgeHeightMapa318dp"
