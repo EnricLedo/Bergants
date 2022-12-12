@@ -42,7 +42,7 @@ class noticia_canvi : Fragment() {
 
     private fun setupRecyclerView() {
 
-        if (getNoticies().isEmpty()) {
+        if (list_multable.isEmpty()) {
             mostrarNoticies() //Executem la funció de suspensió
 
         } else {
@@ -50,7 +50,7 @@ class noticia_canvi : Fragment() {
             //indiquem que el RV es mostrarà en format llista
             binding.recyclerNoticies.layoutManager = LinearLayoutManager(context)
             //generem el adapter
-            myAdapter.NoticiesRecyclerAdapter(getNoticies(), requireActivity())
+            myAdapter.NoticiesRecyclerAdapter(list_multable, requireActivity())
             //assignem el adapter al RV
             binding.recyclerNoticies.adapter = myAdapter
         }
@@ -118,7 +118,7 @@ class noticia_canvi : Fragment() {
                     }
                     binding.recyclerNoticies.layoutManager = LinearLayoutManager(context)
                     //generem el adapter
-                    myAdapter.NoticiesRecyclerAdapter(getNoticies(), requireActivity())
+                    myAdapter.NoticiesRecyclerAdapter(list_multable, requireActivity())
                     //assignem el adapter al RV
                     binding.recyclerNoticies.adapter = myAdapter
                 }
