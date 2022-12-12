@@ -84,7 +84,7 @@ class actuacio : Fragment() {
                         val wallItem = ActuacioModel(
                             title = document["titolActuacio"].toString(),
                             data = document["dataActuacio"].toString(),
-                            lloc = document["ubicacioActuacio"].toString()
+                            lloc = document["llocActuacio"].toString()
                         )
                         if (list_multable.isEmpty()) {
                             list_multable.add(wallItem)
