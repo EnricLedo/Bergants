@@ -9,6 +9,7 @@ import cat.copernic.bergants.databinding.DisenyNoticiaBinding
 import cat.copernic.bergants.model.NoticiaModel
 import cat.copernic.bergants.noticia_canviDirections
 
+
 class NoticiaRecyclerAdapter : RecyclerView.Adapter<NoticiaRecyclerAdapter.ViewHolder>(){
     var noticies: MutableList<NoticiaModel> = ArrayList()
     lateinit var context: Context

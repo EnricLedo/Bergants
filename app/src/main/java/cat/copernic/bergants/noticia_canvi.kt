@@ -28,6 +28,8 @@ import java.util.stream.Collectors.toList
 
 class noticia_canvi : Fragment() {
 
+    private var list_multable: MutableList<NoticiaModel> = ArrayList()
+
     private lateinit var binding: FragmentNoticiaCanviBinding
 
     private val myAdapter: NoticiaRecyclerAdapter = NoticiaRecyclerAdapter()
@@ -100,17 +102,17 @@ class noticia_canvi : Fragment() {
                             content = document["contingutNoticia"].toString(),
                             date = document["dataNoticia"].toString()
                         )
-                        if (getNoticies().isEmpty()) {
-                            getNoticies().add(wallItem)
+                        if (list_multable.isEmpty()) {
+                            list_multable.add(wallItem)
                         } else {
                             var contador = 0
-                            for (i in getNoticies()) {
+                            for (i in list_multable) {
                                 if (wallItem.title == i.title) {
                                     contador++
                                 }
                             }
                             if(contador <1){
-                                getNoticies().add(wallItem)
+                                list_multable.add(wallItem)
                             }
                         }
                     }
