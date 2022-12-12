@@ -83,11 +83,11 @@ class noticia_canvi : Fragment() {
 
         noticies.add(NoticiaModel("Noticia important", "Aquesta noticia es molt important!!!", "09/07/2021"))
         noticies.add(NoticiaModel("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
-        noticies.add(NoticiaModel("Anem d'excursió", "Recordeu que avui anirem al concert d'Adri Navarro. Porteu-vos: el merch de Cucurella i moltes ganes de passar-ho bé.", "12-10-22 19:37h"))
+        noticies.add(NoticiaModel("Anem d'excursió a casa del Marc", "Recordeu que avui anirem al concert d'Adri Navarro. Porteu-vos: el merch de Cucurella i moltes ganes de passar-ho bé.", "12-10-22 19:37h"))
         noticies.add(NoticiaModel("Felicitats", "Avui Glupy Disco fa 40 anys! Felicitats!!!", "04-11-22 9:27h"))
-        noticies.add(NoticiaModel("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
-        noticies.add(NoticiaModel("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
-        noticies.add(NoticiaModel("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
+        noticies.add(NoticiaModel("Anem d'excursió a casa del Joan", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
+        noticies.add(NoticiaModel("No anem d'excursió", "Recordeu que avui no anirem d'excursió a Montserrat. No porteu: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
+        noticies.add(NoticiaModel("Anem d'excursió a algun lloc", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
         return noticies
 
     }
