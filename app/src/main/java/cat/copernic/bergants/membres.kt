@@ -25,9 +25,6 @@ class membres : Fragment() {
         FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
 
     private fun setupRecyclerView() {
-        /*if (getMembres().isEmpty()) {
-            mostrarMembres()
-        }else {*/
         binding.recyclerMembres.setHasFixedSize(true)
 
 

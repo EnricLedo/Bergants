@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import cat.copernic.bergants.databinding.FragmentNoticiaCanviBinding
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import cat.copernic.bergants.DataLists.NoticiaModelList
 import cat.copernic.bergants.adapter.NoticiaRecyclerAdapter
 import cat.copernic.bergants.model.NoticiaModel
 import com.google.firebase.auth.FirebaseAuth
@@ -39,7 +40,7 @@ class noticia_canvi : Fragment() {
 
     private fun setupRecyclerView() {
 
-        if (getNoticies().isEmpty()) {
+        if (NoticiaModelList.NoticiaRV.isEmpty()) {
             lifecycleScope.launch{ //mentres duri el cicle de vida de l'Activity s'executarà...
                 /*ESTEM AL FIL PRINCIPAL*/
                 //Mostrem el resultat en el TextView departaments, assignant aquest resultat al TextView on el volem mostrar
@@ -55,7 +56,7 @@ class noticia_canvi : Fragment() {
             //indiquem que el RV es mostrarà en format llista
             binding.recyclerNoticies.layoutManager = LinearLayoutManager(context)
             //generem el adapter
-            myAdapter.NoticiesRecyclerAdapter(getNoticies(), requireActivity())
+            myAdapter.NoticiesRecyclerAdapter(NoticiaModelList.NoticiaRV, requireActivity())
             //assignem el adapter al RV
             binding.recyclerNoticies.adapter = myAdapter
         }
@@ -84,36 +85,22 @@ class noticia_canvi : Fragment() {
         return binding.root
     }
 
-
-    private fun getNoticies(): MutableList<NoticiaModel> {
-        val noticies: MutableList<NoticiaModel> = arrayListOf()
-
-        noticies.add(NoticiaModel("Noticia important", "Aquesta noticia es molt important!!!", "09/07/2021"))
-        noticies.add(NoticiaModel("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
-        noticies.add(NoticiaModel("Anem d'excursió", "Recordeu que avui anirem al concert d'Adri Navarro. Porteu-vos: el merch de Cucurella i moltes ganes de passar-ho bé.", "12-10-22 19:37h"))
-        noticies.add(NoticiaModel("Felicitats", "Avui Glupy Disco fa 40 anys! Felicitats!!!", "04-11-22 9:27h"))
-        noticies.add(NoticiaModel("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
-        noticies.add(NoticiaModel("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
-        noticies.add(NoticiaModel("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
-
-        return noticies
-
-    }
+    private var ArrayListOnGuardarLesNoticies = ArrayList<NoticiaModel>()
 
     private fun mostrarNoticies() {
             bd.collection("Noticies").get().addOnSuccessListener { documents ->
                 for (document in documents) {
                     val wallItem = NoticiaModel(
-                        title = document["titolNoticia"].toString(),
-                        content = document["contingutNoticia"].toString(),
-                        date = document["dateNoticia"].toString()
+                        titolNoticia = document["titolNoticia"].toString(),
+                        contingutNoticia = document["contingutNoticia"].toString(),
+                        dataNoticia = document["dateNoticia"].toString()
                     )
-                    if (getNoticies().isEmpty()) {
-                        getNoticies().add(wallItem)
+                    if (NoticiaModelList.NoticiaRV.isEmpty()) {
+                        NoticiaModelList.NoticiaRV.add(wallItem)
                     } else {
-                        for (i in getNoticies()) {
+                        for (i in NoticiaModelList.NoticiaRV) {
                             if (wallItem.titolNoticia != i.titolNoticia) {
-                                getNoticies().add(wallItem)
+                                ArrayListOnGuardarLesNoticies.add(wallItem)
                             }
                         }
                     }
@@ -121,8 +108,8 @@ class noticia_canvi : Fragment() {
                 //indiquem que el RV es mostrarà en format llista
                 binding.recyclerNoticies.layoutManager = LinearLayoutManager(context)
 
-                //generem el adapter
-                myAdapter.NoticiesRecyclerAdapter(getNoticies(), requireActivity())
+                //generem l'adapter
+                myAdapter.NoticiesRecyclerAdapter(ArrayListOnGuardarLesNoticies, requireActivity())
                 //assignem el adapter al RV
                 binding.recyclerNoticies.adapter = myAdapter
             }
