@@ -1,7 +1,6 @@
 package cat.copernic.bergants.repository
 
 import androidx.lifecycle.MutableLiveData
-import cat.copernic.bergants.Assaig
 import cat.copernic.bergants.assajos
 import cat.copernic.bergants.model.AssaigModel
 import com.google.firebase.database.*

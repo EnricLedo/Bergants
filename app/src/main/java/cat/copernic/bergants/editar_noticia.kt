@@ -26,6 +26,7 @@ class editar_noticia : Fragment() {
     private lateinit var contingutNoticia: EditText
     private lateinit var dataNoticia: EditText
     private lateinit var botoEditarNoticia: Button
+    private lateinit var botoEliminarNoticia: Button
     private lateinit var noticia: NoticiaModel
 
     //Declarem i incialitzem un atribut de tipus FirebaseFirestore, classe on trobarem els mètodes per treballar amb la base de dades Firestore
@@ -67,13 +68,25 @@ class editar_noticia : Fragment() {
             .addOnSuccessListener { //S'ha afegir la noticia...
                 Toast.makeText(
                     requireActivity(),
-                    "L'assaig s'ha afegit correctament",
+                    "La notícia s'ha afegit correctament",
                     Toast.LENGTH_LONG
                 ).show()
             }
             .addOnFailureListener {
-                Toast.makeText(requireActivity(), "L'assaig no s'ha afegit", Toast.LENGTH_LONG)
+                Toast.makeText(requireActivity(), "La notícia no s'ha afegit", Toast.LENGTH_LONG)
                     .show()
+            }
+    }
+
+    //Eliminar la noticia corresponent al titol passat com a paràmetre. L'eliminarà si existeix.
+    fun eliminarNoticia(titolNoticia:String){
+        bd.collection("Noticies").document(titolNoticia)
+            .delete()
+            .addOnSuccessListener { //S'ha modificat la noticia...
+                Toast.makeText(requireActivity(),"S'ha eliminat la noticia amb titol $titolNoticia", Toast.LENGTH_LONG).show()
+            }
+            .addOnFailureListener{ //No s'ha modificat la noticia...
+                Toast.makeText(requireActivity(),"No s'ha eliminat la noticia", Toast.LENGTH_LONG).show()
             }
     }
 
@@ -83,6 +96,7 @@ class editar_noticia : Fragment() {
         contingutNoticia = binding.editarNoticia
         dataNoticia = binding.editarData
         botoEditarNoticia = binding.botoEditarNoticia
+        botoEliminarNoticia = binding.botoEliminarNoticia
 
         //Modifiquem tota la noticia si la noticia existeix en la BBDD.
         botoEditarNoticia.setOnClickListener {
@@ -97,6 +111,20 @@ class editar_noticia : Fragment() {
             } else {
                 //Mostrem un missatge a l'usuari mitjançant un Toast
                 Toast.makeText(requireActivity(),"Cal introduïr els paramatres a modificar",Toast.LENGTH_LONG).show()
+            }
+        }
+
+        //Eliminem la noticia corresponent al codi passat per paràmetre, si aquest existeix en la col.lecció
+        botoEliminarNoticia.setOnClickListener {
+
+            var noticia = llegirDades()
+
+            if (noticia.titolNoticia?.isNotEmpty() == true) {
+                //Eliminem la noticia mitjançant la funció eliminarNoticia creada per nosaltres
+                eliminarNoticia(noticia.titolNoticia!!)
+            }else{
+                //Mostrem un missatge a l'usuari mitjançant un Toast
+                Toast.makeText(requireActivity(),"Cal introduïr un titol de la noticia que volem eliminar",Toast.LENGTH_LONG).show()
             }
         }
 

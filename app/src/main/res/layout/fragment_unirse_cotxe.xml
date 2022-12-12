@@ -24,7 +24,7 @@
         android:thicknessRatio="1.9">
 
         <ImageView
-            android:id="@+id/fotoUsuari"
+            android:id="@+id/imgMembre"
             android:layout_width="match_parent"
             android:layout_height="@dimen/TamanyFotoCotxe"
             android:layout_alignParentTop="true"

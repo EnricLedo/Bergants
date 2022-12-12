@@ -136,4 +136,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_goneMarginEnd="20dp" />
 
+    <Button
+        android:id="@+id/botoEditarAssaig"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="650dp"
+        android:text="Editar Assaig"
+        android:textColor="@color/blanc"
+        android:backgroundTint="@color/verdBergant"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_goneMarginStart="20dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
