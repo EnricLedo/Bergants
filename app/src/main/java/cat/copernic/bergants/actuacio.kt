@@ -15,7 +15,9 @@ import cat.copernic.bergants.model.ActuacioModel
 import cat.copernic.bergants.model.AssaigModel
 import cat.copernic.bergants.model.NoticiaModel
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class actuacio : Fragment() {
 
@@ -75,8 +77,40 @@ class actuacio : Fragment() {
     }
 
     private fun mostrarActuacions() {
-
         lifecycleScope.launch {
+            withContext(Dispatchers.IO){
+                bd.collection("Actuacions").get().addOnSuccessListener { documents ->
+                    for (document in documents) {
+                        val wallItem = ActuacioModel(
+                            title = document["titolActuacio"].toString(),
+                            data = document["dataActuacio"].toString(),
+                            lloc = document["llocActuacio"].toString()
+                        )
+                        if (list_multable.isEmpty()) {
+                            list_multable.add(wallItem)
+                        } else {
+                            var contador = 0
+                            for (i in list_multable) {
+                                if (wallItem.title == i.title) {
+                                    contador++
+                                }
+                            }
+                            if(contador <1){
+                                list_multable.add(wallItem)
+                            }
+                        }
+                    }
+                    binding.recyclerActuacions.layoutManager = LinearLayoutManager(context)
+                    //generem el adapter
+                    myAdapter.ActuacioRecyclerAdapter(list_multable, requireActivity())
+                    //assignem el adapter al RV
+                    binding.recyclerActuacions.adapter = myAdapter
+                }
+            }
+        }
+
+
+        /**lifecycleScope.launch {
             bd.collection("Actuacions").get().addOnSuccessListener { documents ->
                 for (document in documents) {
                     val wallItem = ActuacioModel(
@@ -102,6 +136,6 @@ class actuacio : Fragment() {
                 //assignem el adapter al RV
                 binding.recyclerActuacions.adapter = myAdapter
             }
-        }
+        }*/
     }
 }
