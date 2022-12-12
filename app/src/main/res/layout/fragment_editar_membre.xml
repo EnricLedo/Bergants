@@ -45,7 +45,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/fotoUsuari"
+            android:id="@+id/imgMembre"
             android:layout_width="match_parent"
             android:layout_height="@dimen/heightfoto"
             android:layout_alignParentTop="true"

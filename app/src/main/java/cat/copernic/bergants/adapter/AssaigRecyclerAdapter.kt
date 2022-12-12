@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import cat.copernic.bergants.assajosDirections
 import cat.copernic.bergants.databinding.DisenyAssaigBinding
+import cat.copernic.bergants.databinding.FragmentEditarAssaigBinding
 import cat.copernic.bergants.model.AssaigModel
 import cat.copernic.bergants.noticia_canviDirections
 

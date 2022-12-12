@@ -19,8 +19,10 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.withContext
 import java.util.stream.Collectors.toList
 
 
@@ -38,7 +40,16 @@ class noticia_canvi : Fragment() {
     private fun setupRecyclerView() {
 
         if (getNoticies().isEmpty()) {
-            mostrarNoticies()
+            lifecycleScope.launch{ //mentres duri el cicle de vida de l'Activity s'executarà...
+                /*ESTEM AL FIL PRINCIPAL*/
+                //Mostrem el resultat en el TextView departaments, assignant aquest resultat al TextView on el volem mostrar
+                //(departaments.text).
+                //Com mostrarDepartaments() és una consulta a una base de dades, canviarem de fil, i l'executarem en el fil IO (withContext(Dispatchers.IO)),
+                //quedant bloquejades les operacions d'entrades i sortides fins que no finalitzi l'execució de la corrutina, però d'aquesta manera el fil principal
+                //quedarà lliure perquè continuï executant altres tasques.
+                mostrarNoticies() //Executem la funció de suspensió
+            }
+
         } else {
             binding.recyclerNoticies.setHasFixedSize(true)
             //indiquem que el RV es mostrarà en format llista
@@ -76,6 +87,7 @@ class noticia_canvi : Fragment() {
 
     private fun getNoticies(): MutableList<NoticiaModel> {
         val noticies: MutableList<NoticiaModel> = arrayListOf()
+
         noticies.add(NoticiaModel("Noticia important", "Aquesta noticia es molt important!!!", "09/07/2021"))
         noticies.add(NoticiaModel("Anem d'excursió", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
         noticies.add(NoticiaModel("Anem d'excursió", "Recordeu que avui anirem al concert d'Adri Navarro. Porteu-vos: el merch de Cucurella i moltes ganes de passar-ho bé.", "12-10-22 19:37h"))
@@ -89,8 +101,6 @@ class noticia_canvi : Fragment() {
     }
 
     private fun mostrarNoticies() {
-
-        lifecycleScope.launch {
             bd.collection("Noticies").get().addOnSuccessListener { documents ->
                 for (document in documents) {
                     val wallItem = NoticiaModel(
@@ -116,7 +126,6 @@ class noticia_canvi : Fragment() {
                 //assignem el adapter al RV
                 binding.recyclerNoticies.adapter = myAdapter
             }
-        }
     }
 
 }

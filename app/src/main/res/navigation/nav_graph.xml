@@ -195,6 +195,43 @@
         <action
             android:id="@+id/action_informacio_assaig_admin_pinyes_to_assajos_fragment"
             app:destination="@id/assajos_fragment" />
+        <action
+            android:id="@+id/action_informacio_assaig_admin_pinyes_to_editar_assaig"
+            app:destination="@id/editar_assaig">
+            <argument
+                android:name="titolAssaig"
+                app:argType="string" />
+            <argument
+                android:name="dataAssaig"
+                app:argType="string" />
+            <argument
+                android:name="ubicacioAssaig"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/editar_assaig"
+        android:name="cat.copernic.bergants.editar_assaig"
+        android:label="fragment_editar_assaig"
+        tools:layout="@layout/fragment_editar_assaig" >
+        <action
+            android:id="@+id/action_editar_assaig_to_informacio_assaig_admin_pinyes"
+            app:destination="@id/informacio_assaig_admin_pinyes" />
+        <argument
+            android:name="titolAssaig"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="dataAssaig"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="ubicacioAssaig"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
     </fragment>
 
 </navigation>
