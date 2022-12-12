@@ -8,24 +8,23 @@
     tools:context=".afegirMembre">
 
 
-
-        <ImageButton
-            android:id="@+id/imgMembre"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:layout_marginStart="@dimen/marginlateralfoto"
-            android:layout_marginTop="@dimen/MargePapereraEsquerra20dp"
-            android:layout_marginEnd="@dimen/marginendfoto"
-            android:layout_marginBottom="@dimen/separacio"
-            android:gravity="center"
-            android:shape="ring"
-            android:thicknessRatio="1.9"
-            app:cardCornerRadius="25dp"
-            app:layout_constraintBottom_toTopOf="@+id/nomMembre"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/fotomembre" />
+    <ImageButton
+        android:id="@+id/imgMembre"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="@dimen/marginlateralfoto"
+        android:layout_marginTop="@dimen/MargePapereraEsquerra20dp"
+        android:layout_marginEnd="@dimen/marginendfoto"
+        android:layout_marginBottom="@dimen/separacio"
+        android:gravity="center"
+        android:shape="ring"
+        android:src="@drawable/fotomembre"
+        android:thicknessRatio="1.9"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/nomMembre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/nomMembre"

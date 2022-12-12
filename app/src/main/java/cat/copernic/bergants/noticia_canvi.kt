@@ -93,11 +93,9 @@ class noticia_canvi : Fragment() {
     }
 
     private fun mostrarNoticies() {
-        auth = Firebase.auth
-        var actual = auth.currentUser
         lifecycleScope.launch {
             withContext(Dispatchers.IO){
-                bd.collection("Users").document(actual!!.email.toString()).collection("Noticies").get().addOnSuccessListener { documents ->
+                bd.collection("Noticies").get().addOnSuccessListener { documents ->
                     for (document in documents) {
                         val wallItem = NoticiaModel(
                             title = document["titolNoticia"].toString(),
@@ -123,11 +121,8 @@ class noticia_canvi : Fragment() {
                     myAdapter.NoticiesRecyclerAdapter(getNoticies(), requireActivity())
                     //assignem el adapter al RV
                     binding.recyclerNoticies.adapter = myAdapter
-
                 }
             }
         }
-
     }
-
 }
