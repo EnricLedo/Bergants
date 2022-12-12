@@ -109,7 +109,7 @@ class noticia_canvi : Fragment() {
                 binding.recyclerNoticies.layoutManager = LinearLayoutManager(context)
 
                 //generem l'adapter
-                myAdapter.NoticiesRecyclerAdapter(ArrayListOnGuardarLesNoticies, requireActivity())
+                myAdapter.NoticiesRecyclerAdapter(NoticiaModelList.NoticiaRV, requireActivity())
                 //assignem el adapter al RV
                 binding.recyclerNoticies.adapter = myAdapter
             }
