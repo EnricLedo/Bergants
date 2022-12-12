@@ -38,7 +38,7 @@ class noticia_canvi : Fragment() {
     private var bd =
         FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
 
-    private fun setupRecyclerView() {
+    private fun setupRecyclerView(view: View) {
 
         if (getNoticies().isEmpty()) {
             mostrarNoticies() //Executem la funció de suspensió
@@ -59,8 +59,7 @@ class noticia_canvi : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val btnAddNot = requireView().findViewById<Button>(R.id.botoAfegirNoticia)
-        mostrarNoticies()
-        setupRecyclerView()
+        setupRecyclerView(view)
 
         btnAddNot.setOnClickListener {
             findNavController().navigate(R.id.action_noticia_fragment_to_afegirNoticia)
@@ -77,7 +76,6 @@ class noticia_canvi : Fragment() {
         return binding.root
     }
 
-
     private fun getNoticies(): MutableList<NoticiaModel> {
         val noticies: MutableList<NoticiaModel> = arrayListOf()
         noticies.add(NoticiaModel("Noticia important", "Aquesta noticia es molt important!!!", "09/07/2021"))
@@ -87,6 +85,8 @@ class noticia_canvi : Fragment() {
         noticies.add(NoticiaModel("Anem d'excursió a casa del Joan", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
         noticies.add(NoticiaModel("No anem d'excursió", "Recordeu que avui no anirem d'excursió a Montserrat. No porteu: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
         noticies.add(NoticiaModel("Anem d'excursió a algun lloc", "Recordeu que avui anirem d'excursió a Montserrat. Porteu-vos: motxilla, cantimplora, entrepà, botes de muntanya i moltes ganes de passar-ho bé.", "27-10-22 9:27h"))
+
+
         return noticies
     }
 
@@ -96,9 +96,9 @@ class noticia_canvi : Fragment() {
                 bd.collection("Noticies").get().addOnSuccessListener { documents ->
                     for (document in documents) {
                         val wallItem = NoticiaModel(
-                            title = document["titolNoticia"].toString(),
-                            content = document["contingutNoticia"].toString(),
-                            date = document["dataNoticia"].toString()
+                            title = document["titolNoticia"] as String,
+                            content = document["contingutNoticia"] as String,
+                            date = document["dataNoticia"] as String
                         )
                         if (getNoticies().isEmpty()) {
                             getNoticies().add(wallItem)
@@ -116,7 +116,7 @@ class noticia_canvi : Fragment() {
                     }
                     binding.recyclerNoticies.layoutManager = LinearLayoutManager(context)
                     //generem el adapter
-                    myAdapter.NoticiesRecyclerAdapter(getNoticies(), requireActivity())
+                    //myAdapter.NoticiesRecyclerAdapter(getNoticies(), requireActivity())
                     //assignem el adapter al RV
                     binding.recyclerNoticies.adapter = myAdapter
                 }
