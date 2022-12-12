@@ -12,11 +12,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import cat.copernic.bergants.adapter.ActuacioRecyclerAdapter
 import cat.copernic.bergants.databinding.FragmentActuacioBinding
 import cat.copernic.bergants.model.ActuacioModel
+import cat.copernic.bergants.model.AssaigModel
 import cat.copernic.bergants.model.NoticiaModel
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.launch
 
 class actuacio : Fragment() {
+
+    private var list_multable: MutableList<ActuacioModel> = ArrayList()
 
     private lateinit var binding: FragmentActuacioBinding
 
@@ -27,7 +30,7 @@ class actuacio : Fragment() {
         FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
 
     private fun setupRecyclerView() {
-        if (getActuacions().isEmpty()) {
+        if (list_multable.isEmpty()) {
             mostrarActuacions()
         } else {
             binding.recyclerActuacions.setHasFixedSize(true)
@@ -36,7 +39,7 @@ class actuacio : Fragment() {
             binding.recyclerActuacions.layoutManager = LinearLayoutManager(context)
 
             //generem el adapter
-            myAdapter.ActuacioRecyclerAdapter(getActuacions(), requireActivity())
+            myAdapter.ActuacioRecyclerAdapter(list_multable, requireActivity())
             //assignem el adapter al RV
             binding.recyclerActuacions.adapter = myAdapter
         }
@@ -81,12 +84,12 @@ class actuacio : Fragment() {
                         data = document["dataActuacio"].toString(),
                         lloc = document["llocActuacio"].toString()
                     )
-                    if (getActuacions().isEmpty()) {
-                        getActuacions().add(wallItem)
+                    if (list_multable.isEmpty()) {
+                        list_multable.add(wallItem)
                     } else {
-                        for (i in getActuacions()) {
+                        for (i in list_multable) {
                             if (wallItem.titolActuacio != i.titolActuacio) {
-                                getActuacions().add(wallItem)
+                                list_multable.add(wallItem)
                             }
                         }
                     }
@@ -95,7 +98,7 @@ class actuacio : Fragment() {
                 binding.recyclerActuacions.layoutManager = LinearLayoutManager(context)
 
                 //generem el adapter
-                myAdapter.ActuacioRecyclerAdapter(getActuacions(), requireActivity())
+                myAdapter.ActuacioRecyclerAdapter(list_multable, requireActivity())
                 //assignem el adapter al RV
                 binding.recyclerActuacions.adapter = myAdapter
             }
