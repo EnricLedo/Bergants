@@ -51,41 +51,12 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, drawerLayout)
         navigationView.setupWithNavController(navController)
 
-
-
-        /**
-        //initRecyclerView()
-        //Inicialitzem l'atribut botologout amb el component de l'XML corresponent
-        botoLogout = findViewById(R.id.botoLogout)
-
-        //Inicialitzem la variable de tipus FirebaseAuth amb una instància d'aquesta classe
-        auth= Firebase.auth
-
-        //Listener per quan l'usuari cliqui el botó de tancar sessió
-        botoLogout.setOnClickListener {
-
-            //Tanquem la sessió mitjançant el mètode signOut() de la classe FirebaseAuth
-            auth.signOut()
-            //Tornem a la pàgina de loguin
-            startActivity(Intent(this,Login::class.java))
-            //Alliberem memòria
-            finish()
-        }
-         */
     }
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.fragmentContainerView)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
-
-    /**
-    private fun initRecyclerView(){
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerNoticies)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = NoticiaAdapter(NoticiaProvider.noticiaList)
-    }
-    */
 
 }
 

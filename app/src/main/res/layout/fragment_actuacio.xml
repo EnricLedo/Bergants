@@ -31,6 +31,32 @@
         app:layout_constraintTop_toTopOf="@id/temporada"
         tools:ignore="SpeakableTextPresentCheck" />
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:visibility="gone"
+        android:id="@+id/shimmer_view_rv_actuacions"
+        app:layout_constraintTop_toBottomOf="@id/spinner">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/shimmer_layout_actuacions">
+
+            </include>
+            <include layout="@layout/shimmer_layout_actuacions">
+
+            </include>
+            <include layout="@layout/shimmer_layout_actuacions">
+
+            </include>
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerActuacions"
         android:layout_width="match_parent"

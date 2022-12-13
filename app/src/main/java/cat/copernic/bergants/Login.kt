@@ -1,6 +1,10 @@
 package cat.copernic.bergants
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -34,6 +38,7 @@ class Login : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        createNotificationChannel()
         setContentView(R.layout.activity_login)
         this.supportActionBar!!.hide()
         val user = FirebaseAuth.getInstance().currentUser
@@ -79,7 +84,6 @@ class Login : AppCompatActivity() {
                 //Anem al mainActivity des d'aquesta pantalla
                 startActivity(Intent(this,MainActivity::class.java))
                 //finish() //Alliberem memòria un cop finalitzada aquesta tasca.
-
         }
     }
 
@@ -102,5 +106,22 @@ class Login : AppCompatActivity() {
 
     fun campEsBuit(correu:String,contrasenya:String):Boolean{
         return correu.isNotEmpty()&&contrasenya.isNotEmpty()
+    }
+
+    private fun createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val name = "name"
+            val descriptionText = "descripcion"
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val channel = NotificationChannel("1", name, importance).apply {
+                description = descriptionText
+            }
+            // Register the channel with the system
+            val notificationManager: NotificationManager =
+                getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager.createNotificationChannel(channel)
+        }
     }
 }

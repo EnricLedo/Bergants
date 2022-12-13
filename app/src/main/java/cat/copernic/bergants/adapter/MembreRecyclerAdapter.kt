@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import cat.copernic.bergants.Membre
 import cat.copernic.bergants.databinding.DisenyMembreBinding
 import coil.api.load
+import com.google.firebase.storage.FirebaseStorage
 
 
 class MembreRecyclerAdapter: RecyclerView.Adapter<MembreRecyclerAdapter.ViewHolder>() {
@@ -37,7 +38,7 @@ class MembreRecyclerAdapter: RecyclerView.Adapter<MembreRecyclerAdapter.ViewHold
             with(membres.get(position)){
                 binding.nomMembre.text = this.nomMembre
                 binding.fotoMembre.load(this.fotoMembre)
-                /*
+
                  //Monstrar la imatge des de Storage de Firebase
                  val storageRef = FirebaseStorage.getInstance().reference
                  val imageRef = storageRef.child("rv/${this.nomMembre}")
@@ -45,7 +46,7 @@ class MembreRecyclerAdapter: RecyclerView.Adapter<MembreRecyclerAdapter.ViewHold
                      binding.fotoMembre.load(url)
                  }.addOnFailureListener {
                      //mostrar error
-                 } */
+                 }
             }
         }
         val item = membres.get(position)

@@ -66,6 +66,9 @@ class assajos : Fragment() {
     }
 
     private fun mostrarAssajos() {
+        binding.shimmerViewRvAssajos.visibility = View.VISIBLE
+        binding.recyclerAssajos.visibility = View.GONE
+        binding.shimmerViewRvAssajos.startShimmer()
         lifecycleScope.launch {
             withContext(Dispatchers.IO){
                 bd.collection("Assajos").get().addOnSuccessListener { documents ->
@@ -96,6 +99,9 @@ class assajos : Fragment() {
                     myAdapter.AssaigRecyclerAdapter(list_multable, requireActivity())
                     //assignem el adapter al RV
                     binding.recyclerAssajos.adapter = myAdapter
+                    binding.shimmerViewRvAssajos.stopShimmer()
+                    binding.shimmerViewRvAssajos.visibility = View.GONE
+                    binding.recyclerAssajos.visibility = View.VISIBLE
                 }
             }
         }

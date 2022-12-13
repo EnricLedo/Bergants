@@ -9,4 +9,6 @@
     <color name="negre">#FF000000</color>
     <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">@color/verdBergant</color>
     <color name="colorProvaVerd">#FFb4fab9</color>
+
+    <color name="shimmer_color">#BFBDBD</color>
 </resources>

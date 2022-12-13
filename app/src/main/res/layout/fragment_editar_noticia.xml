@@ -49,6 +49,7 @@
         android:layout_marginEnd="@dimen/marginpag"
         android:text="+"
         android:textSize="30sp"
+        android:textColor="@color/blanc"
         android:layout_marginBottom="@dimen/separaciomig"
         android:background="@drawable/round_button"
         app:layout_constraintBottom_toBottomOf="parent"
