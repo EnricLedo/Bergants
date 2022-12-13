@@ -65,40 +65,6 @@ class assajos : Fragment() {
         return binding.root
     }
 
-    private fun getAssajos(): MutableList<AssaigModel> {
-        val assajos: MutableList<AssaigModel> = arrayListOf()
-        assajos.add(
-            AssaigModel(
-                "ASSAIG ESPECIAL DE LA MERCÈ",
-                "DISSABTE 23 de Setembre del 2022 20:00h",
-                "Local de la colla"
-            )
-        )
-        assajos.add(
-            AssaigModel(
-                "ASSAIG GENERAL",
-                "DIMECRES 28 de Setembre del 2022 20:00h",
-                "Local de la colla"
-            )
-        )
-        assajos.add(
-            AssaigModel(
-                "ASSAIG GENERAL",
-                "DIVENDRES 30 de Setembre del 2022 20:00h",
-                "Local de la colla"
-            )
-        )
-        assajos.add(
-            AssaigModel(
-                "ASSAIG GENERAL",
-                "DILLUNS 3 d'Octubre del 2022 20:00h",
-                "Local de la colla"
-            )
-        )
-
-        return assajos
-    }
-
     private fun mostrarAssajos() {
         lifecycleScope.launch {
             withContext(Dispatchers.IO){
@@ -133,33 +99,5 @@ class assajos : Fragment() {
                 }
             }
         }
-
-        /**lifecycleScope.launch {
-            bd.collection("Assajos").get().addOnSuccessListener { documents ->
-                for (document in documents) {
-                    val wallItem = AssaigModel(
-                        title = document["titolAssaig"].toString(),
-                        data = document["dataAssaig"].toString(),
-                        lloc = document["llocAssaig"].toString()
-                    )
-                    if (getAssajos().isEmpty()) {
-                        getAssajos().add(wallItem)
-                    } else {
-                        for (i in getAssajos()) {
-                            if (wallItem.titolAssaig != i.titolAssaig) {
-                                getAssajos().add(wallItem)
-                            }
-                        }
-                    }
-                }
-                //indiquem que el RV es mostrarà en format llista
-                binding.recyclerAssajos.layoutManager = LinearLayoutManager(context)
-
-                //generem el adapter
-                myAdapter.AssaigRecyclerAdapter(getAssajos(), requireActivity())
-                //assignem el adapter al RV
-                binding.recyclerAssajos.adapter = myAdapter
-            }
-        }*/
     }
 }

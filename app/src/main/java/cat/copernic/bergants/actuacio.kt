@@ -67,14 +67,6 @@ class actuacio : Fragment() {
         return binding.root
     }
 
-    private fun getActuacions(): MutableList<ActuacioModel> {
-        val actuacions: MutableList<ActuacioModel> = arrayListOf()
-        actuacions.add(ActuacioModel("FM DE FOSTON","DISSABTE 24 de Setembre de 2022 18:00h","Plaça de l'Ajuntament - Calella"))
-        actuacions.add(ActuacioModel("LA MERCÈ","DISSABTE 25 de Setembre 18:00h","Pl. Sant Jaume"))
-        actuacions.add(ActuacioModel("ACTUACIÓ COMERCIAL HOTEL LA MOLA","DIJOUS 29 de Setembre del 2022 18:00h","Hotel la Mola"))
-
-        return actuacions
-    }
 
     private fun mostrarActuacions() {
         lifecycleScope.launch {
@@ -108,34 +100,5 @@ class actuacio : Fragment() {
                 }
             }
         }
-
-
-        /**lifecycleScope.launch {
-            bd.collection("Actuacions").get().addOnSuccessListener { documents ->
-                for (document in documents) {
-                    val wallItem = ActuacioModel(
-                        title = document["titolActuacio"].toString(),
-                        data = document["dataActuacio"].toString(),
-                        lloc = document["llocActuacio"].toString()
-                    )
-                    if (list_multable.isEmpty()) {
-                        list_multable.add(wallItem)
-                    } else {
-                        for (i in list_multable) {
-                            if (wallItem.titolActuacio != i.titolActuacio) {
-                                list_multable.add(wallItem)
-                            }
-                        }
-                    }
-                }
-                //indiquem que el RV es mostrarà en format llista
-                binding.recyclerActuacions.layoutManager = LinearLayoutManager(context)
-
-                //generem el adapter
-                myAdapter.ActuacioRecyclerAdapter(list_multable, requireActivity())
-                //assignem el adapter al RV
-                binding.recyclerActuacions.adapter = myAdapter
-            }
-        }*/
     }
 }
