@@ -11,9 +11,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import cat.copernic.bergants.databinding.FragmentEditarActuacioBinding
-import cat.copernic.bergants.databinding.FragmentEditarAssaigBinding
 import cat.copernic.bergants.model.ActuacioModel
-import cat.copernic.bergants.model.AssaigModel
 import com.google.firebase.firestore.FirebaseFirestore
 
 class editar_actuacio : Fragment() {
@@ -22,7 +20,7 @@ class editar_actuacio : Fragment() {
     //EditText per introduïr les dades de la nova noticia a afegir
     private lateinit var titolActuacio: EditText
     private lateinit var dataActuacio: EditText
-    private lateinit var ubicacioActuacio: EditText
+    private lateinit var llocActuacio: EditText
     private lateinit var botoEditarActuacio: Button
     private lateinit var botoEliminarActuacio: Button
     private lateinit var actuacio: ActuacioModel
@@ -45,9 +43,9 @@ class editar_actuacio : Fragment() {
         //Guardem les dades introduïdes per l'usuari
         var titolActuacio = titolActuacio.text.toString()
         var dataActuacio = dataActuacio.text.toString()
-        var ubicacioActuacio = ubicacioActuacio.text.toString()
+        var llocActuacio = llocActuacio.text.toString()
 
-        return ActuacioModel(titolActuacio, dataActuacio, ubicacioActuacio)
+        return ActuacioModel(titolActuacio, dataActuacio, llocActuacio)
     }
 
     //Funció que modificarà una actuacio amb l'actuacio passada per paràmetre. Per fer la modificació, l'identificador del document
@@ -58,7 +56,7 @@ class editar_actuacio : Fragment() {
             hashMapOf(
                 "titolActuacio" to titolActuacio.text.toString(),
                 "dataActuacio" to dataActuacio.text.toString(),
-                "ubicacioActuacio" to ubicacioActuacio.text.toString()
+                "llocActuacio" to llocActuacio.text.toString()
             )
         )
             .addOnSuccessListener {
@@ -97,7 +95,7 @@ class editar_actuacio : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         titolActuacio = binding.titolActuacio
         dataActuacio = binding.dataActuacio
-        ubicacioActuacio = binding.llocActuacio
+        llocActuacio = binding.llocActuacio
         botoEditarActuacio = binding.botoEditarActuacio
         botoEliminarActuacio = binding.botoEliminarActuacio
 
@@ -115,7 +113,7 @@ class editar_actuacio : Fragment() {
 
         binding.titolActuacio.setText(args.titolActuacio)
         binding.dataActuacio.setText(args.dataActuacio)
-        binding.ubicacioActuacio.setText(args.ubicacioActuacio)
+        binding.llocActuacio.setText(args.ubicacioActuacio)
 
         //Modifiquem tota l'actuacio si l'actuacio existeix en la BBDD.
         botoEditarActuacio.setOnClickListener {
