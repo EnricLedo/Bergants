@@ -108,8 +108,8 @@ class AfegirNoticia : Fragment() {
     }
     private fun notification() {
         val notification = NotificationCompat.Builder(requireContext(),"1").also{ noti ->
-            noti.setContentTitle(titolNoticia.text)
-            noti.setContentText(contingutNoticia.text)
+            noti.setContentTitle(titolNoticia.text.toString())
+            noti.setContentText(contingutNoticia.text.toString())
             noti.setSmallIcon(R.drawable.logo_bergants)
         }.build()
         val notificationManageer = NotificationManagerCompat.from(requireContext())
