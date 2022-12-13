@@ -62,6 +62,7 @@ class actuacio : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentActuacioBinding.inflate(inflater, container, false)
+        binding.shimmerViewRvActuacions.startShimmer()
 
         setupRecyclerView()
         return binding.root
@@ -97,6 +98,9 @@ class actuacio : Fragment() {
                     myAdapter.ActuacioRecyclerAdapter(list_multable, requireActivity())
                     //assignem el adapter al RV
                     binding.recyclerActuacions.adapter = myAdapter
+                    binding.shimmerViewRvActuacions.stopShimmer()
+                    binding.shimmerViewRvActuacions.visibility = View.GONE
+                    binding.recyclerActuacions.visibility = View.VISIBLE
                 }
             }
         }
