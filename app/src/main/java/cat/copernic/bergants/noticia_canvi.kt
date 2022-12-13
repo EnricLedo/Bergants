@@ -68,7 +68,6 @@ class noticia_canvi : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentNoticiaCanviBinding.inflate(inflater, container, false)
-        binding.shimmerViewRvNoticies.startShimmer()
 
         return binding.root
     }
@@ -88,6 +87,9 @@ class noticia_canvi : Fragment() {
 
 
     private fun mostrarNoticies() {
+        binding.shimmerViewRvNoticies.visibility = View.VISIBLE
+        binding.recyclerNoticies.visibility = View.GONE
+        binding.shimmerViewRvNoticies.startShimmer()
         lifecycleScope.launch {
             withContext(Dispatchers.IO){
                 bd.collection("Noticies").get().addOnSuccessListener { documents ->
