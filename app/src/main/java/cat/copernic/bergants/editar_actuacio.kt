@@ -81,8 +81,12 @@ class editar_actuacio : Fragment() {
     fun eliminarActuacio(titolActuacio:String){
         bd.collection("Actuacions").document(titolActuacio)
             .delete()
-            .addOnSuccessListener { //S'ha modificat l'actuacio...
-                Toast.makeText(requireActivity(),"S'ha eliminat l'actuacio amb titol $titolActuacio", Toast.LENGTH_LONG).show()
+            .addOnSuccessListener {
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("S'ha eliminat l'actuacio amb titol $titolActuacio")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()//S'ha modificat l'actuacio...
             }
             .addOnFailureListener{
                 val builder = AlertDialog.Builder(requireContext())

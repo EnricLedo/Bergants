@@ -83,8 +83,12 @@ class editar_assaig : Fragment() {
     fun eliminarAssaig(titolAssaig:String){
         bd.collection("Assajos").document(titolAssaig)
             .delete()
-            .addOnSuccessListener { //S'ha modificat l'assaig...
-                Toast.makeText(requireActivity(),"S'ha eliminat l'assaig amb titol $titolAssaig", Toast.LENGTH_LONG).show()
+            .addOnSuccessListener {
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("S'ha eliminat l'assaig amb titol $titolAssaig")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()//S'ha modificat l'assaig...
             }
             .addOnFailureListener{
                 val builder = AlertDialog.Builder(requireContext())
