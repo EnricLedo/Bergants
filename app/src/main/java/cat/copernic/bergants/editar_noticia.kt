@@ -114,7 +114,7 @@ class editar_noticia : Fragment() {
             }
         }
 
-        //Eliminem el departament corresponent al codi passat per paràmetre, si aquest existeix en la col.lecció
+        //Eliminem la noticia corresponent al codi passat per paràmetre, si aquest existeix en la col.lecció
         botoEliminarNoticia.setOnClickListener {
 
             var noticia = llegirDades()
