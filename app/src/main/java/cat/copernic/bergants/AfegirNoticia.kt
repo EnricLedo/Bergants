@@ -9,6 +9,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import cat.copernic.bergants.databinding.FragmentAfegirNoticiaBinding
 import cat.copernic.bergants.model.NoticiaModel
 import com.google.android.material.snackbar.Snackbar
@@ -67,6 +69,14 @@ class AfegirNoticia : Fragment() {
                 builder.setPositiveButton("Aceptar", null)
                 val dialog = builder.create()
                 dialog.show()//S'ha afegir la noticia...
+
+
+                /**var builder2 = NotificationCompat.Builder(this, CHANNEL_ID)
+                    .setSmallIcon(R.drawable.notification_icon)
+                    .setContentTitle(textTitle)
+                    .setContentText(textContent)
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)*/
+
             }
             .addOnFailureListener {
                 val builder = AlertDialog.Builder(requireContext())
@@ -93,5 +103,14 @@ class AfegirNoticia : Fragment() {
                 Snackbar.make(it, "Falta indroduir parametres!!!", Snackbar.LENGTH_LONG).show()
             }
         }
+    }
+    private fun notification(nom:String) {
+        val notification = NotificationCompat.Builder(requireContext(),"1").also{ noti ->
+            noti.setContentTitle(titolNoticia.text)
+            noti.setContentText(contingutNoticia.text)
+            noti.setSmallIcon(R.drawable.logo_bergants)
+        }.build()
+        val notificationManageer = NotificationManagerCompat.from(requireContext())
+        notificationManageer.notify(1,notification)
     }
 }
