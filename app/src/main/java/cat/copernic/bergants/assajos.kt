@@ -14,11 +14,15 @@ import cat.copernic.bergants.databinding.FragmentAssajosBinding
 import cat.copernic.bergants.model.ActuacioModel
 import cat.copernic.bergants.model.AssaigModel
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class assajos : Fragment() {
 
     private lateinit var binding: FragmentAssajosBinding
+
+    private var list_multable: MutableList<AssaigModel> = ArrayList()
 
     private val myAdapter: AssaigRecyclerAdapter = AssaigRecyclerAdapter()
 
@@ -26,7 +30,7 @@ class assajos : Fragment() {
         FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
 
     private fun setupRecyclerView() {
-        if (getAssajos().isEmpty()) {
+        if (list_multable.isEmpty()) {
             mostrarAssajos()
         } else {
             binding.recyclerAssajos.setHasFixedSize(true)
@@ -35,7 +39,7 @@ class assajos : Fragment() {
             binding.recyclerAssajos.layoutManager = LinearLayoutManager(context)
 
             //generem el adapter
-            myAdapter.AssaigRecyclerAdapter(getAssajos(), requireActivity())
+            myAdapter.AssaigRecyclerAdapter(list_multable, requireActivity())
             //assignem el adapter al RV
             binding.recyclerAssajos.adapter = myAdapter
         }
@@ -61,67 +65,38 @@ class assajos : Fragment() {
         return binding.root
     }
 
-    private fun getAssajos(): MutableList<AssaigModel> {
-        val assajos: MutableList<AssaigModel> = arrayListOf()
-        assajos.add(
-            AssaigModel(
-                "ASSAIG ESPECIAL DE LA MERCÈ",
-                "DISSABTE 23 de Setembre del 2022 20:00h",
-                "Local de la colla"
-            )
-        )
-        assajos.add(
-            AssaigModel(
-                "ASSAIG GENERAL",
-                "DIMECRES 28 de Setembre del 2022 20:00h",
-                "Local de la colla"
-            )
-        )
-        assajos.add(
-            AssaigModel(
-                "ASSAIG GENERAL",
-                "DIVENDRES 30 de Setembre del 2022 20:00h",
-                "Local de la colla"
-            )
-        )
-        assajos.add(
-            AssaigModel(
-                "ASSAIG GENERAL",
-                "DILLUNS 3 d'Octubre del 2022 20:00h",
-                "Local de la colla"
-            )
-        )
-
-        return assajos
-    }
-
     private fun mostrarAssajos() {
-
         lifecycleScope.launch {
-            bd.collection("Assajos").get().addOnSuccessListener { documents ->
-                for (document in documents) {
-                    val wallItem = AssaigModel(
-                        title = document["titolAssaig"].toString(),
-                        data = document["dataAssaig"].toString(),
-                        lloc = document["llocAssaig"].toString()
-                    )
-                    if (getAssajos().isEmpty()) {
-                        getAssajos().add(wallItem)
-                    } else {
-                        for (i in getAssajos()) {
-                            if (wallItem.titolAssaig != i.titolAssaig) {
-                                getAssajos().add(wallItem)
+            withContext(Dispatchers.IO){
+                bd.collection("Assajos").get().addOnSuccessListener { documents ->
+                    for (document in documents) {
+                        val wallItem = AssaigModel(
+                            title = document["titolAssaig"].toString(),
+                            data = document["dataAssaig"].toString(),
+                            lloc = document["llocAssaig"].toString()
+                        )
+                        if (list_multable.isEmpty()) {
+                            list_multable.add(wallItem)
+                        } else {
+                            var contador = 0
+                            for (i in list_multable) {
+                                if (wallItem.title == i.title) {
+                                    contador++
+                                }
+                            }
+                            if(contador <1){
+                                list_multable.add(wallItem)
                             }
                         }
                     }
-                }
-                //indiquem que el RV es mostrarà en format llista
-                binding.recyclerAssajos.layoutManager = LinearLayoutManager(context)
+                    //indiquem que el RV es mostrarà en format llista
+                    binding.recyclerAssajos.layoutManager = LinearLayoutManager(context)
 
-                //generem el adapter
-                myAdapter.AssaigRecyclerAdapter(getAssajos(), requireActivity())
-                //assignem el adapter al RV
-                binding.recyclerAssajos.adapter = myAdapter
+                    //generem el adapter
+                    myAdapter.AssaigRecyclerAdapter(list_multable, requireActivity())
+                    //assignem el adapter al RV
+                    binding.recyclerAssajos.adapter = myAdapter
+                }
             }
         }
     }

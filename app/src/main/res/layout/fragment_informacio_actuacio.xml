@@ -154,7 +154,7 @@
         app:layout_constraintStart_toEndOf="@id/iconaUbicacio"
         app:layout_constraintTop_toTopOf="@+id/iconaUbicacio" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/maps_exemple"
         android:layout_width="@dimen/ImatgeWidthMapa270dp"
         android:layout_height="@dimen/ImatgeHeightMapa318dp"
@@ -164,6 +164,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:contentDescription="@string/imatgeactuacio"/>
+
+    <Button
+        android:id="@+id/botoEditarActuacio"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="650dp"
+        android:text="Editar Actuacio"
+        android:textColor="@color/blanc"
+        android:backgroundTint="@color/verdBergant"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_goneMarginEnd="20dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

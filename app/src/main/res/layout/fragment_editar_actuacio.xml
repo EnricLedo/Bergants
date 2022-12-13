@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".editar_actuacio"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="8dp"
+    android:padding="@dimen/MargePapereraEsquerra20dp">
+
+
+    <TextView
+        android:id="@+id/TemaActuacio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MargePapereraEsquerra20dp"
+        android:text="@string/temaActuacio"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/TitolGordo18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/titolActuacio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/separacio"
+        android:text="Actuació molt guay"
+        android:inputType="text"
+        android:minHeight="@dimen/DimensioPaperera48dp"
+        app:layout_constraintTop_toBottomOf="@id/TemaActuacio" />
+
+    <TextView
+        android:id="@+id/dateActuacio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MargePapereraEsquerra20dp"
+        android:text="DATA I HORA DE L'ACTUACIÓ"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/TitolGordo18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/titolActuacio" />
+
+    <EditText
+        android:id="@+id/dataActuacio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/separacio"
+        android:text="28/07/2023 14:30"
+        android:inputType="datetime"
+        android:minHeight="@dimen/DimensioPaperera48dp"
+        app:layout_constraintTop_toBottomOf="@id/dateActuacio" />
+
+    <TextView
+        android:id="@+id/ubicacioActuacio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MargePapereraEsquerra20dp"
+        android:text="@string/UbicacioTitol"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/TitolGordo18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/dataActuacio" />
+
+    <EditText
+        android:id="@+id/llocActuacio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/separacio"
+        android:text="Plaça divertida"
+        android:inputType="text"
+        android:minHeight="@dimen/DimensioPaperera48dp"
+        app:layout_constraintTop_toBottomOf="@id/ubicacioActuacio" />
+
+    <Button
+        android:id="@+id/botoEliminarActuacio"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/btncircle"
+        android:layout_marginStart="@dimen/MargePapereraEsquerra20dp"
+        android:layout_marginBottom="@dimen/MargeDretaRellotge15dp"
+        android:text="ELIMINAR"
+        android:textSize="@dimen/TitolGordo18sp"
+        android:textColor="@color/blanc"
+        android:backgroundTint="@color/vermellEliminar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/botoEditarActuacio"
+        android:layout_width="@dimen/btncircle"
+        android:layout_height="@dimen/btncircle"
+        android:layout_marginEnd="@dimen/marginpag"
+        android:text="+"
+        android:textSize="30sp"
+        android:textColor="@color/blanc"
+        android:layout_marginBottom="@dimen/separaciomig"
+        android:background="@drawable/round_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

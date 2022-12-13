@@ -78,7 +78,6 @@ class afegirMembre : Fragment() {
 
         //Obrim la galeria
         resultat.launch(Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI))
-
         //adrecaFitxer varaible a la qual li assignarem la refèrencia del fitxer que volem guardar a Storage.
         //A l'atribut storageRef li hem assignat la referència al subdirectori on es guardarà la imatge. El nom de la imatge, el creem de nou
         //amb el mètode child al qual li passem com a paràmetre el nom de la imatge, que en el nostre cas serà, el mateix nom que té la imatge
@@ -86,7 +85,6 @@ class afegirMembre : Fragment() {
         //obtenim l'últim segment de l'adreça què és justament el nom de la imatge. Una adreça (URI) no és un String, per tant l'hem de convertir a
         //String, en el nostre cas, mitjançant el mètode toString()
         var adrecaFitxer = storageRef.child((photoSelectedUri?.lastPathSegment).toString());
-
         //Afegim la imatge seleccionada a storage
         photoSelectedUri?.let{uri-> //Hem seleccionat una imatge. A la variable uri guardem l'URI de la imatge
             //Afegim (pujem) la imatge que hem seleccionat mitjançant el mètode putFile de la classe FirebasStorage, passant-li com a
@@ -102,11 +100,9 @@ class afegirMembre : Fragment() {
         savedInstanceState: Bundle?): View? {
         binding = FragmentAfegirMembreBinding.inflate(inflater, container, false)
         imgMembre =  binding.imgMembre
-
         imgMembre.setOnClickListener{
             afegirImatge()
         }
-
         return binding.root
     }
 
@@ -116,11 +112,12 @@ class afegirMembre : Fragment() {
         var malnom = malnom.text.toString()
         var alcadaEspatlles = alcadaEspatlles.text.toString()
         var alcadaMans = alcadaMans.text.toString()
-        var correuMembre = correuMembre.text.toString()
-        var adrecaMembre = adrecaMembre.text.toString()
         var telefonMembre = telefonMembre.text.toString()
         var rolMembre = rolMembre.text.toString()
         var altaMembre = altaMembre.text.toString()
+        var correuMembre = correuMembre.text.toString()
+        var adrecaMembre = adrecaMembre.text.toString()
+
 
         return MembreModel(nomMembre, malnom, alcadaEspatlles, alcadaMans, correuMembre,
             adrecaMembre, telefonMembre, rolMembre, altaMembre)
@@ -130,7 +127,7 @@ class afegirMembre : Fragment() {
         //Seleccionem la col.lecció on volem afegir el Membre mitjançant la funció collection("Membres"), si no existeix la col.lecció
         //es crearà, si no la sobreescriurà. Afegim el membre a la col.lecció seleccionada amb un id que genera automàticament Firestore
         // mitjançant la funció add(membre). Si el membre existeix, es sobreescriurà, sinó es crearà de nou.
-        bd.collection("Membres").document(nomMembre.text.toString()).set(
+        bd.collection("Membres").document(correuMembre.text.toString()).set(
             hashMapOf(
                 "nomMembre" to nomMembre.text.toString(),
                 "malnom" to malnom.text.toString(),
@@ -144,22 +141,16 @@ class afegirMembre : Fragment() {
             )
         )
             .addOnSuccessListener { //S'ha afegir l'assaig...
-                Toast.makeText(
-                    requireActivity(),
-                    "El membre s'ha afegit correctament",
-                    Toast.LENGTH_LONG
-                ).show()
+                Toast.makeText(requireActivity(),"El membre s'ha afegit correctament",Toast.LENGTH_LONG).show()
             }
             .addOnFailureListener {
-                Toast.makeText(requireActivity(), "El membre no s'ha afegit", Toast.LENGTH_LONG)
-                    .show()
+                Toast.makeText(requireActivity(), "El membre no s'ha afegit", Toast.LENGTH_LONG).show()
             }
     }
 
     fun registrar(correu: String, contrasenya: String){
         //Regsitrem a un usuari mitjançant el seu correu i contrasenya amb el mètode d'Authentication createUserWithEmailAndPassword passant com
         //a paràmetres el seu correu i contrasenya.
-
         //El registre d'un usuari és una tasca asincrona. El mètode addOnCompleteListener ens permet controlar quan finalitza el registre i com finalitza
         auth.createUserWithEmailAndPassword(correu,contrasenya)
     }
@@ -167,7 +158,6 @@ class afegirMembre : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         auth= Firebase.auth
-
         nomMembre = binding.nomMembre
         malnom = binding.malnomMembre
         alcadaEspatlles = binding.espatllesMembre

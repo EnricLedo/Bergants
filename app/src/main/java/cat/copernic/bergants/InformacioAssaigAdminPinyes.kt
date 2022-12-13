@@ -18,6 +18,7 @@ import androidx.navigation.fragment.navArgs
 import cat.copernic.bergants.databinding.FragmentInformacioAssaigAdminPinyesBinding
 import cat.copernic.bergants.databinding.FragmentInformacioAssaigBinding
 import cat.copernic.bergants.model.AssaigModel
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 
