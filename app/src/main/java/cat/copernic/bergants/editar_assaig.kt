@@ -24,7 +24,7 @@ class editar_assaig : Fragment() {
     //EditText per introduïr les dades de la nova noticia a afegir
     private lateinit var titolAssaig: EditText
     private lateinit var dataAssaig: EditText
-    private lateinit var ubicacioAssaig: EditText
+    private lateinit var llocAssaig: EditText
     private lateinit var botoEditarAssaig: Button
     private lateinit var botoEliminarAssaig: Button
     private lateinit var assaig: AssaigModel
@@ -47,9 +47,9 @@ class editar_assaig : Fragment() {
         //Guardem les dades introduïdes per l'usuari
         var titolAssaig = titolAssaig.text.toString()
         var dataAssaig = dataAssaig.text.toString()
-        var ubicacioAssaig = ubicacioAssaig.text.toString()
+        var llocAssaig = llocAssaig.text.toString()
 
-        return AssaigModel(titolAssaig, dataAssaig, ubicacioAssaig)
+        return AssaigModel(titolAssaig, dataAssaig, llocAssaig)
     }
 
     //Funció que modificarà un assaig amb l'assaig passat per paràmetre. Per fer la modificació, l'identificador del document
@@ -60,7 +60,7 @@ class editar_assaig : Fragment() {
             hashMapOf(
                 "titolAssaig" to titolAssaig.text.toString(),
                 "dataAssaig" to dataAssaig.text.toString(),
-                "ubicacioAssaig" to ubicacioAssaig.text.toString()
+                "llocAssaig" to llocAssaig.text.toString()
             )
         )
             .addOnSuccessListener {
@@ -103,7 +103,7 @@ class editar_assaig : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         titolAssaig = binding.titolAssaig
         dataAssaig = binding.dataAssaig
-        ubicacioAssaig = binding.ubicacioAssaig
+        llocAssaig = binding.ubicacioAssaig
         botoEditarAssaig = binding.botoEditarAssaig
         botoEliminarAssaig = binding.botoEliminarAssaig
 
