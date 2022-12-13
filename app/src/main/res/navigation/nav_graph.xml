@@ -22,10 +22,18 @@
         tools:layout="@layout/fragment_noticia_canvi" >
         <action
             android:id="@+id/action_noticia_fragment_to_afegirNoticia"
-            app:destination="@id/afegir_noticia_fragment" />
+            app:destination="@id/afegir_noticia_fragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim" />
         <action
             android:id="@+id/action_noticia_fragment_to_editar_noticia"
-            app:destination="@id/editar_noticia_fragment" />
+            app:destination="@id/editar_noticia_fragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
     </fragment>
     <fragment
         android:id="@+id/assajos_fragment"
@@ -34,10 +42,18 @@
         tools:layout="@layout/fragment_assajos" >
         <action
             android:id="@+id/action_assajos_fragment_to_afegir_assaig_fragment"
-            app:destination="@id/afegir_assaig_fragment" />
+            app:destination="@id/afegir_assaig_fragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
         <action
             android:id="@+id/action_assajos_fragment_to_informacio_assaig_admin_pinyes"
-            app:destination="@id/informacio_assaig_admin_pinyes" />
+            app:destination="@id/informacio_assaig_admin_pinyes"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
     </fragment>
     <fragment
         android:id="@+id/actuacions_fragment"
@@ -46,10 +62,18 @@
         tools:layout="@layout/fragment_actuacio" >
         <action
             android:id="@+id/action_actuacions_fragment_to_afegir_actuacio_fragment"
-            app:destination="@id/afegir_actuacio_fragment" />
+            app:destination="@id/afegir_actuacio_fragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
         <action
             android:id="@+id/action_actuacions_fragment_to_informacioActuacio"
-            app:destination="@id/informacio_actuacio_fragment" />
+            app:destination="@id/informacio_actuacio_fragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
     </fragment>
     <fragment
         android:id="@+id/membres_fragment"
@@ -58,10 +82,18 @@
         tools:layout="@layout/fragment_membres" >
         <action
             android:id="@+id/action_membres_fragment_to_afegirMembre"
-            app:destination="@id/afegir_membre_fragment" />
+            app:destination="@id/afegir_membre_fragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
         <action
             android:id="@+id/action_membres_fragment_to_editarMembre2"
-            app:destination="@id/editar_membre_fragment" />
+            app:destination="@id/editar_membre_fragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
     </fragment>
 
     <action
@@ -76,7 +108,11 @@
         tools:layout="@layout/fragment_afegir_assaig" >
         <action
             android:id="@+id/action_afegir_assaig_fragment_to_assajos_fragment"
-            app:destination="@id/assajos_fragment" />
+            app:destination="@id/assajos_fragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
     </fragment>
 
     <fragment
@@ -86,10 +122,18 @@
         tools:layout="@layout/fragment_afegir_actuacio" >
         <action
             android:id="@+id/action_afegir_actuacio_fragment_to_actuacions_fragment"
-            app:destination="@id/actuacions_fragment" />
+            app:destination="@id/actuacions_fragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
         <action
             android:id="@+id/action_afegir_actuacio_fragment_to_afegir_actuacio_bus_fragment"
-            app:destination="@id/afegir_actuacio_bus_fragment" />
+            app:destination="@id/afegir_actuacio_bus_fragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
     </fragment>
     <fragment
         android:id="@+id/afegir_noticia_fragment"
@@ -98,7 +142,11 @@
         tools:layout="@layout/fragment_afegir_noticia" >
         <action
             android:id="@+id/action_afegirNoticia_to_noticia_fragment"
-            app:destination="@id/noticia_fragment" />
+            app:destination="@id/noticia_fragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
     </fragment>
     <fragment
         android:id="@+id/informacio_actuacio_fragment"
@@ -110,16 +158,32 @@
             app:argType="cat.copernic.bergants.model.ActuacioModel" />
         <action
             android:id="@+id/action_informacioActuacio_to_afegirCotxe"
-            app:destination="@id/afegir_cotxe_fragment" />
+            app:destination="@id/afegir_cotxe_fragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
         <action
             android:id="@+id/action_informacioActuacio_to_editar_cotxe"
-            app:destination="@id/editar_cotxe_fragment" />
+            app:destination="@id/editar_cotxe_fragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
         <action
             android:id="@+id/action_informacioActuacio_to_unirseCotxe2"
-            app:destination="@id/unirse_cotxe_fragment" />
+            app:destination="@id/unirse_cotxe_fragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
         <action
             android:id="@+id/action_informacio_actuacio_fragment_to_editar_actuacio"
-            app:destination="@id/editar_actuacio" >
+            app:destination="@id/editar_actuacio"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim">
             <argument
                 android:name="titolActuacio"
                 app:argType="string" />
@@ -138,7 +202,11 @@
         tools:layout="@layout/fragment_afegir_membre" >
         <action
             android:id="@+id/action_afegirMembre_to_membres_fragment"
-            app:destination="@id/membres_fragment" />
+            app:destination="@id/membres_fragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
     </fragment>
     <fragment
         android:id="@+id/editar_membre_fragment"
@@ -146,7 +214,11 @@
         android:label="editarMembre" >
         <action
             android:id="@+id/action_editarMembre_to_membres_fragment2"
-            app:destination="@id/membres_fragment" />
+            app:destination="@id/membres_fragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
     </fragment>
     <fragment
         android:id="@+id/editar_noticia_fragment"
@@ -158,7 +230,11 @@
             app:argType="cat.copernic.bergants.model.NoticiaModel" />
         <action
             android:id="@+id/action_editar_noticia_to_noticia_fragment"
-            app:destination="@id/noticia_fragment" />
+            app:destination="@id/noticia_fragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
     </fragment>
     <fragment
         android:id="@+id/afegir_cotxe_fragment"
@@ -167,7 +243,11 @@
         tools:layout="@layout/fragment_afegir_cotxe" >
         <action
             android:id="@+id/action_afegirCotxe_to_informacioActuacio"
-            app:destination="@id/informacio_actuacio_fragment" />
+            app:destination="@id/informacio_actuacio_fragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
     </fragment>
     <fragment
         android:id="@+id/editar_cotxe_fragment"
@@ -176,7 +256,11 @@
         tools:layout="@layout/fragment_editar_cotxe" >
         <action
             android:id="@+id/action_editar_cotxe_to_informacioActuacio"
-            app:destination="@id/informacio_actuacio_fragment" />
+            app:destination="@id/informacio_actuacio_fragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
     </fragment>
     <fragment
         android:id="@+id/unirse_cotxe_fragment"
@@ -185,7 +269,11 @@
         tools:layout="@layout/fragment_unirse_cotxe" >
         <action
             android:id="@+id/action_unirseCotxe2_to_informacioActuacio"
-            app:destination="@id/informacio_actuacio_fragment" />
+            app:destination="@id/informacio_actuacio_fragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
     </fragment>
     <fragment
         android:id="@+id/afegir_actuacio_bus_fragment"
@@ -193,10 +281,18 @@
         android:label="fragment_afegir_actuacio_bus" >
         <action
             android:id="@+id/action_afegir_actuacio_bus_fragment_to_actuacions_fragment"
-            app:destination="@id/actuacions_fragment" />
+            app:destination="@id/actuacions_fragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
         <action
             android:id="@+id/action_afegir_actuacio_bus_fragment_to_afegir_actuacio_fragment"
-            app:destination="@id/afegir_actuacio_fragment" />
+            app:destination="@id/afegir_actuacio_fragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
     </fragment>
     <fragment
         android:id="@+id/informacio_assaig_admin_pinyes"
@@ -207,10 +303,18 @@
             app:argType="cat.copernic.bergants.model.AssaigModel" />
         <action
             android:id="@+id/action_informacio_assaig_admin_pinyes_to_assajos_fragment"
-            app:destination="@id/assajos_fragment" />
+            app:destination="@id/assajos_fragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
         <action
             android:id="@+id/action_informacio_assaig_admin_pinyes_to_editar_assaig"
-            app:destination="@id/editar_assaig">
+            app:destination="@id/editar_assaig"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim">
             <argument
                 android:name="titolAssaig"
                 app:argType="string" />
@@ -229,7 +333,11 @@
         tools:layout="@layout/fragment_editar_assaig" >
         <action
             android:id="@+id/action_editar_assaig_to_informacio_assaig_admin_pinyes"
-            app:destination="@id/informacio_assaig_admin_pinyes" />
+            app:destination="@id/informacio_assaig_admin_pinyes"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
         <argument
             android:name="titolAssaig"
             app:argType="string"
@@ -252,7 +360,11 @@
         android:label="editar_actuacio" >
         <action
             android:id="@+id/action_editar_actuacio_to_informacio_actuacio_fragment"
-            app:destination="@id/informacio_actuacio_fragment" />
+            app:destination="@id/informacio_actuacio_fragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
         <argument
             android:name="titolActuacio"
             app:argType="string"
