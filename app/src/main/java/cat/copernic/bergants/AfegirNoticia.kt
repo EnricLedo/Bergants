@@ -70,7 +70,7 @@ class AfegirNoticia : Fragment() {
                 val dialog = builder.create()
                 dialog.show()//S'ha afegir la noticia...
 
-                notification()
+                notification(titolNoticia.text.toString(), contingutNoticia.text.toString())
 
 
                 /**var builder2 = NotificationCompat.Builder(this, CHANNEL_ID)
@@ -106,10 +106,10 @@ class AfegirNoticia : Fragment() {
             }
         }
     }
-    private fun notification() {
+    private fun notification(titol:String, contingut:String) {
         val notification = NotificationCompat.Builder(requireContext(),"1").also{ noti ->
-            noti.setContentTitle(titolNoticia.text.toString())
-            noti.setContentText(contingutNoticia.text.toString())
+            noti.setContentTitle(titol)
+            noti.setContentText(contingut)
             noti.setSmallIcon(R.drawable.logo_bergants)
         }.build()
         val notificationManageer = NotificationManagerCompat.from(requireContext())
