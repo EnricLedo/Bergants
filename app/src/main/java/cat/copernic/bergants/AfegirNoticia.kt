@@ -70,6 +70,8 @@ class AfegirNoticia : Fragment() {
                 val dialog = builder.create()
                 dialog.show()//S'ha afegir la noticia...
 
+                notification()
+
 
                 /**var builder2 = NotificationCompat.Builder(this, CHANNEL_ID)
                     .setSmallIcon(R.drawable.notification_icon)
@@ -104,7 +106,7 @@ class AfegirNoticia : Fragment() {
             }
         }
     }
-    private fun notification(nom:String) {
+    private fun notification() {
         val notification = NotificationCompat.Builder(requireContext(),"1").also{ noti ->
             noti.setContentTitle(titolNoticia.text)
             noti.setContentText(contingutNoticia.text)
