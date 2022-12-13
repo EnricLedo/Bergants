@@ -43,11 +43,7 @@ class noticia_canvi : Fragment() {
     private fun setupRecyclerView() {
 
         if (list_multable.isEmpty()) {
-            lifecycleScope.launch {
-                withContext(Dispatchers.IO){
-                    mostrarNoticies() //Executem la funció de suspensió
-                }
-            }
+            mostrarNoticies() //Executem la funció de suspensió
 
         } else {
             binding.recyclerNoticies.setHasFixedSize(true)
@@ -84,8 +80,8 @@ class noticia_canvi : Fragment() {
     }
 
     private fun mostrarNoticies() {
-
-
+        lifecycleScope.launch {
+            withContext(Dispatchers.IO){
                 bd.collection("Noticies").get().addOnSuccessListener { documents ->
                     for (document in documents) {
                         val wallItem = NoticiaModel(
@@ -113,7 +109,7 @@ class noticia_canvi : Fragment() {
                     //assignem el adapter al RV
                     binding.recyclerNoticies.adapter = myAdapter
                 }
-
-
+            }
+        }
     }
 }
