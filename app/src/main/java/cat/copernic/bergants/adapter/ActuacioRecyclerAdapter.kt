@@ -13,7 +13,6 @@ import cat.copernic.bergants.model.ActuacioModel
 class ActuacioRecyclerAdapter : RecyclerView.Adapter<ActuacioRecyclerAdapter.ViewHolder>() {
     var actuacions: MutableList<ActuacioModel> = ArrayList()
     lateinit var context: Context
-
     //constructor de la classe on es passa la font de dades i el context sobre el que es mostrarà
     fun ActuacioRecyclerAdapter(actuacionsList:MutableList<ActuacioModel>, contxt: Context){
         this.actuacions = actuacionsList
@@ -41,7 +40,6 @@ class ActuacioRecyclerAdapter : RecyclerView.Adapter<ActuacioRecyclerAdapter.Vie
         }
         val item = actuacions.get(position)
         holder.bind(item)
-
         //establim un listener
         holder.itemView.setOnClickListener{
             val action = actuacioDirections.actionActuacionsFragmentToInformacioActuacio(item)
@@ -54,9 +52,7 @@ class ActuacioRecyclerAdapter : RecyclerView.Adapter<ActuacioRecyclerAdapter.Vie
     }
 
     class ViewHolder(val binding: DisenyActuacioBinding): RecyclerView.ViewHolder(binding.root) {
-
         fun bind(actuacio: ActuacioModel) {
-
         }
 
     }

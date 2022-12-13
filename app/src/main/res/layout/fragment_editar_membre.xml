@@ -178,13 +178,26 @@
         android:id="@+id/botoEditarMembre"
         android:layout_width="@dimen/bigbtnwidth"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="28dp"
         android:backgroundTint="@color/verdBergant"
         android:text="@string/botoafegir"
         android:textColor="@color/blanc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rolMembre"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/botoEliminarMembre"
+        android:layout_width="@dimen/bigbtnwidth"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="28dp"
+        android:backgroundTint="@color/vermellEliminar"
+        android:text="Eliminar"
+        android:textColor="@color/blanc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/botoEditarMembre"
         tools:ignore="TextContrastCheck" />
 
     <TextView
