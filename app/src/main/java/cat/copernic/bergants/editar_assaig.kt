@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.navArgs
 import cat.copernic.bergants.databinding.FragmentEditarAssaigBinding
 import cat.copernic.bergants.databinding.FragmentEditarNoticiaBinding
@@ -62,16 +63,19 @@ class editar_assaig : Fragment() {
                 "ubicacioAssaig" to ubicacioAssaig.text.toString()
             )
         )
-            .addOnSuccessListener { //S'ha afegit l'assaig...
-                Toast.makeText(
-                    requireActivity(),
-                    "L'assaig s'ha afegit correctament",
-                    Toast.LENGTH_LONG
-                ).show()
+            .addOnSuccessListener {
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("L'assaig s'ha afegit correctament")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()//S'ha afegit l'assaig...
             }
             .addOnFailureListener {
-                Toast.makeText(requireActivity(), "L'assaig no s'ha afegit", Toast.LENGTH_LONG)
-                    .show()
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("L'assaig no s'ha afegit")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()
             }
     }
 
@@ -82,8 +86,12 @@ class editar_assaig : Fragment() {
             .addOnSuccessListener { //S'ha modificat l'assaig...
                 Toast.makeText(requireActivity(),"S'ha eliminat l'assaig amb titol $titolAssaig", Toast.LENGTH_LONG).show()
             }
-            .addOnFailureListener{ //No s'ha modificat l'assaig...
-                Toast.makeText(requireActivity(),"No s'ha eliminat l'assaig", Toast.LENGTH_LONG).show()
+            .addOnFailureListener{
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("No s'ha eliminat l'assaig")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()//No s'ha modificat l'assaig...
             }
     }
 
@@ -122,8 +130,11 @@ class editar_assaig : Fragment() {
                 modificarAssaig(assaig)
 
             } else {
-                //Mostrem un missatge a l'usuari mitjançant un Toast
-                Toast.makeText(requireActivity(),"Cal introduïr els paramatres a modificar",Toast.LENGTH_LONG).show()
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("Cal introduïr els paramatres a modificar")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show() //Mostrem un missatge a l'usuari
             }
         }
 
@@ -136,8 +147,11 @@ class editar_assaig : Fragment() {
                 //Eliminem l'assaig mitjançant la funció eliminarAssaig creada per nosaltres
                 eliminarAssaig(assaig.titolAssaig!!)
             }else{
-                //Mostrem un missatge a l'usuari mitjançant un Toast
-                Toast.makeText(requireActivity(),"Cal introduïr un titol de l'assaig que volem eliminar",Toast.LENGTH_LONG).show()
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("Cal introduïr un titol de l'assaig que volem eliminar")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                //Mostrem un missatge a l'usuari
             }
         }
     }

@@ -14,6 +14,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import cat.copernic.bergants.databinding.FragmentAfegirMembreBinding
 import cat.copernic.bergants.model.MembreModel
 import com.google.android.material.snackbar.Snackbar
@@ -90,7 +91,11 @@ class afegirMembre : Fragment() {
             //Afegim (pujem) la imatge que hem seleccionat mitjançant el mètode putFile de la classe FirebasStorage, passant-li com a
             //paràmetre l'URI de la imatge. Aquest mètode carrega la imatge de manera asíncrona.
             adrecaFitxer.putFile(uri).addOnSuccessListener {
-                Toast.makeText(requireActivity(),"La imatge s'ha pujat amb èxit", Toast.LENGTH_LONG).show()
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("La imatge s'ha pujat amb èxit")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()
             }
         }
     }
@@ -140,11 +145,19 @@ class afegirMembre : Fragment() {
                 "altaMembre" to altaMembre.text.toString()
             )
         )
-            .addOnSuccessListener { //S'ha afegir l'assaig...
-                Toast.makeText(requireActivity(),"El membre s'ha afegit correctament",Toast.LENGTH_LONG).show()
+            .addOnSuccessListener {
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("El membre s'ha afegit correctament")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()
             }
             .addOnFailureListener {
-                Toast.makeText(requireActivity(), "El membre no s'ha afegit", Toast.LENGTH_LONG).show()
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("El membre no s'ha afegit")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()
             }
     }
 

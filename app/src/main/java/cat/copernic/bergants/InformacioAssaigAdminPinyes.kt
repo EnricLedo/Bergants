@@ -12,6 +12,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -77,7 +78,10 @@ class InformacioAssaigAdminPinyes : Fragment() {
             //Afegim (pujem) la imatge que hem seleccionat mitjançant el mètode putFile de la classe FirebasStorage, passant-li com a
             //paràmetre l'URI de la imatge. Aquest mètode carrega la imatge de manera asíncrona.
             adrecaFitxer.putFile(uri).addOnSuccessListener {
-                Toast.makeText(requireActivity(),"La imatge s'ha pujat amb èxit", Toast.LENGTH_LONG).show()
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("La imatge s'ha pujat amb èxit")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
             }
         }
     }

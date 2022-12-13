@@ -69,8 +69,11 @@ class AfegirNoticia : Fragment() {
                 dialog.show()//S'ha afegir la noticia...
             }
             .addOnFailureListener {
-                Toast.makeText(requireActivity(), "L'assaig no s'ha afegit", Toast.LENGTH_LONG)
-                    .show()
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("L'assaig no s'ha afegit")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()
             }
     }
 

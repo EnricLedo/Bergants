@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import cat.copernic.bergants.databinding.FragmentEditarActuacioBinding
 import cat.copernic.bergants.databinding.FragmentEditarAssaigBinding
 import cat.copernic.bergants.model.ActuacioModel
@@ -60,16 +61,19 @@ class editar_actuacio : Fragment() {
                 "ubicacioActuacio" to ubicacioActuacio.text.toString()
             )
         )
-            .addOnSuccessListener { //S'ha afegit l'actuacio...
-                Toast.makeText(
-                    requireActivity(),
-                    "L'actuacio s'ha afegit correctament",
-                    Toast.LENGTH_LONG
-                ).show()
+            .addOnSuccessListener {
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("L'actuació s'ha afegit correctament")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()//S'ha afegit l'actuacio...
             }
             .addOnFailureListener {
-                Toast.makeText(requireActivity(), "L'actuacio no s'ha afegit", Toast.LENGTH_LONG)
-                    .show()
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("L'actuació no s'ha afegit")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()
             }
     }
 
@@ -80,8 +84,12 @@ class editar_actuacio : Fragment() {
             .addOnSuccessListener { //S'ha modificat l'actuacio...
                 Toast.makeText(requireActivity(),"S'ha eliminat l'actuacio amb titol $titolActuacio", Toast.LENGTH_LONG).show()
             }
-            .addOnFailureListener{ //No s'ha modificat l'actuacio...
-                Toast.makeText(requireActivity(),"No s'ha eliminat l'actuacio", Toast.LENGTH_LONG).show()
+            .addOnFailureListener{
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("No s'ha eliminat l'actuació")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()//No s'ha modificat l'actuacio...
             }
     }
 
@@ -120,8 +128,12 @@ class editar_actuacio : Fragment() {
                 modificarActuacio(actuacio)
 
             } else {
-                //Mostrem un missatge a l'usuari mitjançant un Toast
-                Toast.makeText(requireActivity(),"Cal introduïr els paramatres a modificar",Toast.LENGTH_LONG).show()
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("Cal introduïr els paramatres a modificar")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()
+                //Mostrem un missatge a l'usuari
             }
         }
 
@@ -134,8 +146,12 @@ class editar_actuacio : Fragment() {
                 //Eliminem l'actuacio mitjançant la funció eliminarActuacio creada per nosaltres
                 eliminarActuacio(actuacio.titolActuacio!!)
             }else{
-                //Mostrem un missatge a l'usuari mitjançant un Toast
-                Toast.makeText(requireActivity(),"Cal introduïr un titol de l'actuacio que volem eliminar",Toast.LENGTH_LONG).show()
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("Cal introduïr un titol de l'actuacio que volem eliminar")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()
+                //Mostrem un missatge a l'usuari mitjançant
             }
         }
     }
