@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.Switch
 import android.widget.Toast
 import android.widget.Toast.makeText
+import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.findNavController
 import cat.copernic.bergants.databinding.FragmentActuacioBinding
 import cat.copernic.bergants.databinding.FragmentAfegirActuacioBinding
@@ -67,16 +68,19 @@ class AfegirActuacio : Fragment() {
                 "llocActuacio" to llocActuacio.text.toString() //Atribut llocActuacio amb el valor introduït per l'usuari
             )
         )
-            .addOnSuccessListener { //S'ha afegir l'actuació...
-                Toast.makeText(
-                    requireActivity(),
-                    "L'actuació s'ha afegit correctament",
-                    Toast.LENGTH_LONG
-                ).show()
+            .addOnSuccessListener {
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("L'actuació s'ha afegit correctament")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()
             }
             .addOnFailureListener {
-                Toast.makeText(requireActivity(), "L'actuació no s'ha afegit", Toast.LENGTH_LONG)
-                    .show()
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("L'actuació no s'ha afegit")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()
             }
     }
 

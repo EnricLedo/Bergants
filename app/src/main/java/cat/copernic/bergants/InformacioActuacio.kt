@@ -14,6 +14,7 @@ import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import cat.copernic.bergants.databinding.FragmentInformacioActuacioBinding

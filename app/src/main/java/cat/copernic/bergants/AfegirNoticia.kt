@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import cat.copernic.bergants.databinding.FragmentAfegirNoticiaBinding
 import cat.copernic.bergants.model.NoticiaModel
 import com.google.android.material.snackbar.Snackbar
@@ -60,16 +61,19 @@ class AfegirNoticia : Fragment() {
                 "dataNoticia" to dataNoticia.text.toString() //Atribut dataNoticia amb el valor introduït per l'usuari
             )
         )
-            .addOnSuccessListener { //S'ha afegir la noticia...
-                Toast.makeText(
-                    requireActivity(),
-                    "L'assaig s'ha afegit correctament",
-                    Toast.LENGTH_LONG
-                ).show()
+            .addOnSuccessListener {
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("La notícia s'ha afegit")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()//S'ha afegir la noticia...
             }
             .addOnFailureListener {
-                Toast.makeText(requireActivity(), "L'assaig no s'ha afegit", Toast.LENGTH_LONG)
-                    .show()
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("La notícia no s'ha afegit")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()
             }
     }
 

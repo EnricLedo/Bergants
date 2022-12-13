@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.navArgs
 import cat.copernic.bergants.databinding.FragmentEditarNoticiaBinding
 import cat.copernic.bergants.databinding.FragmentNoticiaCanviBinding
@@ -65,16 +66,19 @@ class editar_noticia : Fragment() {
                 "dataNoticia" to dataNoticia.text.toString()
             )
         )
-            .addOnSuccessListener { //S'ha afegir la noticia...
-                Toast.makeText(
-                    requireActivity(),
-                    "La notícia s'ha afegit correctament",
-                    Toast.LENGTH_LONG
-                ).show()
+            .addOnSuccessListener {
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("La notícia s'ha afegit correctament")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()//S'ha afegir la noticia...
             }
             .addOnFailureListener {
-                Toast.makeText(requireActivity(), "La notícia no s'ha afegit", Toast.LENGTH_LONG)
-                    .show()
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("La notícia no s'ha afegit")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()
             }
     }
 
@@ -82,11 +86,20 @@ class editar_noticia : Fragment() {
     fun eliminarNoticia(titolNoticia:String){
         bd.collection("Noticies").document(titolNoticia)
             .delete()
-            .addOnSuccessListener { //S'ha modificat la noticia...
-                Toast.makeText(requireActivity(),"S'ha eliminat la noticia amb titol $titolNoticia", Toast.LENGTH_LONG).show()
+            .addOnSuccessListener {
+                //S'ha modificat la noticia...
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("S'ha eliminat la noticia amb titol $titolNoticia")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()
             }
-            .addOnFailureListener{ //No s'ha modificat la noticia...
-                Toast.makeText(requireActivity(),"No s'ha eliminat la noticia", Toast.LENGTH_LONG).show()
+            .addOnFailureListener{
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("No s'ha eliminat la noticia")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()//No s'ha modificat la noticia...
             }
     }
 
@@ -109,8 +122,12 @@ class editar_noticia : Fragment() {
                 modificarNoticia(noticia)
 
             } else {
-                //Mostrem un missatge a l'usuari mitjançant un Toast
-                Toast.makeText(requireActivity(),"Cal introduïr els paramatres a modificar",Toast.LENGTH_LONG).show()
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("Cal introduïr els paramatres a modificar")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()
+                //Mostrem un missatge a l'usuari
             }
         }
 
@@ -123,8 +140,12 @@ class editar_noticia : Fragment() {
                 //Eliminem la noticia mitjançant la funció eliminarNoticia creada per nosaltres
                 eliminarNoticia(noticia.titolNoticia!!)
             }else{
-                //Mostrem un missatge a l'usuari mitjançant un Toast
-                Toast.makeText(requireActivity(),"Cal introduïr un titol de la noticia que volem eliminar",Toast.LENGTH_LONG).show()
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("Cal introduïr un titol de la noticia que volem eliminar")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()
+                //Mostrem un missatge a l'usuari
             }
         }
 

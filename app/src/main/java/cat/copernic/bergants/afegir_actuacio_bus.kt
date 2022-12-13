@@ -2,6 +2,7 @@ package cat.copernic.bergants
 
 import android.os.Bundle
 import android.content.Intent
+import android.icu.lang.UCharacter.GraphemeClusterBreak.L
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.findNavController
 import cat.copernic.bergants.databinding.FragmentAfegirActuacioBusBinding
 import cat.copernic.bergants.model.ActuacioBusModel
@@ -71,16 +73,19 @@ class afegir_actuacio_bus : Fragment() {
                 "llocActuacio" to llocActuacio.text.toString() //Atribut llocActuacio amb el valor introduït per l'usuari
             )
         )
-            .addOnSuccessListener { //S'ha afegir l'actuació...
-                Toast.makeText(
-                    requireActivity(),
-                    "L'actuació s'ha afegit correctament",
-                    Toast.LENGTH_LONG
-                ).show()
+            .addOnSuccessListener {
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("L'actuació s'ha afegit correctament")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()//S'ha afegir l'actuació...
             }
             .addOnFailureListener {
-                Toast.makeText(requireActivity(), "L'actuació no s'ha afegit", Toast.LENGTH_LONG)
-                    .show()
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("L'actuació no s'ha afegit")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()
             }
         bd.collection("Actuacions").document(actuacio.titolActuacio).collection("Autocar")//Col.lecció
             .document(actuacio.autocar.get(+1).ubicacioBus).
@@ -88,10 +93,18 @@ class afegir_actuacio_bus : Fragment() {
                 "horariBus" to actuacio.autocar.get(+1).horariBus,
                 "placesBus" to actuacio.autocar.get(+1).placesBus)) //Subcol.lecció
             .addOnSuccessListener {
-                Toast.makeText(requireActivity(),"L'actuació s'ha afegit correctament", Toast.LENGTH_LONG).show()
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("L'actuació s'ha afegit correctament")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()//S'ha afegir l'actuació...
             }
             .addOnFailureListener{ //No s'ha afegit l'actuacio...
-                Toast.makeText(requireActivity(),"L'actuació no s'ha afegit", Toast.LENGTH_LONG).show()
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("L'actuació no s'ha afegit")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()
             }
     }
 

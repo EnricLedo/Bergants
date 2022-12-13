@@ -14,6 +14,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import cat.copernic.bergants.databinding.FragmentAfegirMembreBinding
 import cat.copernic.bergants.model.MembreModel
 import com.google.android.material.snackbar.Snackbar
@@ -140,11 +141,19 @@ class afegirMembre : Fragment() {
                 "altaMembre" to altaMembre.text.toString()
             )
         )
-            .addOnSuccessListener { //S'ha afegir l'assaig...
-                Toast.makeText(requireActivity(),"El membre s'ha afegit correctament",Toast.LENGTH_LONG).show()
+            .addOnSuccessListener {
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("El membre s'ha afegit correctament")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()
             }
             .addOnFailureListener {
-                Toast.makeText(requireActivity(), "El membre no s'ha afegit", Toast.LENGTH_LONG).show()
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("El membre no s'ha afegit")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()
             }
     }
 
