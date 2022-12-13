@@ -79,7 +79,6 @@ class noticia_canvi : Fragment() {
         return binding.root
     }
 
-
     private fun mostrarNoticies() {
         lifecycleScope.launch {
             withContext(Dispatchers.IO){
