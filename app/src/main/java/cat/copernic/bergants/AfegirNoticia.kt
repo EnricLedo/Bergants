@@ -63,14 +63,14 @@ class AfegirNoticia : Fragment() {
         )
             .addOnSuccessListener {
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("L'assaig s'ha afegit")
+                builder.setMessage("La notícia s'ha afegit")
                 builder.setPositiveButton("Aceptar", null)
                 val dialog = builder.create()
                 dialog.show()//S'ha afegir la noticia...
             }
             .addOnFailureListener {
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("L'assaig no s'ha afegit")
+                builder.setMessage("La notícia no s'ha afegit")
                 builder.setPositiveButton("Aceptar", null)
                 val dialog = builder.create()
                 dialog.show()
