@@ -11,6 +11,8 @@ import android.widget.Switch
 import android.widget.Toast
 import android.widget.Toast.makeText
 import androidx.appcompat.app.AlertDialog
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.navigation.fragment.findNavController
 import cat.copernic.bergants.databinding.FragmentActuacioBinding
 import cat.copernic.bergants.databinding.FragmentAfegirActuacioBinding
@@ -74,6 +76,8 @@ class AfegirActuacio : Fragment() {
                 builder.setPositiveButton("Aceptar", null)
                 val dialog = builder.create()
                 dialog.show()
+
+                notification(titolActuacio.text.toString(), llocActuacio.text.toString())
             }
             .addOnFailureListener {
                 val builder = AlertDialog.Builder(requireContext())
@@ -107,5 +111,15 @@ class AfegirActuacio : Fragment() {
                 Snackbar.make(it, "Falta indroduir parametres!!!", Snackbar.LENGTH_LONG).show()
             }
         }
+    }
+
+    private fun notification(titol:String, contingut:String) {
+        val notification = NotificationCompat.Builder(requireContext(),"1").also{ noti ->
+            noti.setContentTitle(titol)
+            noti.setContentText(contingut)
+            noti.setSmallIcon(R.drawable.logo_bergants)
+        }.build()
+        val notificationManageer = NotificationManagerCompat.from(requireContext())
+        notificationManageer.notify(1,notification)
     }
 }
