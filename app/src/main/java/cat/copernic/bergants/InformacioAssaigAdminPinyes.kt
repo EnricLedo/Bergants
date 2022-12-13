@@ -78,10 +78,7 @@ class InformacioAssaigAdminPinyes : Fragment() {
             //Afegim (pujem) la imatge que hem seleccionat mitjançant el mètode putFile de la classe FirebasStorage, passant-li com a
             //paràmetre l'URI de la imatge. Aquest mètode carrega la imatge de manera asíncrona.
             adrecaFitxer.putFile(uri).addOnSuccessListener {
-                val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("La imatge s'ha pujat amb èxit")
-                builder.setPositiveButton("Aceptar", null)
-                val dialog = builder.create()
+                Snackbar.make(requireView(),"La imatge s'ha pujat amb èxit", Snackbar.LENGTH_LONG).show()
             }
         }
     }
