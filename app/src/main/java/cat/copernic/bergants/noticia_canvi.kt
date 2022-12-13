@@ -1,10 +1,14 @@
 package cat.copernic.bergants
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
+import android.view.animation.LayoutAnimationController
 import android.widget.Button
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
@@ -17,6 +21,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import cat.copernic.bergants.adapter.NoticiaRecyclerAdapter
 import cat.copernic.bergants.model.NoticiaModel
+import com.facebook.shimmer.ShimmerFrameLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -31,9 +36,7 @@ import java.util.stream.Collectors.toList
 class noticia_canvi : Fragment() {
 
     private var list_multable: MutableList<NoticiaModel> = ArrayList()
-
     private lateinit var binding: FragmentNoticiaCanviBinding
-
     private val myAdapter: NoticiaRecyclerAdapter = NoticiaRecyclerAdapter()
     private lateinit var auth: FirebaseAuth
 
@@ -47,6 +50,7 @@ class noticia_canvi : Fragment() {
         if (list_multable.isEmpty()) {
             mostrarNoticies() //Executem la funció de suspensió
 
+
         } else {
             binding.recyclerNoticies.setHasFixedSize(true)
             //indiquem que el RV es mostrarà en format llista
@@ -55,9 +59,19 @@ class noticia_canvi : Fragment() {
             myAdapter.NoticiesRecyclerAdapter(list_multable, requireActivity())
             //assignem el adapter al RV
             binding.recyclerNoticies.adapter = myAdapter
+
         }
     }
 
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentNoticiaCanviBinding.inflate(inflater, container, false)
+        binding.shimmerViewRvNoticies.startShimmer()
+
+        return binding.root
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -65,21 +79,13 @@ class noticia_canvi : Fragment() {
         val btnAddNot = requireView().findViewById<Button>(R.id.botoAfegirNoticia)
         mostrarNoticies()
         setupRecyclerView()
-
         btnAddNot.setOnClickListener {
             findNavController().navigate(R.id.action_noticia_fragment_to_afegirNoticia)
         }
     }
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentNoticiaCanviBinding.inflate(inflater, container, false)
 
-        return binding.root
-    }
 
     private fun mostrarNoticies() {
         lifecycleScope.launch {
@@ -105,11 +111,15 @@ class noticia_canvi : Fragment() {
                             }
                         }
                     }
+
                     binding.recyclerNoticies.layoutManager = LinearLayoutManager(context)
                     //generem el adapter
                     myAdapter.NoticiesRecyclerAdapter(list_multable, requireActivity())
                     //assignem el adapter al RV
                     binding.recyclerNoticies.adapter = myAdapter
+                    binding.shimmerViewRvNoticies.stopShimmer()
+                    binding.shimmerViewRvNoticies.visibility = View.GONE
+                    binding.recyclerNoticies.visibility = View.VISIBLE
                 }
             }
         }
