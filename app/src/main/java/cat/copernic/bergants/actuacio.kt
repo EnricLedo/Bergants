@@ -52,6 +52,7 @@ class actuacio : Fragment() {
 
         val btnAddAct = requireView().findViewById<Button>(R.id.botoAfegirActuacio)
 
+        setupRecyclerView()
         btnAddAct.setOnClickListener {
             findNavController().navigate(R.id.action_actuacions_fragment_to_afegir_actuacio_fragment)
         }
@@ -62,7 +63,6 @@ class actuacio : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentActuacioBinding.inflate(inflater, container, false)
-        binding.shimmerViewRvActuacions.startShimmer()
 
         setupRecyclerView()
         return binding.root
@@ -70,6 +70,9 @@ class actuacio : Fragment() {
 
 
     private fun mostrarActuacions() {
+        binding.shimmerViewRvActuacions.visibility = View.VISIBLE
+        binding.recyclerActuacions.visibility = View.GONE
+        binding.shimmerViewRvActuacions.startShimmer()
         lifecycleScope.launch {
             withContext(Dispatchers.IO){
                 bd.collection("Actuacions").get().addOnSuccessListener { documents ->

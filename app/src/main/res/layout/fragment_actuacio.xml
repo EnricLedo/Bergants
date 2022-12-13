@@ -34,6 +34,7 @@
     <com.facebook.shimmer.ShimmerFrameLayout
         android:layout_width="match_parent"
         android:layout_height="550dp"
+        android:visibility="gone"
         android:id="@+id/shimmer_view_rv_actuacions"
         app:layout_constraintTop_toBottomOf="@id/spinner">
 
@@ -60,7 +61,6 @@
         android:id="@+id/recyclerActuacions"
         android:layout_width="match_parent"
         android:layout_height="550dp"
-        android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@+id/spinner"
         tools:listitem="@layout/diseny_actuacio"/>
 
