@@ -66,17 +66,16 @@ class editar_noticia : Fragment() {
                 "dataNoticia" to dataNoticia.text.toString()
             )
         )
-            .addOnSuccessListener {
-                val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("La notícia s'ha afegit correctament")
-                builder.setPositiveButton("Aceptar", null)
-                val dialog = builder.create()//S'ha afegir la noticia...
+            .addOnSuccessListener { //S'ha afegir la noticia...
+                Toast.makeText(
+                    requireActivity(),
+                    "La notícia s'ha afegit correctament",
+                    Toast.LENGTH_LONG
+                ).show()
             }
             .addOnFailureListener {
-                val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("La notícia no s'ha afegit")
-                builder.setPositiveButton("Aceptar", null)
-                val dialog = builder.create()
+                Toast.makeText(requireActivity(), "La notícia no s'ha afegit", Toast.LENGTH_LONG)
+                    .show()
             }
     }
 
@@ -87,11 +86,8 @@ class editar_noticia : Fragment() {
             .addOnSuccessListener { //S'ha modificat la noticia...
                 Toast.makeText(requireActivity(),"S'ha eliminat la noticia amb titol $titolNoticia", Toast.LENGTH_LONG).show()
             }
-            .addOnFailureListener{
-                val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("No s'ha eliminat la noticia")
-                builder.setPositiveButton("Aceptar", null)
-                val dialog = builder.create()//No s'ha modificat la noticia...
+            .addOnFailureListener{ //No s'ha modificat la noticia...
+                Toast.makeText(requireActivity(),"No s'ha eliminat la noticia", Toast.LENGTH_LONG).show()
             }
     }
 
@@ -114,11 +110,8 @@ class editar_noticia : Fragment() {
                 modificarNoticia(noticia)
 
             } else {
-                val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("Cal introduïr els paramatres a modificar")
-                builder.setPositiveButton("Aceptar", null)
-                val dialog = builder.create()
-                //Mostrem un missatge a l'usuari
+                //Mostrem un missatge a l'usuari mitjançant un Toast
+                Toast.makeText(requireActivity(),"Cal introduïr els paramatres a modificar",Toast.LENGTH_LONG).show()
             }
         }
 
@@ -131,12 +124,10 @@ class editar_noticia : Fragment() {
                 //Eliminem la noticia mitjançant la funció eliminarNoticia creada per nosaltres
                 eliminarNoticia(noticia.titolNoticia!!)
             }else{
-                val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("Cal introduïr un titol de la noticia que volem eliminar")
-                builder.setPositiveButton("Aceptar", null)
-                val dialog = builder.create()
-                //Mostrem un missatge a l'usuari
+                //Mostrem un missatge a l'usuari mitjançant un Toast
+                Toast.makeText(requireActivity(),"Cal introduïr un titol de la noticia que volem eliminar",Toast.LENGTH_LONG).show()
             }
         }
+
     }
 }
