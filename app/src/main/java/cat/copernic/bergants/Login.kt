@@ -38,6 +38,7 @@ class Login : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        createNotificationChannel()
         setContentView(R.layout.activity_login)
         this.supportActionBar!!.hide()
         val user = FirebaseAuth.getInstance().currentUser
