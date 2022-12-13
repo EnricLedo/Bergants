@@ -70,7 +70,7 @@ class AfegirNoticia : Fragment() {
                 val dialog = builder.create()
                 dialog.show()//S'ha afegir la noticia...
 
-                notification(titolNoticia.text.toString(), contingutNoticia.text.toString())
+                notification(titolNoticia.toString(), contingutNoticia.toString())
 
 
                 /**var builder2 = NotificationCompat.Builder(this, CHANNEL_ID)
