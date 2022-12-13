@@ -84,7 +84,6 @@ class Login : AppCompatActivity() {
                 //Anem al mainActivity des d'aquesta pantalla
                 startActivity(Intent(this,MainActivity::class.java))
                 //finish() //Alliberem memòria un cop finalitzada aquesta tasca.
-
         }
     }
 
