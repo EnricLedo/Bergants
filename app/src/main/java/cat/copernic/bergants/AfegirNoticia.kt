@@ -72,13 +72,6 @@ class AfegirNoticia : Fragment() {
 
                 notification(titolNoticia.text.toString(), contingutNoticia.text.toString())
 
-
-                /**var builder2 = NotificationCompat.Builder(this, CHANNEL_ID)
-                    .setSmallIcon(R.drawable.notification_icon)
-                    .setContentTitle(textTitle)
-                    .setContentText(textContent)
-                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)*/
-
             }
             .addOnFailureListener {
                 val builder = AlertDialog.Builder(requireContext())
