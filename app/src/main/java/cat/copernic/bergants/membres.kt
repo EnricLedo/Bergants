@@ -66,13 +66,13 @@ class membres : Fragment() {
     private fun getMembres():MutableList<Membre>{
         val membres: MutableList<Membre> = arrayListOf()
         membres.add(Membre("Enric Ledo Muntal", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6jimbnhKGIjk--l0ovAaI4qVdLXFo3CJDhA&usqp=CAU"))
-        membres.add(Membre("Marc Fernández González", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6jimbnhKGIjk--l0ovAaI4qVdLXFo3CJDhA&usqp=CAU"))
-        membres.add(Membre("Joan Galindo Palacio", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6jimbnhKGIjk--l0ovAaI4qVdLXFo3CJDhA&usqp=CAU"))
-        membres.add(Membre("Belen Esteban", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6jimbnhKGIjk--l0ovAaI4qVdLXFo3CJDhA&usqp=CAU"))
+        membres.add(Membre("Marc Fernández González", "https://firebasestorage.googleapis.com/v0/b/bergants-dam.appspot.com/o/imatge%2Fmembre%2Fbelenesteban%40gmail.com?alt=media&token=3b793527-300d-4ed5-8989-981b9d596ff7"))
+        membres.add(Membre("Joan Galindo Palacio", "https://firebasestorage.googleapis.com/v0/b/bergants-dam.appspot.com/o/imatge%2Fmembre%2Fmarcfernandez%40gmail.com?alt=media&token=ec1dc7f0-f1b3-4047-aa1d-e49353347353"))
+        membres.add(Membre("Belen Esteban", "https://firebasestorage.googleapis.com/v0/b/bergants-dam.appspot.com/o/imatge%2Fmembre%2Fjoangalindo250%40gmail.com?alt=media&token=4a7ffd25-1a03-42ee-a359-f9bb024f8f3f"))
         membres.add(Membre("Mila Ximenez", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6jimbnhKGIjk--l0ovAaI4qVdLXFo3CJDhA&usqp=CAU"))
-        membres.add(Membre("Pablo Motos", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6jimbnhKGIjk--l0ovAaI4qVdLXFo3CJDhA&usqp=CAU"))
+        membres.add(Membre("Pablo Motos", "https://firebasestorage.googleapis.com/v0/b/bergants-dam.appspot.com/o/imatge%2Fmembre%2Fricard%40gmail.com?alt=media&token=1e47679d-2f0b-4188-bf3b-fa514d0130bb"))
         membres.add(Membre("Alfons Lopez Navarro", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6jimbnhKGIjk--l0ovAaI4qVdLXFo3CJDhA&usqp=CAU"))
-        membres.add(Membre("Adri Navarro González", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6jimbnhKGIjk--l0ovAaI4qVdLXFo3CJDhA&usqp=CAU"))
+        membres.add(Membre("Adri Navarro González", "https://firebasestorage.googleapis.com/v0/b/bergants-dam.appspot.com/o/imatge%2Fmembre%2Fmarcfernandez%40gmail.com?alt=media&token=ec1dc7f0-f1b3-4047-aa1d-e49353347353"))
 
         return membres
 
