@@ -88,7 +88,11 @@ class editar_noticia : Fragment() {
             .delete()
             .addOnSuccessListener {
                 //S'ha modificat la noticia...
-                Toast.makeText(requireActivity(),"S'ha eliminat la noticia amb titol $titolNoticia", Toast.LENGTH_LONG).show()
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setMessage("S'ha eliminat la noticia amb titol $titolNoticia")
+                builder.setPositiveButton("Aceptar", null)
+                val dialog = builder.create()
+                dialog.show()
             }
             .addOnFailureListener{
                 val builder = AlertDialog.Builder(requireContext())
