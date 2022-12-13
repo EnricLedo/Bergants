@@ -14,11 +14,15 @@ import cat.copernic.bergants.databinding.FragmentMembresBinding
 import cat.copernic.bergants.databinding.FragmentNoticiaCanviBinding
 import cat.copernic.bergants.model.AssaigModel
 import cat.copernic.bergants.model.MembreModel
+import cat.copernic.bergants.model.NoticiaModel
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class membres : Fragment() {
     private lateinit var binding: FragmentMembresBinding
+    private var list_multable: MutableList<MembreModel> = ArrayList()
 
     private val myAdapter: MembreRecyclerAdapter = MembreRecyclerAdapter()
     private var bd =
@@ -74,9 +78,48 @@ class membres : Fragment() {
 
     }
 
-    /*private fun mostrarMembres() {
+    private fun mostrarMembres() {
+        /**lifecycleScope.launch {
+            withContext(Dispatchers.IO){
+                bd.collection("Membres").get().addOnSuccessListener { documents ->
+                    for (document in documents) {
+                        val wallItem = MembreModel(
+                            nomMembre = document["nomMembre"].toString(),
+                            malnom = document["nomMembre"].toString(),
+                            alcadaEspatlles = document["nomMembre"].toString(),
+                            alcadaMans = document["nomMembre"].toString(),
+                            correuMembre = document["nomMembre"].toString(),
+                            adrecaMembre = document["nomMembre"].toString(),
+                            telefonMembre = document["nomMembre"].toString(),
+                            rolMembre = document["nomMembre"].toString(),
+                            altaMembre = document["nomMembre"].toString()
+                        )
+                        if (list_multable.isEmpty()) {
+                            list_multable.add(wallItem)
+                        } else {
+                            var contador = 0
+                            for (i in list_multable) {
+                                if (wallItem.nomMembre == i.nomMembre) {
+                                    contador++
+                                }
+                            }
+                            if(contador <1){
+                                list_multable.add(wallItem)
+                            }
+                        }
+                    }
+                    //indiquem que el RV es mostrarà en format llista
+                    binding.recyclerMembres.layoutManager = LinearLayoutManager(context)
 
-        lifecycleScope.launch {
+                    //generem el adapter
+                    myAdapter.MembreRecyclerAdapter(list_multable,requireActivity())
+                    //assignem el adapter al RV
+                    binding.recyclerMembres.adapter = myAdapter
+                }
+            }
+        }*/
+
+        /**lifecycleScope.launch {
             bd.collection("Noticies").get().addOnSuccessListener { documents ->
                 for (document in documents) {
                     val wallItem = MembreModel(
@@ -107,7 +150,7 @@ class membres : Fragment() {
                 //assignem el adapter al RV
                 binding.recyclerMembres.adapter = myAdapter
             }
-        }
-    }*/
+        }*/
+    }
 
 }
