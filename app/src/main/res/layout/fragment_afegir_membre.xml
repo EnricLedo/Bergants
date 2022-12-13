@@ -81,7 +81,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/MALNOM" />
 
-    <Switch
+    <!--<Switch
         android:id="@+id/booleanAdmin"
         style="@style/Switch"
         android:layout_width="@dimen/switchwidth"
@@ -90,7 +90,7 @@
         android:layout_marginEnd="@dimen/marginpagebtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/administrador"
-        tools:ignore="UseSwitchCompatOrMaterialXml" />
+        tools:ignore="UseSwitchCompatOrMaterialXml" /> -->
 
     <TextView
         android:id="@+id/espatlles"
@@ -110,7 +110,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/separacio"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginBottom="@dimen/separacio"
         android:text="@string/mans"
         android:textColor="@color/negre"
@@ -330,6 +330,17 @@
         app:boxBackgroundColor="@color/blanc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rol" />
+
+    <CheckBox
+        android:id="@+id/booleanAdmin"
+        style="@style/Switch"
+        android:layout_width="@dimen/switchwidth"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/separacio"
+        android:layout_marginEnd="@dimen/marginpagebtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/administrador"
+        tools:ignore="UseSwitchCompatOrMaterialXml"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
