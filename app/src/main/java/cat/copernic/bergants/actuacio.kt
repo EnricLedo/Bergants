@@ -33,7 +33,7 @@ class actuacio : Fragment() {
 
     private fun setupRecyclerView() {
         if (list_multable.isEmpty()) {
-            mostrarActuacions()
+            mostrarActuacions() //Executem la funció de suspensió
         } else {
             binding.recyclerActuacions.setHasFixedSize(true)
 
@@ -49,29 +49,30 @@ class actuacio : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val btnAddAct = requireView().findViewById<Button>(R.id.botoAfegirActuacio)
-
+        //iniciem el recycler view
         setupRecyclerView()
-        btnAddAct.setOnClickListener {
-            findNavController().navigate(R.id.action_actuacions_fragment_to_afegir_actuacio_fragment)
+        //botó que s'encarrega de dirigir-nos al fragment encarregat d'afegir noticies
+        binding.botoAfegirActuacio.setOnClickListener {
+            val action = actuacioDirections.actionActuacionsFragmentToAfegirActuacioFragment()
+            findNavController().navigate(action)
         }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        savedInstanceState: Bundle?): View? {
+        //Inflem el layout
         binding = FragmentActuacioBinding.inflate(inflater, container, false)
-
-        setupRecyclerView()
         return binding.root
     }
 
 
     private fun mostrarActuacions() {
+        //Visibilitzem el shimmer per a fer l'animació de carrega abans de mostrar el recycler
         binding.shimmerViewRvActuacions.visibility = View.VISIBLE
+        //Desactivem la visibilitat del recyclerNoticies mentre carreguen els items
         binding.recyclerActuacions.visibility = View.GONE
+        //Activem el shimmer per l'animació de carregar
         binding.shimmerViewRvActuacions.startShimmer()
         lifecycleScope.launch {
             withContext(Dispatchers.IO){
@@ -101,8 +102,11 @@ class actuacio : Fragment() {
                     myAdapter.ActuacioRecyclerAdapter(list_multable, requireActivity())
                     //assignem el adapter al RV
                     binding.recyclerActuacions.adapter = myAdapter
+                    //ara que han carregat els items del recycler ja podem parar el shimmer
                     binding.shimmerViewRvActuacions.stopShimmer()
+                    //també desactivem la visibilitat del shimmer
                     binding.shimmerViewRvActuacions.visibility = View.GONE
+                    //activem la visibilitat del recycler, ja que l'haviem desactivat anteriorment
                     binding.recyclerActuacions.visibility = View.VISIBLE
                 }
             }

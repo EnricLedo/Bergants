@@ -31,7 +31,7 @@ class assajos : Fragment() {
 
     private fun setupRecyclerView() {
         if (list_multable.isEmpty()) {
-            mostrarAssajos()
+            mostrarAssajos() //Executem la funció de suspensió
         } else {
             binding.recyclerAssajos.setHasFixedSize(true)
 
@@ -47,27 +47,29 @@ class assajos : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val btnAddAss = requireView().findViewById<Button>(R.id.botoAfegirAssaig)
-
-        btnAddAss.setOnClickListener {
-            findNavController().navigate(R.id.action_assajos_fragment_to_afegir_assaig_fragment)
+        //iniciem el recycler view
+        setupRecyclerView()
+        //botó que s'encarrega de dirigir-nos al fragment encarregat d'afegir assajos
+        binding.botoAfegirAssaig.setOnClickListener {
+            val action = assajosDirections.actionAssajosFragmentToAfegirAssaigFragment()
+            findNavController().navigate(action)
         }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        savedInstanceState: Bundle?): View? {
+        //Inflem el layout
         binding = FragmentAssajosBinding.inflate(inflater, container, false)
-
-        setupRecyclerView()
         return binding.root
     }
 
     private fun mostrarAssajos() {
+        //Visibilitzem el shimmer per a fer l'animació de carrega abans de mostrar el recycler
         binding.shimmerViewRvAssajos.visibility = View.VISIBLE
+        //Desactivem la visibilitat del recyclerNoticies mentre carreguen els items
         binding.recyclerAssajos.visibility = View.GONE
+        //Activem el shimmer per l'animació de carregar
         binding.shimmerViewRvAssajos.startShimmer()
         lifecycleScope.launch {
             withContext(Dispatchers.IO){
@@ -99,8 +101,11 @@ class assajos : Fragment() {
                     myAdapter.AssaigRecyclerAdapter(list_multable, requireActivity())
                     //assignem el adapter al RV
                     binding.recyclerAssajos.adapter = myAdapter
+                    //ara que han carregat els items del recycler ja podem parar el shimmer
                     binding.shimmerViewRvAssajos.stopShimmer()
+                    //també desactivem la visibilitat del shimmer
                     binding.shimmerViewRvAssajos.visibility = View.GONE
+                    //activem la visibilitat del recycler, ja que l'haviem desactivat anteriorment
                     binding.recyclerAssajos.visibility = View.VISIBLE
                 }
             }
