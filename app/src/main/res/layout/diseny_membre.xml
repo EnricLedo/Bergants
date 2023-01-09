@@ -46,7 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
-            android:text="Nom i cognoms del membre"
+            android:text="@string/nom_cognoms_membre"
             android:textColor="@color/negre"
             android:textSize="@dimen/TitolGordo18sp"
             app:layout_constraintHorizontal_bias="0.0"

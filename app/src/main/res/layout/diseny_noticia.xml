@@ -28,7 +28,7 @@
             android:layout_marginEnd="8dp"
             android:background="@color/grisClaretGentApuntada"
             android:gravity="center_vertical"
-            android:text="Títol de la noticia"
+            android:text="@string/titol_noticia"
             android:textColor="@color/negre"
             android:textSize="@dimen/TitolGordo18sp"
             android:textStyle="bold"
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:text="Contingut de la notícia"
+            android:text="@string/contingut_noticia"
             android:textColor="@color/negre"
             android:textSize="@dimen/LletraNormal16sp"
             app:layout_constraintTop_toBottomOf="@+id/titlenotice" />
@@ -54,7 +54,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:background="@color/grisClaretGentApuntada"
-            android:text="Data noticia"
+            android:text="@string/data_noticia"
             android:textColor="@color/grisFosc"
             android:textSize="@dimen/LletraNormal16sp"
             app:layout_constraintTop_toBottomOf="@+id/contingut" />
