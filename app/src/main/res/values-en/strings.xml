@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bergants</string>
+    <string name="membres">MEMBERS</string>
+    <string name="membres_menu">MEMBERS</string>
+    <string name="perfil_menu">PROFILE</string>
+    <string name="configuracio_menu">CONFIGURATION</string>
+    <string name="tancar_sessio">LOG OFF</string>
+    <string name="tancar_sessioo">LOG OFF</string>
+    <string name="tancar_sessi">Log off</string>
+    <string name="noticies_menu">NEWS</string>
+    <string name="temporada_2022">2022 SEASON</string>
+</resources>
