@@ -20,7 +20,7 @@
     <string name="inputalçada">cm</string>
     <string name="mans">ALTURA MANOS</string>
     <string name="correu">CORREO ELECTRÓNICO</string>
-    <string name="inputcorreu">\@gnail.com</string>
+    <string name="inputcorreu">\@gmail.com</string>
     <string name="adreca">DIRECCIÓN</string>
     <string name="inputadreca">C/</string>
     <string name="numerotel">NUMERO DE TELÉFONO</string>
@@ -72,7 +72,7 @@
     <string name="boto_borrar">botón borrar</string>
     <string name="tema_actuacio">TEMA DE LA ACTUACIÓN</string>
     <string name="recuperar_contrasenya">RECUPERAR CONTRASEÑA</string>
-    <string name="correuContrasenya">correu@domini.com</string>
+    <string name="correuContrasenya">correo@dominio.com</string>
     <string name="nombrePlaces">NUMERO DE PLAZAS</string>
     <string name="numPlaces">4 plazas</string>
     <string name="pl_campus">Pl. Campus</string>
@@ -142,7 +142,6 @@
     <string name="perfil_menu">PERFIL</string>
     <string name="configuracio_menu">CONFIGURACIÓN</string>
     <string name="tancar_sessio">CERRAR SESIÓN</string>
-    <string name="project_id" translatable="false">bergants-dam</string>
     <string name="tancar_sessioo">CERRAR SESIÓN</string>
     <string name="tancar_sessi">Cerrar sesión</string>
     <string name="membres">MIEMBROS</string>
@@ -189,7 +188,7 @@
     <string name="edit_data_actuacio">DATA I HORA DE L\'ACTUACIÓ</string>
     <string name="edit_data_hora_actuacio">20/07/2023 14:30</string>
     <string name="edit_lloc_actuacio">Plaza divertida</string>
-    <string name="delete">DELETE</string>
+    <string name="delete">ELIMINAR</string>
     <string name="boto_afegir">+</string>
     <string name="edit_titol_assaig">Ensayo muy guay</string>
     <string name="edit_data_assaig">FECHA Y HORA DEL ENSAYO</string>
