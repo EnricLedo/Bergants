@@ -1,9 +1,7 @@
 <resources>
     <string name="app_name">Bergants</string>
-    //Texts que són prou definitius
     <string name="vinc">Vinc</string>
     <string name="noVinc">No vinc</string>
-    //String d'exemple perque encara no tenim base de dades
     <string name="nomAssaig">ASSAIG ESPECIAL DE LA MERCÈ</string>
     <string name="dataAssaig">DIVENDRES 23 de Setembre del 2022</string>
     <string name="horaAssaig">20:00h</string>
@@ -14,11 +12,8 @@
     <string name="ubicacioActuacio">Universitat de Vic</string>
     <string name="autocar">0 Places</string>
     <string name="cotxe">Cotxes</string>
-    //Afegir Assaig
     <string name="temaAssaig">TEMA DE L\'ASSAIG</string>
     <string name="inputTemaAssaig">Assaig Bergant</string>
-
-    //Destos del Joan per entendre el seu codi
     <string name="administrador">ADMINISTRADOR</string>
     <string name="espatlles">ALÇADA ESPATLLES</string>
     <string name="inputalçada">cm</string>
