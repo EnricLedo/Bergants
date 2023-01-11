@@ -83,7 +83,7 @@
     <string name="recuperarContrasenya">Recuperar Contraseña</string>
     <string name="config">Configuración</string>
     <string name="avissosAssajos">Avisos de ensayos</string>
-    <string name="avissosActuacions">Avisps de actuaciones</string>
+    <string name="avissosActuacions">Avisos de actuaciones</string>
     <string name="notificacions">NOTIFICACIONES</string>
     <string name="novetats">Novedades del blog de noticias</string>
     <string name="informacio">INFORMACIÓN ADICIONAL</string>
@@ -99,8 +99,8 @@
     <string name="malnom">MOTE</string>
     <string name="inputmalnom">mote</string>
     <string name="enric">Enric Ledo Muntal</string>
-    <string name="botoguardar">Save</string>
-    <string name="botoborrar">delete</string>
+    <string name="botoguardar">Guardar</string>
+    <string name="botoborrar">eliminar</string>
     <string name="nomPerfil">Enric Ledo Muntal</string>
     <string name="fotoEnric">fotoenric</string>
     <string name="malnomenric">Muntal</string>
