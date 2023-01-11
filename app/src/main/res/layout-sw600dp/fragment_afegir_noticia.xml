@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/MargeDretaBotoGuardar20dp"
+    tools:context=".AfegirNoticia">
+
+    <EditText
+        android:id="@+id/titolNoticia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/MargeDretaBotoGuardar20dp"
+        android:layout_marginTop="@dimen/MargeDretaBotoGuardar20dp"
+        android:layout_marginEnd="@dimen/MargeDretaBotoGuardar20dp"
+        android:textSize="35sp"
+        android:hint="@string/add_titol_noticia"
+        android:inputType="text"
+        android:minHeight="@dimen/DimensioPaperera48dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/contingutNoticia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/MargeDretaBotoGuardar20dp"
+        android:layout_marginEnd="@dimen/MargeDretaBotoGuardar20dp"
+        android:textSize="35sp"
+        android:hint="@string/add_contingut_noticia"
+        android:inputType="textMultiLine"
+        android:minHeight="100dp"
+        app:layout_constraintTop_toBottomOf="@id/titolNoticia" />
+
+    <EditText
+        android:id="@+id/dataNoticia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/MargeDretaBotoGuardar20dp"
+        android:layout_marginEnd="@dimen/MargeDretaBotoGuardar20dp"
+        android:textSize="35sp"
+        android:hint="@string/add_data_noticia"
+        android:inputType="datetime"
+        android:minHeight="@dimen/DimensioPaperera48dp"
+        app:layout_constraintTop_toBottomOf="@id/contingutNoticia" />
+
+    <Button
+        android:id="@+id/botoGuardarNoticia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/MargeDretaBotoGuardar20dp"
+        android:layout_marginBottom="@dimen/MargeDretaRellotge15dp"
+        android:gravity="center"
+        android:text="@string/add"
+        android:backgroundTint="@color/verdBergant"
+        android:textColor="@color/blanc"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
