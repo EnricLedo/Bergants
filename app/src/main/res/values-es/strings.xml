@@ -200,7 +200,7 @@
     <string name="eliminar_membre">Eliminar</string>
     <string name="contrasenya_membre">Contraseña</string>
     <string name="afegir_contrasenya_membre">Añadir Contraseña</string>
-    <string name="data_alta_membre">FECHA DE ALTA</string>
+    <string name="data_alta_membre">FECHA (ALTA)</string>
     <string name="alta_membre">dd/mm/aaaa</string>
     <string name="info_autocar">Autocar</string>
     <string name="editar_actuacio">Editar Actuación</string>
@@ -238,4 +238,6 @@
     <string name="addCorreu">Introduce un correo!!</string>
     <string name="restaurar">Contraseña restaurada con exito. Recibirás un correo.</string>
     <string name="noRestaurar">No se ha podido restablecer la contraseña!!</string>
+    <string name="ubicaci_de_la_parada">UBICACIÓN DE LA PARADA</string>
+    <string name="borrar_autocar">Borrar autocar</string>
 </resources>
