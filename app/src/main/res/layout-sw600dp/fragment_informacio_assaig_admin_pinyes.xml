@@ -127,28 +127,28 @@
         android:id="@+id/AfegirUnaPinya"
         android:layout_width="@dimen/MargeTopImatge350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="650dp"
-        android:text="@string/Boto_afegir_pinya"
-        android:textSize="@dimen/sizeTablet"
-        android:textColor="@color/blanc"
+        android:layout_marginEnd="124dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="@color/verdBergant"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="6dp"
+        android:text="@string/Boto_afegir_pinya"
+        android:textColor="@color/blanc"
+        android:textSize="@dimen/sizeTablet"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_goneMarginEnd="20dp" />
 
     <Button
         android:id="@+id/botoEditarAssaig"
         android:layout_width="@dimen/MargeTopImatge350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="650dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginBottom="104dp"
+        android:backgroundTint="@color/verdBergant"
         android:text="@string/editar_assaig"
         android:textColor="@color/blanc"
         android:textSize="@dimen/sizeTablet"
-        android:backgroundTint="@color/verdBergant"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_goneMarginStart="20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

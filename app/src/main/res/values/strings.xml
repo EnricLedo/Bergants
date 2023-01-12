@@ -237,4 +237,6 @@
     <string name="addCorreu">Introdueix un correu!!!</string>
     <string name="restaurar">Contrasenya restaurada amb èxit. Rebràs un correu.</string>
     <string name="noRestaurar">No s\'ha pogut restaurar la contrasenya!!</string>
+    <string name="ubicaci_de_la_parada">UBICACIÓ DE LA PARADA</string>
+    <string name="borrar_autocar">Borrar autocar</string>
 </resources>

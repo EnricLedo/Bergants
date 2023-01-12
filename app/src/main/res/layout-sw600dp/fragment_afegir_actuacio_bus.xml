@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/MargePapereraEsquerra20dp">
@@ -75,26 +76,30 @@
 
     <Button
         android:id="@+id/autocarBoolean"
-        android:layout_width="425dp"
-        android:layout_height="109dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
         android:backgroundTint="@color/vermellEliminar"
-        android:text="@string/eliminar_autocar"
+        android:text="@string/borrar_autocar"
         android:textSize="@dimen/sizeTablet"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/botoGuardarActuacio"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/llocActuacio" />
+        app:layout_constraintTop_toBottomOf="@id/llocActuacio"
+        app:layout_constraintVertical_bias="0.982" />
 
     <TextView
         android:id="@+id/ubicacioParada"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/MargePapereraEsquerra20dp"
-        android:text="@string/ubicacio_parada"
+        android:text="@string/ubicaci_de_la_parada"
         android:textColor="@color/negre"
         android:textSize="@dimen/sizeTablet"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/autocarBoolean" />
+        app:layout_constraintTop_toBottomOf="@+id/llocActuacio"
+        tools:layout_editor_absoluteX="20dp" />
 
     <EditText
         android:id="@+id/ubicacioAutocar"
@@ -155,7 +160,8 @@
         android:id="@+id/botoGuardarActuacio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/MargeDretaBotoGuardar20dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
         android:backgroundTint="@color/verdBergant"
         android:text="@string/botoguardar"
         android:textColor="@color/blanc"

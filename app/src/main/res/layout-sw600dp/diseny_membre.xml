@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     app:layout_constraintTop_toTopOf="parent"
     android:id="@+id/cardViewMembres"
     android:layout_width="match_parent"
@@ -43,8 +44,8 @@
 
         <TextView
             android:id="@+id/nomMembre"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="372dp"
+            android:layout_height="130dp"
             android:layout_marginStart="92dp"
             android:gravity="center_vertical"
             android:text="@string/nom_cognoms_membre"
