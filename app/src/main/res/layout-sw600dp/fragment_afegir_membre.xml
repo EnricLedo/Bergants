@@ -186,14 +186,14 @@
         android:id="@+id/botoGuardarMembre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="648dp"
         android:layout_marginEnd="56dp"
         android:backgroundTint="@color/verdBergant"
         android:text="@string/botoafegir"
         android:textColor="@color/blanc"
+        android:layout_marginBottom="20dp"
         android:textSize="@dimen/sizeTablet"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rolMembre"
         tools:ignore="TextContrastCheck" />
 
     <TextView
@@ -229,13 +229,14 @@
         android:id="@+id/dataAlta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="544dp"
         android:layout_marginTop="16dp"
         android:text="@string/data_alta"
         android:textColor="@color/negre"
         android:textSize="@dimen/sizeTablet"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/rolMembre"
         app:layout_constraintTop_toBottomOf="@+id/rolMembre" />
 
     <EditText
@@ -256,12 +257,13 @@
         android:id="@+id/altaMembre"
         android:layout_width="212dp"
         android:layout_height="73dp"
-        android:layout_marginStart="544dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:hint="@string/dd_mm_aaaa"
         android:inputType="date"
         android:textSize="@dimen/sizeTablet"
         app:boxBackgroundColor="@color/blanc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.911"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dataAlta" />
 
@@ -277,8 +279,8 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/rolMembre"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.573"
-        app:layout_constraintStart_toEndOf="@+id/email"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/mansMembre"
         app:layout_constraintTop_toBottomOf="@+id/mansMembre" />
 
     <EditText

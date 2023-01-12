@@ -44,8 +44,8 @@
 
         <TextView
             android:id="@+id/nomMembre"
-            android:layout_width="372dp"
-            android:layout_height="130dp"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
             android:layout_marginStart="92dp"
             android:gravity="center_vertical"
             android:text="@string/nom_cognoms_membre"

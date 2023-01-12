@@ -127,7 +127,6 @@
         android:id="@+id/AfegirUnaPinya"
         android:layout_width="@dimen/MargeTopImatge350dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="224dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="@color/verdBergant"
         android:text="@string/Boto_afegir_pinya"
@@ -135,19 +134,20 @@
         android:textSize="@dimen/sizeTablet"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_goneMarginEnd="20dp" />
 
     <Button
         android:id="@+id/botoEditarAssaig"
         android:layout_width="@dimen/MargeTopImatge350dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="224dp"
         android:layout_marginBottom="108dp"
         android:backgroundTint="@color/verdBergant"
         android:text="@string/editar_assaig"
         android:textColor="@color/blanc"
         android:textSize="@dimen/sizeTablet"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_goneMarginStart="20dp" />
 
