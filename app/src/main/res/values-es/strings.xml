@@ -185,7 +185,7 @@
     <string name="add_data_noticia">Fecha de la noticia</string>
     <string name="add">añadir</string>
     <string name="edit_titol_actuacio">Actuación muy guay</string>
-    <string name="edit_data_actuacio">DATA I HORA DE L\'ACTUACIÓ</string>
+    <string name="edit_data_actuacio">FECHA Y HORA DE LA ACTUACIÓN</string>
     <string name="edit_data_hora_actuacio">20/07/2023 14:30</string>
     <string name="edit_lloc_actuacio">Plaza divertida</string>
     <string name="delete">ELIMINAR</string>
