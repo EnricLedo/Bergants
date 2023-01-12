@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/separacio"
-        android:hint="Títol de l'assaig"
+        android:hint="@string/titol_assaig"
         android:inputType="text"
         android:minHeight="@dimen/DimensioPaperera48dp"
         app:layout_constraintTop_toBottomOf="@id/TemaAssaig" />
@@ -35,7 +35,7 @@
         android:id="@+id/dateAssaig"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="DATA I HORA DE L'ASSAIG"
+        android:text="@string/data_assaig"
         android:layout_marginTop="@dimen/MargePapereraEsquerra20dp"
         android:textStyle="bold"
         android:textSize="@dimen/TitolGordo18sp"
@@ -46,7 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/separacio"
-        android:hint="Data i hora de l'assaig"
+        android:hint="@string/data_hora_assaig"
         android:inputType="datetime"
         android:minHeight="@dimen/DimensioPaperera48dp"
         app:layout_constraintTop_toBottomOf="@id/dateAssaig" />
@@ -66,26 +66,11 @@
         android:id="@+id/ubicacioAssaig"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Adreça de la zona d'assaig"
+        android:hint="@string/ubicacio_assaig"
         android:layout_marginTop="@dimen/separacio"
         android:inputType="text"
         android:minHeight="@dimen/DimensioPaperera48dp"
         app:layout_constraintTop_toBottomOf="@id/ubicacio" />
-
-    <!--
-    <ImageView
-        android:id="@+id/fotoPaperera"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="15dp"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:contentDescription="@string/botoborrar"
-        android:src="@drawable/iconopapelera" />
-    -->
 
     <Button
         android:id="@+id/botoGuardarAssaig"

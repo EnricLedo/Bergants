@@ -65,30 +65,29 @@ class noticia_canvi : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        savedInstanceState: Bundle?): View? {
+        //Inflem el layout
         binding = FragmentNoticiaCanviBinding.inflate(inflater, container, false)
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val btnAddNot = requireView().findViewById<Button>(R.id.botoAfegirNoticia)
-        mostrarNoticies()
+        //iniciem el recycler view
         setupRecyclerView()
-        btnAddNot.setOnClickListener {
-            findNavController().navigate(R.id.action_noticia_fragment_to_afegirNoticia)
+        //botó que s'encarrega de dirigir-nos al fragment encarregat d'afegir noticies
+        binding.botoAfegirNoticia.setOnClickListener {
+            val action = noticia_canviDirections.actionNoticiaFragmentToAfegirNoticia()
+            findNavController().navigate(action)
         }
     }
 
-
-
-
     private fun mostrarNoticies() {
+        //Visibilitzem el shimmer per a fer l'animació de carrega abans de mostrar el recycler
         binding.shimmerViewRvNoticies.visibility = View.VISIBLE
+        //Desactivem la visibilitat del recyclerNoticies mentre carreguen els items
         binding.recyclerNoticies.visibility = View.GONE
+        //Activem el shimmer per l'animació de carregar
         binding.shimmerViewRvNoticies.startShimmer()
         lifecycleScope.launch {
             withContext(Dispatchers.IO){
@@ -119,8 +118,12 @@ class noticia_canvi : Fragment() {
                     myAdapter.NoticiesRecyclerAdapter(list_multable, requireActivity())
                     //assignem el adapter al RV
                     binding.recyclerNoticies.adapter = myAdapter
+
+                    //ara que han carregat els items del recycler ja podem parar el shimmer
                     binding.shimmerViewRvNoticies.stopShimmer()
+                    //també desactivem la visibilitat del shimmer
                     binding.shimmerViewRvNoticies.visibility = View.GONE
+                    //activem la visibilitat del recycler, ja que l'haviem desactivat anteriorment
                     binding.recyclerNoticies.visibility = View.VISIBLE
                 }
             }

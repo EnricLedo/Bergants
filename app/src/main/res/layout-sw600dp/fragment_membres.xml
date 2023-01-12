@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout7"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".membres"
+    android:padding="@dimen/MargePapereraEsquerra20dp">
+
+
+
+    <TextView
+        android:id="@+id/membres"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginpag"
+        android:background="@color/grisClaretGentApuntada"
+        android:gravity="center_horizontal"
+        android:text="@string/membres"
+        android:textSize="@dimen/sizeTablet"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="60dp"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerMembres"
+        android:layout_width="805dp"
+        android:layout_height="1189dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/membres"
+        tools:listitem="@layout/diseny_membre" />
+
+
+
+    <Button
+        android:id="@+id/botoAfegirMembre"
+        android:layout_width="@dimen/buttonTablet"
+        android:layout_height="@dimen/buttonTablet"
+        android:background="@drawable/round_button"
+        android:gravity="center"
+        android:text="@string/afegir"
+        android:textColor="@color/blanc"
+        android:textSize="@dimen/sizeTablet"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

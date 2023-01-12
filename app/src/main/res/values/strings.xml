@@ -1,9 +1,7 @@
 <resources>
     <string name="app_name">Bergants</string>
-    //Texts que són prou definitius
     <string name="vinc">Vinc</string>
     <string name="noVinc">No vinc</string>
-    //String d'exemple perque encara no tenim base de dades
     <string name="nomAssaig">ASSAIG ESPECIAL DE LA MERCÈ</string>
     <string name="dataAssaig">DIVENDRES 23 de Setembre del 2022</string>
     <string name="horaAssaig">20:00h</string>
@@ -14,11 +12,8 @@
     <string name="ubicacioActuacio">Universitat de Vic</string>
     <string name="autocar">0 Places</string>
     <string name="cotxe">Cotxes</string>
-    //Afegir Assaig
     <string name="temaAssaig">TEMA DE L\'ASSAIG</string>
     <string name="inputTemaAssaig">Assaig Bergant</string>
-
-    //Destos del Joan per entendre el seu codi
     <string name="administrador">ADMINISTRADOR</string>
     <string name="espatlles">ALÇADA ESPATLLES</string>
     <string name="inputalçada">cm</string>
@@ -151,4 +146,62 @@
     <string name="membres">MEMBRES</string>
     <string name="BotoCanviarVisioPinyes">Pinyes</string>
     <string name="Boto_afegir_pinya">Afegir Pinya</string>
+    <string name="disseny_titol_assaig">ASSAIG ESPECIAL DE LA MERCÈ</string>
+    <string name="disseny_data_assaig">DISSABTE 23 de Setembre del 2022</string>
+    <string name="disseny_lloc_assaig">20:00h Local de la colla</string>
+    <string name="disseny_assistencia_assaig">SENSE RESPOSTA</string>
+    <string name="nom_cognoms_membre">Nom i cognoms del membre</string>
+    <string name="titol_noticia">Títol de la noticia</string>
+    <string name="contingut_noticia">Contingut de la notícia</string>
+    <string name="data_noticia">Data noticia</string>
+    <string name="titol_actuacio">Titol de l\'actuació</string>
+    <string name="data_actuacio">DATA I HORA DE L\'ACTUACIÓ</string>
+    <string name="data_hora_actuacio">Data i hora de l\'actuació</string>
+    <string name="lloc_actuacio">Adreça de la zona on actuar</string>
+    <string name="afegir_autocar">AFEGIR AUTOCAR</string>
+    <string name="titol_actuacio_bus">Titol de l\'actuació</string>
+    <string name="data_actuacio_bus">DATA I HORA DE L\'ACTUACIÓ</string>
+    <string name="data_hora_actuacio_bus">Data i hora de l\'actuació</string>
+    <string name="lloc_actuacio_bus">Adreça de la zona on actuar</string>
+    <string name="eliminar_autocar">ELIMINAR AUTOCAR</string>
+    <string name="ubicacio_parada">UBICACIÓ DE LA PARADA DE L\'AUTOCAR</string>
+    <string name="ubicacio_bus">Ubicació d\'estacionament de l\'autocar</string>
+    <string name="horari_sortida">HORARI SORTIDA</string>
+    <string name="sortida_bus">Hora de la sortida de l\'autocar</string>
+    <string name="places_autocar">PLACES AUTOCAR</string>
+    <string name="places_lliures">Nombre de places lliures a l\'autocar</string>
+    <string name="titol_assaig">Títol de l\'assaig</string>
+    <string name="data_assaig">DATA I HORA DE L\'ASSAIG</string>
+    <string name="data_hora_assaig">Data i hora de l\'assaig</string>
+    <string name="ubicacio_assaig">Adreça de la zona d\'assaig</string>
+    <string name="malnom_membre">malnom</string>
+    <string name="contrasenya">Contrasenya</string>
+    <string name="afegir_contrasenya">Afegir contrasenya</string>
+    <string name="data_alta">DATA D\'ALTA</string>
+    <string name="dd_mm_aaaa">dd/mm/aaaa</string>
+    <string name="add_titol_noticia">Títol de la noticia</string>
+    <string name="add_contingut_noticia">Contingut de la notícia</string>
+    <string name="add_data_noticia">Data de la notícia</string>
+    <string name="add">afegir</string>
+    <string name="edit_titol_actuacio">Actuació molt guay</string>
+    <string name="edit_data_actuacio">DATA I HORA DE L\'ACTUACIÓ</string>
+    <string name="edit_data_hora_actuacio">28/07/2023 14:30</string>
+    <string name="edit_lloc_actuacio">Plaça divertida</string>
+    <string name="delete">ELIMINAR</string>
+    <string name="boto_afegir">+</string>
+    <string name="edit_titol_assaig">Assaig molt guay</string>
+    <string name="edit_data_assaig">DATA I HORA DE L\'ASSAIG</string>
+    <string name="edit_data_hora_assaig">25/07/2023 18:30</string>
+    <string name="edit_ubicacio_assaig">Carrer Mola Mogollón</string>
+    <string name="eliminar_assaig">ELIMINAR</string>
+    <string name="boto_afegir_assaig">+</string>
+    <string name="edit_malnom_membre">malnom</string>
+    <string name="eliminar_membre">Eliminar</string>
+    <string name="contrasenya_membre">Contrasenya</string>
+    <string name="afegir_contrasenya_membre">Afegir contrasenya</string>
+    <string name="data_alta_membre">DATA D\'ALTA</string>
+    <string name="alta_membre">dd/mm/aaaa</string>
+    <string name="info_autocar">Autocar</string>
+    <string name="editar_actuacio">Editar Actuacio</string>
+    <string name="editar_assaig">Editar Assaig</string>
 </resources>

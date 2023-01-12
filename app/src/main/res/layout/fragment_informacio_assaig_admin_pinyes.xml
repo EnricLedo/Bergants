@@ -141,7 +141,7 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginTop="650dp"
-        android:text="Editar Assaig"
+        android:text="@string/editar_assaig"
         android:textColor="@color/blanc"
         android:backgroundTint="@color/verdBergant"
         app:layout_constraintStart_toStartOf="parent"

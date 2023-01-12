@@ -31,11 +31,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerNoticies"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
@@ -43,6 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:theme="@style/textSizeDrawer"
         app:headerLayout="@layout/header_layout"
         app:menu="@menu/menu_desplegable_noticies"/>
 

@@ -18,7 +18,6 @@ class NoticiaRecyclerAdapter : RecyclerView.Adapter<NoticiaRecyclerAdapter.ViewH
     fun NoticiesRecyclerAdapter(noticiesList:MutableList<NoticiaModel>, contxt: Context){
         this.noticies = noticiesList
         this.context = contxt
-        notifyDataSetChanged()
     }
 
     //és l'encarregat de retornar el ViewHolder ja configurat

@@ -18,8 +18,10 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import cat.copernic.bergants.databinding.ActivityMainBinding
+import cat.copernic.bergants.databinding.MytoolbarBinding
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
+import org.checkerframework.checker.units.qual.m
 
 class MainActivity : AppCompatActivity() {
     //Atribut de tipus Button per tancar la sessió
@@ -38,13 +40,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //setupRecyclerView()
-
         toolbar = findViewById(R.id.myToolbar)
         setSupportActionBar(toolbar)
 
-        drawerLayout = findViewById(R.id.drawer)
-        navigationView = findViewById(R.id.navigationView)
+        drawerLayout = binding.drawer
+        navigationView = binding.navigationView
 
         navController = findNavController(R.id.fragmentContainerView)
         appBarConfiguration = AppBarConfiguration(setOf(R.id.actuacions_fragment, R.id.assajos_fragment, R.id.noticia_fragment, R.id.membres_fragment, R.id.perfil_fragment, R.id.configuracio_fragment), drawerLayout)
@@ -53,6 +53,11 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    /**
+     * onSupportNavigateUp serveix per administrar el comportament del botó Navigation a la part
+     * superior esquerra de l'àrea de visualització de la app. El comportament del botó
+     * Navigation canvia si l'usuari és en una destinació de nivell superior.
+     */
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.fragmentContainerView)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()

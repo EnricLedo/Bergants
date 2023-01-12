@@ -9,7 +9,6 @@
     tools:layout_editor_absoluteY="8dp"
     android:padding="@dimen/marginpag">
 
-
     <TextView
         android:id="@+id/TemaAssaig"
         android:layout_width="match_parent"
@@ -26,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/separacio"
-        android:text="Assaig molt guay"
+        android:text="@string/edit_titol_assaig"
         android:inputType="text"
         android:minHeight="@dimen/DimensioPaperera48dp"
         app:layout_constraintTop_toBottomOf="@id/TemaAssaig" />
@@ -35,7 +34,7 @@
         android:id="@+id/dateAssaig"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="DATA I HORA DE L'ASSAIG"
+        android:text="@string/edit_data_assaig"
         android:layout_marginTop="@dimen/MargePapereraEsquerra20dp"
         android:textStyle="bold"
         android:textSize="@dimen/TitolGordo18sp"
@@ -46,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/separacio"
-        android:text="25/07/2023 18:30"
+        android:text="@string/edit_data_hora_assaig"
         android:inputType="datetime"
         android:minHeight="@dimen/DimensioPaperera48dp"
         app:layout_constraintTop_toBottomOf="@id/dateAssaig" />
@@ -66,7 +65,7 @@
         android:id="@+id/ubicacioAssaig"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Carrer Mola Mogollón"
+        android:text="@string/edit_ubicacio_assaig"
         android:layout_marginTop="@dimen/separacio"
         android:inputType="text"
         android:minHeight="@dimen/DimensioPaperera48dp"
@@ -79,7 +78,7 @@
         android:layout_height="@dimen/btncircle"
         android:layout_marginStart="@dimen/MargePapereraEsquerra20dp"
         android:layout_marginBottom="@dimen/MargeDretaRellotge15dp"
-        android:text="ELIMINAR"
+        android:text="@string/eliminar_assaig"
         android:textSize="@dimen/TitolGordo18sp"
         android:backgroundTint="@color/vermellEliminar"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -90,7 +89,7 @@
         android:layout_width="@dimen/btncircle"
         android:layout_height="@dimen/btncircle"
         android:layout_marginEnd="@dimen/marginpag"
-        android:text="+"
+        android:text="@string/boto_afegir_assaig"
         android:textSize="30sp"
         android:textColor="@color/blanc"
         android:layout_marginBottom="@dimen/separaciomig"
