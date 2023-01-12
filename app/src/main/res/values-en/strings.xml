@@ -197,7 +197,7 @@
     <string name="eliminar_membre">Delete</string>
     <string name="contrasenya_membre">Password</string>
     <string name="afegir_contrasenya_membre">Add password</string>
-    <string name="data_alta_membre">DATE OF DISCHARGE</string>
+    <string name="data_alta_membre">DATE</string>
     <string name="alta_membre">dd/mm/yyyy</string>
     <string name="info_autocar">Autocar</string>
     <string name="editar_actuacio">Edit performance</string>
@@ -235,4 +235,6 @@
     <string name="addCorreu">Missing mail!!!</string>
     <string name="restaurar">Check your mail</string>
     <string name="noRestaurar">Couldn\'t reset password</string>
+    <string name="ubicaci_de_la_parada">STOP LOCATION</string>
+    <string name="borrar_autocar">Delete autocar</string>
 </resources>

@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/actuacions_fragment"
-        android:title="@string/actuacions_menu"/>
+        android:title="@string/actuacions_menu" />
 
     <item
         android:id="@+id/assajos_fragment"
