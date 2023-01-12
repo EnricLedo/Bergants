@@ -76,7 +76,7 @@
     <Button
         android:id="@+id/botoEliminarActuacio"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/btncircle"
+        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/MargePapereraEsquerra20dp"
         android:layout_marginBottom="@dimen/MargeDretaRellotge15dp"
         android:text="@string/delete"
@@ -88,14 +88,14 @@
 
     <Button
         android:id="@+id/botoEditarActuacio"
-        android:layout_width="@dimen/btncircle"
-        android:layout_height="@dimen/btncircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/marginpag"
-        android:text="@string/boto_afegir"
-        android:textSize="30sp"
+        android:text="@string/botoguardar"
+        android:textSize="@dimen/TitolGordo18sp"
         android:textColor="@color/blanc"
         android:layout_marginBottom="@dimen/separaciomig"
-        android:background="@drawable/round_button"
+        android:backgroundTint="@color/verdBergant"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

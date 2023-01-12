@@ -205,4 +205,5 @@
     <string name="info_autocar">Autocar</string>
     <string name="editar_actuacio">Editar Actuación</string>
     <string name="editar_assaig">Editar Ensayo</string>
+    <string name="noticiaProva">La noticia se ha añadido</string>
 </resources>

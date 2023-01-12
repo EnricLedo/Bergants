@@ -71,7 +71,7 @@ class InformacioActuacio : Fragment() {
             //Afegim (pujem) la imatge que hem seleccionat mitjançant el mètode putFile de la classe FirebasStorage, passant-li com a
             //paràmetre l'URI de la imatge. Aquest mètode carrega la imatge de manera asíncrona.
             adrecaFitxer.putFile(uri).addOnSuccessListener {
-                Toast.makeText(requireActivity(),"La imatge s'ha pujat amb èxit", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireActivity(),getString(R.string.imatgeCorrect), Toast.LENGTH_LONG).show()
             }
         }
     }

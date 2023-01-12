@@ -57,6 +57,7 @@
         android:textSize="@dimen/sizeTablet"
         android:textColor="@color/blanc"
         android:layout_marginBottom="@dimen/separaciomig"
+        android:backgroundTint="@color/verdBergant"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

@@ -46,7 +46,7 @@ class RecuperarContrasenya : AppCompatActivity() {
                 //vol restaurar la seva contrasenya.
                 restaurarContrasenya(correu)
             }else{
-                Snackbar.make(it,"Introdueix un correu!!!",Snackbar.LENGTH_LONG).show()
+                Snackbar.make(it,getString(R.string.addCorreu),Snackbar.LENGTH_LONG).show()
             }
 
         }
@@ -61,11 +61,11 @@ class RecuperarContrasenya : AppCompatActivity() {
         auth.sendPasswordResetEmail(correu).addOnCompleteListener { task ->
 
             if(task.isSuccessful){
-                Snackbar.make(passwordpage,"Contrasenya restaurada amb èxit. Rebràs un correu.",Snackbar.LENGTH_LONG).show()
+                Snackbar.make(passwordpage,getString(R.string.restaurar),Snackbar.LENGTH_LONG).show()
                 startActivity(Intent(this,Login::class.java))
                 finish() //Alliberem memòria un cop finalitzada aquesta tasca.
             }else{
-                Snackbar.make(passwordpage,"No s'ha pogut restaurar la contrasenya!!",Snackbar.LENGTH_LONG).show()
+                Snackbar.make(passwordpage,getString(R.string.noRestaurar),Snackbar.LENGTH_LONG).show()
             }
         }
     }

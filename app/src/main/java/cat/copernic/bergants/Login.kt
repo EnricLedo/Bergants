@@ -66,7 +66,7 @@ class Login : AppCompatActivity() {
                 loguinar(correu, contrasenya)
             }else{ //El login (task) ha fallat...
                 //Mostrem un missatge a l'usuari mitjançant un Toast
-                Snackbar.make(it,"Introdueix un correu i una contrasenya", Snackbar.LENGTH_LONG).show()
+                Snackbar.make(it,getString(R.string.correuContra), Snackbar.LENGTH_LONG).show()
             }
         }
         binding.forgottenPassword.setOnClickListener {
@@ -98,7 +98,7 @@ class Login : AppCompatActivity() {
                     finish() //Alliberem memòria un cop finalitzada aquesta tasca.
                 }else{ //El login (task) ha fallat...
                     //Mostrem un missatge a l'usuari mitjançant un Toast
-                    Snackbar.make(loginpage,"ERROR! El login ha fallat!", Snackbar.LENGTH_LONG).show()
+                    Snackbar.make(loginpage,getString(R.string.errorLogin), Snackbar.LENGTH_LONG).show()
                 }
             }
     }
