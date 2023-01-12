@@ -80,7 +80,7 @@
     <string name="editar">Edit</string>
     <string name="boto_borrar">delete button</string>
     <string name="tema_actuacio">SUBJECT OF THE PERFORMANCE</string>
-    <string name="recuperar_contrasenya">SUBJECT OF THE PERFORMANCE</string>
+    <string name="recuperar_contrasenya">RECOVER PASSWORD</string>
     <string name="correuContrasenya">mail@domain.com</string>
     <string name="nombrePlaces">NUMBER OF PLACES</string>
     <string name="numPlaces">4 places</string>
