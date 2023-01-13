@@ -23,6 +23,7 @@
         android:id="@+id/botoSiVinc"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginTop="@dimen/RecuperarContrasenya70dp"
         android:layout_marginEnd="@dimen/MargeDretaInformacio50dp"
         android:contentDescription="@string/botodesivinc"
         android:src="@drawable/calendari_si56"
@@ -36,6 +37,7 @@
         android:id="@+id/botoNoVinc"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginTop="@dimen/RecuperarContrasenya70dp"
         android:layout_marginStart="@dimen/MargeDretaInformacio50dp"
         android:contentDescription="@string/botodenovinc"
         android:src="@drawable/calendari_no56"
@@ -67,7 +69,7 @@
         android:id="@+id/iconaRellotge"
         android:layout_width="@dimen/MargeDretaInformacio50dp"
         android:layout_height="@dimen/MargeDretaInformacio50dp"
-        android:layout_marginTop="@dimen/MargeTopImatge350dp"
+        android:layout_marginTop="440dp"
         android:layout_marginEnd="@dimen/MargeDretaRellotge15dp"
         android:contentDescription="@string/iconarellotge"
         android:src="@drawable/rellotge24"
@@ -109,19 +111,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/iconaUbicacio"
         app:layout_constraintTop_toTopOf="@+id/iconaUbicacio" />
-
-    <Button
-        android:id="@+id/CanviarVisioDePinyes"
-        android:layout_width="500dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="500dp"
-        android:text="@string/BotoCanviarVisioPinyes"
-        android:textColor="@color/blanc"
-        android:textSize="@dimen/sizeTablet"
-        android:backgroundTint="@color/verdBergant"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/AfegirUnaPinya"
