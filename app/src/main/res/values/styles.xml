@@ -31,8 +31,6 @@
 
     <style name="TabletDrawer">
         <item name="android:textSize">@dimen/sizeTablet</item>
-        <item name="android:textColor">@color/negre</item>
-        <item name="android:textColorHighlight">@color/grisFosc</item>
     </style>
 
     <style name="textSizeDrawer">
