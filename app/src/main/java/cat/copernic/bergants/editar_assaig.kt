@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import cat.copernic.bergants.databinding.FragmentEditarAssaigBinding
 import cat.copernic.bergants.databinding.FragmentEditarNoticiaBinding
@@ -132,6 +133,7 @@ class editar_assaig : Fragment() {
 
                 //Modifiquem l'assaig mitjançant la funció modificarAssaig creada per nosaltres
                 modificarAssaig(assaig)
+                findNavController().navigate(R.id.action_editar_assaig_to_assajos_fragment)
 
             } else {
                 val builder = AlertDialog.Builder(requireContext())
@@ -150,6 +152,8 @@ class editar_assaig : Fragment() {
             if (assaig.titolAssaig?.isNotEmpty() == true) {
                 //Eliminem l'assaig mitjançant la funció eliminarAssaig creada per nosaltres
                 eliminarAssaig(assaig.titolAssaig!!)
+                findNavController().navigate(R.id.action_editar_assaig_to_assajos_fragment)
+
             }else{
                 val builder = AlertDialog.Builder(requireContext())
                 builder.setMessage(getString(R.string.titolElimAssaig))

@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.navigation.fragment.findNavController
 import cat.copernic.bergants.databinding.FragmentEditarActuacioBinding
 import cat.copernic.bergants.model.ActuacioModel
 import com.google.firebase.firestore.FirebaseFirestore
@@ -128,6 +129,7 @@ class editar_actuacio : Fragment() {
 
                 //Modifiquem l'assaig mitjançant la funció modificarActuacio creada per nosaltres
                 modificarActuacio(actuacio)
+                findNavController().navigate(R.id.action_editar_actuacio_to_actuacions_fragment)
 
             } else {
                 val builder = AlertDialog.Builder(requireContext())
@@ -147,6 +149,7 @@ class editar_actuacio : Fragment() {
             if (actuacio.titolActuacio?.isNotEmpty() == true) {
                 //Eliminem l'actuacio mitjançant la funció eliminarActuacio creada per nosaltres
                 eliminarActuacio(actuacio.titolActuacio!!)
+                findNavController().navigate(R.id.action_editar_actuacio_to_actuacions_fragment)
             }else{
                 val builder = AlertDialog.Builder(requireContext())
                 builder.setMessage(getString(R.string.titolAct))

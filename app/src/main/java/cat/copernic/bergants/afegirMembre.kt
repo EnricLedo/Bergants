@@ -16,6 +16,7 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
+import androidx.navigation.fragment.findNavController
 import cat.copernic.bergants.databinding.FragmentAfegirMembreBinding
 import cat.copernic.bergants.model.MembreModel
 import com.google.android.material.snackbar.Snackbar
@@ -190,6 +191,8 @@ class afegirMembre : Fragment() {
                 && membre.adrecaMembre?.isNotEmpty() == true && membre.telefonMembre?.isNotEmpty() == true
                 && membre.rolMembre?.isNotEmpty() == true && membre.altaMembre?.isNotEmpty() == true) {
                 afegirMembre(membre)
+                findNavController().navigate(R.id.action_afegirMembre_to_membres_fragment)
+
             } else {
                 Snackbar.make(it, getString(R.string.parametres), Snackbar.LENGTH_LONG).show()
             }

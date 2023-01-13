@@ -132,6 +132,7 @@ class afegir_actuacio_bus : Fragment() {
             var actuacio = llegirDades() //Actuacio introduida per l'usuari
             if (actuacio.titolActuacio?.isNotEmpty() == true && actuacio.dataActuacio?.isNotEmpty() == true && actuacio.llocActuacio?.isNotEmpty() == true) {
                 afegirActuacio(actuacio)
+                findNavController().navigate(R.id.action_afegir_actuacio_bus_fragment_to_actuacions_fragment)
             } else {
                 Snackbar.make(it, getString(R.string.parametres), Snackbar.LENGTH_LONG).show()
             }

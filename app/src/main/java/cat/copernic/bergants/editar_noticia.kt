@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import cat.copernic.bergants.databinding.FragmentEditarNoticiaBinding
 import cat.copernic.bergants.databinding.FragmentNoticiaCanviBinding
@@ -120,6 +121,7 @@ class editar_noticia : Fragment() {
 
                 //Modifiquem la noticia mitjançant la funció modificarNoticia creada per nosaltres
                 modificarNoticia(noticia)
+                findNavController().navigate(R.id.action_editar_noticia_to_noticia_fragment)
 
             } else {
                 val builder = AlertDialog.Builder(requireContext())
@@ -139,6 +141,8 @@ class editar_noticia : Fragment() {
             if (noticia.titolNoticia?.isNotEmpty() == true) {
                 //Eliminem la noticia mitjançant la funció eliminarNoticia creada per nosaltres
                 eliminarNoticia(noticia.titolNoticia!!)
+                findNavController().navigate(R.id.action_editar_noticia_to_noticia_fragment)
+
             }else{
                 val builder = AlertDialog.Builder(requireContext())
                 builder.setMessage(getString(R.string.titolNoticiaElim))

@@ -353,6 +353,9 @@
             app:argType="string"
             app:nullable="true"
             android:defaultValue="@null"/>
+        <action
+            android:id="@+id/action_editar_assaig_to_assajos_fragment"
+            app:destination="@id/assajos_fragment" />
     </fragment>
     <fragment
         android:id="@+id/editar_actuacio"
@@ -380,6 +383,9 @@
             app:argType="string"
             app:nullable="true"
             android:defaultValue="@null"/>
+        <action
+            android:id="@+id/action_editar_actuacio_to_actuacions_fragment"
+            app:destination="@id/actuacions_fragment" />
     </fragment>
 
 </navigation>

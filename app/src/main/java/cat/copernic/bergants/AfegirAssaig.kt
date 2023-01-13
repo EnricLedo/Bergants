@@ -97,6 +97,7 @@ class AfegirAssaig : Fragment() {
             var assaig = llegirDades() //Assaig introduït per l'usuari
             if (assaig.titolAssaig?.isNotEmpty() == true && assaig.dataAssaig?.isNotEmpty() == true && assaig.llocAssaig?.isNotEmpty() == true) {
                 afegirAssaig(assaig)
+                findNavController().navigate(R.id.action_afegir_assaig_fragment_to_assajos_fragment)
             } else {
                 Snackbar.make(it, getString(R.string.parametres), Snackbar.LENGTH_LONG).show()
             }
