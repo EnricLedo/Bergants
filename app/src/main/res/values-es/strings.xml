@@ -240,4 +240,20 @@
     <string name="noRestaurar">No se ha podido restablecer la contraseña!!</string>
     <string name="ubicaci_de_la_parada">UBICACIÓN DE LA PARADA</string>
     <string name="borrar_autocar">Borrar autocar</string>
+    <string name="perfil">Perfil</string>
+    <string name="configuracio">Configuración</string>
+    <string name="noticies">Noticias</string>
+    <string name="assajos">Ensayos</string>
+    <string name="actuacions">Actuaciones</string>
+    <string name="membre">Miembros</string>
+    <string name="afegirAssaig">Añadir ensayo</string>
+    <string name="afegirActuacio">Añadir acutación</string>
+    <string name="afegirNoticia">Añadir noticia</string>
+    <string name="informacioActuacio">Información de la actuación</string>
+    <string name="afegirMembre">Añadir miembro</string>
+    <string name="editarNoticia">Editar noticia</string>
+    <string name="afegirActuacioBus">Añadir actuación con bus</string>
+    <string name="informacioAssaig">Información del ensayo</string>
+    <string name="editarAssaig">Editar ensayo</string>
+    <string name="editarActuacio">Editar actuación</string>
 </resources>

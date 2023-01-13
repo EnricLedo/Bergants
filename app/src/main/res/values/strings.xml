@@ -239,4 +239,20 @@
     <string name="noRestaurar">No s\'ha pogut restaurar la contrasenya!!</string>
     <string name="ubicaci_de_la_parada">UBICACIÓ DE LA PARADA</string>
     <string name="borrar_autocar">Borrar autocar</string>
+    <string name="perfil">Perfil</string>
+    <string name="configuracio">Configuració</string>
+    <string name="noticies">Notícies</string>
+    <string name="assajos">Assajos</string>
+    <string name="actuacions">Actuacions</string>
+    <string name="membre">Membres</string>
+    <string name="afegirAssaig">Afegir assaig</string>
+    <string name="afegirActuacio">Afegir actuació</string>
+    <string name="afegirNoticia">Afegir notícia</string>
+    <string name="informacioActuacio">Informació de l\'actuació</string>
+    <string name="afegirMembre">Afegir membre</string>
+    <string name="editarNoticia">Editar notícia</string>
+    <string name="afegirActuacioBus">Afegir actuació amb bus</string>
+    <string name="informacioAssaig">Informació de l\'assaig</string>
+    <string name="editarAssaig">Editar assaig</string>
+    <string name="editarActuacio">Editar actuació</string>
 </resources>

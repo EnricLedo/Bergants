@@ -8,17 +8,17 @@
     <fragment
         android:id="@+id/perfil_fragment"
         android:name="cat.copernic.bergants.perfil"
-        android:label="fragment_perfil"
+        android:label="@string/perfil"
         tools:layout="@layout/fragment_perfil" />
     <fragment
         android:id="@+id/configuracio_fragment"
         android:name="cat.copernic.bergants.Configuracio"
-        android:label="fragment_configuracio"
+        android:label="@string/configuracio"
         tools:layout="@layout/fragment_configuracio" />
     <fragment
         android:id="@+id/noticia_fragment"
         android:name="cat.copernic.bergants.noticia_canvi"
-        android:label="fragment_noticia_canvi"
+        android:label="@string/noticies"
         tools:layout="@layout/fragment_noticia_canvi" >
         <action
             android:id="@+id/action_noticia_fragment_to_afegirNoticia"
@@ -38,7 +38,7 @@
     <fragment
         android:id="@+id/assajos_fragment"
         android:name="cat.copernic.bergants.assajos"
-        android:label="fragment_assajos"
+        android:label="@string/assajos"
         tools:layout="@layout/fragment_assajos" >
         <action
             android:id="@+id/action_assajos_fragment_to_afegir_assaig_fragment"
@@ -58,7 +58,7 @@
     <fragment
         android:id="@+id/actuacions_fragment"
         android:name="cat.copernic.bergants.actuacio"
-        android:label="fragment_actuacio"
+        android:label="@string/actuacions"
         tools:layout="@layout/fragment_actuacio" >
         <action
             android:id="@+id/action_actuacions_fragment_to_afegir_actuacio_fragment"
@@ -78,7 +78,7 @@
     <fragment
         android:id="@+id/membres_fragment"
         android:name="cat.copernic.bergants.membres"
-        android:label="fragment_membres"
+        android:label="@string/membre"
         tools:layout="@layout/fragment_membres" >
         <action
             android:id="@+id/action_membres_fragment_to_afegirMembre"
@@ -104,7 +104,7 @@
     <fragment
         android:id="@+id/afegir_assaig_fragment"
         android:name="cat.copernic.bergants.AfegirAssaig"
-        android:label="fragment_afegir_assaig"
+        android:label="@string/afegirAssaig"
         tools:layout="@layout/fragment_afegir_assaig" >
         <action
             android:id="@+id/action_afegir_assaig_fragment_to_assajos_fragment"
@@ -118,7 +118,7 @@
     <fragment
         android:id="@+id/afegir_actuacio_fragment"
         android:name="cat.copernic.bergants.AfegirActuacio"
-        android:label="fragment_afegir_actuacio"
+        android:label="@string/afegirActuacio"
         tools:layout="@layout/fragment_afegir_actuacio" >
         <action
             android:id="@+id/action_afegir_actuacio_fragment_to_actuacions_fragment"
@@ -138,7 +138,7 @@
     <fragment
         android:id="@+id/afegir_noticia_fragment"
         android:name="cat.copernic.bergants.AfegirNoticia"
-        android:label="fragment_afegir_noticia"
+        android:label="@string/afegirNoticia"
         tools:layout="@layout/fragment_afegir_noticia" >
         <action
             android:id="@+id/action_afegirNoticia_to_noticia_fragment"
@@ -151,7 +151,7 @@
     <fragment
         android:id="@+id/informacio_actuacio_fragment"
         android:name="cat.copernic.bergants.InformacioActuacio"
-        android:label="fragment_informacio_actuacio"
+        android:label="@string/informacioActuacio"
         tools:layout="@layout/fragment_informacio_actuacio" >
         <argument
             android:name="CurrentActuacio"
@@ -198,7 +198,7 @@
     <fragment
         android:id="@+id/afegir_membre_fragment"
         android:name="cat.copernic.bergants.afegirMembre"
-        android:label="fragment_afegir_membre"
+        android:label="@string/afegirMembre"
         tools:layout="@layout/fragment_afegir_membre" >
         <action
             android:id="@+id/action_afegirMembre_to_membres_fragment"
@@ -223,7 +223,7 @@
     <fragment
         android:id="@+id/editar_noticia_fragment"
         android:name="cat.copernic.bergants.editar_noticia"
-        android:label="fragment_editar_noticia"
+        android:label="@string/editarNoticia"
         tools:layout="@layout/fragment_editar_noticia" >
         <argument
             android:name="CurrentNoticia"
@@ -239,7 +239,7 @@
     <fragment
         android:id="@+id/afegir_cotxe_fragment"
         android:name="cat.copernic.bergants.AfegirCotxe"
-        android:label="fragment_afegir_cotxe"
+        android:label="Afegir cotxe"
         tools:layout="@layout/fragment_afegir_cotxe" >
         <action
             android:id="@+id/action_afegirCotxe_to_informacioActuacio"
@@ -252,7 +252,7 @@
     <fragment
         android:id="@+id/editar_cotxe_fragment"
         android:name="cat.copernic.bergants.editar_cotxe"
-        android:label="fragment_editar_cotxe"
+        android:label="Editar cotxe"
         tools:layout="@layout/fragment_editar_cotxe" >
         <action
             android:id="@+id/action_editar_cotxe_to_informacioActuacio"
@@ -265,7 +265,7 @@
     <fragment
         android:id="@+id/unirse_cotxe_fragment"
         android:name="cat.copernic.bergants.UnirseCotxe"
-        android:label="fragment_unirse_cotxe"
+        android:label="Unirse cotxe"
         tools:layout="@layout/fragment_unirse_cotxe" >
         <action
             android:id="@+id/action_unirseCotxe2_to_informacioActuacio"
@@ -278,7 +278,7 @@
     <fragment
         android:id="@+id/afegir_actuacio_bus_fragment"
         android:name="cat.copernic.bergants.afegir_actuacio_bus"
-        android:label="fragment_afegir_actuacio_bus" >
+        android:label="@string/afegirActuacioBus" >
         <action
             android:id="@+id/action_afegir_actuacio_bus_fragment_to_actuacions_fragment"
             app:destination="@id/actuacions_fragment"
@@ -297,7 +297,7 @@
     <fragment
         android:id="@+id/informacio_assaig_admin_pinyes"
         android:name="cat.copernic.bergants.InformacioAssaigAdminPinyes"
-        android:label="fragment_informacio_assaig_admin_pinyes">
+        android:label="@string/informacioAssaig">
         <argument
             android:name="CurrentAssaig"
             app:argType="cat.copernic.bergants.model.AssaigModel" />
@@ -329,7 +329,7 @@
     <fragment
         android:id="@+id/editar_assaig"
         android:name="cat.copernic.bergants.editar_assaig"
-        android:label="fragment_editar_assaig"
+        android:label="@string/editarAssaig"
         tools:layout="@layout/fragment_editar_assaig" >
         <action
             android:id="@+id/action_editar_assaig_to_informacio_assaig_admin_pinyes"
@@ -357,7 +357,7 @@
     <fragment
         android:id="@+id/editar_actuacio"
         android:name="cat.copernic.bergants.editar_actuacio"
-        android:label="editar_actuacio" >
+        android:label="@string/editarActuacio" >
         <action
             android:id="@+id/action_editar_actuacio_to_informacio_actuacio_fragment"
             app:destination="@id/informacio_actuacio_fragment"
