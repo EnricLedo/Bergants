@@ -48,7 +48,7 @@
             android:id="@+id/assistenciaActuacio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SENSE RESPOSTA"
+            android:text="@string/sense_respostaok"
             android:textColor="@color/grisFosc"
             android:textStyle="bold"
             android:textSize="@dimen/LletraNormal16sp"
