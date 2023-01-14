@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.annotation.Keep
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -22,6 +23,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [Configuracio.newInstance] factory method to
  * create an instance of this fragment.
  */
+@Keep
 class Configuracio : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null

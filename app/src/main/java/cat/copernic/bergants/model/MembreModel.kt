@@ -1,5 +1,8 @@
 package cat.copernic.bergants.model
 
+import androidx.annotation.Keep
+
+@Keep
 data class MembreModel(val name:String, val malname:String, val espatlles:String, val mans:String,
                         val email:String, val adress:String, val telefon:String, val rol:String,
                         val date:String):java.io.Serializable{

@@ -3,6 +3,7 @@ package cat.copernic.bergants.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.annotation.Keep
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import cat.copernic.bergants.assajosDirections
@@ -11,6 +12,7 @@ import cat.copernic.bergants.databinding.FragmentEditarAssaigBinding
 import cat.copernic.bergants.model.AssaigModel
 import cat.copernic.bergants.noticia_canviDirections
 
+@Keep
 class AssaigRecyclerAdapter : RecyclerView.Adapter<AssaigRecyclerAdapter.ViewHolder>() {
     var assajos: MutableList<AssaigModel> = ArrayList()
     lateinit var context: Context

@@ -1,5 +1,8 @@
 package cat.copernic.bergants.model
 
+import androidx.annotation.Keep
+
+@Keep
 data class AssaigModel(val title: String, val data: String, val lloc: String): java.io.Serializable {
     var titolAssaig: String? = null
     var dataAssaig: String? = null

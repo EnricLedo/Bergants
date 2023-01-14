@@ -4,10 +4,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.annotation.Keep
 import androidx.recyclerview.widget.RecyclerView
 import cat.copernic.bergants.R
 import cat.copernic.bergants.model.AssaigModel
 
+@Keep
 class MyAdapter : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
     private val AssaigList = ArrayList<AssaigModel>()

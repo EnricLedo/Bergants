@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.annotation.Keep
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -19,6 +20,7 @@ import cat.copernic.bergants.model.AssaigModel
 import cat.copernic.bergants.model.NoticiaModel
 import com.google.firebase.firestore.FirebaseFirestore
 
+@Keep
 class editar_assaig : Fragment() {
     private lateinit var binding: FragmentEditarAssaigBinding
 

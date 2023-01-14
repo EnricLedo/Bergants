@@ -2,11 +2,13 @@ package cat.copernic.bergants
 
 import android.view.View
 import android.widget.ProgressBar
+import androidx.annotation.Keep
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContentProviderCompat.requireContext
 import com.google.android.material.snackbar.Snackbar
 import java.util.regex.Pattern
 
+@Keep
 class Utilities {
     fun campEsBuit(correu: String, contrasenya: String): Boolean {
         return correu.isNotEmpty() && contrasenya.isNotEmpty()

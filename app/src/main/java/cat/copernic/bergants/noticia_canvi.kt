@@ -11,6 +11,7 @@ import android.view.animation.AnimationUtils
 import android.view.animation.LayoutAnimationController
 import android.widget.Button
 import android.widget.Toast
+import androidx.annotation.Keep
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.view.plusAssign
@@ -32,7 +33,7 @@ import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
 import java.util.stream.Collectors.toList
 
-
+@Keep
 class noticia_canvi : Fragment() {
 
     private var list_multable: MutableList<NoticiaModel> = ArrayList()

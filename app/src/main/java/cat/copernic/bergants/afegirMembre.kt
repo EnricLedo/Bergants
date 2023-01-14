@@ -15,6 +15,7 @@ import android.widget.ImageButton
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.Keep
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.findNavController
 import cat.copernic.bergants.databinding.FragmentAfegirMembreBinding
@@ -26,6 +27,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 
+@Keep
 class afegirMembre : Fragment() {
     private lateinit var binding: FragmentAfegirMembreBinding
 

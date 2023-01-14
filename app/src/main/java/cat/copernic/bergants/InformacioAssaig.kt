@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.annotation.Keep
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import cat.copernic.bergants.databinding.FragmentAfegirNoticiaBinding
@@ -15,6 +16,7 @@ import cat.copernic.bergants.model.AssaigModel
 import com.google.firebase.firestore.FirebaseFirestore
 import org.w3c.dom.Text
 
+@Keep
 class InformacioAssaig : Fragment() {
     private lateinit var binding: FragmentInformacioAssaigBinding
 

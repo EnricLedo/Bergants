@@ -3,6 +3,7 @@ package cat.copernic.bergants.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.annotation.Keep
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import cat.copernic.bergants.Membre
@@ -10,7 +11,7 @@ import cat.copernic.bergants.databinding.DisenyMembreBinding
 import coil.api.load
 import com.google.firebase.storage.FirebaseStorage
 
-
+@Keep
 class MembreRecyclerAdapter: RecyclerView.Adapter<MembreRecyclerAdapter.ViewHolder>() {
     var membres: MutableList<Membre> = ArrayList()
     lateinit var context: Context

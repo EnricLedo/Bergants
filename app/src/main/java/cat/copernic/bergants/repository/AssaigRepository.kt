@@ -1,10 +1,12 @@
 package cat.copernic.bergants.repository
 
+import androidx.annotation.Keep
 import androidx.lifecycle.MutableLiveData
 import cat.copernic.bergants.assajos
 import cat.copernic.bergants.model.AssaigModel
 import com.google.firebase.database.*
 
+@Keep
 class AssaigRepository {
 
     private val databaseReference : DatabaseReference = FirebaseDatabase.getInstance().getReference("Assajos")

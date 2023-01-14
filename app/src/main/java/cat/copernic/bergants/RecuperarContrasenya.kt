@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.annotation.Keep
 import cat.copernic.bergants.databinding.ActivityLoginBinding
 import cat.copernic.bergants.databinding.ActivityMainBinding
 import cat.copernic.bergants.databinding.ActivityRecuperarContrasenyaBinding
@@ -17,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-
+@Keep
 class RecuperarContrasenya : AppCompatActivity() {
     private lateinit var passwordpage: View
 
