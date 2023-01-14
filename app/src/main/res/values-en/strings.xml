@@ -253,4 +253,6 @@
     <string name="informacioAssaig">Rehearsal information</string>
     <string name="editarAssaig">Edit rehearsal</string>
     <string name="editarActuacio">Edit performance</string>
+    <string name="eliminar">DELETE</string>
+    <string name="eliminar2">DELETE</string>
 </resources>

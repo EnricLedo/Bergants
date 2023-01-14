@@ -255,4 +255,6 @@
     <string name="informacioAssaig">Informació de l\'assaig</string>
     <string name="editarAssaig">Editar assaig</string>
     <string name="editarActuacio">Editar actuació</string>
+    <string name="eliminar">ELIMINAR</string>
+    <string name="eliminar2">ELIMINAR</string>
 </resources>

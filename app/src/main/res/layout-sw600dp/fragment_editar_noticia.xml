@@ -67,7 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/MargePapereraEsquerra20dp"
         android:layout_marginBottom="@dimen/MargeDretaRellotge15dp"
-        android:text="ELIMINAR"
+        android:text="@string/eliminar2"
         android:textSize="@dimen/sizeTablet"
         android:textColor="@color/blanc"
         android:backgroundTint="@color/vermellEliminar"

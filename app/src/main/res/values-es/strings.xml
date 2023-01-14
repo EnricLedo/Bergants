@@ -256,4 +256,6 @@
     <string name="informacioAssaig">Información del ensayo</string>
     <string name="editarAssaig">Editar ensayo</string>
     <string name="editarActuacio">Editar actuación</string>
+    <string name="eliminar">ELIMINAR</string>
+    <string name="eliminar2">ELIMINAR</string>
 </resources>
