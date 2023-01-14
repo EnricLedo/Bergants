@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.Switch
 import android.widget.Toast
 import android.widget.Toast.makeText
+import androidx.annotation.Keep
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -23,6 +24,7 @@ import cat.copernic.bergants.model.BusModel
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
 
+@Keep
 class AfegirActuacio : Fragment() {
     private lateinit var binding: FragmentAfegirActuacioBinding
 

@@ -3,13 +3,14 @@ package cat.copernic.bergants.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.annotation.Keep
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import cat.copernic.bergants.databinding.DisenyNoticiaBinding
 import cat.copernic.bergants.model.NoticiaModel
 import cat.copernic.bergants.noticia_canviDirections
 
-
+@Keep
 class NoticiaRecyclerAdapter : RecyclerView.Adapter<NoticiaRecyclerAdapter.ViewHolder>(){
     var noticies: MutableList<NoticiaModel> = ArrayList()
     lateinit var context: Context

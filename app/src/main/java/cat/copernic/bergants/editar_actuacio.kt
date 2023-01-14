@@ -9,12 +9,14 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.annotation.Keep
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.findNavController
 import cat.copernic.bergants.databinding.FragmentEditarActuacioBinding
 import cat.copernic.bergants.model.ActuacioModel
 import com.google.firebase.firestore.FirebaseFirestore
 
+@Keep
 class editar_actuacio : Fragment() {
     private lateinit var binding: FragmentEditarActuacioBinding
 

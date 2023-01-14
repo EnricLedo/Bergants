@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.Toast
 import android.widget.Toolbar
+import androidx.annotation.Keep
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
@@ -23,6 +24,7 @@ import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import org.checkerframework.checker.units.qual.m
 
+@Keep
 class MainActivity : AppCompatActivity() {
     //Atribut de tipus Button per tancar la sessió
     //private lateinit var botoLogout: Button

@@ -1,10 +1,12 @@
 package cat.copernic.bergants.model
 
+import androidx.annotation.Keep
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import cat.copernic.bergants.repository.AssaigRepository
 
+@Keep
 class AssaigViewModel : ViewModel() {
 
     private val repository : AssaigRepository

@@ -3,6 +3,7 @@ package cat.copernic.bergants.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.annotation.Keep
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import cat.copernic.bergants.actuacioDirections
@@ -10,6 +11,7 @@ import cat.copernic.bergants.assajosDirections
 import cat.copernic.bergants.databinding.DisenyActuacioBinding
 import cat.copernic.bergants.model.ActuacioModel
 
+@Keep
 class ActuacioRecyclerAdapter : RecyclerView.Adapter<ActuacioRecyclerAdapter.ViewHolder>() {
     var actuacions: MutableList<ActuacioModel> = ArrayList()
     lateinit var context: Context

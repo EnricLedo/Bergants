@@ -12,9 +12,10 @@ import android.view.WindowManager
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
+import androidx.annotation.Keep
 import java.util.*
 
-
+@Keep
 class SplashActivity : AppCompatActivity() {
 
     private val SPLASH_TIMER: Long = 3000

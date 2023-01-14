@@ -1,5 +1,8 @@
 package cat.copernic.bergants.model
 
+import androidx.annotation.Keep
+
+@Keep
 data class NoticiaModel (var title: String, var content: String, var date: String):java.io.Serializable {
     var titolNoticia: String? = null
     var contingutNoticia: String?=null

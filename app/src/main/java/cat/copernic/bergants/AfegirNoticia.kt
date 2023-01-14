@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.annotation.Keep
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -18,6 +19,7 @@ import cat.copernic.bergants.model.NoticiaModel
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
 
+@Keep
 class AfegirNoticia : Fragment() {
     private lateinit var binding: FragmentAfegirNoticiaBinding
 

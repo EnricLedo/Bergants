@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.annotation.Keep
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.findNavController
 import cat.copernic.bergants.databinding.FragmentAfegirActuacioBusBinding
@@ -18,6 +19,7 @@ import cat.copernic.bergants.model.BusModel
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
 
+@Keep
 class afegir_actuacio_bus : Fragment() {
     private lateinit var binding: FragmentAfegirActuacioBusBinding
 
