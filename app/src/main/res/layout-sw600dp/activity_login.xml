@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="532dp"
-        android:layout_height="595dp"
+        android:layout_width="522dp"
+        android:layout_height="413dp"
         android:layout_marginStart="@dimen/MargeImatge"
         android:layout_marginTop="@dimen/MargeTopImatge"
         android:layout_marginEnd="@dimen/MargeImatge"
@@ -26,7 +26,7 @@
         android:layout_marginStart="228dp"
         android:layout_marginBottom="8dp"
         android:text="@string/mail"
-        android:textSize="@dimen/sizePetitTablet"
+        android:textSize="@dimen/sizeTablet"
         app:layout_constraintBottom_toTopOf="@id/emailTextInputLayout"
         app:layout_constraintStart_toStartOf="@+id/emailTextInputLayout" />
 
@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="192dp"
         android:text="@string/password"
-        android:textSize="@dimen/sizePetitTablet"
+        android:textSize="@dimen/sizeTablet"
         app:layout_constraintBottom_toTopOf="@id/passwordTextInputLayout"
         app:layout_constraintStart_toStartOf="@id/passwordTextInputLayout" />
 
@@ -90,7 +90,7 @@
         android:layout_marginTop="@dimen/MargeLogin"
         android:gravity="center"
         android:minHeight="@dimen/AlcadaSwitchLogin"
-        android:textSize="@dimen/TitolGordo18sp"
+        android:textSize="@dimen/sizePetitTablet"
         android:text="@string/keepLoggedIn"
         android:thumbTint="@color/verdBergant"
         app:layout_constraintEnd_toEndOf="parent"
@@ -107,9 +107,12 @@
         android:text="@string/logIn"
         android:textAllCaps="false"
         android:textSize="@dimen/sizeTablet"
+        app:layout_constraintBottom_toTopOf="@+id/forgottenPassword"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/keepLoggedIn" />
+        app:layout_constraintTop_toBottomOf="@+id/keepLoggedIn"
+        app:layout_constraintVertical_bias="0.07" />
 
     <TextView
         android:id="@+id/forgottenPassword"
@@ -122,6 +125,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginBottom="@dimen/BottomRecordarContraLogin"
-        android:textSize="@dimen/sizePetitTablet"/>
+        android:textSize="@dimen/sizeTablet"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import cat.copernic.bergants.databinding.FragmentEditarAssaigBinding
 import cat.copernic.bergants.databinding.FragmentEditarNoticiaBinding
@@ -65,15 +66,15 @@ class editar_assaig : Fragment() {
         )
             .addOnSuccessListener {
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("L'assaig s'ha afegit correctament")
-                builder.setPositiveButton("Aceptar", null)
+                builder.setMessage(getString(R.string.assaigEdit))
+                builder.setPositiveButton(getString(R.string.aceptar), null)
                 val dialog = builder.create()
                 dialog.show()//S'ha afegit l'assaig...
             }
             .addOnFailureListener {
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("L'assaig no s'ha afegit")
-                builder.setPositiveButton("Aceptar", null)
+                builder.setMessage(getString(R.string.assaigNoEdit))
+                builder.setPositiveButton(getString(R.string.aceptar), null)
                 val dialog = builder.create()
                 dialog.show()
             }
@@ -85,15 +86,15 @@ class editar_assaig : Fragment() {
             .delete()
             .addOnSuccessListener {
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("S'ha eliminat l'assaig amb titol $titolAssaig")
-                builder.setPositiveButton("Aceptar", null)
+                builder.setMessage(getString(R.string.titolElim)+" $titolAssaig")
+                builder.setPositiveButton(getString(R.string.aceptar), null)
                 val dialog = builder.create()
                 dialog.show()//S'ha modificat l'assaig...
             }
             .addOnFailureListener{
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("No s'ha eliminat l'assaig")
-                builder.setPositiveButton("Aceptar", null)
+                builder.setMessage(getString(R.string.assaigNoElim4))
+                builder.setPositiveButton(getString(R.string.aceptar), null)
                 val dialog = builder.create()
                 dialog.show()//No s'ha modificat l'assaig...
             }
@@ -132,10 +133,11 @@ class editar_assaig : Fragment() {
 
                 //Modifiquem l'assaig mitjançant la funció modificarAssaig creada per nosaltres
                 modificarAssaig(assaig)
+                findNavController().navigate(R.id.action_editar_assaig_to_assajos_fragment)
 
             } else {
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("Cal introduïr els paramatres a modificar")
+                builder.setMessage(getString(R.string.paramMod))
                 builder.setPositiveButton("Aceptar", null)
                 val dialog = builder.create()
                 dialog.show() //Mostrem un missatge a l'usuari
@@ -150,10 +152,12 @@ class editar_assaig : Fragment() {
             if (assaig.titolAssaig?.isNotEmpty() == true) {
                 //Eliminem l'assaig mitjançant la funció eliminarAssaig creada per nosaltres
                 eliminarAssaig(assaig.titolAssaig!!)
+                findNavController().navigate(R.id.action_editar_assaig_to_assajos_fragment)
+
             }else{
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("Cal introduïr un titol de l'assaig que volem eliminar")
-                builder.setPositiveButton("Aceptar", null)
+                builder.setMessage(getString(R.string.titolElimAssaig))
+                builder.setPositiveButton(getString(R.string.aceptar), null)
                 val dialog = builder.create()
                 //Mostrem un missatge a l'usuari
             }

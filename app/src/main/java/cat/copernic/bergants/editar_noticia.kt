@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import cat.copernic.bergants.databinding.FragmentEditarNoticiaBinding
 import cat.copernic.bergants.databinding.FragmentNoticiaCanviBinding
@@ -68,15 +69,15 @@ class editar_noticia : Fragment() {
         )
             .addOnSuccessListener {
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("La notícia s'ha afegit correctament")
-                builder.setPositiveButton("Aceptar", null)
+                builder.setMessage(getString(R.string.editNoticia))
+                builder.setPositiveButton(getString(R.string.aceptar), null)
                 val dialog = builder.create()
                 dialog.show()//S'ha afegir la noticia...
             }
             .addOnFailureListener {
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("La notícia no s'ha afegit")
-                builder.setPositiveButton("Aceptar", null)
+                builder.setMessage(getString(R.string.errorEditNoticia))
+                builder.setPositiveButton(getString(R.string.aceptar), null)
                 val dialog = builder.create()
                 dialog.show()
             }
@@ -89,15 +90,15 @@ class editar_noticia : Fragment() {
             .addOnSuccessListener {
                 //S'ha modificat la noticia...
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("S'ha eliminat la noticia amb titol $titolNoticia")
-                builder.setPositiveButton("Aceptar", null)
+                builder.setMessage(getString(R.string.elimNoticia)+" $titolNoticia")
+                builder.setPositiveButton(getString(R.string.aceptar), null)
                 val dialog = builder.create()
                 dialog.show()
             }
             .addOnFailureListener{
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("No s'ha eliminat la noticia")
-                builder.setPositiveButton("Aceptar", null)
+                builder.setMessage(getString(R.string.noElimNoticia))
+                builder.setPositiveButton(getString(R.string.aceptar), null)
                 val dialog = builder.create()
                 dialog.show()//No s'ha modificat la noticia...
             }
@@ -120,11 +121,12 @@ class editar_noticia : Fragment() {
 
                 //Modifiquem la noticia mitjançant la funció modificarNoticia creada per nosaltres
                 modificarNoticia(noticia)
+                findNavController().navigate(R.id.action_editar_noticia_to_noticia_fragment)
 
             } else {
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("Cal introduïr els paramatres a modificar")
-                builder.setPositiveButton("Aceptar", null)
+                builder.setMessage(getString(R.string.paramMod))
+                builder.setPositiveButton(getString(R.string.aceptar), null)
                 val dialog = builder.create()
                 dialog.show()
                 //Mostrem un missatge a l'usuari
@@ -139,10 +141,12 @@ class editar_noticia : Fragment() {
             if (noticia.titolNoticia?.isNotEmpty() == true) {
                 //Eliminem la noticia mitjançant la funció eliminarNoticia creada per nosaltres
                 eliminarNoticia(noticia.titolNoticia!!)
+                findNavController().navigate(R.id.action_editar_noticia_to_noticia_fragment)
+
             }else{
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("Cal introduïr un titol de la noticia que volem eliminar")
-                builder.setPositiveButton("Aceptar", null)
+                builder.setMessage(getString(R.string.titolNoticiaElim))
+                builder.setPositiveButton(getString(R.string.aceptar), null)
                 val dialog = builder.create()
                 dialog.show()
                 //Mostrem un missatge a l'usuari

@@ -9,15 +9,15 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/fotoPerfil"
-        android:layout_width="@dimen/fotoTablet"
-        android:layout_height="@dimen/fotoTablet"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginStart="@dimen/marginendfoto"
         android:layout_marginTop="@dimen/margintopfoto"
         android:layout_marginEnd="@dimen/marginendfoto"
         android:gravity="center"
         android:shape="ring"
         android:thicknessRatio="1.9"
-        app:cardCornerRadius="@dimen/radiTablet"
+        app:cardCornerRadius="75dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -25,7 +25,7 @@
         <ImageView
             android:id="@+id/fotoEnric"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/fotoTablet"
+            android:layout_height="150dp"
             android:contentDescription="@string/fotoEnric"
             android:src="@drawable/fotoenric" />
     </androidx.cardview.widget.CardView>
@@ -113,30 +113,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dataalta" />
-
-    <TextView
-        android:id="@+id/eliminarcompte"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/marginpag"
-        android:layout_marginBottom="@dimen/marginpag"
-        android:text="@string/eliminarcompte"
-        android:textColor="@color/negre"
-        android:textSize="@dimen/sizeTablet"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <ImageView
-        android:id="@+id/eliminarperfil"
-        android:layout_width="@dimen/fotoTablet"
-        android:layout_height="@dimen/fotoTablet"
-        android:layout_marginEnd="@dimen/iconcompte"
-        android:layout_marginBottom="@dimen/separacio"
-        android:contentDescription="@string/eliminarperfil"
-        android:gravity="center"
-        android:src="@drawable/eliminarperfil"
-        app:layout_constraintBottom_toTopOf="@+id/eliminarcompte"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

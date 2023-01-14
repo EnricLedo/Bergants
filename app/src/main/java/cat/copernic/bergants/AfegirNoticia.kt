@@ -11,6 +11,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.navigation.fragment.findNavController
 import cat.copernic.bergants.databinding.FragmentAfegirNoticiaBinding
 import cat.copernic.bergants.model.NoticiaModel
 import com.google.android.material.snackbar.Snackbar
@@ -65,18 +67,17 @@ class AfegirNoticia : Fragment() {
         )
             .addOnSuccessListener {
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("La notícia s'ha afegit")
-                builder.setPositiveButton("Aceptar", null)
+                builder.setMessage(getString(R.string.noticiaProva))
+                builder.setPositiveButton(getString(R.string.aceptar), null)
                 val dialog = builder.create()
                 dialog.show()//S'ha afegir la noticia...
-
                 notification(titolNoticia.text.toString(), contingutNoticia.text.toString())
 
             }
             .addOnFailureListener {
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("La notícia no s'ha afegit")
-                builder.setPositiveButton("Aceptar", null)
+                builder.setMessage(getString(R.string.noticiaWrong))
+                builder.setPositiveButton(getString(R.string.aceptar), null)
                 val dialog = builder.create()
                 dialog.show()
             }
@@ -94,8 +95,9 @@ class AfegirNoticia : Fragment() {
             var noticia = llegirDades() //Noticia introduida per l'usuari
             if (noticia.titolNoticia?.isNotEmpty() == true && noticia.contingutNoticia?.isNotEmpty() == true && noticia.dataNoticia?.isNotEmpty() == true) {
                 afegirNoticia(noticia)
+                findNavController().navigate(R.id.action_afegirNoticia_to_noticia_fragment)
             } else {
-                Snackbar.make(it, "Falta indroduir parametres!!!", Snackbar.LENGTH_LONG).show()
+                Snackbar.make(it, getString(R.string.parametres), Snackbar.LENGTH_LONG).show()
             }
         }
     }

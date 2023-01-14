@@ -75,14 +75,14 @@ class afegir_actuacio_bus : Fragment() {
         )
             .addOnSuccessListener {
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("L'actuació s'ha afegit correctament")
+                builder.setMessage(getString(R.string.actuacioCorrect))
                 builder.setPositiveButton("Aceptar", null)
                 val dialog = builder.create()
                 dialog.show()//S'ha afegir l'actuació...
             }
             .addOnFailureListener {
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("L'actuació no s'ha afegit")
+                builder.setMessage(getString(R.string.actuacioWrong))
                 builder.setPositiveButton("Aceptar", null)
                 val dialog = builder.create()
                 dialog.show()
@@ -94,15 +94,15 @@ class afegir_actuacio_bus : Fragment() {
                 "placesBus" to actuacio.autocar.get(+1).placesBus)) //Subcol.lecció
             .addOnSuccessListener {
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("L'actuació s'ha afegit correctament")
-                builder.setPositiveButton("Aceptar", null)
+                builder.setMessage(getString(R.string.actuacioCorrect))
+                builder.setPositiveButton(getString(R.string.aceptar), null)
                 val dialog = builder.create()
                 dialog.show()//S'ha afegir l'actuació...
             }
             .addOnFailureListener{ //No s'ha afegit l'actuacio...
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("L'actuació no s'ha afegit")
-                builder.setPositiveButton("Aceptar", null)
+                builder.setMessage(getString(R.string.actuacioWrong))
+                builder.setPositiveButton(getString(R.string.aceptar), null)
                 val dialog = builder.create()
                 dialog.show()
             }
@@ -132,8 +132,9 @@ class afegir_actuacio_bus : Fragment() {
             var actuacio = llegirDades() //Actuacio introduida per l'usuari
             if (actuacio.titolActuacio?.isNotEmpty() == true && actuacio.dataActuacio?.isNotEmpty() == true && actuacio.llocActuacio?.isNotEmpty() == true) {
                 afegirActuacio(actuacio)
+                findNavController().navigate(R.id.action_afegir_actuacio_bus_fragment_to_actuacions_fragment)
             } else {
-                Snackbar.make(it, "Falta indroduir parametres!!!", Snackbar.LENGTH_LONG).show()
+                Snackbar.make(it, getString(R.string.parametres), Snackbar.LENGTH_LONG).show()
             }
         }
     }

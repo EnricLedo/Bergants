@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.navigation.fragment.findNavController
 import cat.copernic.bergants.databinding.FragmentEditarActuacioBinding
 import cat.copernic.bergants.model.ActuacioModel
 import com.google.firebase.firestore.FirebaseFirestore
@@ -61,15 +62,15 @@ class editar_actuacio : Fragment() {
         )
             .addOnSuccessListener {
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("L'actuació s'ha afegit correctament")
-                builder.setPositiveButton("Aceptar", null)
+                builder.setMessage(getString(R.string.actuacioEdit))
+                builder.setPositiveButton(getString(R.string.aceptar), null)
                 val dialog = builder.create()
                 dialog.show()//S'ha afegit l'actuacio...
             }
             .addOnFailureListener {
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("L'actuació no s'ha afegit")
-                builder.setPositiveButton("Aceptar", null)
+                builder.setMessage(getString(R.string.actuacioNoEdit))
+                builder.setPositiveButton(getString(R.string.aceptar), null)
                 val dialog = builder.create()
                 dialog.show()
             }
@@ -81,15 +82,15 @@ class editar_actuacio : Fragment() {
             .delete()
             .addOnSuccessListener {
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("S'ha eliminat l'actuacio amb titol $titolActuacio")
-                builder.setPositiveButton("Aceptar", null)
+                builder.setMessage(getString(R.string.eliminarActuacio)+" $titolActuacio")
+                builder.setPositiveButton(getString(R.string.aceptar), null)
                 val dialog = builder.create()
                 dialog.show()//S'ha modificat l'actuacio...
             }
             .addOnFailureListener{
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("No s'ha eliminat l'actuació")
-                builder.setPositiveButton("Aceptar", null)
+                builder.setMessage(getString(R.string.eliminarNoActuacio))
+                builder.setPositiveButton(getString(R.string.aceptar), null)
                 val dialog = builder.create()
                 dialog.show()//No s'ha modificat l'actuacio...
             }
@@ -128,11 +129,12 @@ class editar_actuacio : Fragment() {
 
                 //Modifiquem l'assaig mitjançant la funció modificarActuacio creada per nosaltres
                 modificarActuacio(actuacio)
+                findNavController().navigate(R.id.action_editar_actuacio_to_actuacions_fragment)
 
             } else {
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("Cal introduïr els paramatres a modificar")
-                builder.setPositiveButton("Aceptar", null)
+                builder.setMessage(getString(R.string.paramMod))
+                builder.setPositiveButton(getString(R.string.aceptar), null)
                 val dialog = builder.create()
                 dialog.show()
                 //Mostrem un missatge a l'usuari
@@ -147,10 +149,11 @@ class editar_actuacio : Fragment() {
             if (actuacio.titolActuacio?.isNotEmpty() == true) {
                 //Eliminem l'actuacio mitjançant la funció eliminarActuacio creada per nosaltres
                 eliminarActuacio(actuacio.titolActuacio!!)
+                findNavController().navigate(R.id.action_editar_actuacio_to_actuacions_fragment)
             }else{
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("Cal introduïr un titol de l'actuacio que volem eliminar")
-                builder.setPositiveButton("Aceptar", null)
+                builder.setMessage(getString(R.string.titolAct))
+                builder.setPositiveButton(getString(R.string.aceptar), null)
                 val dialog = builder.create()
                 dialog.show()
                 //Mostrem un missatge a l'usuari mitjançant

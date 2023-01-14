@@ -23,6 +23,7 @@
         android:id="@+id/botoSiVinc"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginTop="@dimen/RecuperarContrasenya70dp"
         android:layout_marginEnd="@dimen/MargeDretaInformacio50dp"
         android:contentDescription="@string/botodesivinc"
         android:src="@drawable/calendari_si56"
@@ -36,6 +37,7 @@
         android:id="@+id/botoNoVinc"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginTop="@dimen/RecuperarContrasenya70dp"
         android:layout_marginStart="@dimen/MargeDretaInformacio50dp"
         android:contentDescription="@string/botodenovinc"
         android:src="@drawable/calendari_no56"
@@ -67,7 +69,7 @@
         android:id="@+id/iconaRellotge"
         android:layout_width="@dimen/MargeDretaInformacio50dp"
         android:layout_height="@dimen/MargeDretaInformacio50dp"
-        android:layout_marginTop="@dimen/MargeTopImatge350dp"
+        android:layout_marginTop="440dp"
         android:layout_marginEnd="@dimen/MargeDretaRellotge15dp"
         android:contentDescription="@string/iconarellotge"
         android:src="@drawable/rellotge24"
@@ -111,44 +113,31 @@
         app:layout_constraintTop_toTopOf="@+id/iconaUbicacio" />
 
     <Button
-        android:id="@+id/CanviarVisioDePinyes"
-        android:layout_width="500dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="500dp"
-        android:text="@string/BotoCanviarVisioPinyes"
-        android:textColor="@color/blanc"
-        android:textSize="@dimen/sizeTablet"
-        android:backgroundTint="@color/verdBergant"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/AfegirUnaPinya"
         android:layout_width="@dimen/MargeTopImatge350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="650dp"
-        android:text="@string/Boto_afegir_pinya"
-        android:textSize="@dimen/sizeTablet"
-        android:textColor="@color/blanc"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="@color/verdBergant"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="6dp"
+        android:text="@string/Boto_afegir_pinya"
+        android:textColor="@color/blanc"
+        android:textSize="@dimen/sizeTablet"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_goneMarginEnd="20dp" />
 
     <Button
         android:id="@+id/botoEditarAssaig"
         android:layout_width="@dimen/MargeTopImatge350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="650dp"
+        android:layout_marginBottom="108dp"
+        android:backgroundTint="@color/verdBergant"
         android:text="@string/editar_assaig"
         android:textColor="@color/blanc"
         android:textSize="@dimen/sizeTablet"
-        android:backgroundTint="@color/verdBergant"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_goneMarginStart="20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

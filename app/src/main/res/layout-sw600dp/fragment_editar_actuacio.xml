@@ -97,6 +97,7 @@
         android:text="@string/botoguardar"
         android:textSize="@dimen/sizeTablet"
         android:textColor="@color/blanc"
+        android:backgroundTint="@color/verdBergant"
         android:layout_marginBottom="@dimen/separaciomig"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

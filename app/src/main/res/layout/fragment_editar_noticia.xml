@@ -50,6 +50,7 @@
         android:text="@string/botoguardar"
         android:textSize="@dimen/TitolGordo18sp"
         android:textColor="@color/blanc"
+        android:backgroundTint="@color/verdBergant"
         android:layout_marginBottom="@dimen/separaciomig"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -57,10 +58,10 @@
     <Button
         android:id="@+id/botoEliminarNoticia"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/btncircle"
+        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/MargePapereraEsquerra20dp"
         android:layout_marginBottom="@dimen/MargeDretaRellotge15dp"
-        android:text="ELIMINAR"
+        android:text="@string/eliminar"
         android:textSize="@dimen/TitolGordo18sp"
         android:textColor="@color/blanc"
         android:backgroundTint="@color/vermellEliminar"

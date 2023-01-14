@@ -67,7 +67,7 @@
         android:id="@+id/iconaRellotge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/MargeTopIconaRellotge250dp"
+        android:layout_marginTop="@dimen/MargeTopIconaUbicacio280dp"
         android:layout_marginEnd="@dimen/MargeDretaRellotge15dp"
         android:src="@drawable/rellotge24"
         app:layout_constraintEnd_toStartOf="@id/DataAssaig"
@@ -91,7 +91,7 @@
         android:id="@+id/iconaUbicacio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/MargeTopIconaUbicacio280dp"
+        android:layout_marginTop="310dp"
         android:layout_marginEnd="@dimen/MargeDretaRellotge15dp"
         android:src="@drawable/ubicacio24"
         app:layout_constraintEnd_toStartOf="@+id/ubicacioAssaig"
@@ -110,18 +110,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/iconaUbicacio"
         app:layout_constraintTop_toTopOf="@+id/iconaUbicacio" />
-
-    <Button
-        android:id="@+id/CanviarVisioDePinyes"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="320dp"
-        android:text="@string/BotoCanviarVisioPinyes"
-        android:textColor="@color/blanc"
-        android:backgroundTint="@color/verdBergant"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/AfegirUnaPinya"

@@ -16,6 +16,7 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
+import androidx.navigation.fragment.findNavController
 import cat.copernic.bergants.databinding.FragmentAfegirMembreBinding
 import cat.copernic.bergants.model.MembreModel
 import com.google.android.material.snackbar.Snackbar
@@ -138,15 +139,15 @@ class afegirMembre : Fragment() {
         )
             .addOnSuccessListener {
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("El membre s'ha afegit correctament")
-                builder.setPositiveButton("Aceptar", null)
+                builder.setMessage(getString(R.string.membreCorredct))
+                builder.setPositiveButton(getString(R.string.aceptar), null)
                 val dialog = builder.create()
                 dialog.show()
             }
             .addOnFailureListener {
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage("El membre no s'ha afegit")
-                builder.setPositiveButton("Aceptar", null)
+                builder.setMessage(getString(R.string.membreWrong))
+                builder.setPositiveButton(getString(R.string.aceptar) , null)
                 val dialog = builder.create()
                 dialog.show()
             }
@@ -181,7 +182,7 @@ class afegirMembre : Fragment() {
             if (correuMembre.isNotEmpty()&&passwordOkMembre.isNotEmpty()){
                 registrar(correuMembre, passwordOkMembre,)
             }else {
-                Snackbar.make(it, "Falta indroduir un correu i una contrasenya!!!", Snackbar.LENGTH_LONG).show()
+                Snackbar.make(it, getString(R.string.correuMal), Snackbar.LENGTH_LONG).show()
             }
 
             var membre = llegirDades() //Membre introduit per l'usuari
@@ -190,8 +191,10 @@ class afegirMembre : Fragment() {
                 && membre.adrecaMembre?.isNotEmpty() == true && membre.telefonMembre?.isNotEmpty() == true
                 && membre.rolMembre?.isNotEmpty() == true && membre.altaMembre?.isNotEmpty() == true) {
                 afegirMembre(membre)
+                findNavController().navigate(R.id.action_afegirMembre_to_membres_fragment)
+
             } else {
-                Snackbar.make(it, "Falta indroduir parametres!!!", Snackbar.LENGTH_LONG).show()
+                Snackbar.make(it, getString(R.string.parametres), Snackbar.LENGTH_LONG).show()
             }
         }
     }
