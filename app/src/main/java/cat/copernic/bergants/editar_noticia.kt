@@ -42,7 +42,6 @@ class editar_noticia : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
         binding = FragmentEditarNoticiaBinding.inflate(inflater, container, false)
-
         binding.editarTitol.setText(args.currentNoticia.titolNoticia)
         binding.editarNoticia.setText(args.currentNoticia.contingutNoticia)
         binding.editarData.setText(args.currentNoticia.dataNoticia)
