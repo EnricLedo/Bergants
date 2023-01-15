@@ -71,7 +71,7 @@
         android:gravity="center"
         android:text="@string/afegir"
         android:textColor="@color/blanc"
-        android:textSize="@dimen/sizeTablet"
+        android:textSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
