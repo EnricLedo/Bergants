@@ -153,6 +153,5 @@ class editar_noticia : Fragment() {
                 //Mostrem un missatge a l'usuari
             }
         }
-
     }
 }
