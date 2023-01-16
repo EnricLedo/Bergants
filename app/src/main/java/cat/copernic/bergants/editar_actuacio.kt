@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.Keep
 import androidx.appcompat.app.AlertDialog
@@ -21,7 +22,7 @@ class editar_actuacio : Fragment() {
     private lateinit var binding: FragmentEditarActuacioBinding
 
     //EditText per introduïr les dades de la nova noticia a afegir
-    private lateinit var titolActuacio: EditText
+    private lateinit var titolActuacio: TextView
     private lateinit var dataActuacio: EditText
     private lateinit var llocActuacio: EditText
     private lateinit var botoEditarActuacio: Button
@@ -57,7 +58,7 @@ class editar_actuacio : Fragment() {
     fun modificarActuacio(acutacio: ActuacioModel){
         bd.collection("Actuacions").document(titolActuacio.text.toString()).set(
             hashMapOf(
-                "titolActuacio" to titolActuacio.text.toString(),
+                "titolActuacio" to titolActuacio.toString(),
                 "dataActuacio" to dataActuacio.text.toString(),
                 "llocActuacio" to llocActuacio.text.toString()
             )
@@ -127,7 +128,7 @@ class editar_actuacio : Fragment() {
 
             var actuacio = llegirDades() //Actuacio introduïda per l'usuari
 
-            if (actuacio.titolActuacio?.isNotEmpty() == true && actuacio.dataActuacio?.isNotEmpty() == true && actuacio.llocActuacio?.isNotEmpty() == true) {
+            if (actuacio.dataActuacio?.isNotEmpty() == true && actuacio.llocActuacio?.isNotEmpty() == true) {
 
                 //Modifiquem l'assaig mitjançant la funció modificarActuacio creada per nosaltres
                 modificarActuacio(actuacio)
@@ -148,18 +149,10 @@ class editar_actuacio : Fragment() {
 
             var actuacio = llegirDades()
 
-            if (actuacio.titolActuacio?.isNotEmpty() == true) {
-                //Eliminem l'actuacio mitjançant la funció eliminarActuacio creada per nosaltres
+            //Eliminem l'actuacio mitjançant la funció eliminarActuacio creada per nosaltres
                 eliminarActuacio(actuacio.titolActuacio!!)
                 findNavController().navigate(R.id.action_editar_actuacio_to_actuacions_fragment)
-            }else{
-                val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage(getString(R.string.titolAct))
-                builder.setPositiveButton(getString(R.string.aceptar), null)
-                val dialog = builder.create()
-                dialog.show()
-                //Mostrem un missatge a l'usuari mitjançant
-            }
+
         }
     }
 }
