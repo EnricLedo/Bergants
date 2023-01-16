@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/separacio"
         android:text="@string/edit_titol_assaig"
-        android:textSize="35dp"
+        android:textSize="35sp"
         android:textColor="@color/negre"
         android:textStyle="bold"
         android:minHeight="@dimen/DimensioPaperera48dp"
