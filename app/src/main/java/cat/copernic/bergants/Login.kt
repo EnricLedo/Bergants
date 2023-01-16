@@ -6,20 +6,18 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.*
+import android.widget.CheckBox
 import androidx.annotation.Keep
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.core.content.ContextCompat.startActivity
 import cat.copernic.bergants.databinding.ActivityLoginBinding
-import cat.copernic.bergants.databinding.ActivityMainBinding
-import cat.copernic.bergants.Utilities
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+
 
 @Keep
 class Login : AppCompatActivity() {
@@ -77,14 +75,12 @@ class Login : AppCompatActivity() {
         super.onStart() //Cridem al la funció onStart() perquè ens mostri per pantalla l'activity
         //currentUser és un atribut de la classe FirebaseAuth que guarda l'usuari autenticat. Si aquest no està autenticat, el seu valor serà null.
         val currentUser = auth.currentUser
-        if (binding.keepLoggedIn.isChecked){
-            if(currentUser != null){
+        if(currentUser != null){
             //Sí l'usuari no ha tancat sessió (està autenticat)...
                 //Anem al mainActivity des d'aquesta pantalla
                 startActivity(Intent(this,MainActivity::class.java))
                 //finish() //Alliberem memòria un cop finalitzada aquesta tasca.
             }
-        }
     }
 
     //Funció per loginar a un usuari mitjançant Firebase Authentication
