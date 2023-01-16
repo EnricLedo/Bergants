@@ -65,6 +65,7 @@ class editar_noticia : Fragment() {
     fun modificarNoticia(noticia: NoticiaModel){
         bd.collection("Noticies").document(titolNoticia.text.toString()).set(
             hashMapOf(
+                "titolNoticia" to args.currentNoticia.titolNoticia.toString(),
                 "contingutNoticia" to contingutNoticia.text.toString(),
                 "dataNoticia" to dataNoticia.text.toString()
             )
