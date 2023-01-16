@@ -58,7 +58,7 @@ class editar_actuacio : Fragment() {
     fun modificarActuacio(acutacio: ActuacioModel){
         bd.collection("Actuacions").document(titolActuacio.text.toString()).set(
             hashMapOf(
-                "titolActuacio" to titolActuacio.toString(),
+                "titolActuacio" to titolActuacio.text.toString(),
                 "dataActuacio" to dataActuacio.text.toString(),
                 "llocActuacio" to llocActuacio.text.toString()
             )
