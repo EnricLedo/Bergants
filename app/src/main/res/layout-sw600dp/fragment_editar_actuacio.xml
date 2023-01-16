@@ -11,26 +11,16 @@
 
 
     <TextView
-        android:id="@+id/TemaActuacio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/MargePapereraEsquerra20dp"
-        android:text="@string/temaActuacio"
-        android:textColor="@color/negre"
-        android:textSize="@dimen/sizeTablet"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
         android:id="@+id/titolActuacio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/separacio"
         android:text="@string/edit_titol_actuacio"
-        android:textSize="@dimen/sizeTablet"
-        android:inputType="text"
+        android:textSize="35dp"
+        android:textColor="@color/negre"
+        android:textStyle="bold"
         android:minHeight="@dimen/DimensioPaperera48dp"
-        app:layout_constraintTop_toBottomOf="@id/TemaActuacio" />
+        app:layout_constraintTop_toTopOf="parent"  />
 
     <TextView
         android:id="@+id/dateActuacio"
@@ -38,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/MargePapereraEsquerra20dp"
         android:text="@string/edit_data_actuacio"
-        android:textColor="@color/negre"
+        android:textColor="@color/grisFosc"
         android:textSize="@dimen/sizeTablet"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/titolActuacio" />
@@ -60,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/MargePapereraEsquerra20dp"
         android:text="@string/UbicacioTitol"
-        android:textColor="@color/negre"
+        android:textColor="@color/grisFosc"
         android:textSize="@dimen/sizeTablet"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/dataActuacio" />

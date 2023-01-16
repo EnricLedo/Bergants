@@ -80,32 +80,20 @@
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Switch
-        android:id="@+id/keepLoggedIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/MargeLogin"
-        android:gravity="center"
-        android:minHeight="@dimen/AlcadaSwitchLogin"
-        android:text="@string/keepLoggedIn"
-        android:thumbTint="@color/verdBergant"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordTextInputLayout"
-        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <Button
         android:id="@+id/logIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/MargeTopBotoLogin"
+        android:layout_marginTop="32dp"
         android:gravity="center"
         android:text="@string/logIn"
         android:textAllCaps="false"
         android:textSize="@dimen/TamanyLletraLogin"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/keepLoggedIn" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordTextInputLayout" />
 
     <TextView
         android:id="@+id/forgottenPassword"
@@ -119,5 +107,4 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginBottom="@dimen/BottomRecordarContraLogin"
         android:textSize="16sp"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

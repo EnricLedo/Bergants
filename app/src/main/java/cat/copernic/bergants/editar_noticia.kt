@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.Keep
 import androidx.appcompat.app.AlertDialog
@@ -26,7 +27,7 @@ class editar_noticia : Fragment() {
     private lateinit var binding: FragmentEditarNoticiaBinding
 
     //EditText per introduïr les dades de la nova noticia a afegir
-    private lateinit var titolNoticia: EditText
+    private lateinit var titolNoticia: TextView
     private lateinit var contingutNoticia: EditText
     private lateinit var dataNoticia: EditText
     private lateinit var botoEditarNoticia: Button
@@ -42,8 +43,8 @@ class editar_noticia : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
         binding = FragmentEditarNoticiaBinding.inflate(inflater, container, false)
-
-        binding.editarTitol.setText(args.currentNoticia.titolNoticia)
+        var titulo:TextView = binding.editarTitol
+        titulo.text = args.currentNoticia.titolNoticia
         binding.editarNoticia.setText(args.currentNoticia.contingutNoticia)
         binding.editarData.setText(args.currentNoticia.dataNoticia)
 
@@ -64,7 +65,7 @@ class editar_noticia : Fragment() {
     fun modificarNoticia(noticia: NoticiaModel){
         bd.collection("Noticies").document(titolNoticia.text.toString()).set(
             hashMapOf(
-                "titolNoticia" to titolNoticia.text.toString(),
+                "titolNoticia" to args.currentNoticia.titolNoticia.toString(),
                 "contingutNoticia" to contingutNoticia.text.toString(),
                 "dataNoticia" to dataNoticia.text.toString()
             )
@@ -119,7 +120,7 @@ class editar_noticia : Fragment() {
 
             var noticia = llegirDades() //Noticia introduïda per l'usuari
 
-            if (noticia.titolNoticia?.isNotEmpty() == true && noticia.contingutNoticia?.isNotEmpty() == true && noticia.dataNoticia?.isNotEmpty() == true) {
+            if (noticia.contingutNoticia?.isNotEmpty() == true && noticia.dataNoticia?.isNotEmpty() == true) {
 
                 //Modifiquem la noticia mitjançant la funció modificarNoticia creada per nosaltres
                 modificarNoticia(noticia)
@@ -140,20 +141,10 @@ class editar_noticia : Fragment() {
 
             var noticia = llegirDades()
 
-            if (noticia.titolNoticia?.isNotEmpty() == true) {
-                //Eliminem la noticia mitjançant la funció eliminarNoticia creada per nosaltres
+            //Eliminem la noticia mitjançant la funció eliminarNoticia creada per nosaltres
                 eliminarNoticia(noticia.titolNoticia!!)
                 findNavController().navigate(R.id.action_editar_noticia_to_noticia_fragment)
 
-            }else{
-                val builder = AlertDialog.Builder(requireContext())
-                builder.setMessage(getString(R.string.titolNoticiaElim))
-                builder.setPositiveButton(getString(R.string.aceptar), null)
-                val dialog = builder.create()
-                dialog.show()
-                //Mostrem un missatge a l'usuari
-            }
         }
-
     }
 }

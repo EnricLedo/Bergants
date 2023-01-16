@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".editar_noticia">
 
-    <EditText
+
+    <TextView
         android:id="@+id/editarTitol"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,9 +16,9 @@
         android:layout_marginTop="@dimen/marginpag"
         android:layout_marginEnd="@dimen/marginpag"
         android:text="@string/inputtitoledit"
-        android:inputType="text"
-        android:textColorHint="@color/negre"
-        android:textSize="@dimen/sizeTablet"
+        android:textColor="@color/negre"
+        android:textStyle="bold"
+        android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>

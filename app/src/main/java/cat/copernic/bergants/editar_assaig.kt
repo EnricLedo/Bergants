@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.Keep
 import androidx.appcompat.app.AlertDialog
@@ -25,7 +26,7 @@ class editar_assaig : Fragment() {
     private lateinit var binding: FragmentEditarAssaigBinding
 
     //EditText per introduïr les dades de la nova noticia a afegir
-    private lateinit var titolAssaig: EditText
+    private lateinit var titolAssaig: TextView
     private lateinit var dataAssaig: EditText
     private lateinit var llocAssaig: EditText
     private lateinit var botoEditarAssaig: Button

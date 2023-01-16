@@ -13,8 +13,8 @@ android {
         applicationId "cat.copernic.bergants"
         minSdk 21
         targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -78,6 +78,9 @@ dependencies {
     //implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
     //implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+
+    //Diàleg de ressenya
+    implementation 'com.github.hotchemi:android-rate:1.0.1'
 
 
 }
