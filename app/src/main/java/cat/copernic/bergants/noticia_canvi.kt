@@ -77,10 +77,17 @@ class noticia_canvi : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         //iniciem el recycler view
         setupRecyclerView()
-
+        /**Diàleg de ressenya
+         * Mostra el diàleg el primer dia d'instal·lació amb setInstallDays(0)
+         * Un cop l'usuari obre l'aplicació 2 cops aparèix el diàleg setLaunchTimes(2)
+         * Si l'usuari selecciona recordar més tard el diàleg apareixerà el dia següent de seleccionar l'opció.
+         */
         AppRate.with(requireActivity()).setInstallDays(0).setLaunchTimes(2).setRemindInterval(1).monitor()
+        //Es mostra el diàleg si es compleix alguna de les condicions
         AppRate.showRateDialogIfMeetsConditions(requireActivity())
-        AppRate.with(requireActivity()).clearAgreeShowDialog()
+        //Aquesta linia és només per provar el dialeg
+        //Mostra sempre el diàleg quan iniciem l'app, aquesta línia es només per fer proves, serà borrada un cop demostrat un funciomanet correcte.
+        //AppRate.with(requireActivity()).showRateDialog(requireActivity())
         //botó que s'encarrega de dirigir-nos al fragment encarregat d'afegir noticies
         binding.botoAfegirNoticia.setOnClickListener {
             val action = noticia_canviDirections.actionNoticiaFragmentToAfegirNoticia()
