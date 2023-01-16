@@ -154,17 +154,6 @@
         app:layout_constraintStart_toEndOf="@id/iconaUbicacio"
         app:layout_constraintTop_toTopOf="@+id/iconaUbicacio" />
 
-    <ImageButton
-        android:id="@+id/maps_exemple"
-        android:layout_width="@dimen/ImatgeWidthMapa270dp"
-        android:layout_height="@dimen/ImatgeHeightMapa318dp"
-        android:src="@drawable/maps_exemple"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/MargeTopImatge350dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:contentDescription="@string/imatgeactuacio"/>
-
     <Button
         android:id="@+id/botoEditarActuacio"
         android:layout_width="wrap_content"
