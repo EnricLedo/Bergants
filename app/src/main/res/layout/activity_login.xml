@@ -119,5 +119,4 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginBottom="@dimen/BottomRecordarContraLogin"
         android:textSize="16sp"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

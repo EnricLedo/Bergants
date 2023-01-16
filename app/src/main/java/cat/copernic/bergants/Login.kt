@@ -76,11 +76,11 @@ class Login : AppCompatActivity() {
         //currentUser és un atribut de la classe FirebaseAuth que guarda l'usuari autenticat. Si aquest no està autenticat, el seu valor serà null.
         val currentUser = auth.currentUser
         if(currentUser != null){
-            //Sí l'usuari no ha tancat sessió (està autenticat)...
-                //Anem al mainActivity des d'aquesta pantalla
-                startActivity(Intent(this,MainActivity::class.java))
-                //finish() //Alliberem memòria un cop finalitzada aquesta tasca.
-            }
+        //Sí l'usuari no ha tancat sessió (està autenticat)...
+            //Anem al mainActivity des d'aquesta pantalla
+            startActivity(Intent(this,MainActivity::class.java))
+            //finish() //Alliberem memòria un cop finalitzada aquesta tasca.
+        }
     }
 
     //Funció per loginar a un usuari mitjançant Firebase Authentication
