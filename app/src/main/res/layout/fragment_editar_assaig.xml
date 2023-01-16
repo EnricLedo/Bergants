@@ -10,25 +10,16 @@
     android:padding="@dimen/marginpag">
 
     <TextView
-        android:id="@+id/TemaAssaig"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/temaAssaig"
-        android:textColor="@color/negre"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
         android:id="@+id/titolAssaig"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/separacio"
         android:text="@string/edit_titol_assaig"
-        android:inputType="text"
+        android:textColor="@color/negre"
+        android:textStyle="bold"
+        android:textSize="22dp"
         android:minHeight="@dimen/DimensioPaperera48dp"
-        app:layout_constraintTop_toBottomOf="@id/TemaAssaig" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/dateAssaig"
@@ -36,6 +27,7 @@
         android:layout_height="wrap_content"
         android:text="@string/edit_data_assaig"
         android:layout_marginTop="@dimen/MargePapereraEsquerra20dp"
+        android:textColor="@color/grisFosc"
         android:textStyle="bold"
         android:textSize="@dimen/TitolGordo18sp"
         app:layout_constraintTop_toBottomOf="@id/titolAssaig" />
@@ -56,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/MargePapereraEsquerra20dp"
         android:text="@string/UbicacioTitol"
-        android:textColor="@color/negre"
+        android:textColor="@color/grisFosc"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/dataAssaig"/>
