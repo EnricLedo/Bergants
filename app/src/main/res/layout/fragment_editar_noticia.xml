@@ -8,7 +8,7 @@
     tools:context=".editar_noticia">
 
 
-    <EditText
+    <TextView
         android:id="@+id/editarTitol"
         android:layout_width="@dimen/fullwidth"
         android:layout_height="@dimen/smallinputheight"
