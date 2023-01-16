@@ -27,6 +27,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import hotchemi.android.rate.AppRate
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
@@ -76,6 +77,10 @@ class noticia_canvi : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         //iniciem el recycler view
         setupRecyclerView()
+
+        AppRate.with(requireActivity()).setInstallDays(0).setLaunchTimes(2).setRemindInterval(1).monitor()
+        AppRate.showRateDialogIfMeetsConditions(requireActivity())
+        AppRate.with(requireActivity()).clearAgreeShowDialog()
         //botó que s'encarrega de dirigir-nos al fragment encarregat d'afegir noticies
         binding.botoAfegirNoticia.setOnClickListener {
             val action = noticia_canviDirections.actionNoticiaFragmentToAfegirNoticia()
