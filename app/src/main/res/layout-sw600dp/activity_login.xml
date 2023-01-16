@@ -83,7 +83,7 @@
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Switch
+    <CheckBox
         android:id="@+id/keepLoggedIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
