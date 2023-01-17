@@ -162,6 +162,7 @@
         android:layout_marginTop="650dp"
         android:text="@string/editar_actuacio"
         android:textColor="@color/blanc"
+        android:textStyle="bold"
         android:backgroundTint="@color/verdBergant"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="6dp"
