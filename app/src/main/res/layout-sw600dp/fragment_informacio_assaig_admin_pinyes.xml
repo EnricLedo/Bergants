@@ -114,7 +114,8 @@
 
     <Button
         android:id="@+id/AfegirUnaPinya"
-        android:layout_width="@dimen/MargeTopImatge350dp"
+        android:layout_width="wrap_content"
+        android:minWidth="@dimen/MargeTopImatge350dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:backgroundTint="@color/verdBergant"
@@ -128,7 +129,8 @@
 
     <Button
         android:id="@+id/botoEditarAssaig"
-        android:layout_width="@dimen/MargeTopImatge350dp"
+        android:layout_width="wrap_content"
+        android:minWidth="@dimen/MargeTopImatge350dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="108dp"
         android:backgroundTint="@color/verdBergant"

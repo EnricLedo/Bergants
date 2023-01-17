@@ -115,7 +115,7 @@
     <string name="malnomenric">Munalto</string>
     <string name="rolnomenric">Member</string>
     <string name="dataalta">BERGANT SINCE</string>
-    <string name="dataenric">10-23-2019</string>
+    <string name="dataenric">10–23–2019</string>
     <string name="eliminarcompte">Delete account</string>
     <string name="eliminarperfil">Delete profile</string>
     <string name="inputtitol">Add title</string>
@@ -124,7 +124,7 @@
     <string name="inputtitoledit">Mercè lunch</string>
     <string name="inputnoticiaedit">Badass! The castellers of Barcelona invite us to the lunch they organize after the Mercè performance. It takes place in the Clot park (next to its premises). Lunch is a fideuà and costs 6 euros, if you don\'t bring cutlery or glasses you have to buy them for 1 euro. There is a vegan option.     After lunch there will be a party!      Thank you so much.</string>
     <string name="botocheck">save</string>
-    <string name="check">Ok</string>
+    <string name="check">OK</string>
     <string name="imatgeactuacio">performancePicture</string>
     <string name="botodesivinc">ComingButton</string>
     <string name="botodenovinc">NotComingButton</string>
@@ -256,4 +256,15 @@
     <string name="eliminar">DELETE</string>
     <string name="eliminar2">DELETE</string>
     <string name="sense_respostaok">NO REPLY</string>
+    <string name="_27_10_22_9_27">27–10–22 9:27</string>
+    <string name="acces_autocar">Bus Access</string>
+    <string name="acces_cotxes">Car Access</string>
+    <string name="confirmar_assistencia">Confirm assistance</string>
+    <string name="rebutjar_assistencia">Decline assistance</string>
+    <string name="hora_inici">Start time</string>
+    <string name="lloc_esdeveniment">Place of the event</string>
+    <string name="foto_del_bergant">Photo of the Bergant</string>
+    <string name="introdueix_el_correu_registrat">Enter registered email</string>
+    <string name="confirmar">CONFIRM</string>
+    <string name="introdueix_la_contrasenya_registrada">enter the registered password</string>
 </resources>

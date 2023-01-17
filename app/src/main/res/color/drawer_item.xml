@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- checked state color (quan el item és clicat canvia el seu color de text respecte la resta d'items)-->
-    <item android:color="@color/verdBergant" android:state_checked="true" />
+    <item android:color="@color/verdFosc" android:state_checked="true" />
     <!-- color estandar dels items-->
     <item android:color="@color/negre" />
 </selector>

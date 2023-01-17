@@ -106,7 +106,7 @@
     <string name="malnomenric">Muntal</string>
     <string name="rolnomenric">Miembro</string>
     <string name="dataalta">BERGANT DES DE</string>
-    <string name="dataenric">23-10-2019</string>
+    <string name="dataenric">23–10–2019</string>
     <string name="eliminarcompte">Eliminar cuenta</string>
     <string name="eliminarperfil">Eliminar perfil</string>
     <string name="inputtitol">Añadir título</string>
@@ -232,11 +232,11 @@
     <string name="elimNoticia">Se ha eliminado la noticia con titulo</string>
     <string name="noElimNoticia">No se ha eliminado la noticia</string>
     <string name="titolNoticiaElim">Falta el titulo de la noticia a eliminar</string>
-    <string name="imatgeCorrect">La imagen se ha subido con exito</string>
+    <string name="imatgeCorrect">La imagen se ha subido con éxito</string>
     <string name="correuContra">Indroduce un correo y una contraseña</string>
     <string name="errorLogin">ERROR! El login ha fallado!</string>
     <string name="addCorreu">Introduce un correo!!</string>
-    <string name="restaurar">Contraseña restaurada con exito. Recibirás un correo.</string>
+    <string name="restaurar">Contraseña restaurada con éxito. Recibirás un correo.</string>
     <string name="noRestaurar">No se ha podido restablecer la contraseña!!</string>
     <string name="ubicaci_de_la_parada">UBICACIÓN DE LA PARADA</string>
     <string name="borrar_autocar">Borrar autocar</string>
@@ -259,4 +259,15 @@
     <string name="eliminar">ELIMINAR</string>
     <string name="eliminar2">ELIMINAR</string>
     <string name="sense_respostaok">SIN RESPUESTA</string>
+    <string name="_27_10_22_9_27">27–10–22 9:27</string>
+    <string name="acces_autocar">Acceso Autocar</string>
+    <string name="acces_cotxes">Acceso Coches</string>
+    <string name="confirmar_assistencia">Confirmar asistencia</string>
+    <string name="rebutjar_assistencia">Rechazar asistencia</string>
+    <string name="hora_inici">Hora de inicio</string>
+    <string name="lloc_esdeveniment">Lugar del evento</string>
+    <string name="foto_del_bergant">Foto del Bergant</string>
+    <string name="introdueix_el_correu_registrat">Introduce el correo registrado</string>
+    <string name="confirmar">CONFIRMAR</string>
+    <string name="introdueix_la_contrasenya_registrada">Introduce la contraseña registrada</string>
 </resources>

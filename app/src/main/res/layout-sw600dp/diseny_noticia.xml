@@ -21,8 +21,9 @@
 
         <TextView
             android:id="@+id/titlenotice"
-            android:layout_width="778dp"
-            android:layout_height="82dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="82dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:background="@color/grisClaretGentApuntada"

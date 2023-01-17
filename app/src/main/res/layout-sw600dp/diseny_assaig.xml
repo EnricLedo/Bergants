@@ -18,8 +18,10 @@
 
         <TextView
             android:id="@+id/titleAssaig"
-            android:layout_width="794dp"
-            android:layout_height="89dp"
+            android:layout_width="match_parent"
+            android:minWidth="794dp"
+            android:layout_height="wrap_content"
+            android:minHeight="89dp"
             android:background="@color/grisClaretGentApuntada"
             android:gravity="center_vertical"
             android:text="@string/disseny_titol_assaig"

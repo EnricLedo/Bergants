@@ -25,8 +25,10 @@
     <Switch
         android:id="@+id/assajos"
         style="@style/Switch"
-        android:layout_width="429dp"
-        android:layout_height="87dp"
+        android:layout_width="wrap_content"
+        android:minWidth="429dp"
+        android:layout_height="wrap_content"
+        android:minHeight="87dp"
         android:layout_marginStart="@dimen/marginpag"
         android:layout_marginTop="@dimen/separaciogran"
         android:layout_marginEnd="@dimen/marginpag"
@@ -40,8 +42,10 @@
     <Switch
         android:id="@+id/actuacions"
         style="@style/Switch"
-        android:layout_width="429dp"
-        android:layout_height="81dp"
+        android:layout_width="wrap_content"
+        android:minWidth="429dp"
+        android:layout_height="wrap_content"
+        android:minHeight="81dp"
         android:layout_marginStart="@dimen/marginpag"
         android:layout_marginTop="@dimen/separaciogran"
         android:layout_marginEnd="@dimen/marginpag"
@@ -57,8 +61,10 @@
     <Switch
         android:id="@+id/novetats"
         style="@style/Switch"
-        android:layout_width="430dp"
-        android:layout_height="89dp"
+        android:layout_width="wrap_content"
+        android:minWidth="430dp"
+        android:layout_height="wrap_content"
+        android:minHeight="89dp"
         android:layout_marginStart="@dimen/marginpag"
         android:layout_marginTop="@dimen/separaciogran"
         android:layout_marginEnd="@dimen/marginpag"
@@ -86,8 +92,10 @@
 
     <TextView
         android:id="@+id/versio"
-        android:layout_width="244dp"
-        android:layout_height="37dp"
+        android:layout_width="wrap_content"
+        android:minWidth="244dp"
+        android:layout_height="wrap_content"
+        android:minHeight="37dp"
         android:layout_marginStart="@dimen/marginpag"
         android:layout_marginTop="@dimen/separaciogegant"
         android:text="@string/versio"
@@ -99,8 +107,10 @@
 
     <TextView
         android:id="@+id/adreca"
-        android:layout_width="225dp"
-        android:layout_height="66dp"
+        android:layout_width="wrap_content"
+        android:minWidth="225dp"
+        android:layout_height="wrap_content"
+        android:minHeight="66dp"
         android:layout_marginStart="@dimen/marginpag"
         android:layout_marginTop="@dimen/info"
         android:layout_marginBottom="@dimen/info"
@@ -114,8 +124,10 @@
 
     <TextView
         android:id="@+id/suport"
-        android:layout_width="206dp"
-        android:layout_height="39dp"
+        android:layout_width="wrap_content"
+        android:minWidth="206dp"
+        android:layout_height="wrap_content"
+        android:minHeight="39dp"
         android:layout_marginStart="@dimen/marginpag"
         android:layout_marginTop="60dp"
         android:text="@string/suport"
@@ -127,8 +139,10 @@
 
     <TextView
         android:id="@+id/num"
-        android:layout_width="267dp"
-        android:layout_height="41dp"
+        android:layout_width="wrap_content"
+        android:minWidth="267dp"
+        android:layout_height="wrap_content"
+        android:minHeight="41dp"
         android:layout_marginTop="@dimen/separaciogegant"
         android:layout_marginEnd="@dimen/marginpag"
         android:layout_marginBottom="@dimen/info"
@@ -143,8 +157,10 @@
 
     <TextView
         android:id="@+id/contacte"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:minWidth="300dp"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
         android:layout_marginTop="@dimen/info"
         android:layout_marginEnd="@dimen/marginpag"
         android:gravity="end"
@@ -157,8 +173,10 @@
 
     <TextView
         android:id="@+id/sup"
-        android:layout_width="322dp"
-        android:layout_height="49dp"
+        android:layout_width="wrap_content"
+        android:minWidth="322dp"
+        android:layout_height="wrap_content"
+        android:minHeight="49dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="@dimen/marginpag"
         android:gravity="end"

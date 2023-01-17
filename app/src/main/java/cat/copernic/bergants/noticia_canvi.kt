@@ -85,7 +85,6 @@ class noticia_canvi : Fragment() {
         AppRate.with(requireActivity()).setInstallDays(0).setLaunchTimes(2).setRemindInterval(1).monitor()
         //Es mostra el diàleg si es compleix alguna de les condicions
         AppRate.showRateDialogIfMeetsConditions(requireActivity())
-        //Aquesta linia és només per provar el dialeg
         //Mostra sempre el diàleg quan iniciem l'app, aquesta línia es només per fer proves, serà borrada un cop demostrat un funciomanet correcte.
         //AppRate.with(requireActivity()).showRateDialog(requireActivity())
         //botó que s'encarrega de dirigir-nos al fragment encarregat d'afegir noticies

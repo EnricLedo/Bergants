@@ -9,7 +9,8 @@
     <TextView
         android:id="@+id/TitolAssaig"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/AlcadaTextViewTitolActuacio33dp"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/AlcadaTextViewTitolActuacio33dp"
         android:text="@string/nomAssaig"
         android:textSize="@dimen/TitolActuacio23sp"
         android:textStyle="bold"
@@ -114,7 +115,8 @@
     <Button
         android:id="@+id/AfegirUnaPinya"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/margeTop50dp"
         android:layout_marginTop="650dp"
         android:text="@string/Boto_afegir_pinya"
         android:textColor="@color/blanc"
@@ -127,7 +129,8 @@
     <Button
         android:id="@+id/botoEditarAssaig"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/margeTop50dp"
         android:layout_marginTop="650dp"
         android:text="@string/editar_assaig"
         android:textColor="@color/blanc"
