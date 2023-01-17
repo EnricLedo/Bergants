@@ -46,6 +46,7 @@
             android:layout_width="407dp"
             android:layout_height="68dp"
             android:layout_gravity="center"
+            android:hint="@string/exemple_gmail_com"
             android:inputType="textEmailAddress"
             android:textColor="@color/negre"
             android:textSize="@dimen/LletraNormal16sp"
@@ -78,6 +79,7 @@
             android:layout_height="69dp"
             android:layout_gravity="center"
             android:inputType="textPassword"
+            android:hint="@string/password_exemple"
             android:textColor="@color/negre"
             android:textSize="@dimen/LletraNormal16sp"
             tools:ignore="TextContrastCheck">

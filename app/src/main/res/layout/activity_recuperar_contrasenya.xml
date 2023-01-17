@@ -33,9 +33,9 @@
         android:id="@+id/emailTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/introdueix_el_correu_registrat"
         android:layout_marginTop="@dimen/RecuperarContrasenya40dp"
         android:layout_marginStart="@dimen/MargeEsquerra"
+        android:contentDescription="@string/introdueix_el_correu_registrat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RecuperarContrasenya">
@@ -46,6 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:inputType="textEmailAddress"
+            android:hint="@string/exemple_gmail_com"
             android:textColor="@color/negre"
             tools:ignore="TextContrastCheck"
             android:textSize="@dimen/LletraNormal16sp"/>

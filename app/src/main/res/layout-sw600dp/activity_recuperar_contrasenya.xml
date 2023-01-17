@@ -36,6 +36,7 @@
         android:id="@+id/emailTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minHeight="@dimen/DimensioPaperera48dp"
         android:layout_marginTop="@dimen/MargePapereraEsquerra20dp"
         android:layout_marginStart="@dimen/MargeEsquerra"
         android:layout_marginEnd="@dimen/MargeEsquerra"
@@ -51,6 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:inputType="textEmailAddress"
+            android:hint="@string/exemple_gmail_com"
             android:textColor="@color/negre"
             android:textSize="@dimen/LletraNormal16sp"
             tools:ignore="TextContrastCheck" />

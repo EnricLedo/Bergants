@@ -248,8 +248,10 @@
 
     <EditText
         android:id="@+id/passwordOkMembre"
-        android:layout_width="@dimen/smallinputwidth"
-        android:layout_height="@dimen/smallinputheight"
+        android:layout_width="wrap_content"
+        android:minWidth="170dp"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/DimensioPaperera48dp"
         android:layout_marginStart="@dimen/MargeEsquerra"
         android:layout_marginTop="@dimen/separacio"
         android:layout_marginEnd="@dimen/MargeEsquerra"
