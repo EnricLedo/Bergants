@@ -9,14 +9,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageButton
-import android.widget.Toast
+import android.widget.*
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.Keep
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.navigation.fragment.findNavController
 import cat.copernic.bergants.databinding.FragmentAfegirMembreBinding
 import cat.copernic.bergants.model.MembreModel
@@ -43,6 +41,7 @@ class afegirMembre : Fragment() {
     private lateinit var telefonMembre: EditText
     private lateinit var rolMembre: EditText
     private lateinit var altaMembre: EditText
+    private lateinit var adminMembre: CheckBox
 
     //Atribut de tipus Button per afegir un nou membre
     private lateinit var botoAfegir: Button
@@ -128,9 +127,15 @@ class afegirMembre : Fragment() {
         var correuMembre = correuMembre.text.toString()
         var adrecaMembre = adrecaMembre.text.toString()
 
+        if(binding.booleanAdmin.isChecked()){
+            var adminMembre ="admin"
+        }
+        else{
+            var adminMembre = "user"
+        }
 
-        return MembreModel(nomMembre, malnom, alcadaEspatlles, alcadaMans, correuMembre,
-            adrecaMembre, telefonMembre, rolMembre, altaMembre)
+       return MembreModel(nomMembre, malnom, alcadaEspatlles, alcadaMans, correuMembre,
+            adrecaMembre, telefonMembre, rolMembre, altaMembre, adminMembre)
     }
 
     fun afegirMembre(membre: MembreModel) {
@@ -147,7 +152,8 @@ class afegirMembre : Fragment() {
                 "adrecaMembre" to adrecaMembre.text.toString(),
                 "telefonMembre" to telefonMembre.text.toString(),
                 "rolMembre" to rolMembre.text.toString(),
-                "altaMembre" to altaMembre.text.toString()
+                "altaMembre" to altaMembre.text.toString(),
+                "adminUser" to adminMembre.toString()
             )
 
         )
@@ -193,6 +199,7 @@ class afegirMembre : Fragment() {
         altaMembre = binding.altaMembre
         botoAfegir = binding.botoGuardarMembre
         passwordOkMembre = binding.passwordOkMembre
+        adminMembre = binding.booleanAdmin
 
         //Aquest codi està configurant un onClickListener per a un botó (botoAfegir) a Kotlin. Quan es
         // fa clic al botó, el codi executarà primer la funció "llegirDades()" que recull l'entrada de
@@ -220,8 +227,8 @@ class afegirMembre : Fragment() {
                 && membre.alcadaMans?.isNotEmpty() == true && membre.correuMembre?.isNotEmpty() == true
                 && membre.adrecaMembre?.isNotEmpty() == true && membre.telefonMembre?.isNotEmpty() == true
                 && membre.rolMembre?.isNotEmpty() == true && membre.altaMembre?.isNotEmpty() == true) {
-                afegirMembre(membre)
-                findNavController().navigate(R.id.action_afegirMembre_to_membres_fragment)
+                    afegirMembre(membre)
+                    findNavController().navigate(R.id.action_afegirMembre_to_membres_fragment)
 
             } else {
                 Snackbar.make(it, getString(R.string.parametres), Snackbar.LENGTH_LONG).show()
