@@ -70,6 +70,10 @@ class editar_noticia : Fragment() {
                 "dataNoticia" to dataNoticia.text.toString()
             )
         )
+            //Aquest codi està afegint oients d'èxit i fracàs a una tasca asíncrona. Si la tasca té
+            // èxit, crea un AlertDialog amb un missatge "noticiaCorrect" que té un sol botó "Acceptar"
+            // i el mostra. A continuació, crida al mètode de notificació. Si la tasca no té èxit,
+            // crea un AlertDialog amb un missatge que té un sol botó "Acceptar" i el mostra.
             .addOnSuccessListener {
                 val builder = AlertDialog.Builder(requireContext())
                 builder.setMessage(getString(R.string.editNoticia))
@@ -90,6 +94,10 @@ class editar_noticia : Fragment() {
     fun eliminarNoticia(titolNoticia:String){
         bd.collection("Noticies").document(titolNoticia)
             .delete()
+            //Aquest codi està afegint oients d'èxit i fracàs a una tasca asíncrona. Si la tasca té
+            // èxit, crea un AlertDialog amb un missatge que té un sol botó "Acceptar"
+            // i el mostra. A continuació, crida al mètode de notificació. Si la tasca no té èxit,
+            // crea un AlertDialog amb un missatge que té un sol botó "Acceptar" i el mostra.
             .addOnSuccessListener {
                 //S'ha modificat la noticia...
                 val builder = AlertDialog.Builder(requireContext())

@@ -53,6 +53,16 @@ class InformacioActuacio : Fragment() {
         return binding.root
     }
 
+    //Primer crida al mètode onViewCreated de la superclasse, després recupera una referència d'un botó
+    // en el disseny cridant al mètode findViewById a la vista que retorna la funció requireView() i
+    // l'assigna a la variable btnEditarActuacioBinding.
+    //Estableix un onClickListener per al botó, quan es fa clic, recuperarà el text dels camps de text
+    // del disseny TitolActuacio, DataActuacio, ubicacioActuacio, i l'assignarà a localtitle, localdate
+    // i localubi respectivament. A continuació, crea una instància de la classe
+    // "InformacioActuacioDirections" cridant al mètode "actionInformacioActuacioFragmentToEditarActuacio"
+    // que pren els localtitle, localdate i localubi com a arguments. A continuació, crida al mètode de
+    // navegació a findNavController() amb les indicacions com a argument. Això desplaçarà l'usuari al
+    // fragment EditarActuacio.
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

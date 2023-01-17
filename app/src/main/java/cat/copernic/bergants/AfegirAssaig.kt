@@ -68,6 +68,11 @@ class AfegirAssaig : Fragment() {
                 "llocAssaig" to llocAssaig.text.toString() //Atribut llocAssaig amb el valor introduït per l'usuari
             )
         )
+            //Aquest codi està afegint oients d'èxit i fracàs a una tasca asíncrona. Si la tasca té
+            // èxit, crea un AlertDialog amb un missatge "assaigCorrect" que té un sol botó "Acceptar"
+            // i el mostra. A continuació, crida al mètode de notificació amb els valors de "titolAssaig"
+            // i "llocAssaig" com a arguments. Si la tasca no té èxit, crea un AlertDialog amb un missatge
+            // "assaigWrong" que té un sol botó "Acceptar" i el mostra.
             .addOnSuccessListener {
                 val builder = AlertDialog.Builder(requireContext())
                 builder.setMessage(getString(R.string.assaigCorrect))
@@ -94,6 +99,14 @@ class AfegirAssaig : Fragment() {
         llocAssaig = binding.ubicacioAssaig
         botoAfegir = binding.botoGuardarAssaig
 
+        //Aquest codi està configurant un OnClickListener en un botó "botoAfegir". Quan es fa clic al
+        // botó, crida a una funció "llegirDades()", que llegeix algunes dades de la interfície d'usuari.
+        // A continuació, crea una variable "assaig" i li assigna el valor de retorn de "llegirDades()".
+        // A continuació, comprova si les propietats "titolAssaig", "dataAssaig", "llocAssaig" de l'objecte
+        // "assaig" no estan buides. Si totes les propietats no estan buides, crida a la funció
+        // "afegirAssaig(assaig)" i navega al fragment "assajos_fragment" mitjançant el
+        // "findNavController().navigate(R.id.action_afegir_assaig_fragment_to_assajos_fragment)". En cas
+        // contrari, mostra un Snackbar amb el missatge "paràmetres" a la pantalla.
         botoAfegir.setOnClickListener {
             llegirDades()
             var assaig = llegirDades() //Assaig introduït per l'usuari
@@ -112,6 +125,10 @@ class AfegirAssaig : Fragment() {
             noti.setContentText(contingut)
             noti.setSmallIcon(R.drawable.logo_bergants)
         }.build()
+        //Aquest codi està creant un objecte NotificationManagerCompat i utilitza el mètode
+        // "from" per inicialitzar-lo amb el context actual. A continuació, utilitza el mètode
+        // "notificar" per mostrar una notificació amb un identificador 1 i l'objecte "notificació"
+        // com a contingut.
         val notificationManageer = NotificationManagerCompat.from(requireContext())
         notificationManageer.notify(1,notification)
     }

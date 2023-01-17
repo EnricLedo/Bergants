@@ -47,6 +47,20 @@ class noticia_canvi : Fragment() {
     private var bd =
         FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
 
+    //Aquest codi defineix una funció anomenada "setupRecyclerView" que probablement s'utilitza per
+    // configurar una vista de reciclador al fragment.
+    //Primer comprova si el list_multable està buit o no. Si està buit, crida a la funció
+    // mostrarNoticies() que probablement carrega les dades per a la vista del reciclador. Si no està
+    // buit, passa a configurar la vista del reciclador.
+    //Estableix la vista del reciclador perquè tingui una mida fixa trucant a setHasFixedSize(true) a
+    // la vista del reciclador.
+    //Estableix el gestor de disseny de la vista del reciclador en un LinearLayoutManager utilitzant
+    // el context del fragment.
+    //Crea una instància de la classe NoticiesRecyclerAdapter i l'assigna a la vista del reciclador
+    // cridant a myAdapter.NoticiesRecyclerAdapter(list_multable, requireActivity()) i l'assigna a
+    // la propietat d'adaptador de la vista del reciclador.
+    //S'utilitza per configurar la vista del reciclador, com ara crear un adaptador i configurar-lo
+    // a la vista del reciclador per mostrar una llista de notícies.
     private fun setupRecyclerView() {
 
         if (list_multable.isEmpty()) {
@@ -102,6 +116,15 @@ class noticia_canvi : Fragment() {
         binding.recyclerNoticies.visibility = View.GONE
         //Activem el shimmer per l'animació de carregar
         binding.shimmerViewRvNoticies.startShimmer()
+        //Aquest codi utilitza la rutina lifecycleScope.launch per fer una sol·licitud de xarxa a
+        // Firestore per obtenir una col·lecció de documents anomenada "Noticies" en un fil de fons
+        // mitjançant Dispatchers.IO.
+        //L'addOnSuccessListener es crida quan la sol·licitud té èxit i itera els documents retornats
+        // i crea un objecte NoticiaModel per a cada document, utilitzant els camps "titolNoticia",
+        // "contingutNoticia" i "dataNoticia" del document.
+        //A continuació, comprova si el list_multable està buit o no. Si està buit, afegeix el wallItem
+        // a la llista. Si no està buit, itera per la llista_multable i comprova si ja hi ha una notícia
+        // amb el mateix títol, si no, l'afegeix a la llista.
         lifecycleScope.launch {
             withContext(Dispatchers.IO){
                 bd.collection("Noticies").get().addOnSuccessListener { documents ->

@@ -67,6 +67,10 @@ class editar_assaig : Fragment() {
                 "llocAssaig" to llocAssaig.text.toString()
             )
         )
+            //Aquest codi està afegint oients d'èxit i fracàs a una tasca asíncrona. Si la tasca té
+            // èxit, crea un AlertDialog amb un missatge "assaigCorrect" que té un sol botó "Acceptar"
+            // i el mostra. A continuació, crida al mètode de notificació. Si la tasca no té èxit,
+            // crea un AlertDialog amb un missatge que té un sol botó "Acceptar" i el mostra.
             .addOnSuccessListener {
                 val builder = AlertDialog.Builder(requireContext())
                 builder.setMessage(getString(R.string.assaigEdit))

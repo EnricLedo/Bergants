@@ -98,6 +98,16 @@ class AfegirActuacio : Fragment() {
         llocActuacio = binding.llocActuacio
         botoAfegir = binding.botoGuardarActuacio
 
+        //Hi ha dos botons, un amb l'identificador "autocarBoolean" i l'altre "botoAfegir"
+        //
+        //Quan l'usuari fa clic al botó amb l'identificador "autocarBoolean" navega a un altre fragment
+        // anomenat "afegir_actuacio_bus_fragment".
+        //Quan l'usuari fa clic al botó "botoAfegir" crida al mètode llegirDades() que llegeix les dades
+        // introduïdes per l'usuari. A continuació, comprova si s'han omplert els camps "titolActuacio",
+        // "dataActuacio" i "llocActuacio". Si s'han omplert, crida al mètode afegirActuacio(actuacio) i
+        // navega a un altre fragment anomenat "actuacions_fragment". Si els camps no s'han omplert,
+        // mostra un missatge de Snackbar que diu "paràmetres" que sembla ser un missatge en castellà
+        // que indica a l'usuari que els paràmetres no s'han omplert.
         val btnAddBus = requireView().findViewById<Button>(R.id.autocarBoolean)
 
         btnAddBus.setOnClickListener{
@@ -122,6 +132,10 @@ class AfegirActuacio : Fragment() {
             noti.setContentText(contingut)
             noti.setSmallIcon(R.drawable.logo_bergants)
         }.build()
+        //Aquest codi està creant un objecte NotificationManagerCompat i utilitza el mètode
+        // "from" per inicialitzar-lo amb el context actual. A continuació, utilitza el mètode
+        // "notificar" per mostrar una notificació amb un identificador 1 i l'objecte "notificació"
+        // com a contingut.
         val notificationManageer = NotificationManagerCompat.from(requireContext())
         notificationManageer.notify(1,notification)
     }

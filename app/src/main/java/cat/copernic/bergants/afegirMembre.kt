@@ -98,6 +98,11 @@ class afegirMembre : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
         binding = FragmentAfegirMembreBinding.inflate(inflater, container, false)
+        //Aquest codi està configurant un onClickListener per a una visualització d'imatge (imgMembre)
+        // a Kotlin. OnClickListener s'està configurant en una funció anomenada "afegirImatge()",
+        // que s'executarà quan es faci clic a la vista de la imatge. La funció "afegirImatge()" és
+        // l'encarregada d'obrir la biblioteca d'imatges o la càmera del dispositiu per permetre a
+        // l'usuari seleccionar o capturar una imatge.
         imgMembre =  binding.imgMembre
         imgMembre.setOnClickListener{
             afegirImatge()
@@ -105,6 +110,12 @@ class afegirMembre : Fragment() {
         return binding.root
     }
 
+    //Aquest codi és una funció anomenada "llegirDades()" a Kotlin que probablement s'utilitza per
+    // recollir l'entrada de l'usuari d'un formulari i crear una instància de la classe "MembreModel".
+    // Primer crea diverses variables (nomMembre, malnom, alcadaEspatlles, alcadaMans, telefonMembre,
+    // rolMembre, altaMembre, correuMembre, adrecaMembre) obtenint el text de les vistes EditText
+    // corresponents i convertint-lo en una cadena. A continuació, crea una instància de "MembreModel"
+    // passant les variables com a arguments i la retorna.
     fun llegirDades(): MembreModel {
         //Guardem les dades introduïdes per l'usuari
         var nomMembre = nomMembre.text.toString()
@@ -139,6 +150,11 @@ class afegirMembre : Fragment() {
                 "altaMembre" to altaMembre.text.toString()
             )
         )
+            //Aquest codi està afegint oients d'èxit i fracàs a una tasca asíncrona. Si la tasca té
+            // èxit, crea un AlertDialog amb un missatge "assaigCorrect" que té un sol botó "Acceptar"
+            // i el mostra. A continuació, crida al mètode de notificació amb els valors de "titolAssaig"
+            // i "llocAssaig" com a arguments. Si la tasca no té èxit, crea un AlertDialog amb un missatge
+            // "assaigWrong" que té un sol botó "Acceptar" i el mostra.
             .addOnSuccessListener {
                 val builder = AlertDialog.Builder(requireContext())
                 builder.setMessage(getString(R.string.membreCorredct))
@@ -177,6 +193,17 @@ class afegirMembre : Fragment() {
         botoAfegir = binding.botoGuardarMembre
         passwordOkMembre = binding.passwordOkMembre
 
+        //Aquest codi està configurant un onClickListener per a un botó (botoAfegir) a Kotlin. Quan es
+        // fa clic al botó, el codi executarà primer la funció "llegirDades()" que recull l'entrada de
+        // l'usuari d'un formulari i crea una instància de la classe "MembreModel".
+        //Aleshores comprovarà que els camps de correu electrònic i contrasenya no estiguin buits, si
+        // és així, cridarà a una funció "registrar(correuMembre, passwordOkMembre)". Si els camps estan
+        // buits, mostrarà un missatge de Snackbar amb la cadena "correuMal", que és un missatge d'error.
+        //Aleshores comprovarà que tots els camps obligatoris del MembreModel no estiguin buits, si és
+        // així cridarà a la funció "afegirMembre(membre)" i navegarà l'usuari a la pantalla
+        // "membres_fragment". Si algun dels camps està buit, mostrarà un missatge de Snackbar amb la
+        // cadena "paràmetres", que és  un missatge d'error indicant a l'usuari que ompli
+        // els camps obligatoris.
         botoAfegir.setOnClickListener {
             llegirDades()
             var correuMembre = correuMembre.text.toString()
