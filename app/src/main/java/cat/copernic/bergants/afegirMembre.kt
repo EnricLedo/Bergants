@@ -126,7 +126,13 @@ class afegirMembre : Fragment() {
         var altaMembre = altaMembre.text.toString()
         var correuMembre = correuMembre.text.toString()
         var adrecaMembre = adrecaMembre.text.toString()
-        var adminMembre = adminMembre
+
+        if(binding.booleanAdmin.isChecked()){
+            var adminMembre ="admin"
+        }
+        else{
+            var adminMembre = "user"
+        }
 
        return MembreModel(nomMembre, malnom, alcadaEspatlles, alcadaMans, correuMembre,
             adrecaMembre, telefonMembre, rolMembre, altaMembre, adminMembre)
@@ -147,7 +153,7 @@ class afegirMembre : Fragment() {
                 "telefonMembre" to telefonMembre.text.toString(),
                 "rolMembre" to rolMembre.text.toString(),
                 "altaMembre" to altaMembre.text.toString(),
-                "admin" to adminMembre.text.toString()
+                "adminUser" to adminMembre.toString()
             )
         )
             //Aquest codi està afegint oients d'èxit i fracàs a una tasca asíncrona. Si la tasca té
