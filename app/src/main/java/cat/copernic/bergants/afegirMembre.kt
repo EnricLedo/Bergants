@@ -153,7 +153,7 @@ class afegirMembre : Fragment() {
                 "telefonMembre" to telefonMembre.text.toString(),
                 "rolMembre" to rolMembre.text.toString(),
                 "altaMembre" to altaMembre.text.toString(),
-                "adminUser" to adminMembre.toString()
+                "adminUser" to adminMembre
             )
         )
             //Aquest codi està afegint oients d'èxit i fracàs a una tasca asíncrona. Si la tasca té
