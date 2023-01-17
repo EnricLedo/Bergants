@@ -61,6 +61,12 @@ class RecuperarContrasenya : AppCompatActivity() {
         //Enviem a l'usuari el correu d'autenticació al correu passat per paràmetre. Aquest mètode comprova que el correu sigui el correu d'un dels registres.
         auth.sendPasswordResetEmail(correu).addOnCompleteListener { task ->
 
+            //Si la tasca té èxit, mostra un missatge de Snackbar a l'usuari que indica que el restabliment
+            // de la contrasenya s'ha realitzat correctament i navega a l'activitat d'inici de sessió
+            // creant un Intent i trucant a startActivity. També crida al mètode finish() per alliberar
+            // la memòria de l'activitat actual.
+            //Si la tasca no té èxit, mostra un missatge de Snackbar a l'usuari que indica que el
+            // restabliment de la contrasenya no ha tingut èxit.
             if(task.isSuccessful){
                 Snackbar.make(passwordpage,getString(R.string.restaurar),Snackbar.LENGTH_LONG).show()
                 startActivity(Intent(this,Login::class.java))

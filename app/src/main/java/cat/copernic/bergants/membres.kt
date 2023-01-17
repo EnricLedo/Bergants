@@ -47,6 +47,13 @@ class membres : Fragment() {
         //}
     }
 
+    //Aquest codi es troba en el mètode onViewCreated d'un fragment a Kotlin.
+    //Primer crida al mètode onViewCreated de la superclasse, després recupera una referència d'un
+    // botó en el disseny trucant al mètode findViewById a la vista que retorna la funció requireView()
+    // i l'assigna a la variable btnAddMem.
+    //Estableix un onClickListener per al botó, quan es fa clic, navegarà a un fragment diferent
+    // trucant al mètode de navegació a findNavController() amb l'argument
+    // action_membres_fragment_to_afegirMembre. Això navegarà l'usuari fins al fragment AfegirMembre.
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -57,6 +64,15 @@ class membres : Fragment() {
         }
     }
 
+    //Aquest codi es troba al mètode onCreateView d'un fragment a Kotlin.
+    //Primer crea una instància de la classe FragmentMembresBinding cridant-hi el mètode inflate,
+    // passant com a arguments el disseny inflater, container i false.
+    //A continuació, crida al mètode setupRecyclerView(), aquest mètode probablement configura la
+    // vista del reciclador amb les dades, com ara crear un adaptador i configurar-lo a la vista del
+    // reciclador.
+    //Retorna la vista arrel de l'objecte d'enllaç.
+    //S'utilitza per inflar el disseny del fragment i configurar la vista del reciclador per mostrar
+    // una llista de membres.
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         binding = FragmentMembresBinding.inflate(inflater, container, false)

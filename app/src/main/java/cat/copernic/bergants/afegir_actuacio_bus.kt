@@ -82,6 +82,10 @@ class afegir_actuacio_bus : Fragment() {
                 val dialog = builder.create()
                 dialog.show()//S'ha afegir l'actuació...
             }
+            //Aquest codi està configurant un OnFailureListener per a alguna tasca.
+            // Quan la tasca falla, es crea un diàleg d'alerta amb un missatge del recurs
+            // de cadena "actuacioWrong" i un botó "Acceptar". A continuació, es mostra el
+            // diàleg a la pantalla.
             .addOnFailureListener {
                 val builder = AlertDialog.Builder(requireContext())
                 builder.setMessage(getString(R.string.actuacioWrong))
@@ -123,6 +127,14 @@ class afegir_actuacio_bus : Fragment() {
 
         autocar = arrayListOf()
 
+        //Aquest codi configura dos oients de clic per a dos botons diferents en un fragment.
+        // El primer botó, "btnNoBus", quan es fa clic, navega a l'usuari a un fragment diferent
+        // mitjançant el component de navegació. El segon botó, "botoAfegir", quan es fa clic, primer
+        // crida a la funció "llegirDades()" que llegeix algunes dades i les emmagatzema a la variable
+        // "actuacio". A continuació, comprova si els camps de títol, data i ubicació de l'objecte
+        // "actuacio" no estan buits. Si no ho són, crida a la funció "afegirActuacio(actuacio)" que
+        // afegeix l'actuacio al repositori i després navega l'usuari a un altre fragment. Si algun dels
+        // camps està buit, mostra un Snackbar amb un missatge del recurs de cadena "paràmetres".
         val btnNoBus = requireView().findViewById<Button>(R.id.autocarBoolean)
 
         btnNoBus.setOnClickListener{

@@ -76,6 +76,14 @@ class actuacio : Fragment() {
         binding.recyclerActuacions.visibility = View.GONE
         //Activem el shimmer per l'animació de carregar
         binding.shimmerViewRvActuacions.startShimmer()
+        //Aquest codi utilitza la base de dades Firebase Firestore per recuperar una col·lecció de
+        // documents anomenada "Actuacions". Per a cada document de la col·lecció, crea un objecte
+        // de la classe ActuacioModel i assigna els valors dels camps "titolActuacio", "dataActuacio
+        // " i "llocActuacio" a les propietats corresponents de l'objecte. A continuació, comprova si
+        // la llista anomenada "list_multable" està buida. Si és així, afegeix l'objecte ActuacioModel
+        // a la llista. Si no està buit, comprova si el títol de l'objecte ActuacioModel ja existeix a
+        // la llista. Si no ho fa, s'afegeix a la llista, en cas contrari no s'afegeix. L'operació es fa
+        // dins del IO Dispatcher i lifecycleScope.launch.
         lifecycleScope.launch {
             withContext(Dispatchers.IO){
                 bd.collection("Actuacions").get().addOnSuccessListener { documents ->

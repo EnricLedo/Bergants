@@ -65,6 +65,9 @@ class Login : AppCompatActivity() {
                 Snackbar.make(it,getString(R.string.correuContra), Snackbar.LENGTH_LONG).show()
             }
         }
+        //Quan es fa clic a la vista, el codi iniciarà una activitat anomenada "RecuperarContrasenya"
+        // mitjançant la classe Intent i el mètode startActivity. La paraula clau this s'utilitza per
+        // passar el context actual.
         binding.forgottenPassword.setOnClickListener {
             startActivity(Intent(this,RecuperarContrasenya::class.java))
             finish() //Alliberem memòria un cop finalitzada aquesta tasca.
@@ -100,10 +103,26 @@ class Login : AppCompatActivity() {
     }
 
 
+    //Aquest codi defineix una funció anomenada "campEsBuit" en Kotlin que pren dos arguments, correu i
+    // contrasenya, que són cadenes que representen camps de correu electrònic i contrasenya.
+    //Aleshores, la funció comprova si els dos camps no estan buits cridant a la funció isNotEmpty() a
+    // cada camp i retorna el resultat de l'operació lògica AND entre ells.
+    //Retorna true si els dos camps no estan buits i fals en cas contrari, probablement s'utilitza per
+    // comprovar si l'usuari omple els camps de correu electrònic i contrasenya.
     fun campEsBuit(correu:String,contrasenya:String):Boolean{
         return correu.isNotEmpty()&&contrasenya.isNotEmpty()
     }
 
+    //Aquest codi defineix una funció anomenada "createNotificationChannel" a Kotlin, que s'utilitza
+    //per crear un canal de notificació en dispositius amb el nivell 26 de l'API d'Android o superior.
+    //La funció primer comprova la versió de l'SDK que està executant el dispositiu, si és superior o
+    // igual a Android 8.0 (nivell API 26), després crea un canal de notificació amb l'ID "1", un nom,
+    // una descripció i un nivell d'importància. El nivell d'importància s'estableix en
+    // "IMPORTANCE_DEFAULT", el que significa que el canal s'utilitza per a notificacions que no són
+    // urgents però que s'han de mostrar a l'usuari. També registra el canal amb el sistema mitjançant
+    // la classe NotificationManager.
+    //Aquesta funció s'utilitza per configurar un canal de notificacions per a l'aplicació, d'aquesta
+    // manera l'aplicació pot enviar notificacions a l'usuari.
     private fun createNotificationChannel() {
         // Create the NotificationChannel, but only on API 26+ because
         // the NotificationChannel class is new and not in the support library
