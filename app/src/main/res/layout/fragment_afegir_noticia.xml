@@ -15,6 +15,7 @@
         android:layout_marginTop="@dimen/MargeDretaBotoGuardar20dp"
         android:layout_marginEnd="@dimen/MargeDretaBotoGuardar20dp"
         android:hint="@string/add_titol_noticia"
+        android:textColorHint="@color/grisFosc"
         android:inputType="text"
         android:minHeight="@dimen/DimensioPaperera48dp"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,6 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/MargeDretaBotoGuardar20dp"
         android:layout_marginEnd="@dimen/MargeDretaBotoGuardar20dp"
+        android:textColorHint="@color/grisFosc"
         android:hint="@string/add_contingut_noticia"
         android:inputType="textMultiLine"
         android:minHeight="100dp"
@@ -35,6 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/MargeDretaBotoGuardar20dp"
+        android:textColorHint="@color/grisFosc"
         android:layout_marginEnd="@dimen/MargeDretaBotoGuardar20dp"
         android:hint="@string/add_data_noticia"
         android:inputType="datetime"

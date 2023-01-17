@@ -34,8 +34,8 @@
 
     <Button
         android:id="@+id/botoAfegirMembre"
-        android:layout_width="@dimen/btncircle"
-        android:layout_height="@dimen/btncircle"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:background="@drawable/round_button"
         android:gravity="center"
         android:text="@string/afegir"
