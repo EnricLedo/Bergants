@@ -149,6 +149,7 @@ class afegirMembre : Fragment() {
                 "rolMembre" to rolMembre.text.toString(),
                 "altaMembre" to altaMembre.text.toString()
             )
+
         )
             //Aquest codi està afegint oients d'èxit i fracàs a una tasca asíncrona. Si la tasca té
             // èxit, crea un AlertDialog amb un missatge "assaigCorrect" que té un sol botó "Acceptar"

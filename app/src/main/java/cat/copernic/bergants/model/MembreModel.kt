@@ -16,6 +16,7 @@ data class MembreModel(val name:String, val malname:String, val espatlles:String
     var rolMembre: String? = null
     var altaMembre: String? = null
 
+
     init {
         this.nomMembre = name
         this.malnom = malname
