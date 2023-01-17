@@ -14,6 +14,7 @@ import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.Keep
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.navigation.fragment.findNavController
 import cat.copernic.bergants.databinding.FragmentAfegirMembreBinding
 import cat.copernic.bergants.model.MembreModel
@@ -40,7 +41,7 @@ class afegirMembre : Fragment() {
     private lateinit var telefonMembre: EditText
     private lateinit var rolMembre: EditText
     private lateinit var altaMembre: EditText
-    private lateinit var adminMembre: EditText
+    private lateinit var adminMembre: CheckBox
 
     //Atribut de tipus Button per afegir un nou membre
     private lateinit var botoAfegir: Button
@@ -125,17 +126,10 @@ class afegirMembre : Fragment() {
         var altaMembre = altaMembre.text.toString()
         var correuMembre = correuMembre.text.toString()
         var adrecaMembre = adrecaMembre.text.toString()
-        var admin = "admin"
-        var user = "user"
-        if(binding.booleanAdmin.isChecked()){
-            var adrecaMembre = admin.toString()
-        }
-        else{
-            var adrecaMembre = user.toString()
-        }
+        var adminMembre = adminMembre
 
-        return MembreModel(nomMembre, malnom, alcadaEspatlles, alcadaMans, correuMembre,
-            adrecaMembre, telefonMembre, rolMembre, altaMembre, adrecaMembre)
+       return MembreModel(nomMembre, malnom, alcadaEspatlles, alcadaMans, correuMembre,
+            adrecaMembre, telefonMembre, rolMembre, altaMembre, adminMembre)
     }
 
     fun afegirMembre(membre: MembreModel) {
@@ -198,6 +192,7 @@ class afegirMembre : Fragment() {
         altaMembre = binding.altaMembre
         botoAfegir = binding.botoGuardarMembre
         passwordOkMembre = binding.passwordOkMembre
+        adminMembre = binding.booleanAdmin
 
         //Aquest codi està configurant un onClickListener per a un botó (botoAfegir) a Kotlin. Quan es
         // fa clic al botó, el codi executarà primer la funció "llegirDades()" que recull l'entrada de
