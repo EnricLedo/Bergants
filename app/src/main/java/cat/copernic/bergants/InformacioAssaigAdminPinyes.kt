@@ -62,6 +62,10 @@ class InformacioAssaigAdminPinyes : Fragment() {
      */
     private var storageRef = storage.getReference().child("imatges")
 
+    /**
+
+    Aquesta funció afegirà una imatge a la galeria i la guardarà a Firebase Storage.
+     */
     private fun afegirImatge(){
 
         //Obrim la galeria
@@ -85,6 +89,16 @@ class InformacioAssaigAdminPinyes : Fragment() {
         }
     }
 
+    /**
+
+    Aquesta classe és responsable de mostrar la vista per al administrador per afegir informació sobre les pinyes d'un assaig.
+    Utilitza un binding per associar les dades de l'assaig amb les vistes del layout.
+    També conté un listener per afegir imatges a l'assaig.
+    @param inflater inflater per crear la vista
+    @param container container on s'inflarà la vista
+    @param savedInstanceState bundle per guardar l'estat de la instància
+    @return retorna la vista inflada i configurada
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -114,6 +128,12 @@ class InformacioAssaigAdminPinyes : Fragment() {
     // "actionInformacioAssaigAdminPinyesToEditarAssaig" que pren els localtitle, localdate i localubi
     // com a arguments. A continuació, crida al mètode de navegació a findNavController() amb les
     // indicacions com a argument. Això desplaçarà l'usuari al fragment EditarAssaig.
+
+    /**
+
+    Aquesta funció és cridada quan la vista del fragment és creada. Es configura el comportament del botó "Editar assaig"
+    per tal que quan es premi, es navegui a la pàgina d'edició d'assaig passant-li les dades del títol, la data i la ubicació de l'assaig.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

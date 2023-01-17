@@ -69,6 +69,11 @@ class afegirMembre : Fragment() {
     private var storageRef = storage.getReference().child("imatge/membre/")
 
     //Atribut on guardarem el resultat de la nostra activitat, en el nostre cas seleccionar la imatge de la galeria.
+    /**
+
+    Aquesta variable utilitza ActivityResultContracts.StartActivityForResult per iniciar una activitat per seleccionar
+    una imatge i guardar el resultat en una variable photoSelectedUri. Si el resultat és OK, assigna l'URI de la imatge seleccionada.
+     */
     private val guardarImatge = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
         result: ActivityResult ->
         if (result.resultCode == Activity.RESULT_OK){
@@ -80,6 +85,12 @@ class afegirMembre : Fragment() {
     private var bd =
         FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
 
+    /**
+
+    Aquest mètode utilitza la variable guardarImatge per obrir la galeria d'imatges del dispositiu i seleccionar una imatge.
+    Després, utilitza Firebase Storage per pujar la imatge seleccionada i guardar-la en una ubicació específica dins del
+    repositori. Mostra un missatge Toast per confirmar que la imatge s'ha pujat amb èxit.
+     */
     private fun afegirImatge(){
 
         //Obrim la galeria
@@ -95,6 +106,12 @@ class afegirMembre : Fragment() {
         }
     }
 
+    /**
+
+    Aquest mètode inflata la vista del fragment AfegirMembreBinding, i configura un OnClickListener en una imatge (imgMembre).
+    Quan es fa clic en la imatge, s'executa la funció "afegirImatge()" que permet obrir la biblioteca d'imatges o la càmera del dispositiu
+    per permetre a l'usuari seleccionar o capturar una imatge.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
@@ -117,6 +134,12 @@ class afegirMembre : Fragment() {
     // rolMembre, altaMembre, correuMembre, adrecaMembre) obtenint el text de les vistes EditText
     // corresponents i convertint-lo en una cadena. A continuació, crea una instància de "MembreModel"
     // passant les variables com a arguments i la retorna.
+
+    /**
+
+    Funció que llegeix les dades introduïdes per l'usuari i les guarda en un objecte MembreModel
+    @return Retorna un objecte MembreModel amb les dades introduïdes per l'usuari
+     */
     fun llegirDades(): MembreModel {
         //Guardem les dades introduïdes per l'usuari
         var nomMembre = nomMembre.text.toString()
@@ -133,6 +156,15 @@ class afegirMembre : Fragment() {
             adrecaMembre, telefonMembre, rolMembre, altaMembre)
     }
 
+    /**
+
+    La funció afegirMembre és encarregada dafegir un nou membre a la base de dades del Firestore.
+    Se selecciona la col·lecció "Membres" i s'afegeix el membre amb un ID generat automàticament per Firestore.
+    Si el membre ja existeix, se sobreescriu, si no, se'n crea un de nou.
+    També s'hi afegeix un listener per detectar si la tasca d'afegir el membre ha estat exitosa o no,
+    en cas dèxit es mostra un AlertDialog amb un missatge dèxit, en cas contrari es mostra un missatge derror.
+    @param membre: un objecte de tipus MembreModel amb les dades del membre a afegir.
+     */
     fun afegirMembre(membre: MembreModel) {
         //Seleccionem la col.lecció on volem afegir el Membre mitjançant la funció collection("Membres"), si no existeix la col.lecció
         //es crearà, si no la sobreescriurà. Afegim el membre a la col.lecció seleccionada amb un id que genera automàticament Firestore
@@ -171,6 +203,14 @@ class afegirMembre : Fragment() {
             }
     }
 
+    /**
+
+    Mètode que s'encarrega de registrar un usuari a l'aplicació mitjançant el correu i la contrasenya.
+    Utilitza el mètode createUserWithEmailAndPassword de la classe FirebaseAuth per dur a terme el registre.
+    Aquest mètode és asíncron, per la qual cosa sutilitza el mètode addOnCompleteListener per controlar quan finalitza el registre i com finalitza.
+    @param correu correu electrònic de lusuari que es registrarà.
+    @param contrasenya contrasenya de l'usuari que es registrarà.
+     */
     fun registrar(correu: String, contrasenya: String){
         //Regsitrem a un usuari mitjançant el seu correu i contrasenya amb el mètode d'Authentication createUserWithEmailAndPassword passant com
         //a paràmetres el seu correu i contrasenya.
@@ -178,6 +218,13 @@ class afegirMembre : Fragment() {
         auth.createUserWithEmailAndPassword(correu,contrasenya)
     }
 
+    /**
+
+    Aquesta classe és responsable de gestionar la vista per afegir un nou membre a l'aplicació.
+    Utilitza les dades introduïdes per l'usuari a través d'un formulari per crear una instància de la classe "MembreModel" i registrar-lo a Firebase.
+    També es comprova que tots els camps obligatoris estiguin omplerts abans de registrar el membre i navegar a la pantalla de "membres_fragment".
+    Si algun camp obligatori està buit o el correu i la contrasenya no són vàlids, es mostrarà un missatge d'error.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         auth= Firebase.auth

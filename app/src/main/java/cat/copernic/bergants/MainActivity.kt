@@ -55,6 +55,10 @@ class MainActivity : AppCompatActivity() {
     //Configura la barra d'acció amb el NavController i la disposició del calaix trucant a
     // setupActionBarWithNavController i configura la vista de navegació amb el NavController trucant a
     // setupWithNavController a la vista de navegació.
+    /**
+
+    Aquesta funció es crida quan l'activitat es crea. S'infla la vista, es configura la Toolbar i es configura el comportament del Navigation Drawer i el NavigationView per tal de navegar per les diferents opcions de l'aplicació.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -93,6 +97,12 @@ class MainActivity : AppCompatActivity() {
     //
     //Aquest codi permet a l'usuari tornar a la destinació principal del fragment actual quan es prem
     // el botó amunt a la barra d'accions.
+    /**
+
+    Aquest mètode sobreescriu la funció onSupportNavigateUp() de la classe pare per a navegar cap amunt en la jerarquia de navegació.
+    Utilitza un controlador de navegació per navegar cap amunt en la jerarquia de navegació i retorna true si la navegació ha estat reeixida.
+    @return true si la navegació ha estat reeixida, false en cas contrari.
+     */
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.fragmentContainerView)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()

@@ -30,6 +30,13 @@ class membres : Fragment() {
     private var bd =
         FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
 
+    /**
+
+    Aquesta funció configura el RecyclerView per mostrar la llista de membres.
+    Si la llista de membres està buida, es crida la funció per mostrar els membres.
+    En cas contrari, es configura el RecyclerView per mostrar-lo en format llista,
+    es crea l'adapter i es l'assigna al RecyclerView.
+     */
     private fun setupRecyclerView() {
         /*if (getMembres().isEmpty()) {
             mostrarMembres()
@@ -54,6 +61,12 @@ class membres : Fragment() {
     //Estableix un onClickListener per al botó, quan es fa clic, navegarà a un fragment diferent
     // trucant al mètode de navegació a findNavController() amb l'argument
     // action_membres_fragment_to_afegirMembre. Això navegarà l'usuari fins al fragment AfegirMembre.
+
+    /**
+
+    Aquesta funció s'executa quan la vista s'ha creat. Es defineix un listener per al botó "Afegir membre",
+    que navega cap a la pantalla per afegir un membre.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -73,6 +86,12 @@ class membres : Fragment() {
     //Retorna la vista arrel de l'objecte d'enllaç.
     //S'utilitza per inflar el disseny del fragment i configurar la vista del reciclador per mostrar
     // una llista de membres.
+
+    /**
+
+    Aquesta funció s'executa quan la vista es crea. Crea el binding per al fragment i configura el RecyclerView per mostrar la llista de membres.
+    Es retorna la vista arrel.
+     */
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         binding = FragmentMembresBinding.inflate(inflater, container, false)

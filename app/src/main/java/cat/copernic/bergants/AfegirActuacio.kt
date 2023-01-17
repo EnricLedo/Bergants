@@ -44,6 +44,17 @@ class AfegirActuacio : Fragment() {
     private var bd =
         FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
 
+    /**
+     * Aquesta classe es crida quan es crea la vista del fragment.
+     * Es fa l'inflado del layout del fragment i es vincula el binding amb el layout.
+     *
+     * @param inflater : Objecte utilitzat per inflar la vista del fragment.
+     * @param container : Contenidor on es posarà la vista del fragment.
+     * @param savedInstanceState : estat guardat de l'instancia del fragment.
+     * @param binding : Objecte de l'enllaç de la vista del fragment.
+     *
+     * @return Retorna la vista del fragment.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
@@ -52,6 +63,12 @@ class AfegirActuacio : Fragment() {
         return binding.root
     }
 
+    /**
+     * Aquesta funció llegeix les dades introduides per l'usuari i les guarda en variables.
+     * Aquestes variables són utilitzades per crear un objecte ActuacioModel amb les dades llegides.
+     *
+     * @return Retorna un objecte ActuacioModel amb les dades llegides.
+     */
     fun llegirDades(): ActuacioModel {
         //Guardem les dades introduïdes per l'usuari
         var titolActuacio = titolActuacio.text.toString()
@@ -61,6 +78,12 @@ class AfegirActuacio : Fragment() {
         return ActuacioModel(titolActuacio, dataActuacio, llocActuacio)
     }
 
+    /**
+
+    Funció encarregada de llegir les dades introduïdes per l'usuari i crear una nova actuació
+    * @param actuacio: Objecte ActuacioModel que conté les dades introduïdes per l'usuari
+    * @return  Retorna una notificació en cas de l'operació haver estat realitzada amb èxit.
+    */
     fun afegirActuacio(actuacio: ActuacioModel) {
         //Seleccionem la col.lecció on volem afegir l'actuació mitjançant la funció collection("Actuacions"), si no existeix la col.lecció
         //es crearà, si no la sobreescriurà. Afegim l'actuació a la col.lecció seleccionada amb un id que genera automàticament Firestore
@@ -90,6 +113,18 @@ class AfegirActuacio : Fragment() {
             }
     }
 
+    /**
+
+    Aquest mètode s'executa quan la vista ha estat creada.
+
+    Inicialitza les variables per les dades de l'actuació i el botó per guardar l'actuació.
+
+    També configura el comportament del botó per afegir un autocar a l'actuació i del botó per guardar l'actuació.
+
+    Si les dades de l'actuació estan completes, es desa i es navega a la pantalla de llista d'actuacions.
+
+    Si les dades de l'actuació no estan completes, mostra un missatge d'error.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -126,6 +161,15 @@ class AfegirActuacio : Fragment() {
         }
     }
 
+    /**
+
+    Aquest mètode crea una notificació amb un títol i un contingut especificats.
+    Utilitza la classe NotificationCompat.Builder per crear la notificació, i estableix el títol, el contingut
+    i la icona. Després es construeix la notificació i es mostra utilitzant un objecte NotificationManagerCompat
+    i un identificador específic.
+    @param titol Títol de la notificació
+    @param contingut Contingut de la notificació
+     */
     private fun notification(titol:String, contingut:String) {
         val notification = NotificationCompat.Builder(requireContext(),"1").also{ noti ->
             noti.setContentTitle(titol)

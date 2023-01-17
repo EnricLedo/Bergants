@@ -34,6 +34,15 @@ class editar_actuacio : Fragment() {
         FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
 
 
+    /**
+
+    Aquest mètode s'executa quan la vista del fragment es crea. S'utilitza per inflar el layout associat al fragment
+    i assignar-lo a una variable de binding.
+    @param inflater: LayoutInflater per inflar el layout.
+    @param container: Contenidor del layout.
+    @param savedInstanceState: Bundle amb l'estat guardat anteriorment de la vista.
+    @return Retorna la vista del layout inflada.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -43,6 +52,11 @@ class editar_actuacio : Fragment() {
         return binding.root
     }
 
+    /**
+
+    Aquesta funció recull les dades introduïdes per l'usuari en un formulari i crea una instància de la classe "ActuacioModel".
+    @return Retorna un objecte de la classe ActuacioModel amb les dades introduïdes per l'usuari.
+     */
     fun llegirDades(): ActuacioModel {
         //Guardem les dades introduïdes per l'usuari
         var titolActuacio = titolActuacio.text.toString()
@@ -55,6 +69,14 @@ class editar_actuacio : Fragment() {
     //Funció que modificarà una actuacio amb l'actuacio passada per paràmetre. Per fer la modificació, l'identificador del document
     //passat per paràmetre ha de coincidir amb un dels identificadors dels documents que ja estan afegits a la col.lecció, si no el crearà de nou.
     //Això ho podem fer servir quan necessitem modificar tots els parells clau-valor d'un document que existeix dins la col.lecció.
+
+    /**
+
+    Aquesta funció modifica una actuació existent a la base de dades Firestore.
+    Utilitza les dades introduïdes per l'usuari per crear un nou objecte de la classe "ActuacioModel"
+    i sobreescriu la informació de l'actuació existent amb aquestes dades.
+    @param actuacio: Objecte de la classe ActuacioModel amb les dades introduïdes per l'usuari.
+     */
     fun modificarActuacio(acutacio: ActuacioModel){
         bd.collection("Actuacions").document(titolActuacio.text.toString()).set(
             hashMapOf(
@@ -84,6 +106,11 @@ class editar_actuacio : Fragment() {
     }
 
     //Eliminar l'actuacio corresponent al titol passat com a paràmetre. L'eliminarà si existeix.
+    /**
+
+    Aquesta funció elimina una actuació de la base de dades a partir del seu títol.
+    @param titolActuacio Títol de l'actuació a eliminar.
+     */
     fun eliminarActuacio(titolActuacio:String){
         bd.collection("Actuacions").document(titolActuacio)
             .delete()
@@ -107,6 +134,11 @@ class editar_actuacio : Fragment() {
             }
     }
 
+    /**
+
+    Aquesta classe extén de Fragment i s'encarrega de mostrar la vista d'edició d'una actuació
+    i de fer les operacions necessàries per a modificar o eliminar una actuació de la base de dades.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         titolActuacio = binding.titolActuacio

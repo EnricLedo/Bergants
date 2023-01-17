@@ -32,6 +32,10 @@ class Login : AppCompatActivity() {
     //Declarem un atribut de tipus FirebaseAuth
     private lateinit var auth: FirebaseAuth
 
+    /**
+
+    Aquesta funció és cridada quan l'activitat és creada. Es configura la vista del layout, es crea un canal de notificació, s'amaga la ActionBar i es comprova si l'usuari ja està connectat. També es configura el comportament dels botons de log in i recuperar contrasenya.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         createNotificationChannel()
@@ -74,6 +78,10 @@ class Login : AppCompatActivity() {
         }
     }
 
+    /**
+
+    Aquesta funció és cridada quan l'activitat comença. Es comprova si l'usuari ja està autenticat i si ho està, es mostra la pantalla principal de l'aplicació.
+     */
     override fun onStart() {
         super.onStart() //Cridem al la funció onStart() perquè ens mostri per pantalla l'activity
         //currentUser és un atribut de la classe FirebaseAuth que guarda l'usuari autenticat. Si aquest no està autenticat, el seu valor serà null.
@@ -87,6 +95,10 @@ class Login : AppCompatActivity() {
     }
 
     //Funció per loginar a un usuari mitjançant Firebase Authentication
+    /**
+
+    Aquesta funció s'encarrega de loguear a l'usuari amb les dades del correu i contrasenya proporcionades. Si el logueig es completa amb èxit, es mostra la pantalla principal de l'aplicació, en cas contrari es mostra un missatge d'error.
+     */
     private fun loguinar(correu: String, contrasenya: String){
         //Loginem a l'usuari
         auth.signInWithEmailAndPassword(correu,contrasenya)
@@ -109,6 +121,13 @@ class Login : AppCompatActivity() {
     // cada camp i retorna el resultat de l'operació lògica AND entre ells.
     //Retorna true si els dos camps no estan buits i fals en cas contrari, probablement s'utilitza per
     // comprovar si l'usuari omple els camps de correu electrònic i contrasenya.
+    /**
+
+    Aquesta funció comprova si els camps del correu i contrasenya són buits o no.
+    @param correu correu de l'usuari introduit per l'usuari
+    @param contrasenya contrasenya introduida per l'usuari
+    @return Retorna true si els camps no estan buits, false en cas contrari.
+     */
     fun campEsBuit(correu:String,contrasenya:String):Boolean{
         return correu.isNotEmpty()&&contrasenya.isNotEmpty()
     }
@@ -123,6 +142,10 @@ class Login : AppCompatActivity() {
     // la classe NotificationManager.
     //Aquesta funció s'utilitza per configurar un canal de notificacions per a l'aplicació, d'aquesta
     // manera l'aplicació pot enviar notificacions a l'usuari.
+    /**
+
+    Aquesta funció crea un canal de notificació per a l'aplicació, però només en dispositius amb API 26 o superior.
+     */
     private fun createNotificationChannel() {
         // Create the NotificationChannel, but only on API 26+ because
         // the NotificationChannel class is new and not in the support library
