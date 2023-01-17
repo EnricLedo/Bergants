@@ -46,6 +46,7 @@
         <item name="boxStrokeColor">@color/verdBergant </item>
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/negre</item>
+        <item name="hintTextColor">@color/grisFosc</item>
         <item name="background">@color/grisClaretGentApuntada</item>
     </style>
 </resources>

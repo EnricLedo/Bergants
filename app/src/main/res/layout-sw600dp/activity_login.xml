@@ -32,8 +32,10 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailTextInputLayout"
-        android:layout_width="531dp"
-        android:layout_height="89dp"
+        android:layout_width="wrap_content"
+        android:minWidth="531dp"
+        android:layout_height="wrap_content"
+        android:minHeight="89dp"
         android:layout_marginTop="60dp"
         android:contentDescription="@string/introdueix_el_correu_registrat"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,13 +45,15 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email"
-            android:layout_width="407dp"
-            android:layout_height="68dp"
+            android:layout_width="wrap_content"
+            android:minWidth="407dp"
+            android:layout_height="wrap_content"
+            android:minHeight="68dp"
             android:layout_gravity="center"
             android:hint="@string/exemple_gmail_com"
+            android:textColorHint="@color/grisFosc"
             android:inputType="textEmailAddress"
-            android:textColor="@color/negre"
-            android:textSize="@dimen/LletraNormal16sp"
+            android:textSize="25sp"
             tools:ignore="TextContrastCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -65,8 +69,10 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordTextInputLayout"
-        android:layout_width="531dp"
-        android:layout_height="80dp"
+        android:layout_width="wrap_content"
+        android:minWidth="531dp"
+        android:layout_height="wrap_content"
+        android:minHeight="80dp"
         android:layout_marginTop="@dimen/MargeLogin"
         android:contentDescription="@string/introdueix_la_contrasenya_registrada"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,13 +81,15 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
-            android:layout_width="411dp"
-            android:layout_height="69dp"
+            android:layout_width="wrap_content"
+            android:minWidth="411dp"
+            android:layout_height="wrap_content"
+            android:minHeight="69dp"
             android:layout_gravity="center"
             android:inputType="textPassword"
             android:hint="@string/password_exemple"
-            android:textColor="@color/negre"
-            android:textSize="@dimen/LletraNormal16sp"
+            android:textColorHint="@color/grisFosc"
+            android:textSize="25sp"
             tools:ignore="TextContrastCheck">
 
         </com.google.android.material.textfield.TextInputEditText>

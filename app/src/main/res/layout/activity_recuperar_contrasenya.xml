@@ -32,7 +32,9 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailTextInputLayout"
         android:layout_width="match_parent"
+        android:minWidth="300dp"
         android:layout_height="wrap_content"
+        android:minHeight="48dp"
         android:layout_marginTop="@dimen/RecuperarContrasenya40dp"
         android:layout_marginStart="@dimen/MargeEsquerra"
         android:contentDescription="@string/introdueix_el_correu_registrat"
@@ -42,12 +44,14 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/emailContrasenya"
-            android:layout_width="@dimen/TamanyImatgeLogo"
+            android:layout_width="wrap_content"
+            android:minWidth="300dp"
             android:layout_height="wrap_content"
+            android:minHeight="@dimen/DimensioPaperera48dp"
             android:layout_gravity="start"
             android:inputType="textEmailAddress"
             android:hint="@string/exemple_gmail_com"
-            android:textColor="@color/negre"
+            android:textColorHint="@color/grisFosc"
             tools:ignore="TextContrastCheck"
             android:textSize="@dimen/LletraNormal16sp"/>
 
