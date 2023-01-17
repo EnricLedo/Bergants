@@ -128,7 +128,6 @@ class afegirMembre : Fragment() {
         var correuMembre = correuMembre.text.toString()
         var adrecaMembre = adrecaMembre.text.toString()
 
-
         return MembreModel(nomMembre, malnom, alcadaEspatlles, alcadaMans, correuMembre,
             adrecaMembre, telefonMembre, rolMembre, altaMembre)
     }
