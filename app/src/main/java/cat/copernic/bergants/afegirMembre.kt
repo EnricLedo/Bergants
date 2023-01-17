@@ -125,11 +125,13 @@ class afegirMembre : Fragment() {
         var altaMembre = altaMembre.text.toString()
         var correuMembre = correuMembre.text.toString()
         var adrecaMembre = adrecaMembre.text.toString()
+        var admin = "admin"
+        var user = "user"
         if(binding.booleanAdmin.isChecked()){
-            var adrecaMembre = "admin"
+            var adrecaMembre = admin.toString()
         }
         else{
-            var adrecaMembre = "user"
+            var adrecaMembre = user.toString()
         }
 
         return MembreModel(nomMembre, malnom, alcadaEspatlles, alcadaMans, correuMembre,
@@ -223,8 +225,8 @@ class afegirMembre : Fragment() {
                 && membre.alcadaMans?.isNotEmpty() == true && membre.correuMembre?.isNotEmpty() == true
                 && membre.adrecaMembre?.isNotEmpty() == true && membre.telefonMembre?.isNotEmpty() == true
                 && membre.rolMembre?.isNotEmpty() == true && membre.altaMembre?.isNotEmpty() == true) {
-                afegirMembre(membre)
-                findNavController().navigate(R.id.action_afegirMembre_to_membres_fragment)
+                    afegirMembre(membre)
+                    findNavController().navigate(R.id.action_afegirMembre_to_membres_fragment)
 
             } else {
                 Snackbar.make(it, getString(R.string.parametres), Snackbar.LENGTH_LONG).show()
