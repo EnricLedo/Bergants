@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/TitolActuacio"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/AlcadaTextViewTitolActuacio33dp"
+        android:layout_height="wrap_content"
         android:text="@string/nomActuacio"
         android:textSize="@dimen/TitolActuacio23sp"
         android:textStyle="bold"
