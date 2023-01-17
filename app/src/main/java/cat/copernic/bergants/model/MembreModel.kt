@@ -5,7 +5,7 @@ import androidx.annotation.Keep
 @Keep
 data class MembreModel(val name:String, val malname:String, val espatlles:String, val mans:String,
                         val email:String, val adress:String, val telefon:String, val rol:String,
-                        val date:String):java.io.Serializable{
+                        val date:String, val admin:String):java.io.Serializable{
     var nomMembre: String? = null
     var malnom: String? = null
     var alcadaEspatlles: String? = null
@@ -15,6 +15,7 @@ data class MembreModel(val name:String, val malname:String, val espatlles:String
     var telefonMembre: String? = null
     var rolMembre: String? = null
     var altaMembre: String? = null
+    var adminMembre: String? = null
 
     init {
         this.nomMembre = name
@@ -26,5 +27,6 @@ data class MembreModel(val name:String, val malname:String, val espatlles:String
         this.telefonMembre = telefon
         this.rolMembre = rol
         this.altaMembre = date
+        this.adminMembre = admin
     }
 }

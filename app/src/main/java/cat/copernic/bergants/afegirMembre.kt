@@ -9,10 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageButton
-import android.widget.Toast
+import android.widget.*
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.Keep
@@ -43,6 +40,7 @@ class afegirMembre : Fragment() {
     private lateinit var telefonMembre: EditText
     private lateinit var rolMembre: EditText
     private lateinit var altaMembre: EditText
+    private lateinit var adminMembre: EditText
 
     //Atribut de tipus Button per afegir un nou membre
     private lateinit var botoAfegir: Button
@@ -127,10 +125,15 @@ class afegirMembre : Fragment() {
         var altaMembre = altaMembre.text.toString()
         var correuMembre = correuMembre.text.toString()
         var adrecaMembre = adrecaMembre.text.toString()
-
+        if(binding.booleanAdmin.isChecked()){
+            var adrecaMembre = "admin"
+        }
+        else{
+            var adrecaMembre = "user"
+        }
 
         return MembreModel(nomMembre, malnom, alcadaEspatlles, alcadaMans, correuMembre,
-            adrecaMembre, telefonMembre, rolMembre, altaMembre)
+            adrecaMembre, telefonMembre, rolMembre, altaMembre, adrecaMembre)
     }
 
     fun afegirMembre(membre: MembreModel) {
@@ -147,7 +150,8 @@ class afegirMembre : Fragment() {
                 "adrecaMembre" to adrecaMembre.text.toString(),
                 "telefonMembre" to telefonMembre.text.toString(),
                 "rolMembre" to rolMembre.text.toString(),
-                "altaMembre" to altaMembre.text.toString()
+                "altaMembre" to altaMembre.text.toString(),
+                "admin" to adminMembre.text.toString()
             )
         )
             //Aquest codi està afegint oients d'èxit i fracàs a una tasca asíncrona. Si la tasca té
