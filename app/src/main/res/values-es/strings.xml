@@ -270,4 +270,6 @@
     <string name="introdueix_el_correu_registrat">Introduce el correo registrado</string>
     <string name="confirmar">CONFIRMAR</string>
     <string name="introdueix_la_contrasenya_registrada">Introduce la contraseña registrada</string>
+    <string name="exemple_gmail_com">ejemplo@gmail.com</string>
+    <string name="password_exemple">abc123</string>
 </resources>

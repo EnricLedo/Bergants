@@ -267,4 +267,6 @@
     <string name="introdueix_el_correu_registrat">Enter registered email</string>
     <string name="confirmar">CONFIRM</string>
     <string name="introdueix_la_contrasenya_registrada">enter the registered password</string>
+    <string name="exemple_gmail_com">example@gmail.com</string>
+    <string name="password_exemple">abc123</string>
 </resources>

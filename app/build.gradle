@@ -13,8 +13,8 @@ android {
         applicationId "cat.copernic.bergants"
         minSdk 21
         targetSdk 33
-        versionCode 3
-        versionName "2"
+        versionCode 4
+        versionName "2.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
