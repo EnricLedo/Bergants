@@ -31,19 +31,25 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailTextInputLayout"
         android:layout_width="match_parent"
+        android:minWidth="300dp"
         android:layout_height="wrap_content"
+        android:minHeight="@dimen/DimensioPaperera48dp"
         android:layout_marginTop="@dimen/MargeFitxerImatge"
+        android:contentDescription="@string/introdueix_el_correu_registrat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email"
-            android:layout_width="@dimen/TamanyImatgeLogo"
+            android:layout_width="wrap_content"
+            android:minWidth="300dp"
             android:layout_height="wrap_content"
+            android:minHeight="@dimen/DimensioPaperera48dp"
             android:layout_gravity="center"
             android:inputType="textEmailAddress"
-            android:textColor="@color/negre"
+            android:hint="@string/exemple_gmail_com"
+            android:textColorHint="@color/grisFosc"
             tools:ignore="TextContrastCheck"
             android:textSize="@dimen/LletraNormal16sp"/>
 
@@ -62,18 +68,24 @@
         android:id="@+id/passwordTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minWidth="300dp"
+        android:minHeight="@dimen/DimensioPaperera48dp"
         android:layout_marginTop="@dimen/MargeLogin"
+        android:contentDescription="@string/introdueix_la_contrasenya_registrada"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailTextInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
-            android:layout_width="@dimen/TamanyImatgeLogo"
+            android:layout_width="wrap_content"
+            android:minWidth="300dp"
             android:layout_height="wrap_content"
+            android:minHeight="@dimen/DimensioPaperera48dp"
             android:layout_gravity="center"
+            android:hint="@string/password_exemple"
+            android:textColorHint="@color/grisFosc"
             android:inputType="textPassword"
-            android:textColor="@color/negre"
             tools:ignore="TextContrastCheck"
             android:textSize="@dimen/LletraNormal16sp">
 
@@ -99,6 +111,7 @@
         android:id="@+id/forgottenPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:minHeight="@dimen/DimensioPaperera48dp"
         android:gravity="center"
         android:text="@string/forgottenPassword"
         android:textColor="@color/grisFosc"

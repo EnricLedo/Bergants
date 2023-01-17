@@ -5,6 +5,7 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="15dp"
     tools:context=".perfil">
 
     <androidx.cardview.widget.CardView
@@ -59,11 +60,10 @@
 
     <TextView
         android:id="@+id/malnomenric"
-        android:layout_width="@dimen/fullwidth"
+        android:layout_width="match_parent"
+        android:minWidth="@dimen/fullwidth"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/marginpag"
         android:layout_marginTop="@dimen/marginpag"
-        android:layout_marginEnd="@dimen/marginpag"
         android:text="@string/malnomenric"
         android:textColor="@color/negre"
         android:textSize="@dimen/sizeTablet"
@@ -73,11 +73,10 @@
 
     <TextView
         android:id="@+id/rolenric"
-        android:layout_width="@dimen/fullwidth"
+        android:layout_width="match_parent"
+        android:minWidth="@dimen/fullwidth"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/marginpag"
         android:layout_marginTop="@dimen/marginpag"
-        android:layout_marginEnd="@dimen/marginpag"
         android:text="@string/rolnomenric"
         android:textColor="@color/negre"
         android:textSize="@dimen/sizeTablet"
@@ -102,7 +101,8 @@
 
     <TextView
         android:id="@+id/dataenric"
-        android:layout_width="@dimen/fullwidth"
+        android:layout_width="match_parent"
+        android:minWidth="@dimen/fullwidth"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/marginpag"
         android:layout_marginTop="@dimen/marginpag"

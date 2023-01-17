@@ -11,7 +11,7 @@
 
     <TextView
         android:id="@+id/editarTitol"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="start"
         android:minHeight="@dimen/smallinputheight"
@@ -27,7 +27,9 @@
     <EditText
         android:id="@+id/editarNoticia"
         android:layout_width="match_parent"
+        android:minWidth="200dp"
         android:layout_height="wrap_content"
+        android:minHeight="@dimen/DimensioPaperera48dp"
         android:text="@string/inputnoticiaedit"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +40,9 @@
         android:id="@+id/editarData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="27-10-22 9:27"
+        android:minHeight="@dimen/DimensioPaperera48dp"
+        android:minWidth="200dp"
+        android:text="@string/_27_10_22_9_27"
         android:inputType="datetime"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

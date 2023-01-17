@@ -25,7 +25,8 @@
     <Switch
         android:id="@+id/assajos"
         style="@style/Switch"
-        android:layout_width="@dimen/fullwidth"
+        android:layout_width="match_parent"
+        android:minWidth="@dimen/fullwidth"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/marginpag"
         android:layout_marginTop="@dimen/separaciogran"
@@ -39,7 +40,8 @@
     <Switch
         android:id="@+id/actuacions"
         style="@style/Switch"
-        android:layout_width="@dimen/fullwidth"
+        android:layout_width="match_parent"
+        android:minWidth="@dimen/fullwidth"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/marginpag"
         android:layout_marginTop="@dimen/separaciogran"
@@ -55,7 +57,8 @@
     <Switch
         android:id="@+id/novetats"
         style="@style/Switch"
-        android:layout_width="@dimen/fullwidth"
+        android:layout_width="match_parent"
+        android:minWidth="@dimen/fullwidth"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/marginpag"
         android:layout_marginTop="@dimen/separaciogran"
@@ -83,7 +86,8 @@
 
     <TextView
         android:id="@+id/versio"
-        android:layout_width="@dimen/halfwidth"
+        android:layout_width="wrap_content"
+        android:minWidth="185dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/marginpag"
         android:layout_marginTop="@dimen/separaciogegant"
@@ -96,7 +100,8 @@
 
     <TextView
         android:id="@+id/adreca"
-        android:layout_width="@dimen/halfwidth"
+        android:layout_width="wrap_content"
+        android:minWidth="185dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/marginpag"
         android:layout_marginTop="@dimen/info"
@@ -111,7 +116,8 @@
 
     <TextView
         android:id="@+id/suport"
-        android:layout_width="@dimen/halfwidth"
+        android:layout_width="wrap_content"
+        android:minWidth="185dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/marginpag"
         android:layout_marginTop="@dimen/info"
@@ -124,7 +130,8 @@
 
     <TextView
         android:id="@+id/num"
-        android:layout_width="@dimen/halfwidth"
+        android:layout_width="wrap_content"
+        android:minWidth="185dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/separaciogegant"
         android:layout_marginEnd="@dimen/marginpag"
@@ -140,7 +147,8 @@
 
     <TextView
         android:id="@+id/contacte"
-        android:layout_width="@dimen/halfwidth"
+        android:layout_width="wrap_content"
+        android:minWidth="185dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/info"
         android:layout_marginEnd="@dimen/marginpag"
@@ -154,7 +162,8 @@
 
     <TextView
         android:id="@+id/sup"
-        android:layout_width="@dimen/halfwidth"
+        android:layout_width="wrap_content"
+        android:minWidth="185dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/info"
         android:layout_marginEnd="@dimen/marginpag"

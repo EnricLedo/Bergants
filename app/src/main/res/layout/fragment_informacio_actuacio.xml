@@ -28,7 +28,7 @@
         app:layout_constraintBottom_toBottomOf="@id/botoSiVinc"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/iconaCotxe"
-        android:contentDescription="@string/imatgeactuacio" />
+        android:contentDescription="@string/acces_autocar" />
 
     <TextView
         android:id="@+id/autocarText"
@@ -50,7 +50,7 @@
         app:layout_constraintBottom_toBottomOf="@id/botoSiVinc"
         app:layout_constraintStart_toEndOf="@id/iconaAutocar"
         app:layout_constraintEnd_toStartOf="@id/botoSiVinc"
-        android:contentDescription="@string/imatgeactuacio" />
+        android:contentDescription="@string/acces_cotxes" />
 
     <TextView
         android:id="@+id/cotxeText"
@@ -72,7 +72,7 @@
         app:layout_constraintEnd_toStartOf="@+id/botoNoVinc"
         app:layout_constraintStart_toEndOf="@id/iconaCotxe"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/imatgeactuacio"/>
+        android:contentDescription="@string/confirmar_assistencia"/>
 
     <TextView
         android:id="@+id/vincText"
@@ -93,7 +93,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/botoSiVinc"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/imatgeactuacio" />
+        android:contentDescription="@string/rebutjar_assistencia" />
 
 
     <TextView
@@ -117,7 +117,7 @@
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/imatgeactuacio" />
+        android:contentDescription="@string/hora_inici" />
 
     <TextView
         android:id="@+id/DataActuacio"
@@ -141,7 +141,7 @@
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/imatgeactuacio" />
+        android:contentDescription="@string/lloc_esdeveniment" />
 
     <TextView
         android:id="@+id/ubicacioActuacio"
@@ -157,10 +157,12 @@
     <Button
         android:id="@+id/botoEditarActuacio"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/margeTop50dp"
         android:layout_marginTop="650dp"
         android:text="@string/editar_actuacio"
         android:textColor="@color/blanc"
+        android:textStyle="bold"
         android:backgroundTint="@color/verdBergant"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="6dp"

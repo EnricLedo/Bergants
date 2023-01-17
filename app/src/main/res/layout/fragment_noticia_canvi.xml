@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/marginpag"
     tools:context=".noticia_canvi">
 
     <com.facebook.shimmer.ShimmerFrameLayout
@@ -50,8 +51,10 @@
 
     <Button
         android:id="@+id/botoAfegirNoticia"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="wrap_content"
+        android:minWidth="@dimen/MargeEsquerra60dpLogin"
+        android:minHeight="@dimen/MargeEsquerra60dpLogin"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/marginpag"
         android:layout_marginBottom="@dimen/separaciomig"
         android:background="@drawable/round_button"
