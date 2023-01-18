@@ -61,6 +61,14 @@ class noticia_canvi : Fragment() {
     // la propietat d'adaptador de la vista del reciclador.
     //S'utilitza per configurar la vista del reciclador, com ara crear un adaptador i configurar-lo
     // a la vista del reciclador per mostrar una llista de notícies.
+
+    /**
+
+    Aquesta funció configura el RecyclerView per mostrar la llista de noticies.
+    Si la llista de noticies està buida, es crida la funció per mostrar les noticies.
+    En cas contrari, es configura el RecyclerView per mostrar-lo en format llista,
+    es crea l'adapter i es l'assigna al RecyclerView.
+     */
     private fun setupRecyclerView() {
 
         if (list_multable.isEmpty()) {
@@ -79,6 +87,10 @@ class noticia_canvi : Fragment() {
         }
     }
 
+    /**
+
+    Aquesta funció s'executa quan la vista es crea. Es crea el binding per al fragment i es retorna la vista arrel.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
@@ -87,6 +99,12 @@ class noticia_canvi : Fragment() {
         return binding.root
     }
 
+    /**
+
+    Aquesta funció s'executa quan la vista s'ha creat. Es configura el RecyclerView per mostrar la llista de noticies.
+    Es defineix un diàleg per fer una ressenya de l'aplicació, que es mostra el primer dia d'instal·lació o després de 2 inici de sessió.
+    Es defineix un listener per al botó "Afegir noticia", que navega cap al fragment per afegir una noticia.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //iniciem el recycler view
@@ -108,6 +126,13 @@ class noticia_canvi : Fragment() {
         }
     }
 
+    /**
+
+    Aquesta funció mostra les noticies en el RecyclerView. Es mostra una animació de càrrega mentre es carreguen les noticies des de Firestore.
+    Utilitza la rutina lifecycleScope.launch per fer una sol·licitud de xarxa a Firestore per obtenir una col·lecció de documents anomenada "Noticies" en un fil de fons.
+    L'addOnSuccessListener es crida quan la sol·licitud té èxit i itera els documents retornats i crea un objecte NoticiaModel per a cada document, utilitzant els camps "titolNoticia", "contingutNoticia" i "dataNoticia" del document.
+    A continuació, comprova si el list_multable està buit o no. Si està buit, afegeix el wallItem a la llista. Si no està buit, itera per la llista_multable i comprova si ja hi ha una notícia amb el mateix títol, si no, l'afegeix a la llista.
+     */
     private fun mostrarNoticies() {
         //Visibilitzem el shimmer per a fer l'animació de carrega abans de mostrar el recycler
         binding.shimmerViewRvNoticies.visibility = View.VISIBLE

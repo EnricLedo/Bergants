@@ -30,6 +30,15 @@ class InformacioAssaig : Fragment() {
 
     //private val args by navArgs<InformacioAssaigArgs>()
 
+    /**
+
+    Aquesta funció és cridada durant la creació de la vista del fragment.
+    Utilitza el binding per inflar el layout del fragment i actualitzar les dades dels elements de la vista.
+    @param inflater inflador de layout per inflar la vista del fragment
+    @param container contenidor de la vista on es mostrarà el fragment
+    @param savedInstanceState estat de la instància desada, pot ser nul
+    @return la vista del fragment
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

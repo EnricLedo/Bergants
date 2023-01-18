@@ -26,6 +26,13 @@ class SplashActivity : AppCompatActivity() {
     // Animations
     private lateinit var sideAnim: Animation
 
+    /**
+
+    Aquesta funció s'executa en la creació de l'activity.
+    S'assigna la vista i es creen les variables per les imatges de fons i les animacions.
+    S'estableixen les animacions en les imatges de fons.
+    Utilitza un controlador per a la creació d'un temporitzador que redirigeix a l'usuari a la pantalla d'inici de sessió un cop s'ha acabat el temps establert en SPLASH_TIMER.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

@@ -41,6 +41,17 @@ class afegir_actuacio_bus : Fragment() {
     //Declarem i incialitzem un atribut de tipus FirebaseFirestore, classe on trobarem els mètodes per treballar amb la base de dades Firestore
     private var bd = FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
 
+    /**
+     *
+     * Aquesta funció es crida quan es crea la vista del fragment. Infla el disseny
+     * i el defineix a l'objecte d'enllaç de visualització.
+     *
+     * @param inflater : l'objecte LayoutInflater que es pot utilitzar per inflar qualsevol vista del fragment.
+     * @param container : la vista principal a la qual s'ha d'adjuntar la interfície d'usuari del fragment.
+     * @param savedInstanceState : aquest és l'estat de la instància desada del fragment.
+     *
+     * @return La vista inflada.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
@@ -49,6 +60,12 @@ class afegir_actuacio_bus : Fragment() {
         return binding.root
     }
 
+    /**
+     * Aquesta funció llegeix les dades introduïdes per l'usuari des de la IU i retorna un objecte de
+     * ActuacioBusModel que conté les dades introduïdes.
+     *
+     * @return un objecte d'ActuacioBusModel que conté les dades introduïdes.
+     */
     fun llegirDades(): ActuacioBusModel {
         //Guardem les dades introduïdes per l'usuari
         var titolActuacio = titolActuacio.text.toString()
@@ -64,6 +81,16 @@ class afegir_actuacio_bus : Fragment() {
         return ActuacioBusModel(titolActuacio, dataActuacio, llocActuacio, autocar)
     }
 
+    /**
+     *
+     * Aquesta funció afegeix l'objecte ActuacioBusModel passat a la col·lecció "Actuacions" de Firebase Firestore
+     * i crea una subcol·lecció "Autocar" on s'afegeix l'objecte BusModel. També mostra un diàleg d'alerta
+     * amb un missatge que indica l'èxit o el fracàs de l'operació.
+     *
+     * @param actuacio : l'objecte ActuacioBusModel que s'afegirà a la col·lecció Firestore.
+     * @param bd : aquesta és la instància de Firebase Firestore.
+     *
+     */
     fun afegirActuacio(actuacio: ActuacioBusModel) {
         //Seleccionem la col.lecció on volem afegir l'actuació mitjançant la funció collection("Actuacions"), si no existeix la col.lecció
         //es crearà, si no la sobreescriurà. Afegim l'actuació a la col.lecció seleccionada amb un id que genera automàticament Firestore
@@ -114,6 +141,26 @@ class afegir_actuacio_bus : Fragment() {
             }
     }
 
+    /**
+     * Aquesta classe es crida quan es crea la vista del fragment.
+     * Es vinculen les variables dels diferents elements del layout amb les variables de la classe.
+     * A més, es configura un botó per afegir les dades introduides per l'usuari a la base de dades i un altre per anar a un altre fragment.
+     * Si algun dels camps estan buits, mostra un Snackbar amb un missatge d'error.
+     *
+     * @param view : Vista del fragment.
+     * @param savedInstanceState : estat guardat de l'instancia del fragment.
+     * @param binding : Objecte de l'enllaç de la vista del fragment.
+     * @param titolActuacio : variable que guarda el valor del camp títol de l'actuació.
+     * @param dataActuacio : variable que guarda el valor del camp data de l'actuació.
+     * @param llocActuacio : variable que guarda el valor del camp lloc de l'actuació.
+     * @param ubicacioBus : variable que guarda el valor del camp ubicació de l'autocar.
+     * @param horariBus : variable que guarda el valor del camp horari de l'autocar.
+     * @param placesBus : variable que guarda el valor del camp places de l'autocar.
+     * @param botoAfegir : variable que guarda el botó d'afegir.
+     * @param autocar : Llista on es guarden les dades de l'autocar.
+     * @param bd : Instancia de Firebase Firestore.
+     *
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

@@ -31,6 +31,11 @@ class assajos : Fragment() {
     private var bd =
         FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
 
+    /**
+
+    Aquesta funció configura i mostra un RecyclerView amb una llista d'assajos. Si la llista està buida, crida a la funció "mostrarAssajos()"
+    per obtenir les dades i actualitzar la llista. Utilitza un adapter personalitzat per mostrar les dades de manera eficient.
+     */
     private fun setupRecyclerView() {
         if (list_multable.isEmpty()) {
             mostrarAssajos() //Executem la funció de suspensió
@@ -47,6 +52,13 @@ class assajos : Fragment() {
         }
     }
 
+    /**
+
+    Aquest mètode s'executa quan la vista s'ha creat. Inicia el RecyclerView mitjançant la funció "setupRecyclerView()"
+    i configura un onClickListener per al botó "botoAfegirAssaig", que navega l'usuari al fragment encarregat d'afegir assajos.
+    @param view: Vista associada al fragment.
+    @param savedInstanceState: Bundle amb l'estat guardat anteriorment de la vista.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //iniciem el recycler view
@@ -58,6 +70,15 @@ class assajos : Fragment() {
         }
     }
 
+    /**
+
+    Aquest mètode s'executa quan la vista del fragment es crea. S'utilitza per inflar el layout associat al fragment
+    i assignar-lo a una variable de binding.
+    @param inflater: LayoutInflater per inflar el layout.
+    @param container: Contenidor del layout.
+    @param savedInstanceState: Bundle amb l'estat guardat anteriorment de la vista.
+    @return Retorna la vista del layout inflada.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
@@ -66,6 +87,11 @@ class assajos : Fragment() {
         return binding.root
     }
 
+    /**
+
+    Aquesta funció es connecta a la base de dades Firestore, recupera les dades dels assajos i les mostra a un RecyclerView mitjançant un adapter personalitzat.
+    Mostra una animació de carrega mentre les dades es recuperen de la base de dades.
+     */
     private fun mostrarAssajos() {
         //Visibilitzem el shimmer per a fer l'animació de carrega abans de mostrar el recycler
         binding.shimmerViewRvAssajos.visibility = View.VISIBLE

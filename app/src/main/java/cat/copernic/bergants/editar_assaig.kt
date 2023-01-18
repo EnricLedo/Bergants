@@ -38,6 +38,14 @@ class editar_assaig : Fragment() {
         FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
 
 
+    /**
+
+    Aquesta funció infla el layout associat a aquest fragment i el retorna com a View.
+    @param inflater inflador de layout
+    @param container contenidor del layout
+    @param savedInstanceState estat de l'instancia guardada
+    @return Retorna la vista del layout associat a aquest fragment.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -47,6 +55,11 @@ class editar_assaig : Fragment() {
         return binding.root
     }
 
+    /**
+
+    Aquesta funció llegeix les dades introduides per l'usuari i les retorna en un objecte AssaigModel.
+    @return Retorna un objecte AssaigModel amb les dades introduides per l'usuari.
+     */
     fun llegirDades(): AssaigModel {
         //Guardem les dades introduïdes per l'usuari
         var titolAssaig = titolAssaig.text.toString()
@@ -59,6 +72,12 @@ class editar_assaig : Fragment() {
     //Funció que modificarà un assaig amb l'assaig passat per paràmetre. Per fer la modificació, l'identificador del document
     //passat per paràmetre ha de coincidir amb un dels identificadors dels documents que ja estan afegits a la col.lecció, si no el crearà de nou.
     //Això ho podem fer servir quan necessitem modificar tots els parells clau-valor d'un document que existeix dins la col.lecció.
+
+    /**
+
+    Aquesta classe modifica un assaig existent en la base de dades amb un nou títol, data i lloc.
+    @param assaig L'{@link AssaigModel} que es vol modificar.
+     */
     fun modificarAssaig(assaig: AssaigModel){
         bd.collection("Assajos").document(titolAssaig.text.toString()).set(
             hashMapOf(
@@ -88,6 +107,11 @@ class editar_assaig : Fragment() {
     }
 
     //Eliminar l'assaig corresponent al titol passat com a paràmetre. L'eliminarà si existeix.
+    /**
+
+    Aquesta funció elimina un assaig de la base de dades a través del seu títol.
+    @param titolAssaig Títol de l'assaig a eliminar.
+     */
     fun eliminarAssaig(titolAssaig:String){
         bd.collection("Assajos").document(titolAssaig)
             .delete()
@@ -107,6 +131,13 @@ class editar_assaig : Fragment() {
             }
     }
 
+    /**
+
+    Aquest mètode és cridat quan s'ha creat la vista del fragment.
+    Inicialitza les variables de la classe, obté els arguments passats al fragment i configura el comportament dels botons d'editar i eliminar.
+    @param view Vista del fragment
+    @param savedInstanceState Bundle amb dades de l'estat anterior del fragment.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         titolAssaig = binding.titolAssaig
