@@ -34,7 +34,6 @@ class InformacioActuacio : Fragment() {
     private lateinit var ubicacioActuacio: TextView
     private lateinit var llocActuacio: TextView
     private lateinit var actuacio: ActuacioModel
-    private lateinit var maps_exemple: ImageButton
 
     //Declarem i incialitzem un atribut de tipus FirebaseFirestore, classe on trobarem els mètodes per treballar amb la base de dades Firestore
     private var bd = FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore

@@ -5,55 +5,48 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import androidx.annotation.Keep
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
+import cat.copernic.bergants.databinding.FragmentInfoActuacioUsuarisBinding
+import cat.copernic.bergants.model.ActuacioModel
+import com.google.firebase.firestore.FirebaseFirestore
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [InfoActuacioUsuaris.newInstance] factory method to
- * create an instance of this fragment.
- */
+@Keep
 class InfoActuacioUsuaris : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var binding: FragmentInfoActuacioUsuarisBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var titolActuacio: TextView
+    private lateinit var dataActuacio: TextView
+    private lateinit var ubicacioActuacio: TextView
+    private lateinit var llocActuacio: TextView
+    private lateinit var actuacio: ActuacioModel
 
+    //Declarem i incialitzem un atribut de tipus FirebaseFirestore, classe on trobarem els mètodes per treballar amb la base de dades Firestore
+    private var bd = FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
+
+    private val args by navArgs<InformacioActuacioArgs>()
+
+
+    /**
+
+    Aquesta classe és la encarregada de mostrar la informació de l'actuació seleccionada en la pantalla d'informació de l'actuació.
+    Utilitza un binding per associar les dades de l'actuació amb els elements de la vista.
+    @param inflater permet inflar la vista
+    @param container el container on es mostrarà la vista
+    @param savedInstanceState estat guardat anteriorment
+    @return la vista inflada i amb les dades associades
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_info_actuacio_usuaris, container, false)
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment InfoActuacioUsuaris.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            InfoActuacioUsuaris().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        binding = FragmentInfoActuacioUsuarisBinding.inflate(inflater, container, false)
+        binding.TitolActuacio.setText(args.currentActuacio.titolActuacio)
+        binding.ubicacioActuacio.setText(args.currentActuacio.llocActuacio)
+        binding.DataActuacio.setText(args.currentActuacio.dataActuacio)
+        return binding.root
     }
 }
