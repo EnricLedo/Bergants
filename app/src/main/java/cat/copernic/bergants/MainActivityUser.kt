@@ -1,7 +1,16 @@
 package cat.copernic.bergants
 
+
+import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Button
+import android.widget.Toast
+import android.widget.Toolbar
+import androidx.annotation.Keep
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
@@ -9,11 +18,13 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import cat.copernic.bergants.R
+import androidx.navigation.ui.setupWithNavController
 import cat.copernic.bergants.databinding.ActivityMainBinding
 import cat.copernic.bergants.databinding.ActivityMainUserBinding
+import cat.copernic.bergants.databinding.MytoolbarBinding
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
+import org.checkerframework.checker.units.qual.m
 
 class MainActivityUser : AppCompatActivity() {
     //Atribut de tipus Button per tancar la sessió
@@ -58,19 +69,18 @@ class MainActivityUser : AppCompatActivity() {
         toolbar = findViewById(R.id.myToolbarUser)
         setSupportActionBar(toolbar)
 
-        val navController = findNavController(R.id.nav_host_fragment_content_main_activity_user)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        drawerLayout = binding.drawerUser
+        navigationView = binding.navigationViewUser
 
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+        navController = findNavController(R.id.fragmentContainerViewUser)
+        appBarConfiguration = AppBarConfiguration(setOf(R.id.actuacions_usuari_fragment, R.id.assajos_usuari_fragment, R.id.noticia_usuari_fragment, R.id.membres_usuari_fragment, R.id.perfil_fragment, R.id.configuracio_fragment), drawerLayout)
+        setupActionBarWithNavController(navController, drawerLayout)
+        navigationView.setupWithNavController(navController)
+
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main_activity_user)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
+        val navController = findNavController(R.id.fragmentContainerViewUser)
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }
