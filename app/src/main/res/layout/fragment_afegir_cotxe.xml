@@ -167,7 +167,7 @@
         app:layout_constraintTop_toBottomOf="@+id/spinnerHoraAnada" />
 
     <Switch
-        android:id="@+id/booleanAdmin"
+        android:id="@+id/adminMembre"
         style="@style/Switch"
         android:layout_width="48dp"
         android:layout_height="wrap_content"
@@ -191,7 +191,7 @@
         android:text="@string/afegirNom"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/booleanAdmin"
+        app:layout_constraintTop_toBottomOf="@+id/adminMembre"
         tools:ignore="TextContrastCheck" />
 
     <com.google.android.material.textfield.TextInputLayout

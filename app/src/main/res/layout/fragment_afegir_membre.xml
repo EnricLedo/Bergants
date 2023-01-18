@@ -66,7 +66,7 @@
         android:textColor="@color/negre"
         android:textSize="@dimen/secondtitlesize"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/booleanAdmin"
+        app:layout_constraintBottom_toTopOf="@+id/adminMembre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nomMembre" />
 
@@ -112,7 +112,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/mansMembre"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/booleanAdmin" />
+        app:layout_constraintTop_toBottomOf="@+id/adminMembre" />
 
     <EditText
         android:id="@+id/espatllesMembre"
@@ -355,8 +355,7 @@
         app:layout_constraintTop_toBottomOf="@+id/rol" />
 
     <CheckBox
-        android:id="@+id/booleanAdmin"
-        style="@style/Switch"
+        android:id="@+id/adminMembre"
         android:layout_width="@dimen/switchwidth"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/separacio"

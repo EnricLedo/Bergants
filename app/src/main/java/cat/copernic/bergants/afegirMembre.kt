@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
@@ -43,6 +44,7 @@ class afegirMembre : Fragment() {
     private lateinit var telefonMembre: EditText
     private lateinit var rolMembre: EditText
     private lateinit var altaMembre: EditText
+    private lateinit var adminMembre: CheckBox
 
     //Atribut de tipus Button per afegir un nou membre
     private lateinit var botoAfegir: Button
@@ -151,9 +153,10 @@ class afegirMembre : Fragment() {
         var altaMembre = altaMembre.text.toString()
         var correuMembre = correuMembre.text.toString()
         var adrecaMembre = adrecaMembre.text.toString()
+        var adminMembre = adminMembre.isChecked
 
         return MembreModel(nomMembre, malnom, alcadaEspatlles, alcadaMans, correuMembre,
-            adrecaMembre, telefonMembre, rolMembre, altaMembre)
+            adrecaMembre, telefonMembre, rolMembre, altaMembre, adminMembre)
     }
 
     /**
@@ -179,7 +182,8 @@ class afegirMembre : Fragment() {
                 "adrecaMembre" to adrecaMembre.text.toString(),
                 "telefonMembre" to telefonMembre.text.toString(),
                 "rolMembre" to rolMembre.text.toString(),
-                "altaMembre" to altaMembre.text.toString()
+                "altaMembre" to altaMembre.text.toString(),
+                "adminMembre" to adminMembre.isChecked
             )
         )
             //Aquest codi està afegint oients d'èxit i fracàs a una tasca asíncrona. Si la tasca té
@@ -237,6 +241,7 @@ class afegirMembre : Fragment() {
         telefonMembre = binding.telefonMembre
         rolMembre = binding.rolMembre
         altaMembre = binding.altaMembre
+        adminMembre = binding.adminMembre
         botoAfegir = binding.botoGuardarMembre
         passwordOkMembre = binding.passwordOkMembre
 
