@@ -120,4 +120,20 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginBottom="@dimen/BottomRecordarContraLogin"
         android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingHorizontal="15dp"
+        android:text="@string/registre_tancat_per_a_crear_un_compte_comunicat_amb_algun_membre_de_l_equip_de_bergants"
+        android:textColor="@color/grisFosc"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/forgottenPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logIn"
+        app:layout_constraintVertical_bias="0.24" />
 </androidx.constraintlayout.widget.ConstraintLayout>
