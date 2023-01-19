@@ -214,7 +214,7 @@
     <string name="assaigWrong">L\'assaig no s\'ha afegit</string>
     <string name="membreCorredct">El membre s\'ha afegit correctament</string>
     <string name="membreWrong">El membre no s\'ha afegit</string>
-    <string name="correuMal">Falta indroduir un correu i una contrasenya!!!</string>
+    <string name="correuMal">Falta introduir un correu i una contrasenya vàlid!!!</string>
     <string name="actuacioEdit">L\'actuació s\'ha editat correctament</string>
     <string name="actuacioNoEdit">L\'actuació no s\'ha editat</string>
     <string name="eliminarActuacio">S\'ha eliminat l\'actuacio amb titol</string>
