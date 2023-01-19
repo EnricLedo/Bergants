@@ -42,12 +42,16 @@
 
     </com.facebook.shimmer.ShimmerFrameLayout>
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerNoticies"
-        android:layout_width="417dp"
-        android:layout_height="746dp"
-        tools:layout_editor_absoluteX="-24dp"
-        tools:layout_editor_absoluteY="39dp"
+        android:layout_width="456dp"
+        android:layout_height="645dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
         tools:listitem="@layout/diseny_noticia" />
 
     <TextView
@@ -60,9 +64,10 @@
         android:textSize="13sp"
         app:layout_constraintBottom_toTopOf="@+id/recyclerNoticies"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/botoAfegirNoticia"
