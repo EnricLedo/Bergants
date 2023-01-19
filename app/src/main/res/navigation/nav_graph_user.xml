@@ -54,12 +54,12 @@
     <fragment
         android:id="@+id/id_perfil_fragment"
         android:name="cat.copernic.bergants.perfil"
-        android:label="fragment_perfil"
+        android:label="@string/perfil"
         tools:layout="@layout/fragment_perfil" />
     <fragment
         android:id="@+id/id_configuracio_fragment"
         android:name="cat.copernic.bergants.Configuracio"
-        android:label="fragment_configuracio"
+        android:label="@string/configuracio"
         tools:layout="@layout/fragment_configuracio" />
     <fragment
         android:id="@+id/fragment_informacio_assaig_user"

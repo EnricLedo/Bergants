@@ -90,7 +90,7 @@ class InformacioActuacio : Fragment() {
             val localdate = binding.DataActuacio.text.toString()
             val localubi = binding.ubicacioActuacio.text.toString()
 
-            val directions = InformacioActuacioDirections.actionInformacioActuacioToEditarActuacio(localtitle, localdate, localubi)
+            val directions = InformacioActuacioDirections.actionToEditarActuacio(localtitle, localdate, localubi)
             findNavController().navigate(directions)
         }
     }

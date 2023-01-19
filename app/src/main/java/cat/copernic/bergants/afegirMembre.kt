@@ -268,7 +268,11 @@ class afegirMembre : Fragment() {
                 if (correuMembre.matches(Regex(emailRegex))&&passwordOkMembre.isNotEmpty()){
                     afegirMembre(membre)
                     registrar(correuMembre, passwordOkMembre,)
-                    findNavController().navigate(R.id.action_afegirMembre_to_membres_fragment)
+                    if(imgMembre.toString().isNullOrEmpty()) {
+                        Snackbar.make(it, getString(R.string.foto_required), Snackbar.LENGTH_LONG).show()
+                    }else {
+                        findNavController().navigate(R.id.action_afegirMembre_to_membres_fragment)
+                    }
 
                     val builder = AlertDialog.Builder(requireContext())
                     builder.setMessage(getString(R.string.membreCorredct))
