@@ -270,8 +270,7 @@ class afegirMembre : Fragment() {
                     val dialog = builder.create()
                     dialog.show()
 
-                }
-                else {
+                }else {
                     Snackbar.make(it, getString(R.string.correuMal), Snackbar.LENGTH_LONG).show()
                 }
             }else {
