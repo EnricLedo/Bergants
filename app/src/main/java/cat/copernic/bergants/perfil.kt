@@ -44,7 +44,7 @@ class perfil : Fragment() {
     ): View? {
         binding = FragmentPerfilBinding.inflate(inflater, container, false)
 
-        carregarImatge()
+
 
         return binding.root
     }
@@ -57,14 +57,15 @@ class perfil : Fragment() {
         dataenric = binding.dataenric
         fotoEnric = binding.fotoEnric
 
+        carregarImatge()
         val currentUser = auth.currentUser
 
     }
 
     private fun carregarImatge(){
         auth = Firebase.auth
-        val currentUser = auth.currentUser
-        var adrecaImatge = storageRef.child(currentUser.toString())
+        val currentUser = auth.currentUser!!.email
+        var adrecaImatge = storageRef.child(currentUser!!.toString())
         var fitxerTemporal = File.createTempFile("temp", null)
         adrecaImatge.getFile(fitxerTemporal).addOnSuccessListener{
             val mapaBits = BitmapFactory.decodeFile(fitxerTemporal.absolutePath)
