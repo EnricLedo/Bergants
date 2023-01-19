@@ -157,39 +157,6 @@ class membres : Fragment() {
                 }
             }
         }
-
-        /**lifecycleScope.launch {
-            bd.collection("Noticies").get().addOnSuccessListener { documents ->
-                for (document in documents) {
-                    val wallItem = MembreModel(
-                        nomMembre = document["nomMembre"].toString(),
-                        malnom = document["malnom"].toString(),
-                        alcadaEspatlles = document["alcadaEspatlles"].toString(),
-                        alcadaMans = document["alcadaMans"].toString(),
-                        correuMembre = document["correuMembre"].toString(),
-                        adrecaMembre = document["adrecaMembre"].toString(),
-                        telefonMembre = document["telefonMembre"].toString(),
-                        rolMembre = document["rolMembre"].toString()
-                    )
-                    if (getMembres().isEmpty()) {
-                        getMembres().add(wallItem)
-                    } else {
-                        for (i in getMembres()) {
-                            if (wallItem.nomMembre != i.nomMembre) {
-                                getMembres().add(wallItem)
-                            }
-                        }
-                    }
-                }
-                //indiquem que el RV es mostrarà en format llista
-                binding.recyclerMembres.layoutManager = LinearLayoutManager(context)
-
-                //generem el adapter
-                myAdapter.MembreRecyclerAdapter(getMembres(),requireActivity())
-                //assignem el adapter al RV
-                binding.recyclerMembres.adapter = myAdapter
-            }
-        }*/
     }
 
 }

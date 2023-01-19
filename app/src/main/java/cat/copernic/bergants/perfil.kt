@@ -67,7 +67,7 @@ class perfil : Fragment() {
         val currentUser = auth.currentUser!!.email.toString()
         val database = FirebaseFirestore.getInstance()
         val collectionReference = database.collection("Membres")
-        val documentReference = collectionReference.document("currentUser")
+        val documentReference = collectionReference.document(currentUser)
         documentReference.get().addOnSuccessListener { documentSnapshot ->
             val field = documentSnapshot.getString("malnomenric")
             nomPerfil.setText(field)
