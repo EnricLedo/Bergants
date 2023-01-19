@@ -215,7 +215,7 @@
     <string name="assaigWrong">El ensayo no se ha añadido</string>
     <string name="membreCorredct">El miembro se ha añadido correctamente</string>
     <string name="membreWrong">El miembro no se ha añadido</string>
-    <string name="correuMal">Falta introducir un correo i una contraseña!!!</string>
+    <string name="correuMal">Falta introducir un correo y una contraseña validos!!!</string>
     <string name="actuacioEdit">La actuación se ha editado correctamente</string>
     <string name="actuacioNoEdit">La actuación no se ha editado</string>
     <string name="eliminarActuacio">Se ha eliminado la actuación con titulo</string>
@@ -272,4 +272,11 @@
     <string name="introdueix_la_contrasenya_registrada">Introduce la contraseña registrada</string>
     <string name="exemple_gmail_com">ejemplo@gmail.com</string>
     <string name="password_exemple">abc123</string>
+    <string name="title_activity_main_user">MainActivityUser</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$sF</string>
 </resources>

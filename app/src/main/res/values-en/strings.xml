@@ -212,7 +212,7 @@
     <string name="assaigWrong">The rehearsal wasn\'t added</string>
     <string name="membreCorredct">The member was added</string>
     <string name="membreWrong">The member wasn\'t added</string>
-    <string name="correuMal">Missing mail and password!!!</string>
+    <string name="correuMal">You need to enter a valid email and password!!!</string>
     <string name="actuacioEdit">The performance was edited</string>
     <string name="actuacioNoEdit">The performance wasn\'t edited</string>
     <string name="eliminarActuacio">This performance has been deleted:</string>
@@ -269,4 +269,11 @@
     <string name="introdueix_la_contrasenya_registrada">enter the registered password</string>
     <string name="exemple_gmail_com">example@gmail.com</string>
     <string name="password_exemple">abc123</string>
+    <string name="title_activity_main_user">MainActivityUser</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>
