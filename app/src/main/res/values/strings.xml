@@ -208,6 +208,7 @@
     <string name="aceptar">Acceptar</string>
     <string name="noticiaWrong">La notícia no s\'ha afegit</string>
     <string name="parametres">Falta indroduir parametres!!!</string>
+    <string name="correuFoto">Cal omplir els camps buits abans d\'afegir la foto!</string>
     <string name="actuacioCorrect">L\'actuació s\'ha afegit correctament</string>
     <string name="actuacioWrong">L\'actuació no s\'ha afegit</string>
     <string name="assaigCorrect">L\'assaig s\'ha afegit correctament</string>

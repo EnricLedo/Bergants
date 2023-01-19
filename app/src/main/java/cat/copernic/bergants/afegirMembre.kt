@@ -95,16 +95,26 @@ class afegirMembre : Fragment() {
      */
     private fun afegirImatge(){
 
-        //Obrim la galeria
-        guardarImatge.launch(Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI))
-        storageRef = storage.reference.child("imatge/membre/").child(correuMembre.text.toString()) //si el user no ecribe ningun correo petara ya que no tiene id
-        //Afegim la imatge seleccionada a storage
-        photoSelectedUri?.let { uri ->
-            storageRef.putFile(uri)
-                .addOnSuccessListener {
-                    Toast.makeText(context, "La imatge s'ha pujat amb èxit", Toast.LENGTH_LONG)
-                        .show()
-                }
+        if(correuMembre.text.toString().isNullOrEmpty()){
+            Snackbar.make(requireView(), getString(R.string.correuFoto), Snackbar.LENGTH_LONG).show()
+        }else {
+            //Obrim la galeria
+            guardarImatge.launch(
+                Intent(
+                    Intent.ACTION_PICK,
+                    MediaStore.Images.Media.EXTERNAL_CONTENT_URI
+                )
+            )
+            storageRef = storage.reference.child("imatge/membre/")
+                .child(correuMembre.text.toString()) //si el user no ecribe ningun correo petara ya que no tiene id
+            //Afegim la imatge seleccionada a storage
+            photoSelectedUri?.let { uri ->
+                storageRef.putFile(uri)
+                    .addOnSuccessListener {
+                        Toast.makeText(context, "La imatge s'ha pujat amb èxit", Toast.LENGTH_LONG)
+                            .show()
+                    }
+            }
         }
     }
 
@@ -118,12 +128,7 @@ class afegirMembre : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
         binding = FragmentAfegirMembreBinding.inflate(inflater, container, false)
-        //Aquest codi està configurant un onClickListener per a una visualització d'imatge (imgMembre)
-        // a Kotlin. OnClickListener s'està configurant en una funció anomenada "afegirImatge()",
-        // que s'executarà quan es faci clic a la vista de la imatge. La funció "afegirImatge()" és
-        // l'encarregada d'obrir la biblioteca d'imatges o la càmera del dispositiu per permetre a
-        // l'usuari seleccionar o capturar una imatge.
-        imgMembre =  binding.imgMembre
+        imgMembre = binding.imgMembre
         imgMembre.setOnClickListener{
             afegirImatge()
         }
@@ -237,6 +242,7 @@ class afegirMembre : Fragment() {
         adminMembre = binding.adminMembre
         botoAfegir = binding.botoGuardarMembre
         passwordOkMembre = binding.passwordOkMembre
+        imgMembre =  binding.imgMembre
 
         //Aquest codi està configurant un onClickListener per a un botó (botoAfegir) a Kotlin. Quan es
         // fa clic al botó, el codi executarà primer la funció "llegirDades()" que recull l'entrada de
