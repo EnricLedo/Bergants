@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.CheckBox
 import androidx.annotation.Keep
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.lifecycleScope
@@ -46,6 +47,7 @@ class Login : AppCompatActivity() {
      */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         createNotificationChannel()
         setContentView(R.layout.activity_login)
         this.supportActionBar!!.hide()
