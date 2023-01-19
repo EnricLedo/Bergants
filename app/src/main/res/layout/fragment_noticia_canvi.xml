@@ -44,9 +44,24 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerNoticies"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/diseny_noticia"/>
+        android:layout_width="417dp"
+        android:layout_height="746dp"
+        tools:layout_editor_absoluteX="-24dp"
+        tools:layout_editor_absoluteY="39dp"
+        tools:listitem="@layout/diseny_noticia" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/fes_clic_a_sobre_d_una_noticia_per_a_poder_editar_o_eliminar_ho"
+        android:textColor="@color/grisFosc"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerNoticies"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <Button

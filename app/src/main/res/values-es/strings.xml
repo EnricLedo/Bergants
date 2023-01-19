@@ -280,4 +280,8 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$sF</string>
     <string name="correuFoto">¡Hay que llenar los campos vacíos antes de añadir la foto!</string>
+    <string name="registre_tancat_per_a_crear_un_compte_comunicat_amb_algun_membre_de_l_equip_de_bergants">Registro cerrado. Para crear una cuenta comunicada con algún miembro del equipo de Bergants.</string>
+    <string name="fes_clic_a_sobre_d_un_assaig_per_a_poder_editar_o_eliminar_ho">Haz clic sobre un ensayo para poder editar o eliminarlo.</string>
+    <string name="fes_clic_a_sobre_d_una_actuaci_per_a_poder_editar_o_eliminar_ho">Haz clic sobre una actuación para poder editar o eliminarla.</string>
+    <string name="fes_clic_a_sobre_d_una_noticia_per_a_poder_editar_o_eliminar_ho">Haz clic sobre una noticia para poder editar o eliminarla.</string>
 </resources>

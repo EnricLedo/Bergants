@@ -38,20 +38,21 @@ class membres : Fragment() {
     es crea l'adapter i es l'assigna al RecyclerView.
      */
     private fun setupRecyclerView() {
-        /*if (getMembres().isEmpty()) {
-            mostrarMembres()
-        }else {*/
-        binding.recyclerMembres.setHasFixedSize(true)
+        if (list_multable.isEmpty()) {
+            mostrarMembres() //Executem la funció de suspensió
+        } else {
+            binding.recyclerMembres.setHasFixedSize(true)
 
+            //indiquem que el RV es mostrarà en format llista
+            binding.recyclerMembres.layoutManager = LinearLayoutManager(context)
 
-        //indiquem que el RV es mostrarà en format llista
-        binding.recyclerMembres.layoutManager = LinearLayoutManager(context)
+            //generem el adapter
+            myAdapter.MembreRecyclerAdapter(getMembres(),requireActivity())
+            //assignem el adapter al RV
+            binding.recyclerMembres.adapter = myAdapter
+            //}
 
-        //generem el adapter
-        myAdapter.MembreRecyclerAdapter(getMembres(),requireActivity())
-        //assignem el adapter al RV
-        binding.recyclerMembres.adapter = myAdapter
-        //}
+        }
     }
 
     //Aquest codi es troba en el mètode onViewCreated d'un fragment a Kotlin.
@@ -102,34 +103,35 @@ class membres : Fragment() {
 
     private fun getMembres():MutableList<Membre>{
         val membres: MutableList<Membre> = arrayListOf()
-        membres.add(Membre("Enric Ledo Muntal", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6jimbnhKGIjk--l0ovAaI4qVdLXFo3CJDhA&usqp=CAU"))
-        membres.add(Membre("Marc Fernández González", "https://firebasestorage.googleapis.com/v0/b/bergants-dam.appspot.com/o/imatge%2Fmembre%2Fbelenesteban%40gmail.com?alt=media&token=3b793527-300d-4ed5-8989-981b9d596ff7"))
-        membres.add(Membre("Joan Galindo Palacio", "https://firebasestorage.googleapis.com/v0/b/bergants-dam.appspot.com/o/imatge%2Fmembre%2Fmarcfernandez%40gmail.com?alt=media&token=ec1dc7f0-f1b3-4047-aa1d-e49353347353"))
-        membres.add(Membre("Belen Esteban", "https://firebasestorage.googleapis.com/v0/b/bergants-dam.appspot.com/o/imatge%2Fmembre%2Fjoangalindo250%40gmail.com?alt=media&token=4a7ffd25-1a03-42ee-a359-f9bb024f8f3f"))
-        membres.add(Membre("Mila Ximenez", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6jimbnhKGIjk--l0ovAaI4qVdLXFo3CJDhA&usqp=CAU"))
-        membres.add(Membre("Pablo Motos", "https://firebasestorage.googleapis.com/v0/b/bergants-dam.appspot.com/o/imatge%2Fmembre%2Fricard%40gmail.com?alt=media&token=1e47679d-2f0b-4188-bf3b-fa514d0130bb"))
-        membres.add(Membre("Alfons Lopez Navarro", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6jimbnhKGIjk--l0ovAaI4qVdLXFo3CJDhA&usqp=CAU"))
-        membres.add(Membre("Adri Navarro González", "https://firebasestorage.googleapis.com/v0/b/bergants-dam.appspot.com/o/imatge%2Fmembre%2Fmarcfernandez%40gmail.com?alt=media&token=ec1dc7f0-f1b3-4047-aa1d-e49353347353"))
+        //membres.add(Membre("Enric Ledo Muntal", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6jimbnhKGIjk--l0ovAaI4qVdLXFo3CJDhA&usqp=CAU"))
+        //membres.add(Membre("Marc Fernández González", "https://firebasestorage.googleapis.com/v0/b/bergants-dam.appspot.com/o/imatge%2Fmembre%2Fbelenesteban%40gmail.com?alt=media&token=3b793527-300d-4ed5-8989-981b9d596ff7"))
+        //membres.add(Membre("Joan Galindo Palacio", "https://firebasestorage.googleapis.com/v0/b/bergants-dam.appspot.com/o/imatge%2Fmembre%2Fmarcfernandez%40gmail.com?alt=media&token=ec1dc7f0-f1b3-4047-aa1d-e49353347353"))
+        //membres.add(Membre("Belen Esteban", "https://firebasestorage.googleapis.com/v0/b/bergants-dam.appspot.com/o/imatge%2Fmembre%2Fjoangalindo250%40gmail.com?alt=media&token=4a7ffd25-1a03-42ee-a359-f9bb024f8f3f"))
+        //membres.add(Membre("Mila Ximenez", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6jimbnhKGIjk--l0ovAaI4qVdLXFo3CJDhA&usqp=CAU"))
+        //membres.add(Membre("Pablo Motos", "https://firebasestorage.googleapis.com/v0/b/bergants-dam.appspot.com/o/imatge%2Fmembre%2Fricard%40gmail.com?alt=media&token=1e47679d-2f0b-4188-bf3b-fa514d0130bb"))
+        //membres.add(Membre("Alfons Lopez Navarro", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6jimbnhKGIjk--l0ovAaI4qVdLXFo3CJDhA&usqp=CAU"))
+        //membres.add(Membre("Adri Navarro González", "https://firebasestorage.googleapis.com/v0/b/bergants-dam.appspot.com/o/imatge%2Fmembre%2Fmarcfernandez%40gmail.com?alt=media&token=ec1dc7f0-f1b3-4047-aa1d-e49353347353"))
 
         return membres
 
     }
 
     private fun mostrarMembres() {
-        /**lifecycleScope.launch {
+        lifecycleScope.launch {
             withContext(Dispatchers.IO){
                 bd.collection("Membres").get().addOnSuccessListener { documents ->
                     for (document in documents) {
                         val wallItem = MembreModel(
-                            nomMembre = document["nomMembre"].toString(),
-                            malnom = document["nomMembre"].toString(),
-                            alcadaEspatlles = document["nomMembre"].toString(),
-                            alcadaMans = document["nomMembre"].toString(),
-                            correuMembre = document["nomMembre"].toString(),
-                            adrecaMembre = document["nomMembre"].toString(),
-                            telefonMembre = document["nomMembre"].toString(),
-                            rolMembre = document["nomMembre"].toString(),
-                            altaMembre = document["nomMembre"].toString()
+                            name = document["nomMembre"].toString(),
+                            malname = document["nomMembre"].toString(),
+                            espatlles = document["nomMembre"].toString(),
+                            mans = document["nomMembre"].toString(),
+                            email = document["nomMembre"].toString(),
+                            adress = document["nomMembre"].toString(),
+                            telefon = document["nomMembre"].toString(),
+                            rol = document["nomMembre"].toString(),
+                            date = document["nomMembre"].toString(),
+                            admin= true
                         )
                         if (list_multable.isEmpty()) {
                             list_multable.add(wallItem)
@@ -149,12 +151,12 @@ class membres : Fragment() {
                     binding.recyclerMembres.layoutManager = LinearLayoutManager(context)
 
                     //generem el adapter
-                    myAdapter.MembreRecyclerAdapter(list_multable,requireActivity())
+                    myAdapter.MembreRecyclerAdapter(getMembres(),requireActivity())
                     //assignem el adapter al RV
                     binding.recyclerMembres.adapter = myAdapter
                 }
             }
-        }*/
+        }
 
         /**lifecycleScope.launch {
             bd.collection("Noticies").get().addOnSuccessListener { documents ->

@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="160dp"
             android:contentDescription="@string/fotoEnric"
-            android:src="@drawable/fotoenric" />
+            android:src="@drawable/avatar" />
     </androidx.cardview.widget.CardView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
