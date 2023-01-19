@@ -17,6 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Bergants"
         android:usesCleartextTraffic="true"
+        android:background="@color/blanc"
         tools:targetApi="31">
         <activity
             android:name=".MainActivityUser"
