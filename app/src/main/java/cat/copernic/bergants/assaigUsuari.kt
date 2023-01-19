@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import cat.copernic.bergants.adapter.AssaigRecyclerAdapter
+import cat.copernic.bergants.adapter.AssaigRecyclerAdapterUser
 import cat.copernic.bergants.databinding.FragmentAssaigUsuariBinding
 import cat.copernic.bergants.databinding.FragmentAssajosBinding
 import cat.copernic.bergants.model.AssaigModel
@@ -26,7 +27,7 @@ class assaigUsuari : Fragment() {
 
     private var list_multable: MutableList<AssaigModel> = ArrayList()
 
-    private val myAdapter: AssaigRecyclerAdapter = AssaigRecyclerAdapter()
+    private val myAdapter: AssaigRecyclerAdapterUser = AssaigRecyclerAdapterUser()
 
     private var bd =
         FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
@@ -40,15 +41,15 @@ class assaigUsuari : Fragment() {
         if (list_multable.isEmpty()) {
             mostrarAssajos() //Executem la funció de suspensió
         } else {
-            binding.recyclerAssajos.setHasFixedSize(true)
+            binding.recyclerAssajosUser!!.setHasFixedSize(true)
 
             //indiquem que el RV es mostrarà en format llista
-            binding.recyclerAssajos.layoutManager = LinearLayoutManager(context)
+            binding.recyclerAssajosUser!!.layoutManager = LinearLayoutManager(context)
 
             //generem el adapter
-            myAdapter.AssaigRecyclerAdapter(list_multable, requireActivity())
+            myAdapter.AssaigRecyclerAdapterUser(list_multable, requireActivity())
             //assignem el adapter al RV
-            binding.recyclerAssajos.adapter = myAdapter
+            binding.recyclerAssajosUser!!.adapter = myAdapter
         }
     }
 
@@ -90,7 +91,7 @@ class assaigUsuari : Fragment() {
         //Visibilitzem el shimmer per a fer l'animació de carrega abans de mostrar el recycler
         binding.shimmerViewRvAssajos.visibility = View.VISIBLE
         //Desactivem la visibilitat del recyclerNoticies mentre carreguen els items
-        binding.recyclerAssajos.visibility = View.GONE
+        binding.recyclerAssajosUser!!.visibility = View.GONE
         //Activem el shimmer per l'animació de carregar
         binding.shimmerViewRvAssajos.startShimmer()
         lifecycleScope.launch {
@@ -117,18 +118,18 @@ class assaigUsuari : Fragment() {
                         }
                     }
                     //indiquem que el RV es mostrarà en format llista
-                    binding.recyclerAssajos.layoutManager = LinearLayoutManager(context)
+                    binding.recyclerAssajosUser!!.layoutManager = LinearLayoutManager(context)
 
                     //generem el adapter
-                    myAdapter.AssaigRecyclerAdapter(list_multable, requireActivity())
+                    myAdapter.AssaigRecyclerAdapterUser(list_multable, requireActivity())
                     //assignem el adapter al RV
-                    binding.recyclerAssajos.adapter = myAdapter
+                    binding.recyclerAssajosUser!!.adapter = myAdapter
                     //ara que han carregat els items del recycler ja podem parar el shimmer
                     binding.shimmerViewRvAssajos.stopShimmer()
                     //també desactivem la visibilitat del shimmer
                     binding.shimmerViewRvAssajos.visibility = View.GONE
                     //activem la visibilitat del recycler, ja que l'haviem desactivat anteriorment
-                    binding.recyclerAssajos.visibility = View.VISIBLE
+                    binding.recyclerAssajosUser!!.visibility = View.VISIBLE
                 }
             }
         }
