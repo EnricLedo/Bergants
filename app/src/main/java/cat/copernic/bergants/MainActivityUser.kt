@@ -73,7 +73,7 @@ class MainActivityUser : AppCompatActivity() {
         navigationView = binding.navigationViewUser
 
         navController = findNavController(R.id.fragmentContainerViewUser)
-        appBarConfiguration = AppBarConfiguration(setOf(R.id.actuacions_usuari_fragment, R.id.assajos_usuari_fragment, R.id.noticia_usuari_fragment, R.id.membres_usuari_fragment, R.id.perfil_fragment, R.id.configuracio_fragment), drawerLayout)
+        appBarConfiguration = AppBarConfiguration(setOf(R.id.id_actuacio_usuari_fragment, R.id.id_assaig_usuari_fragment, R.id.id_noticies_usuari_fragment, R.id.id_membres_usuari_fragment, R.id.id_perfil_fragment, R.id.id_configuracio_fragment), drawerLayout)
         setupActionBarWithNavController(navController, drawerLayout)
         navigationView.setupWithNavController(navController)
 

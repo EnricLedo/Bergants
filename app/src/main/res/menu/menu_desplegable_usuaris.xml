@@ -2,27 +2,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/actuacions_usuari_fragment"
+        android:id="@+id/id_actuacio_usuari_fragment"
         android:title="@string/actuacions_menu" />
 
     <item
-        android:id="@+id/assajos_usuari_fragment"
+        android:id="@+id/id_assaig_usuari_fragment"
         android:title="@string/assajos_menu"/>
 
     <item
-        android:id="@+id/noticia_usuari_fragment"
+        android:id="@+id/id_noticies_usuari_fragment"
         android:title="@string/noticies_menu"/>
 
     <item
-        android:id="@+id/membres_usuari_fragment"
+        android:id="@+id/id_membres_usuari_fragment"
         android:title="@string/membres_menu"/>
 
     <item
-        android:id="@+id/perfil_fragment"
+        android:id="@+id/id_perfil_fragment"
         android:title="@string/perfil_menu"/>
 
     <item
-        android:id="@+id/configuracio_fragment"
+        android:id="@+id/id_configuracio_fragment"
         android:title="@string/configuracio_menu"/>
 
 </menu>

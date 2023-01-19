@@ -3,27 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph2"
-    app:startDestination="@id/noticiesUsuari">
+    app:startDestination="@id/id_noticies_usuari_fragment">
     <fragment
-        android:id="@+id/noticiesUsuari"
+        android:id="@+id/id_noticies_usuari_fragment"
         android:name="cat.copernic.bergants.noticiesUsuari"
-        android:label="noticiesUsuari" />
+        android:label="@string/noticies"
+        tools:layout="@layout/fragment_noticies_usuari"/>
     <fragment
-        android:id="@+id/actuacioUsuari"
+        android:id="@+id/id_actuacio_usuari_fragment"
         android:name="cat.copernic.bergants.ActuacioUsuari"
-        android:label="ActuacioUsuari" >
+        android:label="@string/actuacions"
+        tools:layout="@layout/fragment_actuacio_usuari">
         <action
             android:id="@+id/action_actuacioUsuari_to_informacioActuacio"
-            app:destination="@id/informacioActuacio"
+            app:destination="@id/informacioActuacioUsuari"
             app:enterAnim="@anim/enter_anim"
             app:exitAnim="@anim/exit_anim"
             app:popEnterAnim="@anim/pop_enter_anim"
             app:popExitAnim="@anim/pop_exit_anim" />
     </fragment>
     <fragment
-        android:id="@+id/assaigUsuari"
+        android:id="@+id/id_assaig_usuari_fragment"
         android:name="cat.copernic.bergants.assaigUsuari"
-        android:label="assaigUsuari" >
+        android:label="@string/assajos"
+        tools:layout="@layout/fragment_assaig_usuari">
         <action
             android:id="@+id/action_assaigUsuari_to_fragment_informacio_assaig_user"
             app:destination="@id/fragment_informacio_assaig_user"
@@ -33,45 +36,50 @@
             app:popExitAnim="@anim/pop_exit_anim" />
     </fragment>
     <fragment
-        android:id="@+id/informacioActuacio"
+        android:id="@+id/informacioActuacioUsuari"
         android:name="cat.copernic.bergants.InformacioActuacio"
-        android:label="fragment_info_actuacio_usuaris"
+        android:label="@string/informacioActuacio"
         tools:layout="@layout/fragment_info_actuacio_usuaris" >
         <argument
             android:name="CurrentActuacio"
             app:argType="cat.copernic.bergants.model.ActuacioModel" />
         <action
             android:id="@+id/action_informacioActuacio_to_actuacioUsuari"
-            app:destination="@id/actuacioUsuari"
+            app:destination="@id/id_actuacio_usuari_fragment"
             app:enterAnim="@anim/enter_anim"
             app:exitAnim="@anim/exit_anim"
             app:popEnterAnim="@anim/pop_enter_anim"
             app:popExitAnim="@anim/pop_exit_anim" />
     </fragment>
     <fragment
-        android:id="@+id/perfil"
+        android:id="@+id/id_perfil_fragment"
         android:name="cat.copernic.bergants.perfil"
         android:label="fragment_perfil"
         tools:layout="@layout/fragment_perfil" />
     <fragment
-        android:id="@+id/configuracio"
+        android:id="@+id/id_configuracio_fragment"
         android:name="cat.copernic.bergants.Configuracio"
         android:label="fragment_configuracio"
         tools:layout="@layout/fragment_configuracio" />
     <fragment
         android:id="@+id/fragment_informacio_assaig_user"
         android:name="cat.copernic.bergants.InformacioAssaig"
-        android:label="fragment_info_assaig_usuaris"
+        android:label="@string/informacioAssaig"
         tools:layout="@layout/fragment_informacio_assaig" >
         <argument
             android:name="CurrentAssaig"
             app:argType="cat.copernic.bergants.model.AssaigModel" />
         <action
             android:id="@+id/action_fragment_informacio_assaig_user_to_assaigUsuari"
-            app:destination="@id/assaigUsuari"
+            app:destination="@id/id_assaig_usuari_fragment"
             app:enterAnim="@anim/enter_anim"
             app:exitAnim="@anim/exit_anim"
             app:popEnterAnim="@anim/pop_enter_anim"
             app:popExitAnim="@anim/pop_exit_anim" />
     </fragment>
+    <fragment
+        android:id="@+id/id_membres_usuari_fragment"
+        android:name="cat.copernic.bergants.MembresUsuari"
+        android:label="@string/membre"
+        tools:layout="@layout/fragment_membres_usuari"/>
 </navigation>

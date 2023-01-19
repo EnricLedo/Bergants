@@ -12,11 +12,15 @@ import androidx.annotation.Keep
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.core.content.ContextCompat.startActivity
+import androidx.lifecycle.lifecycleScope
 import cat.copernic.bergants.databinding.ActivityLoginBinding
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
 
 
 @Keep
@@ -28,6 +32,10 @@ class Login : AppCompatActivity() {
 
     private lateinit var loginpage: View
     private lateinit var binding: ActivityLoginBinding
+
+    //Declarem i incialitzem un atribut de tipus FirebaseFirestore, classe on trobarem els mètodes per treballar amb la base de dades Firestore
+    private var bd =
+        FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
 
     //Declarem un atribut de tipus FirebaseAuth
     private lateinit var auth: FirebaseAuth
@@ -82,17 +90,30 @@ class Login : AppCompatActivity() {
 
     Aquesta funció és cridada quan l'activitat comença. Es comprova si l'usuari ja està autenticat i si ho està, es mostra la pantalla principal de l'aplicació.
      */
+
     override fun onStart() {
         super.onStart() //Cridem al la funció onStart() perquè ens mostri per pantalla l'activity
         //currentUser és un atribut de la classe FirebaseAuth que guarda l'usuari autenticat. Si aquest no està autenticat, el seu valor serà null.
         val currentUser = auth.currentUser
+        val intentAdmin = Intent(this,MainActivity::class.java)
+        val intent = Intent(this,MainActivityUser::class.java)
         if(currentUser != null){
         //Sí l'usuari no ha tancat sessió (està autenticat)...
-            //Anem al mainActivity des d'aquesta pantalla
-            startActivity(Intent(this,MainActivity::class.java))
-            //finish() //Alliberem memòria un cop finalitzada aquesta tasca.
+            lifecycleScope.launch{
+                val queryAdmin = bd.collection("Membres").document(currentUser.email!!).get().await()
+
+                if(queryAdmin.getBoolean("adminMembre") == true){
+                    startActivity(intentAdmin)
+                    finish()
+                } else{
+                    startActivity(intent)
+                    finish()
+                }
+            }
         }
     }
+
+
 
     //Funció per loginar a un usuari mitjançant Firebase Authentication
     /**
@@ -101,12 +122,23 @@ class Login : AppCompatActivity() {
      */
     private fun loguinar(correu: String, contrasenya: String){
         //Loginem a l'usuari
+        val intentAdmin = Intent(this,MainActivity::class.java)
+        val intent = Intent(this,MainActivityUser::class.java)
         auth.signInWithEmailAndPassword(correu,contrasenya)
             .addOnCompleteListener(this) {task ->
                 if(task.isSuccessful){ //El loguin (task) s'ha completat amb exit...
-                    //Anem al mainActivity des d'aquesta pantalla
-                    startActivity(Intent(this,MainActivity::class.java))
-                    finish() //Alliberem memòria un cop finalitzada aquesta tasca.
+                    lifecycleScope.launch{
+                        val queryAdmin = bd.collection("Membres").document(correu).get().await()
+
+                        if (queryAdmin.getBoolean("adminMembre")== true){
+                            //Anem al mainActivity des d'aquesta pantalla
+                            startActivity(intentAdmin)
+                            finish() //Alliberem memòria un cop finalitzada aquesta tasca.
+                        } else{
+                            startActivity(intent)
+                            finish()
+                        }
+                    }
                 }else{ //El login (task) ha fallat...
                     //Mostrem un missatge a l'usuari mitjançant un Toast
                     Snackbar.make(loginpage,getString(R.string.errorLogin), Snackbar.LENGTH_LONG).show()
