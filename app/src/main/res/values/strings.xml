@@ -273,6 +273,7 @@
     <string name="exemple_gmail_com">exemple@gmail.com</string>
     <string name="password_exemple">abc123</string>
     <string name="title_activity_main_user">MainActivityUser</string>
+    <string name="foto_required">Cal afegir una foto pel membre!</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>

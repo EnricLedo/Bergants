@@ -157,28 +157,7 @@
             android:name="CurrentActuacio"
             app:argType="cat.copernic.bergants.model.ActuacioModel" />
         <action
-            android:id="@+id/action_informacioActuacio_to_afegirCotxe"
-            app:destination="@id/afegir_cotxe_fragment"
-            app:enterAnim="@anim/enter_anim"
-            app:exitAnim="@anim/exit_anim"
-            app:popEnterAnim="@anim/pop_enter_anim"
-            app:popExitAnim="@anim/pop_exit_anim"/>
-        <action
-            android:id="@+id/action_informacioActuacio_to_editar_cotxe"
-            app:destination="@id/editar_cotxe_fragment"
-            app:enterAnim="@anim/enter_anim"
-            app:exitAnim="@anim/exit_anim"
-            app:popEnterAnim="@anim/pop_enter_anim"
-            app:popExitAnim="@anim/pop_exit_anim"/>
-        <action
-            android:id="@+id/action_informacioActuacio_to_unirseCotxe2"
-            app:destination="@id/unirse_cotxe_fragment"
-            app:enterAnim="@anim/enter_anim"
-            app:exitAnim="@anim/exit_anim"
-            app:popEnterAnim="@anim/pop_enter_anim"
-            app:popExitAnim="@anim/pop_exit_anim"/>
-        <action
-            android:id="@+id/action_informacioActuacio_to_editar_actuacio"
+            android:id="@+id/action_to_editar_actuacio"
             app:destination="@id/editar_actuacio"
             app:enterAnim="@anim/enter_anim"
             app:exitAnim="@anim/exit_anim"
@@ -242,13 +221,6 @@
         android:name="cat.copernic.bergants.AfegirCotxe"
         android:label="Afegir cotxe"
         tools:layout="@layout/fragment_afegir_cotxe" >
-        <action
-            android:id="@+id/action_afegirCotxe_to_informacioActuacio"
-            app:destination="@id/informacio_actuacio_fragment"
-            app:enterAnim="@anim/enter_anim"
-            app:exitAnim="@anim/exit_anim"
-            app:popEnterAnim="@anim/pop_enter_anim"
-            app:popExitAnim="@anim/pop_exit_anim"/>
     </fragment>
     <fragment
         android:id="@+id/editar_cotxe_fragment"
