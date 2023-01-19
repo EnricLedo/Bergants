@@ -27,7 +27,7 @@ class InfoActuacioUsuaris : Fragment() {
     //Declarem i incialitzem un atribut de tipus FirebaseFirestore, classe on trobarem els mètodes per treballar amb la base de dades Firestore
     private var bd = FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
 
-    private val args by navArgs<InformacioActuacioArgs>()
+    private val args by navArgs<InfoActuacioUsuarisArgs>()
 
 
     /**
@@ -44,9 +44,9 @@ class InfoActuacioUsuaris : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentInfoActuacioUsuarisBinding.inflate(inflater, container, false)
-        binding.TitolActuacio.setText(args.currentActuacio.titolActuacio)
-        binding.ubicacioActuacio.setText(args.currentActuacio.llocActuacio)
-        binding.DataActuacio.setText(args.currentActuacio.dataActuacio)
+        binding.TitolActuacio.setText(args.currentActuacioUser.titolActuacio)
+        binding.ubicacioActuacio.setText(args.currentActuacioUser.llocActuacio)
+        binding.DataActuacio.setText(args.currentActuacioUser.dataActuacio)
         return binding.root
     }
 }

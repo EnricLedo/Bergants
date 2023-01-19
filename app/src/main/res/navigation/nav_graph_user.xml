@@ -16,7 +16,7 @@
         tools:layout="@layout/fragment_actuacio_usuari">
         <action
             android:id="@+id/action_actuacioUsuari_to_informacioActuacio"
-            app:destination="@id/informacioActuacioUsuari"
+            app:destination="@id/fragment_informacio_actuacio_user"
             app:enterAnim="@anim/enter_anim"
             app:exitAnim="@anim/exit_anim"
             app:popEnterAnim="@anim/pop_enter_anim"
@@ -36,12 +36,12 @@
             app:popExitAnim="@anim/pop_exit_anim" />
     </fragment>
     <fragment
-        android:id="@+id/informacioActuacioUsuari"
-        android:name="cat.copernic.bergants.InformacioActuacio"
+        android:id="@+id/fragment_informacio_actuacio_user"
+        android:name="cat.copernic.bergants.InfoActuacioUsuaris"
         android:label="@string/informacioActuacio"
         tools:layout="@layout/fragment_info_actuacio_usuaris" >
         <argument
-            android:name="CurrentActuacio"
+            android:name="CurrentActuacioUser"
             app:argType="cat.copernic.bergants.model.ActuacioModel" />
         <action
             android:id="@+id/action_informacioActuacio_to_actuacioUsuari"
@@ -67,7 +67,7 @@
         android:label="@string/informacioAssaig"
         tools:layout="@layout/fragment_informacio_assaig" >
         <argument
-            android:name="CurrentAssaig"
+            android:name="CurrentAssaigUser"
             app:argType="cat.copernic.bergants.model.AssaigModel" />
         <action
             android:id="@+id/action_fragment_informacio_assaig_user_to_assaigUsuari"

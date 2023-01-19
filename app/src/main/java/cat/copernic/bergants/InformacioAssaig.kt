@@ -45,9 +45,9 @@ class InformacioAssaig : Fragment() {
     ): View? {
         binding = FragmentInformacioAssaigBinding.inflate(inflater, container, false)
 
-        binding.TitolAssaig.setText(args.currentAssaig.titolAssaig)
-        binding.ubicacioAssaig.setText(args.currentAssaig.llocAssaig)
-        binding.dataAssaig.setText(args.currentAssaig.dataAssaig)
+        binding.TitolAssaig.setText(args.currentAssaigUser.titolAssaig)
+        binding.ubicacioAssaig.setText(args.currentAssaigUser.llocAssaig)
+        binding.dataAssaig.setText(args.currentAssaigUser.dataAssaig)
 
         return binding.root
     }
