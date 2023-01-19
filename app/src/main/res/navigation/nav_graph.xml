@@ -178,7 +178,7 @@
             app:popEnterAnim="@anim/pop_enter_anim"
             app:popExitAnim="@anim/pop_exit_anim"/>
         <action
-            android:id="@+id/ambiguity"
+            android:id="@+id/action_informacioActuacio_to_editar_actuacio"
             app:destination="@id/editar_actuacio"
             app:enterAnim="@anim/enter_anim"
             app:exitAnim="@anim/exit_anim"
