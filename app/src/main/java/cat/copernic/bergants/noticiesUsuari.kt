@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import cat.copernic.bergants.databinding.FragmentNoticiesUsuariBinding
 import androidx.recyclerview.widget.LinearLayoutManager
 import cat.copernic.bergants.adapter.NoticiaRecyclerAdapter
+import cat.copernic.bergants.adapter.NoticiaRecyclerAdapterUser
 import cat.copernic.bergants.databinding.FragmentNoticiaCanviBinding
 import cat.copernic.bergants.model.NoticiaModel
 import com.google.firebase.auth.FirebaseAuth
@@ -25,7 +26,7 @@ class noticiesUsuari : Fragment() {
 
     private var list_multable: MutableList<NoticiaModel> = ArrayList()
     private lateinit var binding: FragmentNoticiesUsuariBinding
-    private val myAdapter: NoticiaRecyclerAdapter = NoticiaRecyclerAdapter()
+    private val myAdapter: NoticiaRecyclerAdapterUser = NoticiaRecyclerAdapterUser()
     private lateinit var auth: FirebaseAuth
 
     //Declarem i incialitzem un atribut de tipus FirebaseFirestore, classe on trobarem els mètodes per treballar amb la base de dades Firestore
@@ -62,13 +63,13 @@ class noticiesUsuari : Fragment() {
 
 
         } else {
-            binding.recyclerNoticies.setHasFixedSize(true)
+            binding.recyclerNoticiesUser!!.setHasFixedSize(true)
             //indiquem que el RV es mostrarà en format llista
-            binding.recyclerNoticies.layoutManager = LinearLayoutManager(context)
+            binding.recyclerNoticiesUser!!.layoutManager = LinearLayoutManager(context)
             //generem el adapter
-            myAdapter.NoticiesRecyclerAdapter(list_multable, requireActivity())
+            myAdapter.NoticiesRecyclerAdapterUser(list_multable, requireActivity())
             //assignem el adapter al RV
-            binding.recyclerNoticies.adapter = myAdapter
+            binding.recyclerNoticiesUser!!.adapter = myAdapter
 
         }
     }
@@ -116,7 +117,7 @@ class noticiesUsuari : Fragment() {
         //Visibilitzem el shimmer per a fer l'animació de carrega abans de mostrar el recycler
         binding.shimmerViewRvNoticies.visibility = View.VISIBLE
         //Desactivem la visibilitat del recyclerNoticies mentre carreguen els items
-        binding.recyclerNoticies.visibility = View.GONE
+        binding.recyclerNoticiesUser!!.visibility = View.GONE
         //Activem el shimmer per l'animació de carregar
         binding.shimmerViewRvNoticies.startShimmer()
         //Aquest codi utilitza la rutina lifecycleScope.launch per fer una sol·licitud de xarxa a
@@ -152,18 +153,18 @@ class noticiesUsuari : Fragment() {
                         }
                     }
 
-                    binding.recyclerNoticies.layoutManager = LinearLayoutManager(context)
+                    binding.recyclerNoticiesUser!!.layoutManager = LinearLayoutManager(context)
                     //generem el adapter
-                    myAdapter.NoticiesRecyclerAdapter(list_multable, requireActivity())
+                    myAdapter.NoticiesRecyclerAdapterUser(list_multable, requireActivity())
                     //assignem el adapter al RV
-                    binding.recyclerNoticies.adapter = myAdapter
+                    binding.recyclerNoticiesUser!!.adapter = myAdapter
 
                     //ara que han carregat els items del recycler ja podem parar el shimmer
                     binding.shimmerViewRvNoticies.stopShimmer()
                     //també desactivem la visibilitat del shimmer
                     binding.shimmerViewRvNoticies.visibility = View.GONE
                     //activem la visibilitat del recycler, ja que l'haviem desactivat anteriorment
-                    binding.recyclerNoticies.visibility = View.VISIBLE
+                    binding.recyclerNoticiesUser!!.visibility = View.VISIBLE
                 }
             }
         }
