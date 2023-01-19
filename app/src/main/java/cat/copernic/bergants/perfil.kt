@@ -75,6 +75,8 @@ class perfil : Fragment() {
             rolenric.setText(field2)
             val field3 = documentSnapshot.getString("altaMembre")
             dataenric.setText(field3)
+            val field4 = documentSnapshot.getString("malnom")
+            malnomenric.setText(field4)
         }
     }
 
