@@ -255,13 +255,13 @@ class afegirMembre : Fragment() {
             var passwordOkMembre = passwordOkMembre.text.toString()
             val emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$"
             if (correuMembre.matches(Regex(emailRegex))&&passwordOkMembre.isNotEmpty()){
-                registrar(correuMembre, passwordOkMembre,)
                 var membre = llegirDades()
                 if (membre.nomMembre?.isNotEmpty() == true && membre.malnom?.isNotEmpty() == true && membre.alcadaEspatlles?.isNotEmpty() == true
                     && membre.alcadaMans?.isNotEmpty() == true && membre.correuMembre?.isNotEmpty() == true
                     && membre.adrecaMembre?.isNotEmpty() == true && membre.telefonMembre?.isNotEmpty() == true
                     && membre.rolMembre?.isNotEmpty() == true && membre.altaMembre?.isNotEmpty() == true) {
                     afegirMembre(membre)
+                    registrar(correuMembre, passwordOkMembre,)
                     findNavController().navigate(R.id.action_afegirMembre_to_membres_fragment)
 
                     val builder = AlertDialog.Builder(requireContext())
@@ -275,29 +275,6 @@ class afegirMembre : Fragment() {
                 }
             }else {
                 Snackbar.make(it, getString(R.string.correuMal), Snackbar.LENGTH_LONG).show()
-            }
-
-            var membre = llegirDades() //Membre introduit per l'usuari
-            if (membre.nomMembre?.isNotEmpty() == true && membre.malnom?.isNotEmpty() == true && membre.alcadaEspatlles?.isNotEmpty() == true
-                && membre.alcadaMans?.isNotEmpty() == true && membre.correuMembre?.isNotEmpty() == true
-                && membre.adrecaMembre?.isNotEmpty() == true && membre.telefonMembre?.isNotEmpty() == true
-                && membre.rolMembre?.isNotEmpty() == true && membre.altaMembre?.isNotEmpty() == true) {
-                afegirMembre(membre)
-                findNavController().navigate(R.id.action_afegirMembre_to_membres_fragment)
-                if (correuMembre.matches(Regex(emailRegex))&&passwordOkMembre.isNotEmpty()){
-                    registrar(correuMembre, passwordOkMembre,)
-
-                    val builder = AlertDialog.Builder(requireContext())
-                    builder.setMessage(getString(R.string.membreCorredct))
-                    builder.setPositiveButton(getString(R.string.aceptar), null)
-                    val dialog = builder.create()
-                    dialog.show()
-                }else {
-                    Snackbar.make(it, getString(R.string.correuMal), Snackbar.LENGTH_LONG).show()
-                }
-
-            } else {
-                Snackbar.make(it, getString(R.string.parametres), Snackbar.LENGTH_LONG).show()
             }
         }
     }
