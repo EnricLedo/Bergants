@@ -254,12 +254,12 @@ class afegirMembre : Fragment() {
             var correuMembre = correuMembre.text.toString()
             var passwordOkMembre = passwordOkMembre.text.toString()
             val emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$"
-            if (correuMembre.matches(Regex(emailRegex))&&passwordOkMembre.isNotEmpty()){
-                var membre = llegirDades()
-                if (membre.nomMembre?.isNotEmpty() == true && membre.malnom?.isNotEmpty() == true && membre.alcadaEspatlles?.isNotEmpty() == true
-                    && membre.alcadaMans?.isNotEmpty() == true && membre.correuMembre?.isNotEmpty() == true
-                    && membre.adrecaMembre?.isNotEmpty() == true && membre.telefonMembre?.isNotEmpty() == true
-                    && membre.rolMembre?.isNotEmpty() == true && membre.altaMembre?.isNotEmpty() == true) {
+            var membre = llegirDades()
+            if (membre.nomMembre?.isNotEmpty() == true && membre.malnom?.isNotEmpty() == true && membre.alcadaEspatlles?.isNotEmpty() == true
+                && membre.alcadaMans?.isNotEmpty() == true && membre.correuMembre?.isNotEmpty() == true
+                && membre.adrecaMembre?.isNotEmpty() == true && membre.telefonMembre?.isNotEmpty() == true
+                && membre.rolMembre?.isNotEmpty() == true && membre.altaMembre?.isNotEmpty() == true) {
+                if (correuMembre.matches(Regex(emailRegex))&&passwordOkMembre.isNotEmpty()){
                     afegirMembre(membre)
                     registrar(correuMembre, passwordOkMembre,)
                     findNavController().navigate(R.id.action_afegirMembre_to_membres_fragment)
@@ -271,10 +271,10 @@ class afegirMembre : Fragment() {
                     dialog.show()
 
                 } else {
-                    Snackbar.make(it, getString(R.string.parametres), Snackbar.LENGTH_LONG).show()
+                    Snackbar.make(it, getString(R.string.correuMal), Snackbar.LENGTH_LONG).show()
                 }
             }else {
-                Snackbar.make(it, getString(R.string.correuMal), Snackbar.LENGTH_LONG).show()
+                Snackbar.make(it, getString(R.string.parametres), Snackbar.LENGTH_LONG).show()
             }
         }
     }
