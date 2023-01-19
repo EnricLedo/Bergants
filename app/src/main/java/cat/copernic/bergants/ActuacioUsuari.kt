@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import cat.copernic.bergants.adapter.ActuacioRecyclerAdapter
+import cat.copernic.bergants.adapter.ActuacioRecyclerAdapterUser
 import cat.copernic.bergants.databinding.FragmentActuacioBinding
 import cat.copernic.bergants.databinding.FragmentActuacioUsuariBinding
 import cat.copernic.bergants.model.ActuacioModel
@@ -24,7 +25,7 @@ class ActuacioUsuari : Fragment() {
 
     private lateinit var binding: FragmentActuacioUsuariBinding
 
-    private val myAdapter: ActuacioRecyclerAdapter = ActuacioRecyclerAdapter()
+    private val myAdapter: ActuacioRecyclerAdapterUser = ActuacioRecyclerAdapterUser()
 
     //Declarem i incialitzem un atribut de tipus FirebaseFirestore, classe on trobarem els mètodes per treballar amb la base de dades Firestore
     private var bd =
@@ -44,15 +45,15 @@ class ActuacioUsuari : Fragment() {
         if (list_multable.isEmpty()) {
             mostrarActuacions() //Executem la funció de suspensió
         } else {
-            binding.recyclerActuacions.setHasFixedSize(true)
+            binding.recyclerActuacionsUsuari!!.setHasFixedSize(true)
 
             //indiquem que el RV es mostrarà en format llista
-            binding.recyclerActuacions.layoutManager = LinearLayoutManager(context)
+            binding.recyclerActuacionsUsuari!!.layoutManager = LinearLayoutManager(context)
 
             //generem el adapter
-            myAdapter.ActuacioRecyclerAdapter(list_multable, requireActivity())
+            myAdapter.ActuacioRecyclerAdapterUser(list_multable, requireActivity())
             //assignem el adapter al RV
-            binding.recyclerActuacions.adapter = myAdapter
+            binding.recyclerActuacionsUsuari!!.adapter = myAdapter
         }
     }
 
@@ -113,7 +114,7 @@ class ActuacioUsuari : Fragment() {
         //Visibilitzem el shimmer per a fer l'animació de carrega abans de mostrar el recycler
         binding.shimmerViewRvActuacions.visibility = View.VISIBLE
         //Desactivem la visibilitat del recyclerNoticies mentre carreguen els items
-        binding.recyclerActuacions.visibility = View.GONE
+        binding.recyclerActuacionsUsuari!!.visibility = View.GONE
         //Activem el shimmer per l'animació de carregar
         binding.shimmerViewRvActuacions.startShimmer()
         //Aquest codi utilitza la base de dades Firebase Firestore per recuperar una col·lecció de
@@ -147,17 +148,17 @@ class ActuacioUsuari : Fragment() {
                             }
                         }
                     }
-                    binding.recyclerActuacions.layoutManager = LinearLayoutManager(context)
+                    binding.recyclerActuacionsUsuari!!.layoutManager = LinearLayoutManager(context)
                     //generem el adapter
-                    myAdapter.ActuacioRecyclerAdapter(list_multable, requireActivity())
+                    myAdapter.ActuacioRecyclerAdapterUser(list_multable, requireActivity())
                     //assignem el adapter al RV
-                    binding.recyclerActuacions.adapter = myAdapter
+                    binding.recyclerActuacionsUsuari!!.adapter = myAdapter
                     //ara que han carregat els items del recycler ja podem parar el shimmer
                     binding.shimmerViewRvActuacions.stopShimmer()
                     //també desactivem la visibilitat del shimmer
                     binding.shimmerViewRvActuacions.visibility = View.GONE
                     //activem la visibilitat del recycler, ja que l'haviem desactivat anteriorment
-                    binding.recyclerActuacions.visibility = View.VISIBLE
+                    binding.recyclerActuacionsUsuari!!.visibility = View.VISIBLE
                 }
             }
         }
