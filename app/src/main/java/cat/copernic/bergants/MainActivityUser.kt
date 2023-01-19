@@ -26,6 +26,7 @@ import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import org.checkerframework.checker.units.qual.m
 
+@Keep
 class MainActivityUser : AppCompatActivity() {
     //Atribut de tipus Button per tancar la sessió
     //private lateinit var botoLogout: Button
