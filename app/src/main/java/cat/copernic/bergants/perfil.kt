@@ -65,28 +65,17 @@ class perfil : Fragment() {
 
         carregarImatge()
         val currentUser = auth.currentUser!!.email.toString()
-        val db = FirebaseFirestore.getInstance()
-        val docRef = db.collection("Membres").document(currentUser)
-        val newValue = "new value"
-        val newValue2 = "new value"
-        val newValue3 = "new value"
-        val newValue4 = "new value"
-        docRef.set(mapOf("malnom" to newValue))
-            .addOnSuccessListener {
-                nomPerfil.text = newValue
-            }
-        docRef.set(mapOf("malnomenric" to newValue))
-            .addOnSuccessListener {
-                malnomenric.text = newValue2
-            }
-        docRef.set(mapOf("rolMembre" to newValue))
-            .addOnSuccessListener {
-                rolenric.text = newValue3
-            }
-        docRef.set(mapOf("altaMembre" to newValue))
-            .addOnSuccessListener {
-                dataenric.text = newValue4
-            }
+        val database = FirebaseFirestore.getInstance()
+        val collectionReference = database.collection("Membres")
+        val documentReference = collectionReference.document("currentUser")
+        documentReference.get().addOnSuccessListener { documentSnapshot ->
+            val field = documentSnapshot.getString("malnomenric")
+            nomPerfil.setText(field)
+            val field2 = documentSnapshot.getString("rolMembre")
+            rolenric.setText(field2)
+            val field3 = documentSnapshot.getString("altaMembre")
+            dataenric.setText(field3)
+        }
     }
 
     private fun carregarImatge(){
