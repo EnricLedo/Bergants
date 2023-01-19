@@ -22,7 +22,7 @@
         android:shape="ring"
         android:src="@drawable/avatar"
         android:thicknessRatio="1.9"
-        app:cardCornerRadius="25dp"
+        app:cardCornerRadius="38dp"
         android:contentDescription="@string/foto_del_bergant"
         app:layout_constraintBottom_toTopOf="@+id/nomMembre"
         app:layout_constraintEnd_toEndOf="parent"
