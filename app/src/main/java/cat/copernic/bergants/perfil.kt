@@ -65,9 +65,6 @@ class perfil : Fragment() {
 
         carregarImatge()
         val currentUser = auth.currentUser!!.email.toString()
-        val db = FirebaseFirestore.getInstance()
-
-
         val database = FirebaseFirestore.getInstance()
         val collectionReference = database.collection("Membres")
         val documentReference = collectionReference.document("currentUser")
