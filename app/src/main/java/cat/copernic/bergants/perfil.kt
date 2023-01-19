@@ -65,7 +65,7 @@ class perfil : Fragment() {
         auth = Firebase.auth
         val currentUser = auth.currentUser
 
-        var adrecaImatge = storageRef.child(currentUser.toString())
+        var adrecaImatge = storageRef.child("imatge/membre/"+currentUser.toString())
         var fitxerTemporal = File.createTempFile("temp", null)
         adrecaImatge.getFile(fitxerTemporal).addOnSuccessListener{
             val mapaBits = BitmapFactory.decodeFile(fitxerTemporal.absolutePath)
