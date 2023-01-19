@@ -69,7 +69,7 @@ class perfil : Fragment() {
         val collectionReference = database.collection("Membres")
         val documentReference = collectionReference.document(currentUser)
         documentReference.get().addOnSuccessListener { documentSnapshot ->
-            val field = documentSnapshot.getString("malnomenric")
+            val field = documentSnapshot.getString("nomMembre")
             nomPerfil.setText(field)
             val field2 = documentSnapshot.getString("rolMembre")
             rolenric.setText(field2)
