@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:contentDescription="@string/fotoEnric"
-            android:src="@drawable/fotoenric" />
+            android:src="@drawable/avatar" />
     </androidx.cardview.widget.CardView>
 
     <TextView
