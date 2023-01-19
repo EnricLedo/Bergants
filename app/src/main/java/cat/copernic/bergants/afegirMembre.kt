@@ -260,7 +260,8 @@ class afegirMembre : Fragment() {
             llegirDades()
             var correuMembre = correuMembre.text.toString()
             var passwordOkMembre = passwordOkMembre.text.toString()
-            if (correuMembre.isNotEmpty()&&passwordOkMembre.isNotEmpty()){
+            val emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$"
+            if (correuMembre.matches(Regex(emailRegex))&&passwordOkMembre.isNotEmpty()){
                 registrar(correuMembre, passwordOkMembre,)
             }else {
                 Snackbar.make(it, getString(R.string.correuMal), Snackbar.LENGTH_LONG).show()
