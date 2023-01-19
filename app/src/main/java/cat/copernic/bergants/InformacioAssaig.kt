@@ -28,7 +28,7 @@ class InformacioAssaig : Fragment() {
     //Declarem i incialitzem un atribut de tipus FirebaseFirestore, classe on trobarem els mètodes per treballar amb la base de dades Firestore
     private var bd = FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
 
-    //private val args by navArgs<InformacioAssaigArgs>()
+    private val args by navArgs<InformacioAssaigArgs>()
 
     /**
 
@@ -44,12 +44,11 @@ class InformacioAssaig : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentInformacioAssaigBinding.inflate(inflater, container, false)
-/*
+
         binding.TitolAssaig.setText(args.currentAssaig.titolAssaig)
         binding.ubicacioAssaig.setText(args.currentAssaig.llocAssaig)
         binding.dataAssaig.setText(args.currentAssaig.dataAssaig)
 
- */
         return binding.root
     }
 }

@@ -178,7 +178,7 @@
             app:popEnterAnim="@anim/pop_enter_anim"
             app:popExitAnim="@anim/pop_exit_anim"/>
         <action
-            android:id="@+id/action_informacio_actuacio_fragment_to_editar_actuacio"
+            android:id="@+id/ambiguity"
             app:destination="@id/editar_actuacio"
             app:enterAnim="@anim/enter_anim"
             app:exitAnim="@anim/exit_anim"
@@ -194,6 +194,7 @@
                 android:name="ubicacioActuacio"
                 app:argType="string" />
         </action>
+
     </fragment>
     <fragment
         android:id="@+id/afegir_membre_fragment"
