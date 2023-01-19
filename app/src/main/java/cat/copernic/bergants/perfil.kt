@@ -2,16 +2,20 @@ package cat.copernic.bergants
 
 import android.graphics.BitmapFactory
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.Keep
+import androidx.fragment.app.Fragment
 import cat.copernic.bergants.databinding.FragmentPerfilBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
@@ -49,6 +53,8 @@ class perfil : Fragment() {
         return binding.root
     }
 
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         nomPerfil = binding.nomPerfil
@@ -58,8 +64,29 @@ class perfil : Fragment() {
         fotoEnric = binding.fotoEnric
 
         carregarImatge()
-        val currentUser = auth.currentUser
-
+        val currentUser = auth.currentUser!!.email.toString()
+        val db = FirebaseFirestore.getInstance()
+        val docRef = db.collection("Membres").document(currentUser)
+        val newValue = "new value"
+        val newValue2 = "new value"
+        val newValue3 = "new value"
+        val newValue4 = "new value"
+        docRef.set(mapOf("malnom" to newValue))
+            .addOnSuccessListener {
+                nomPerfil.text = newValue
+            }
+        docRef.set(mapOf("malnomenric" to newValue))
+            .addOnSuccessListener {
+                malnomenric.text = newValue2
+            }
+        docRef.set(mapOf("rolMembre" to newValue))
+            .addOnSuccessListener {
+                rolenric.text = newValue3
+            }
+        docRef.set(mapOf("altaMembre" to newValue))
+            .addOnSuccessListener {
+                dataenric.text = newValue4
+            }
     }
 
     private fun carregarImatge(){
