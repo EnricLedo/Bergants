@@ -1,6 +1,7 @@
 package cat.copernic.bergants
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -133,6 +134,20 @@ class AfegirActuacio : Fragment() {
         llocActuacio = binding.llocActuacio
         botoAfegir = binding.botoGuardarActuacio
 
+        //creem el bundle
+        val bundle = arguments
+
+        if(bundle == null){
+            Log.d("Confirmation","Fragment didn't receive info")
+            return
+        }
+
+        val args = afegir_actuacio_busArgs.fromBundle(bundle)
+
+        binding.titolActuacio.setText(args.titolActuacio)
+        binding.dataActuacio.setText(args.dataActuacio)
+        binding.llocActuacio.setText(args.ubicacioActuacio)
+
         //Hi ha dos botons, un amb l'identificador "autocarBoolean" i l'altre "botoAfegir"
         //
         //Quan l'usuari fa clic al botó amb l'identificador "autocarBoolean" navega a un altre fragment
@@ -146,7 +161,19 @@ class AfegirActuacio : Fragment() {
         val btnAddBus = requireView().findViewById<Button>(R.id.autocarBoolean)
 
         btnAddBus.setOnClickListener{
-            findNavController().navigate(R.id.action_afegir_actuacio_fragment_to_afegir_actuacio_bus_fragment)
+            llegirDades()
+            var actuacio = llegirDades()
+            if(actuacio.titolActuacio?.isNotEmpty() == true && actuacio.dataActuacio?.isNotEmpty() == true && actuacio.llocActuacio?.isNotEmpty() == true) {
+                val directions =
+                    AfegirActuacioDirections.actionAfegirActuacioFragmentToAfegirActuacioBusFragment(
+                        titolActuacio.text.toString(),
+                        dataActuacio.text.toString(),
+                        llocActuacio.text.toString()
+                    )
+                findNavController().navigate(directions)
+            } else{
+                Snackbar.make(it, getString(R.string.parametres), Snackbar.LENGTH_LONG).show()
+            }
         }
 
         botoAfegir.setOnClickListener {

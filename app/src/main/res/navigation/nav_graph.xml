@@ -133,7 +133,32 @@
             app:enterAnim="@anim/enter_anim"
             app:exitAnim="@anim/exit_anim"
             app:popEnterAnim="@anim/pop_enter_anim"
-            app:popExitAnim="@anim/pop_exit_anim"/>
+            app:popExitAnim="@anim/pop_exit_anim" >
+            <argument
+                android:name="titolActuacio"
+                app:argType="string" />
+            <argument
+                android:name="dataActuacio"
+                app:argType="string" />
+            <argument
+                android:name="ubicacioActuacio"
+                app:argType="string" />
+        </action>
+        <argument
+            android:name="titolActuacio"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="dataActuacio"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="ubicacioActuacio"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
     </fragment>
     <fragment
         android:id="@+id/afegir_noticia_fragment"
@@ -259,13 +284,41 @@
             app:exitAnim="@anim/exit_anim"
             app:popEnterAnim="@anim/pop_enter_anim"
             app:popExitAnim="@anim/pop_exit_anim"/>
+
+        <argument
+            android:name="titolActuacio"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="dataActuacio"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="ubicacioActuacio"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+
         <action
             android:id="@+id/action_afegir_actuacio_bus_fragment_to_afegir_actuacio_fragment"
             app:destination="@id/afegir_actuacio_fragment"
             app:enterAnim="@anim/enter_anim"
             app:exitAnim="@anim/exit_anim"
             app:popEnterAnim="@anim/pop_enter_anim"
-            app:popExitAnim="@anim/pop_exit_anim"/>
+            app:popExitAnim="@anim/pop_exit_anim" >
+            <argument
+                android:name="titolActuacio"
+                app:argType="string" />
+            <argument
+                android:name="dataActuacio"
+                app:argType="string" />
+            <argument
+                android:name="ubicacioActuacio"
+                app:argType="string" />
+        </action>
+
     </fragment>
     <fragment
         android:id="@+id/informacio_assaig_admin_pinyes"

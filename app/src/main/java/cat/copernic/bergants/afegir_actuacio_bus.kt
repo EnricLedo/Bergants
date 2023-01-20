@@ -3,6 +3,7 @@ package cat.copernic.bergants
 import android.os.Bundle
 import android.content.Intent
 import android.icu.lang.UCharacter.GraphemeClusterBreak.L
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +13,9 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.Keep
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
+import cat.copernic.bergants.afegir_actuacio_busDirections.ActionAfegirActuacioBusFragmentToAfegirActuacioFragment
 import cat.copernic.bergants.databinding.FragmentAfegirActuacioBusBinding
 import cat.copernic.bergants.model.ActuacioBusModel
 import cat.copernic.bergants.model.BusModel
@@ -56,7 +59,8 @@ class afegir_actuacio_bus : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
         binding = FragmentAfegirActuacioBusBinding.inflate(inflater, container, false)
-
+        val actionBar = (activity as AppCompatActivity).supportActionBar
+        actionBar?.setDisplayHomeAsUpEnabled(false)
         return binding.root
     }
 
@@ -172,6 +176,21 @@ class afegir_actuacio_bus : Fragment() {
         placesBus = binding.placesAutocar
         botoAfegir = binding.botoGuardarActuacio
 
+        //creem el bundle
+        val bundle = arguments
+
+        if(bundle == null){
+            Log.d("Confirmation","Fragment didn't receive info")
+            return
+        }
+
+        val args = afegir_actuacio_busArgs.fromBundle(bundle)
+
+        binding.titolActuacio.setText(args.titolActuacio)
+        binding.dataActuacio.setText(args.dataActuacio)
+        binding.llocActuacio.setText(args.ubicacioActuacio)
+
+        //extraiem els args des del bundle
         autocar = arrayListOf()
 
         //Aquest codi configura dos oients de clic per a dos botons diferents en un fragment.
@@ -185,13 +204,27 @@ class afegir_actuacio_bus : Fragment() {
         val btnNoBus = requireView().findViewById<Button>(R.id.autocarBoolean)
 
         btnNoBus.setOnClickListener{
-            findNavController().navigate(R.id.action_afegir_actuacio_bus_fragment_to_afegir_actuacio_fragment)
+            llegirDades()
+            var actuacio = llegirDades()
+            if(actuacio.titolActuacio?.isNotEmpty() == true && actuacio.dataActuacio?.isNotEmpty() == true && actuacio.llocActuacio?.isNotEmpty() == true) {
+                val directions =
+                    afegir_actuacio_busDirections.actionAfegirActuacioBusFragmentToAfegirActuacioFragment(
+                        titolActuacio.text.toString(),
+                        dataActuacio.text.toString(),
+                        llocActuacio.text.toString()
+                    )
+                findNavController().navigate(directions)
+            } else{
+                Snackbar.make(it, getString(R.string.parametres), Snackbar.LENGTH_LONG).show()
+            }
         }
 
         botoAfegir.setOnClickListener {
             llegirDades()
             var actuacio = llegirDades() //Actuacio introduida per l'usuari
-            if (actuacio.titolActuacio?.isNotEmpty() == true && actuacio.dataActuacio?.isNotEmpty() == true && actuacio.llocActuacio?.isNotEmpty() == true) {
+            if (actuacio.titolActuacio?.isNotEmpty() == true && actuacio.dataActuacio?.isNotEmpty() == true
+                && actuacio.llocActuacio?.isNotEmpty() == true && ubicacioBus.text.toString().isNotEmpty()
+                && horariBus.text.toString().isNotEmpty() && placesBus.text.toString().isNotEmpty()) {
                 afegirActuacio(actuacio)
                 findNavController().navigate(R.id.action_afegir_actuacio_bus_fragment_to_actuacions_fragment)
             } else {
