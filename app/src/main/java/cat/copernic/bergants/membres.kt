@@ -133,7 +133,6 @@ class membres : Fragment() {
                             date = document["altaMembre"].toString(),
                             admin= true,
                             foto= bd.collection("imatge/membre/admin@gmail.com").toString()
-
                         )
                         if (list_multable.isEmpty()) {
                             list_multable.add(wallItem)
