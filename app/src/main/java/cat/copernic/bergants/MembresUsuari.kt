@@ -42,7 +42,7 @@ class MembresUsuari : Fragment() {
         binding.recyclerMembres.layoutManager = LinearLayoutManager(context)
 
         //generem el adapter
-        myAdapter.MembreRecyclerAdapter(getMembres(),requireActivity())
+        myAdapter.MembreRecyclerAdapter(list_multable,requireActivity())
         //assignem el adapter al RV
         binding.recyclerMembres.adapter = myAdapter
         //}
