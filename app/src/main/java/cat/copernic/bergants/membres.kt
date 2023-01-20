@@ -120,7 +120,6 @@ class membres : Fragment() {
     private fun mostrarMembres() {
         val storage = FirebaseStorage.getInstance()
         val storageRef = storage.reference
-        val imageRef = storageRef.child("imatge/membre/example.jpg")
         lifecycleScope.launch {
             withContext(Dispatchers.IO){
                 bd.collection("Membres").get().addOnSuccessListener { documents ->
