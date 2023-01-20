@@ -17,6 +17,7 @@ import cat.copernic.bergants.model.AssaigModel
 import cat.copernic.bergants.model.MembreModel
 import cat.copernic.bergants.model.NoticiaModel
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -117,6 +118,9 @@ class membres : Fragment() {
     }
 
     private fun mostrarMembres() {
+        val storage = FirebaseStorage.getInstance()
+        val storageRef = storage.reference
+        val imageRef = storageRef.child("imatge/membre/example.jpg")
         lifecycleScope.launch {
             withContext(Dispatchers.IO){
                 bd.collection("Membres").get().addOnSuccessListener { documents ->
@@ -132,7 +136,7 @@ class membres : Fragment() {
                             rol = document["rolMembre"].toString(),
                             date = document["altaMembre"].toString(),
                             admin= true,
-                            foto= "https://firebasestorage.googleapis.com/v0/b/bergants-dam.appspot.com/o/imatge%2Fmembre%2Fadmin%40gmail.com?alt=media&token=fa014a1f-1fc5-4d67-9531-b7412a906b1a"
+                            foto= storageRef.child("imatge/membre/"+document["correuMembre"]).toString()
                         )
                         if (list_multable.isEmpty()) {
                             list_multable.add(wallItem)
