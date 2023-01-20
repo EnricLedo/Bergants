@@ -159,9 +159,10 @@ class afegirMembre : Fragment() {
         var correuMembre = correuMembre.text.toString()
         var adrecaMembre = adrecaMembre.text.toString()
         var adminMembre = adminMembre.isChecked
+        var fotoMembre = bd.collection("Membres").toString()
 
         return MembreModel(nomMembre, malnom, alcadaEspatlles, alcadaMans, correuMembre,
-            adrecaMembre, telefonMembre, rolMembre, altaMembre, adminMembre)
+            adrecaMembre, telefonMembre, rolMembre, altaMembre, adminMembre, fotoMembre)
     }
 
     /**
