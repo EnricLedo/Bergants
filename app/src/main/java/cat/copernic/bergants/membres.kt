@@ -132,7 +132,7 @@ class membres : Fragment() {
                             rol = document["rolMembre"].toString(),
                             date = document["altaMembre"].toString(),
                             admin= true,
-                            foto= bd.collection("imatge/membre/admin@gmail.com").toString()
+                            foto= "https://firebasestorage.googleapis.com/v0/b/bergants-dam.appspot.com/o/imatge%2Fmembre%2Fadmin%40gmail.com?alt=media&token=fa014a1f-1fc5-4d67-9531-b7412a906b1a"
                         )
                         if (list_multable.isEmpty()) {
                             list_multable.add(wallItem)
