@@ -135,7 +135,7 @@ class membres : Fragment() {
                             rol = document["rolMembre"].toString(),
                             date = document["altaMembre"].toString(),
                             admin= true,
-                            foto= storageRef.child("imatge/membre/"+document["correuMembre"]).toString()
+                            foto= storageRef.child("imatge/membre/"+document["correuMembre"].toString()+".jpeg").toString()
                         )
                         if (list_multable.isEmpty()) {
                             list_multable.add(wallItem)
