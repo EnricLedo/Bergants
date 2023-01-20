@@ -8,16 +8,17 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import cat.copernic.bergants.Membre
 import cat.copernic.bergants.databinding.DisenyMembreBinding
+import cat.copernic.bergants.model.MembreModel
 import coil.api.load
 import com.google.firebase.storage.FirebaseStorage
 
 @Keep
 class MembreRecyclerAdapter: RecyclerView.Adapter<MembreRecyclerAdapter.ViewHolder>() {
-    var membres: MutableList<Membre> = ArrayList()
+    var membres: MutableList<MembreModel> = ArrayList()
     lateinit var context: Context
 
     //constructor de la classe on es passa la font de dades i el context sobre el que es mostrarà
-    fun MembreRecyclerAdapter(membreList:MutableList<Membre>, contxt: Context){
+    fun MembreRecyclerAdapter(membreList:MutableList<MembreModel>, contxt: Context){
         this.membres = membreList
         this.context = contxt
     }
@@ -91,7 +92,7 @@ class MembreRecyclerAdapter: RecyclerView.Adapter<MembreRecyclerAdapter.ViewHold
     // ViewHolder.
     class ViewHolder(val binding: DisenyMembreBinding): RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(membre: Membre) {
+        fun bind(membre: MembreModel) {
 
         }
 
