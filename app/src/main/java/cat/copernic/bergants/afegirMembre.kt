@@ -2,6 +2,7 @@ package cat.copernic.bergants
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -18,6 +19,8 @@ import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.Keep
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import cat.copernic.bergants.databinding.FragmentAfegirMembreBinding
 import cat.copernic.bergants.model.MembreModel
@@ -27,6 +30,11 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.withContext
+import java.io.File
 
 @Keep
 class afegirMembre : Fragment() {
@@ -80,6 +88,11 @@ class afegirMembre : Fragment() {
         result: ActivityResult ->
         if (result.resultCode == Activity.RESULT_OK){
             photoSelectedUri = result.data?.data //Assignem l'URI de la imatge
+            lifecycleScope.launch {
+                withContext(Dispatchers.IO){
+                    afegirImatge()
+                }
+            }
         }
     }
 
@@ -87,35 +100,76 @@ class afegirMembre : Fragment() {
     private var bd =
         FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
 
+
+
+    /**
+     * Método que se encarga de cargar la imagen del perfil del usuario en caso de ya estar creada.
+     * Se utiliza el método getFile de la clase FirebaseStorage para obtener la imagen almacenada en el servidor.
+     * Se utiliza un archivo temporal para almacenar la imagen obtenida y se convierte en un bitmap para poder mostrarla en la interfaz.
+     * En caso de error se maneja dentro del catch.
+     */
+    suspend fun carregarImatge() {
+            val adrecaImatge = storageRef.child(correuMembre.toString())
+            val localfile = File.createTempFile("temp", null)
+            val task = adrecaImatge.getFile(localfile).await()
+            try {
+                (task)
+                val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
+                binding.imgMembre.setImageBitmap(bitmap)
+            } catch (e: Exception) {
+                // maneja el error aquí
+            }
+    }
+
     /**
 
     Aquest mètode utilitza la variable guardarImatge per obrir la galeria d'imatges del dispositiu i seleccionar una imatge.
     Després, utilitza Firebase Storage per pujar la imatge seleccionada i guardar-la en una ubicació específica dins del
     repositori. Mostra un missatge Toast per confirmar que la imatge s'ha pujat amb èxit.
      */
-    private fun afegirImatge(){
-
-        if(correuMembre.text.toString().isNullOrEmpty()){
-            Snackbar.make(requireView(), getString(R.string.correuFoto), Snackbar.LENGTH_LONG).show()
-        }else {
-            //Obrim la galeria
-            guardarImatge.launch(
-                Intent(
-                    Intent.ACTION_PICK,
-                    MediaStore.Images.Media.EXTERNAL_CONTENT_URI
+    private suspend fun afegirImatge(){
+        lifecycleScope.launch {
+            if (correuMembre.text.toString().isNullOrEmpty()) {
+                Snackbar.make(requireView(), getString(R.string.correuFoto), Snackbar.LENGTH_LONG)
+                    .show()
+            } else {
+                //Obrim la galeria
+                /**
+                guardarImatge.launch(
+                    Intent(
+                        Intent.ACTION_PICK,
+                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI
+                    )
                 )
-            )
-            storageRef = storage.reference.child("imatge/membre/")
-                .child(correuMembre.text.toString()) //si el user no ecribe ningun correo petara ya que no tiene id
-            //Afegim la imatge seleccionada a storage
-            photoSelectedUri?.let { uri ->
-                storageRef.putFile(uri)
-                    .addOnSuccessListener {
-                        Toast.makeText(context, "La imatge s'ha pujat amb èxit", Toast.LENGTH_LONG)
-                            .show()
-                    }
+                */
+                storageRef = storage.reference.child("imatge/membre/")
+                    .child(correuMembre.text.toString()) //si el user no ecribe ningun correo no se accede ya que no tiene id
+                //Afegim la imatge seleccionada a storage
+                photoSelectedUri?.let { uri ->
+                    storageRef.putFile(uri).await()
+                            Toast.makeText(
+                                context,
+                                "La imatge s'ha pujat amb èxit",
+                                Toast.LENGTH_LONG
+                            )
+                                .show()
+                }
             }
         }
+    }
+
+    /**
+     * Función que permite abrir la galería de imágenes del dispositivo para seleccionar una imagen.
+     * Utiliza el método launch de la clase guardarImgCamera para abrir la galería y seleccionar una imagen.
+     */
+    fun obrirImatge() {
+        //Obrim la galeria per seleccionar la imatge  //Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI
+        guardarImatge.launch(
+            Intent(
+                Intent.ACTION_PICK,
+                MediaStore.Images.Media.EXTERNAL_CONTENT_URI
+            )
+        )
     }
 
     /**
@@ -128,10 +182,6 @@ class afegirMembre : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
         binding = FragmentAfegirMembreBinding.inflate(inflater, container, false)
-        imgMembre = binding.imgMembre
-        imgMembre.setOnClickListener{
-            afegirImatge()
-        }
         return binding.root
     }
 
@@ -245,6 +295,21 @@ class afegirMembre : Fragment() {
         passwordOkMembre = binding.passwordOkMembre
         imgMembre =  binding.imgMembre
 
+        //metode per carregar l'imatge si ya esta creada
+        if(!correuMembre.text.toString().isNullOrEmpty()) {
+            lifecycleScope.launch {
+                withContext(Dispatchers.IO) {
+                    carregarImatge()
+                }
+            }
+        }
+        imgMembre.setOnClickListener{
+            lifecycleScope.launch {
+                withContext(Dispatchers.Main) {
+                    obrirImatge()
+                }
+            }
+        }
         //Aquest codi està configurant un onClickListener per a un botó (botoAfegir) a Kotlin. Quan es
         // fa clic al botó, el codi executarà primer la funció "llegirDades()" que recull l'entrada de
         // l'usuari d'un formulari i crea una instància de la classe "MembreModel".
