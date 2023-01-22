@@ -16,6 +16,7 @@ import cat.copernic.bergants.databinding.FragmentNoticiaCanviBinding
 import cat.copernic.bergants.model.AssaigModel
 import cat.copernic.bergants.model.MembreModel
 import cat.copernic.bergants.model.NoticiaModel
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
@@ -121,50 +122,36 @@ class membres : Fragment() {
 
     private fun mostrarMembres() {
         lifecycleScope.launch {
-            withContext(Dispatchers.IO){
-                bd.collection("Membres").get().addOnSuccessListener { documents ->
+            try {
+                withContext(Dispatchers.IO) {
+                    val documents = bd.collection("Membres").get().await()
                     for (document in documents) {
-                        val storageRef = Firebase.storage.reference.child("imatge/membre/"+document["correuMembre"].toString())
-                        val urlTask = storageRef.downloadUrl
-                        urlTask.addOnSuccessListener { url ->
-                            // Do something with the download URL
-                            val wallItem = MembreModel(
-                                name = document["nomMembre"].toString(),
-                                malname = document["malnom"].toString(),
-                                espatlles = document["alcadaEspatlles"].toString(),
-                                mans = document["alcadaMans"].toString(),
-                                email = document["correuMembre"].toString(),
-                                adress = document["adrecaMembre"].toString(),
-                                telefon = document["telefonMembre"].toString(),
-                                rol = document["rolMembre"].toString(),
-                                date = document["altaMembre"].toString(),
-                                admin= true,
-                                foto= url.toString()
-                            )
-                        if (list_multable.isEmpty()) {
+                        val storageRef = Firebase.storage.reference.child("imatge/membre/${document["correuMembre"]}")
+                        val url = storageRef.downloadUrl.await()
+                        val wallItem = MembreModel(
+                            name = document["nomMembre"].toString(),
+                            malname = document["malnom"].toString(),
+                            espatlles = document["alcadaEspatlles"].toString(),
+                            mans = document["alcadaMans"].toString(),
+                            email = document["correuMembre"].toString(),
+                            adress = document["adrecaMembre"].toString(),
+                            telefon = document["telefonMembre"].toString(),
+                            rol = document["rolMembre"].toString(),
+                            date = document["altaMembre"].toString(),
+                            admin = true,
+                            foto = url.toString()
+                        )
+                        if (!list_multable.any { it.nomMembre == wallItem.nomMembre }) {
                             list_multable.add(wallItem)
-                        } else {
-                            var contador = 0
-                            for (i in list_multable) {
-                                if (wallItem.nomMembre == i.nomMembre) {
-                                    contador++
-                                }
-                            }
-                            if(contador <1){
-                                list_multable.add(wallItem)
-                            }
                         }
                     }
-                    //indiquem que el RV es mostrarà en format llista
                     binding.recyclerMembres.layoutManager = LinearLayoutManager(context)
-
-                    //generem el adapter
-                    myAdapter.MembreRecyclerAdapter(list_multable,requireActivity())
-                    //assignem el adapter al RV
+                    myAdapter.MembreRecyclerAdapter(list_multable, requireActivity())
                     binding.recyclerMembres.adapter = myAdapter
                 }
+            } catch (e: Exception) {
+
             }
         }
-    }
     }
 }
