@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/actuacions_fragment"
+        android:title="@string/actuacions_menu" />
+
+    <item
+        android:id="@+id/assajos_fragment"
+        android:title="@string/assajos_menu"/>
+
+    <item
+        android:id="@+id/noticia_fragment"
+        android:title="@string/noticies_menu"/>
+
+    <item
+        android:id="@+id/membres_fragment"
+        android:title="@string/membres_menu"/>
+
+    <item
+        android:id="@+id/perfil_fragment"
+        android:title="@string/perfil_menu"/>
+
+    <item
+        android:id="@+id/configuracio_fragment"
+        android:title="@string/configuracio_menu"/>
+
+</menu>

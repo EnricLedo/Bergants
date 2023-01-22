@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InfoActuacioUsuaris">
+
+    <TextView
+        android:id="@+id/TitolActuacio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nomActuacio"
+        android:textSize="@dimen/TitolActuacio23sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <ImageView
+        android:id="@+id/iconaAutocar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/autocar45"
+        app:layout_constraintTop_toTopOf="@id/botoSiVinc"
+        app:layout_constraintBottom_toBottomOf="@id/botoSiVinc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/iconaCotxe"
+        android:contentDescription="@string/acces_autocar" />
+
+    <TextView
+        android:id="@+id/autocarText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/info_autocar"
+        android:textSize="@dimen/LletraNormal16sp"
+        app:layout_constraintEnd_toEndOf="@+id/iconaAutocar"
+        app:layout_constraintStart_toStartOf="@+id/iconaAutocar"
+        app:layout_constraintTop_toBottomOf="@id/iconaAutocar"/>
+
+    <ImageView
+        android:id="@+id/iconaCotxe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/cotxe50"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintTop_toTopOf="@id/botoSiVinc"
+        app:layout_constraintBottom_toBottomOf="@id/botoSiVinc"
+        app:layout_constraintStart_toEndOf="@id/iconaAutocar"
+        app:layout_constraintEnd_toStartOf="@id/botoSiVinc"
+        android:contentDescription="@string/acces_cotxes" />
+
+    <TextView
+        android:id="@+id/cotxeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cotxe"
+        android:textSize="@dimen/LletraNormal16sp"
+        app:layout_constraintEnd_toEndOf="@+id/iconaCotxe"
+        app:layout_constraintStart_toStartOf="@+id/iconaCotxe"
+        app:layout_constraintTop_toBottomOf="@id/iconaCotxe"/>
+
+    <ImageView
+        android:id="@+id/botoSiVinc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MargeTopInformacio150dpInformacio"
+        android:src="@drawable/calendari_si56"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintEnd_toStartOf="@+id/botoNoVinc"
+        app:layout_constraintStart_toEndOf="@id/iconaCotxe"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/confirmar_assistencia"/>
+
+    <TextView
+        android:id="@+id/vincText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/vinc"
+        android:textSize="@dimen/LletraNormal16sp"
+        app:layout_constraintEnd_toEndOf="@+id/botoSiVinc"
+        app:layout_constraintStart_toStartOf="@+id/botoSiVinc"
+        app:layout_constraintTop_toBottomOf="@id/botoSiVinc"/>
+
+    <ImageView
+        android:id="@+id/botoNoVinc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MargeTopInformacio150dpInformacio"
+        android:src="@drawable/calendari_no56"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/botoSiVinc"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/rebutjar_assistencia" />
+
+
+    <TextView
+        android:id="@+id/noVincText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/noVinc"
+        android:textSize="@dimen/LletraNormal16sp"
+        app:layout_constraintEnd_toEndOf="@+id/botoNoVinc"
+        app:layout_constraintStart_toStartOf="@+id/botoNoVinc"
+        app:layout_constraintTop_toBottomOf="@id/botoNoVinc" />
+
+    <ImageView
+        android:id="@+id/iconaRellotge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MargeTopIconaRellotge250dp"
+        android:layout_marginEnd="@dimen/MargeDretaRellotge15dp"
+        android:src="@drawable/rellotge24"
+        app:layout_constraintEnd_toStartOf="@id/DataActuacio"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/hora_inici" />
+
+    <TextView
+        android:id="@+id/DataActuacio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/horaActuacio"
+        android:textSize="@dimen/LletraNormal16sp"
+        app:layout_constraintBottom_toBottomOf="@id/iconaRellotge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iconaRellotge"
+        app:layout_constraintTop_toTopOf="@id/iconaRellotge" />
+
+    <ImageView
+        android:id="@+id/iconaUbicacio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MargeTopIconaUbicacio280dp"
+        android:layout_marginEnd="@dimen/MargeDretaRellotge15dp"
+        android:src="@drawable/ubicacio24"
+        app:layout_constraintEnd_toStartOf="@+id/ubicacioActuacio"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/lloc_esdeveniment" />
+
+    <TextView
+        android:id="@+id/ubicacioActuacio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ubicacioActuacio"
+        android:textSize="@dimen/LletraNormal16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iconaUbicacio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iconaUbicacio"
+        app:layout_constraintTop_toTopOf="@+id/iconaUbicacio" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

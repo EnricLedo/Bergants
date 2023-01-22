@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/marginpag"
+    tools:context=".actuacio">
+
+    <TextView
+        android:id="@+id/temporada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/temporada_2022"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/sizeTablet"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view_rv_actuacions"
+        android:layout_width="match_parent"
+        android:layout_marginTop="40dp"
+        android:layout_height="1131dp"
+        app:layout_constraintTop_toBottomOf="@+id/temporada"
+        android:visibility="gone"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/shimmer_layout_actuacions">
+
+            </include>
+
+            <include layout="@layout/shimmer_layout_actuacions">
+
+            </include>
+
+            <include layout="@layout/shimmer_layout_actuacions">
+
+            </include>
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerActuacions"
+        android:layout_width="match_parent"
+        android:layout_marginTop="40dp"
+        android:layout_height="1131dp"
+        app:layout_constraintTop_toBottomOf="@+id/temporada"
+        tools:layout_editor_absoluteX="27dp"
+        tools:listitem="@layout/diseny_actuacio" />
+
+    <Button
+        android:id="@+id/botoAfegirActuacio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="120dp"
+        android:minHeight="120dp"
+        android:layout_marginEnd="@dimen/marginpag"
+        android:layout_marginBottom="@dimen/separaciomig"
+        android:background="@drawable/round_button"
+        android:gravity="center"
+        android:text="@string/afegir"
+        android:textColor="@color/blanc"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/grisFosc"
+        android:textSize="25sp"
+        android:text="@string/fes_clic_a_sobre_d_una_actuaci_per_a_poder_editar_o_eliminar_ho"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerActuacions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temporada" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

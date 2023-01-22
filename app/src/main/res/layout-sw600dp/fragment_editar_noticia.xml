@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/frameLayout4"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".editar_noticia">
+
+
+    <TextView
+        android:id="@+id/editarTitol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginpag"
+        android:layout_marginTop="@dimen/marginpag"
+        android:layout_marginEnd="@dimen/marginpag"
+        android:text="@string/inputtitoledit"
+        android:textColor="@color/negre"
+        android:textStyle="bold"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/editarNoticia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/DimensioPaperera48dp"
+        android:minWidth="300dp"
+        android:layout_marginStart="@dimen/marginpag"
+        android:layout_marginEnd="@dimen/marginpag"
+        android:text="@string/inputnoticiaedit"
+        android:inputType="textMultiLine"
+        android:textSize="@dimen/sizeTablet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editarTitol"/>
+
+    <EditText
+        android:id="@+id/editarData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minWidth="300dp"
+        android:layout_marginStart="@dimen/marginpag"
+        android:layout_marginEnd="@dimen/marginpag"
+        android:minHeight="@dimen/DimensioPaperera48dp"
+        android:text="27-10-22 9:27"
+        android:inputType="datetime"
+        android:textSize="@dimen/sizeTablet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editarNoticia"/>
+
+    <Button
+        android:id="@+id/botoEditarNoticia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/marginpag"
+        android:text="@string/botoguardar"
+        android:textSize="@dimen/sizeTablet"
+        android:textColor="@color/blanc"
+        android:layout_marginBottom="@dimen/separaciomig"
+        android:backgroundTint="@color/verdBergant"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/botoEliminarNoticia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/MargePapereraEsquerra20dp"
+        android:layout_marginBottom="@dimen/MargeDretaRellotge15dp"
+        android:text="@string/eliminar2"
+        android:textSize="@dimen/sizeTablet"
+        android:textColor="@color/blanc"
+        android:backgroundTint="@color/vermellEliminar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

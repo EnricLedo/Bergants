@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".afegirMembre">
+
+
+    <ImageButton
+        android:id="@+id/imgMembre"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="@dimen/marginlateralfoto"
+        android:layout_marginTop="@dimen/MargePapereraEsquerra20dp"
+        android:layout_marginEnd="@dimen/marginendfoto"
+        android:layout_marginBottom="@dimen/separacio"
+        android:gravity="center"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:shape="ring"
+        android:src="@drawable/avatar"
+        android:thicknessRatio="1.9"
+        app:cardCornerRadius="38dp"
+        android:contentDescription="@string/foto_del_bergant"
+        app:layout_constraintBottom_toTopOf="@+id/nomMembre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/nomMembre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/separacio"
+        android:gravity="center"
+        android:hint="@string/nomMembre"
+        android:textColorHint="@color/grisFosc"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/titlesize"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgMembre" />
+
+    <TextView
+        android:id="@+id/MALNOM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginpag"
+        android:layout_marginTop="@dimen/separacio"
+        android:text="@string/malnom"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/secondtitlesize"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nomMembre" />
+
+    <TextView
+        android:id="@+id/administrador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/separacio"
+        android:layout_marginEnd="@dimen/marginpag"
+        android:layout_marginBottom="@dimen/separacio"
+        android:text="@string/administrador"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/secondtitlesize"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/adminMembre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nomMembre" />
+
+    <EditText
+        android:id="@+id/malnomMembre"
+        android:layout_width="wrap_content"
+        android:minWidth="170dp"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/DimensioPaperera48dp"
+        android:layout_marginStart="@dimen/marginpag"
+        android:layout_marginTop="@dimen/separacio"
+        android:layout_marginBottom="@dimen/separacio"
+        android:hint="@string/malnom_membre"
+        android:textColorHint="@color/grisFosc"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/espatlles"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MALNOM" />
+
+    <TextView
+        android:id="@+id/espatlles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginpag"
+        android:layout_marginTop="@dimen/separacio"
+        android:text="@string/espatlles"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/secondtitlesize"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/malnomMembre" />
+
+    <TextView
+        android:id="@+id/mans"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/separacio"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="@dimen/separacio"
+        android:text="@string/mans"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/secondtitlesize"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/mansMembre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adminMembre" />
+
+    <EditText
+        android:id="@+id/espatllesMembre"
+        android:layout_width="wrap_content"
+        android:minWidth="170dp"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/DimensioPaperera48dp"
+        android:layout_marginStart="@dimen/marginpag"
+        android:layout_marginTop="@dimen/separacio"
+        android:layout_marginBottom="@dimen/separacio"
+        android:hint="@string/inputalçada"
+        android:textColorHint="@color/grisFosc"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/espatlles" />
+
+    <EditText
+        android:id="@+id/mansMembre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/separacio"
+        android:layout_marginEnd="4dp"
+        android:hint="@string/inputalçada"
+        android:inputType="number"
+        android:minWidth="@dimen/smallinputwidth"
+        android:minHeight="@dimen/DimensioPaperera48dp"
+        android:textColorHint="@color/grisFosc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mans" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:minWidth="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginpag"
+        android:layout_marginTop="@dimen/separacio"
+        android:layout_marginEnd="@dimen/marginpag"
+        android:text="@string/correu"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/secondtitlesize"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/espatllesMembre" />
+
+    <EditText
+        android:id="@+id/correuMembre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="370dp"
+        android:minHeight="@dimen/DimensioPaperera48dp"
+        android:layout_marginStart="@dimen/marginpag"
+        android:layout_marginTop="@dimen/separacio"
+        android:layout_marginEnd="@dimen/marginpag"
+        android:layout_marginBottom="@dimen/marginpag"
+        android:hint="@string/inputcorreu"
+        android:textColorHint="@color/grisFosc"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/adreca"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
+
+    <Button
+        android:id="@+id/botoGuardarMembre"
+        android:layout_width="wrap_content"
+        android:minWidth="@dimen/AmpleBotoGuardar150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="28dp"
+        android:backgroundTint="@color/verdBergant"
+        android:text="@string/botoafegir"
+        android:textColor="@color/blanc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rolMembre"
+        android:textStyle="bold"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/adreca"
+        android:layout_width="wrap_content"
+        android:minWidth="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginpag"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="@dimen/marginpag"
+        android:text="@string/adreca"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/secondtitlesize"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/correuMembre" />
+
+    <EditText
+        android:id="@+id/adrecaMembre"
+        android:layout_width="wrap_content"
+        android:minWidth="170dp"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/DimensioPaperera48dp"
+        android:layout_marginStart="@dimen/marginpag"
+        android:layout_marginTop="@dimen/separacio"
+        android:layout_marginEnd="@dimen/marginpag"
+        android:layout_marginBottom="@dimen/separacio"
+        android:hint="@string/inputadreca"
+        android:textColorHint="@color/grisFosc"
+        android:inputType="textPostalAddress"
+        app:boxBackgroundColor="@color/blanc"
+        app:layout_constraintBottom_toTopOf="@+id/telefon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adreca" />
+
+    <TextView
+        android:id="@+id/passwordOk"
+        android:layout_width="wrap_content"
+        android:minWidth="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginpag"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="@dimen/marginpag"
+        android:text="@string/contrasenya"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/secondtitlesize"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/correuMembre" />
+
+    <EditText
+        android:id="@+id/passwordOkMembre"
+        android:layout_width="wrap_content"
+        android:minWidth="170dp"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/DimensioPaperera48dp"
+        android:layout_marginStart="@dimen/MargeEsquerra"
+        android:layout_marginTop="@dimen/separacio"
+        android:layout_marginEnd="@dimen/MargeEsquerra"
+        android:layout_marginBottom="@dimen/separacio"
+        android:hint="@string/afegir_contrasenya"
+        android:textColorHint="@color/grisFosc"
+        app:boxBackgroundColor="@color/blanc"
+        app:layout_constraintBottom_toTopOf="@+id/telefon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.984"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adreca"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/telefonMembre"
+        android:layout_width="wrap_content"
+        android:minWidth="170dp"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/DimensioPaperera48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/inputTelefon"
+        android:textColorHint="@color/grisFosc"
+        android:inputType="phone"
+        android:maxLength="9"
+        app:boxBackgroundColor="@color/blanc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/telefon" />
+
+    <TextView
+        android:id="@+id/telefon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/numerotel"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/secondtitlesize"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adrecaMembre" />
+
+    <TextView
+        android:id="@+id/rol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/separacio"
+        android:layout_marginBottom="@dimen/separacio"
+        android:text="@string/rol"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/secondtitlesize"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rolMembre"
+        app:layout_constraintStart_toEndOf="@+id/telefon"
+        app:layout_constraintTop_toBottomOf="@+id/adrecaMembre" />
+
+    <TextView
+        android:id="@+id/dataAlta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/data_alta"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/secondtitlesize"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/telefonMembre" />
+
+    <EditText
+        android:id="@+id/altaMembre"
+        android:layout_width="wrap_content"
+        android:minWidth="170dp"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/DimensioPaperera48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
+        android:hint="@string/dd_mm_aaaa"
+        android:textColorHint="@color/grisFosc"
+        android:inputType="date"
+        app:boxBackgroundColor="@color/blanc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dataAlta" />
+
+    <EditText
+        android:id="@+id/rolMembre"
+        android:layout_width="wrap_content"
+        android:minWidth="170dp"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/DimensioPaperera48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/inputrol"
+        android:textColorHint="@color/grisFosc"
+        android:inputType="text"
+        app:boxBackgroundColor="@color/blanc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rol" />
+
+    <CheckBox
+        android:id="@+id/adminMembre"
+        android:layout_width="@dimen/switchwidth"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/separacio"
+        android:layout_marginEnd="@dimen/marginpagebtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/administrador"
+        tools:ignore="UseSwitchCompatOrMaterialXml"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

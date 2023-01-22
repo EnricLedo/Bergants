@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".editar_actuacio"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="8dp"
+    android:padding="@dimen/MargePapereraEsquerra20dp">
+
+
+    <TextView
+        android:id="@+id/titolActuacio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/separacio"
+        android:text="@string/edit_titol_actuacio"
+        android:textSize="35dp"
+        android:textColor="@color/negre"
+        android:textStyle="bold"
+        android:minHeight="@dimen/DimensioPaperera48dp"
+        app:layout_constraintTop_toTopOf="parent"  />
+
+    <TextView
+        android:id="@+id/dateActuacio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MargePapereraEsquerra20dp"
+        android:text="@string/edit_data_actuacio"
+        android:textColor="@color/grisFosc"
+        android:textSize="@dimen/sizeTablet"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/titolActuacio" />
+
+    <EditText
+        android:id="@+id/dataActuacio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/separacio"
+        android:text="@string/edit_data_hora_actuacio"
+        android:textSize="@dimen/sizeTablet"
+        android:inputType="datetime"
+        android:minHeight="@dimen/DimensioPaperera48dp"
+        app:layout_constraintTop_toBottomOf="@id/dateActuacio" />
+
+    <TextView
+        android:id="@+id/ubicacioActuacio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/MargePapereraEsquerra20dp"
+        android:text="@string/UbicacioTitol"
+        android:textColor="@color/grisFosc"
+        android:textSize="@dimen/sizeTablet"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/dataActuacio" />
+
+    <EditText
+        android:id="@+id/llocActuacio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/separacio"
+        android:text="@string/edit_lloc_actuacio"
+        android:inputType="text"
+        android:textSize="@dimen/sizeTablet"
+        android:minHeight="@dimen/DimensioPaperera48dp"
+        app:layout_constraintTop_toBottomOf="@id/ubicacioActuacio" />
+
+    <Button
+        android:id="@+id/botoEliminarActuacio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/MargePapereraEsquerra20dp"
+        android:layout_marginBottom="@dimen/MargeDretaRellotge15dp"
+        android:text="@string/delete"
+        android:textSize="@dimen/sizeTablet"
+        android:textColor="@color/blanc"
+        android:backgroundTint="@color/vermellEliminar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/botoEditarActuacio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/marginpag"
+        android:text="@string/botoguardar"
+        android:textSize="@dimen/sizeTablet"
+        android:textColor="@color/blanc"
+        android:backgroundTint="@color/verdBergant"
+        android:layout_marginBottom="@dimen/separaciomig"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

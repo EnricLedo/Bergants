@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    tools:context=".perfil">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/fotoPerfil"
+        android:layout_width="@dimen/widthfoto"
+        android:layout_height="@dimen/heightfoto"
+        android:layout_marginStart="@dimen/marginendfoto"
+        android:layout_marginTop="@dimen/margintopfoto"
+        android:layout_marginEnd="@dimen/marginendfoto"
+        android:gravity="center"
+        android:shape="ring"
+        android:thicknessRatio="1.9"
+        app:cardCornerRadius="@dimen/cornerradius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/fotoEnric"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/heightfoto"
+            android:contentDescription="@string/fotoEnric"
+            android:src="@drawable/avatar" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/nomPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginpag"
+        android:gravity="center"
+        android:text="@string/nomPerfil"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/titlesize"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fotoPerfil" />
+
+    <TextView
+        android:id="@+id/MALNOM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginpag"
+        android:text="@string/malnom"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/secondtitlesize"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nomPerfil" />
+
+    <TextView
+        android:id="@+id/malnomenric"
+        android:layout_width="match_parent"
+        android:minWidth="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginpag"
+        android:text="@string/malnomenric"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/secondtitlesize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MALNOM" />
+
+    <TextView
+        android:id="@+id/rolenric"
+        android:layout_width="match_parent"
+        android:minWidth="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginpag"
+        android:text="@string/rolnomenric"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/secondtitlesize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/malnomenric" />
+
+    <TextView
+        android:id="@+id/dataalta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginpag"
+        android:layout_marginBottom="@dimen/marginpag"
+        android:text="@string/dataalta"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/secondtitlesize"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/dataenric"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rolenric" />
+
+    <TextView
+        android:id="@+id/dataenric"
+        android:layout_width="match_parent"
+        android:minWidth="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginpag"
+        android:text="@string/dataenric"
+        android:textColor="@color/negre"
+        android:textSize="@dimen/secondtitlesize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dataalta" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
