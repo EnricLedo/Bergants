@@ -39,6 +39,15 @@ class editar_noticia : Fragment() {
 
     private val args by navArgs<editar_noticiaArgs>()
 
+    /**
+
+    Aquest mètode és cridat quan es crea la vista del fragment.
+    Infla el layout del fragment, inicialitza les variables de la classe, i configura els valors de les views amb les dades de la notícia passada com a argument.
+    @param inflater inflador de layout
+    @param container contenidor del fragment
+    @param savedInstanceState bundle amb dades de l'estat anterior del fragment
+    @return retorna la vista del fragment
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
@@ -51,6 +60,11 @@ class editar_noticia : Fragment() {
         return binding.root
     }
 
+    /**
+
+    Aquesta funció llegeix les dades introduïdes per l'usuari i les retorna en un objecte NoticiaModel.
+    @return Retorna un objecte NoticiaModel amb les dades introduïdes per l'usuari.
+     */
     fun llegirDades(): NoticiaModel {
         //Guardem les dades introduïdes per l'usuari
         var titolNoticia = titolNoticia.text.toString()
@@ -59,9 +73,15 @@ class editar_noticia : Fragment() {
 
         return NoticiaModel(titolNoticia, contingutNoticia, dataNoticia)
     }
+
     //Funció que modificarà una noticia amb la noticia passada per paràmetre. Per fer la modificació, l'identificador del document
     //passat per paràmetre ha de coincidir amb un dels identificadors dels documents que ja estan afegits a la col.lecció, si no el crearà de nou.
     //Això ho podem fer servir quan necessitem modificar tots els parells clau-valor d'un document que existeix dins la col.lecció.
+    /**
+
+    Aquesta funció modifica una noticia existent en la base de dades a través del seu títol.
+    @param noticia Noticia amb les dades modificades per actualitzar en la base de dades.
+     */
     fun modificarNoticia(noticia: NoticiaModel){
         bd.collection("Noticies").document(titolNoticia.text.toString()).set(
             hashMapOf(
@@ -70,6 +90,10 @@ class editar_noticia : Fragment() {
                 "dataNoticia" to dataNoticia.text.toString()
             )
         )
+            //Aquest codi està afegint oients d'èxit i fracàs a una tasca asíncrona. Si la tasca té
+            // èxit, crea un AlertDialog amb un missatge "noticiaCorrect" que té un sol botó "Acceptar"
+            // i el mostra. A continuació, crida al mètode de notificació. Si la tasca no té èxit,
+            // crea un AlertDialog amb un missatge que té un sol botó "Acceptar" i el mostra.
             .addOnSuccessListener {
                 val builder = AlertDialog.Builder(requireContext())
                 builder.setMessage(getString(R.string.editNoticia))
@@ -87,9 +111,18 @@ class editar_noticia : Fragment() {
     }
 
     //Eliminar la noticia corresponent al titol passat com a paràmetre. L'eliminarà si existeix.
+    /**
+
+    Aquesta funció elimina una noticia de la base de dades a través del seu títol.
+    @param titolNoticia Títol de la noticia a eliminar.
+     */
     fun eliminarNoticia(titolNoticia:String){
         bd.collection("Noticies").document(titolNoticia)
             .delete()
+            //Aquest codi està afegint oients d'èxit i fracàs a una tasca asíncrona. Si la tasca té
+            // èxit, crea un AlertDialog amb un missatge que té un sol botó "Acceptar"
+            // i el mostra. A continuació, crida al mètode de notificació. Si la tasca no té èxit,
+            // crea un AlertDialog amb un missatge que té un sol botó "Acceptar" i el mostra.
             .addOnSuccessListener {
                 //S'ha modificat la noticia...
                 val builder = AlertDialog.Builder(requireContext())
@@ -107,6 +140,13 @@ class editar_noticia : Fragment() {
             }
     }
 
+    /**
+
+    Aquest mètode és cridat quan s'ha creat la vista del fragment.
+    Inicialitza les variables de la classe i configura el comportament dels botons d'editar i eliminar.
+    @param view Vista del fragment
+    @param savedInstanceState Bundle amb dades de l'estat anterior del fragment.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         titolNoticia = binding.editarTitol

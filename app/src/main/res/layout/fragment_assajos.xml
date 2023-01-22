@@ -63,8 +63,10 @@
 
     <Button
         android:id="@+id/botoAfegirAssaig"
-        android:layout_width="@dimen/btncircle"
-        android:layout_height="@dimen/btncircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/MargeEsquerra60dpLogin"
+        android:minWidth="@dimen/MargeEsquerra60dpLogin"
         android:layout_marginEnd="@dimen/marginpag"
         android:layout_marginBottom="@dimen/separaciomig"
         android:background="@drawable/round_button"
@@ -74,5 +76,18 @@
         android:textSize="@dimen/txtcircle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/grisFosc"
+        android:textSize="13sp"
+        android:text="@string/fes_clic_a_sobre_d_un_assaig_per_a_poder_editar_o_eliminar_ho"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerAssajos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temporada" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <!-- Permissos perquè l'aplicació accedeixi a Internet -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- Permissos perquè l'aplicació accedeixi a Internet -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
@@ -14,10 +14,21 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:screenOrientation="portrait"
-        android:usesCleartextTraffic="true"
         android:supportsRtl="true"
         android:theme="@style/Theme.Bergants"
+        android:usesCleartextTraffic="true"
+        android:background="@color/blanc"
         tools:targetApi="31">
+        <activity
+            android:name=".MainActivityUser"
+            android:exported="false"
+            android:label="@string/title_activity_main_user"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
 
         <meta-data
             android:name="android.app.lib_name"
@@ -26,9 +37,8 @@
         <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity
             android:name=".SplashActivity"
             android:exported="true"
@@ -42,14 +52,12 @@
         </activity>
         <activity
             android:name=".RecuperarContrasenya"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".Login"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Bergants"></activity>
-
+            android:theme="@style/Theme.Bergants" />
     </application>
 
 </manifest>

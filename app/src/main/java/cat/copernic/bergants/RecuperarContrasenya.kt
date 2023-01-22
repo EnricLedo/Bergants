@@ -26,6 +26,11 @@ class RecuperarContrasenya : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
+    /**
+
+    Aquesta funció s'executa en la creació de l'activity. Es crea el binding per a l'activity i s'assigna la vista.
+    Es defineix un listener per al botó "Editar" que recupera la contrasenya de l'usuari. Si l'usuari ha introduït el correu, es fa una crida al mètode restaurarContrasenya, el qual enviarà un missatge de restauració a l'adreça de correu introduïda per l'usuari. Si no s'ha introduït cap correu, mostra una notificació per a que l'usuari introduisca una adreça de correu.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRecuperarContrasenyaBinding.inflate(layoutInflater)
@@ -53,6 +58,16 @@ class RecuperarContrasenya : AppCompatActivity() {
         }
     }
 
+    /**
+
+    Aquesta funció envia un correu de restabliment de contrasenya a l'adreça de correu passada per paràmetre.
+
+    Utilitza el mètode sendPasswordResetEmail de Firebase Authentication per enviar el correu de restabliment de contrasenya.
+
+    Si la tasca té èxit, mostra un missatge de Snackbar a l'usuari que indica que el restabliment de la contrasenya s'ha realitzat correctament i navega a l'activitat d'inici de sessió.
+
+    Si la tasca no té èxit, mostra un missatge de Snackbar a l'usuari que indica que el restabliment de la contrasenya no ha tingut èxit.
+     */
     fun restaurarContrasenya(correu: String){
 
         //Li indiquem al sistema en quin llenguatge ha de ser el correu de restauració de contrasenya que li enviarem a l'usuari. En el nostre cas català ("ca")
@@ -61,6 +76,12 @@ class RecuperarContrasenya : AppCompatActivity() {
         //Enviem a l'usuari el correu d'autenticació al correu passat per paràmetre. Aquest mètode comprova que el correu sigui el correu d'un dels registres.
         auth.sendPasswordResetEmail(correu).addOnCompleteListener { task ->
 
+            //Si la tasca té èxit, mostra un missatge de Snackbar a l'usuari que indica que el restabliment
+            // de la contrasenya s'ha realitzat correctament i navega a l'activitat d'inici de sessió
+            // creant un Intent i trucant a startActivity. També crida al mètode finish() per alliberar
+            // la memòria de l'activitat actual.
+            //Si la tasca no té èxit, mostra un missatge de Snackbar a l'usuari que indica que el
+            // restabliment de la contrasenya no ha tingut èxit.
             if(task.isSuccessful){
                 Snackbar.make(passwordpage,getString(R.string.restaurar),Snackbar.LENGTH_LONG).show()
                 startActivity(Intent(this,Login::class.java))

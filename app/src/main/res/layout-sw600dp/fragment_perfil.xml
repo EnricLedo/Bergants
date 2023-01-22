@@ -5,6 +5,7 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="15dp"
     tools:context=".perfil">
 
     <androidx.cardview.widget.CardView
@@ -27,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:contentDescription="@string/fotoEnric"
-            android:src="@drawable/fotoenric" />
+            android:src="@drawable/avatar" />
     </androidx.cardview.widget.CardView>
 
     <TextView
@@ -48,8 +49,8 @@
         android:id="@+id/MALNOM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/marginpag"
-        android:layout_marginTop="@dimen/marginpag"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
         android:text="@string/malnom"
         android:textColor="@color/negre"
         android:textSize="@dimen/sizeTablet"
@@ -59,29 +60,31 @@
 
     <TextView
         android:id="@+id/malnomenric"
-        android:layout_width="@dimen/fullwidth"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/marginpag"
-        android:layout_marginTop="@dimen/marginpag"
-        android:layout_marginEnd="@dimen/marginpag"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="32dp"
+        android:minWidth="@dimen/fullwidth"
         android:text="@string/malnomenric"
         android:textColor="@color/negre"
         android:textSize="@dimen/sizeTablet"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.037"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/MALNOM" />
 
     <TextView
         android:id="@+id/rolenric"
-        android:layout_width="@dimen/fullwidth"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/marginpag"
-        android:layout_marginTop="@dimen/marginpag"
-        android:layout_marginEnd="@dimen/marginpag"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="32dp"
+        android:minWidth="@dimen/fullwidth"
         android:text="@string/rolnomenric"
         android:textColor="@color/negre"
         android:textSize="@dimen/sizeTablet"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.037"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/malnomenric" />
 
@@ -89,8 +92,8 @@
         android:id="@+id/dataalta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/marginpag"
-        android:layout_marginTop="@dimen/marginpag"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
         android:layout_marginBottom="@dimen/marginpag"
         android:text="@string/dataalta"
         android:textColor="@color/negre"
@@ -102,15 +105,17 @@
 
     <TextView
         android:id="@+id/dataenric"
-        android:layout_width="@dimen/fullwidth"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/marginpag"
-        android:layout_marginTop="@dimen/marginpag"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="@dimen/marginpag"
+        android:minWidth="@dimen/fullwidth"
         android:text="@string/dataenric"
         android:textColor="@color/negre"
         android:textSize="@dimen/sizeTablet"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dataalta" />
 

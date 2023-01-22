@@ -36,12 +36,17 @@
     <style name="textSizeDrawer">
         <item name="android:textSize">@dimen/LletraNormal16sp</item>
     </style>
+    
+    <style name="Toolbar.TitleText" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">@dimen/TitolGordo18sp</item>
+    </style>
 
     <!-- TextInputLayout -->
     <style name="BergantsTextInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="boxStrokeColor">@color/verdBergant </item>
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/negre</item>
+        <item name="hintTextColor">@color/grisFosc</item>
         <item name="background">@color/grisClaretGentApuntada</item>
     </style>
 </resources>

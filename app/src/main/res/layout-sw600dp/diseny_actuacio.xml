@@ -18,8 +18,10 @@
 
         <TextView
             android:id="@+id/titleActuacio"
-            android:layout_width="795dp"
-            android:layout_height="97dp"
+            android:layout_width="match_parent"
+            android:minWidth="700dp"
+            android:layout_height="wrap_content"
+            android:minHeight="97dp"
             android:background="@color/grisClaretGentApuntada"
             android:gravity="center_vertical"
             android:text="FM DE FOSTON"
@@ -31,8 +33,8 @@
 
         <TextView
             android:id="@+id/dataActuacio"
-            android:layout_width="792dp"
-            android:layout_height="42dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Dissabte 24 de Setembre del 2022"
             android:textColor="@color/negre"
             android:textSize="@dimen/sizeTablet"

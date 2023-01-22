@@ -10,7 +10,7 @@
 
     <TextView
         android:id="@+id/editarTitol"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/marginpag"
         android:layout_marginTop="@dimen/marginpag"
@@ -27,6 +27,8 @@
         android:id="@+id/editarNoticia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minHeight="@dimen/DimensioPaperera48dp"
+        android:minWidth="300dp"
         android:layout_marginStart="@dimen/marginpag"
         android:layout_marginEnd="@dimen/marginpag"
         android:text="@string/inputnoticiaedit"
@@ -40,8 +42,10 @@
         android:id="@+id/editarData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minWidth="300dp"
         android:layout_marginStart="@dimen/marginpag"
         android:layout_marginEnd="@dimen/marginpag"
+        android:minHeight="@dimen/DimensioPaperera48dp"
         android:text="27-10-22 9:27"
         android:inputType="datetime"
         android:textSize="@dimen/sizeTablet"

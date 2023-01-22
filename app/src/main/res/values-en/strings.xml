@@ -99,7 +99,7 @@
     <string name="versio">App version</string>
     <string name="adrecacontacte">Contact address</string>
     <string name="suport">Support</string>
-    <string name="num">1.0</string>
+    <string name="num">4.1</string>
     <string name="contacte">info@bergants.cat</string>
     <string name="sup">" app@bergants.cat"</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -115,7 +115,7 @@
     <string name="malnomenric">Munalto</string>
     <string name="rolnomenric">Member</string>
     <string name="dataalta">BERGANT SINCE</string>
-    <string name="dataenric">10-23-2019</string>
+    <string name="dataenric">10–23–2019</string>
     <string name="eliminarcompte">Delete account</string>
     <string name="eliminarperfil">Delete profile</string>
     <string name="inputtitol">Add title</string>
@@ -124,7 +124,7 @@
     <string name="inputtitoledit">Mercè lunch</string>
     <string name="inputnoticiaedit">Badass! The castellers of Barcelona invite us to the lunch they organize after the Mercè performance. It takes place in the Clot park (next to its premises). Lunch is a fideuà and costs 6 euros, if you don\'t bring cutlery or glasses you have to buy them for 1 euro. There is a vegan option.     After lunch there will be a party!      Thank you so much.</string>
     <string name="botocheck">save</string>
-    <string name="check">Ok</string>
+    <string name="check">OK</string>
     <string name="imatgeactuacio">performancePicture</string>
     <string name="botodesivinc">ComingButton</string>
     <string name="botodenovinc">NotComingButton</string>
@@ -212,7 +212,7 @@
     <string name="assaigWrong">The rehearsal wasn\'t added</string>
     <string name="membreCorredct">The member was added</string>
     <string name="membreWrong">The member wasn\'t added</string>
-    <string name="correuMal">Missing mail and password!!!</string>
+    <string name="correuMal">You need to enter a valid email and password!!!</string>
     <string name="actuacioEdit">The performance was edited</string>
     <string name="actuacioNoEdit">The performance wasn\'t edited</string>
     <string name="eliminarActuacio">This performance has been deleted:</string>
@@ -256,4 +256,30 @@
     <string name="eliminar">DELETE</string>
     <string name="eliminar2">DELETE</string>
     <string name="sense_respostaok">NO REPLY</string>
+    <string name="_27_10_22_9_27">27–10–22 9:27</string>
+    <string name="acces_autocar">Bus Access</string>
+    <string name="acces_cotxes">Car Access</string>
+    <string name="confirmar_assistencia">Confirm assistance</string>
+    <string name="rebutjar_assistencia">Decline assistance</string>
+    <string name="hora_inici">Start time</string>
+    <string name="lloc_esdeveniment">Place of the event</string>
+    <string name="foto_del_bergant">Photo of the Bergant</string>
+    <string name="introdueix_el_correu_registrat">Enter registered email</string>
+    <string name="confirmar">CONFIRM</string>
+    <string name="introdueix_la_contrasenya_registrada">enter the registered password</string>
+    <string name="exemple_gmail_com">example@gmail.com</string>
+    <string name="password_exemple">abc123</string>
+    <string name="title_activity_main_user">MainActivityUser</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="correuFoto">You must fill in the empty fields before adding the photo!</string>
+    <string name="registre_tancat_per_a_crear_un_compte_comunicat_amb_algun_membre_de_l_equip_de_bergants">Registration closed. To create an account communicate with a member of the Bergants team.</string>
+    <string name="fes_clic_a_sobre_d_un_assaig_per_a_poder_editar_o_eliminar_ho">Click on a rehearsal to edit or delete it.</string>
+    <string name="fes_clic_a_sobre_d_una_actuaci_per_a_poder_editar_o_eliminar_ho">Click on a performance to edit or delete it.</string>
+    <string name="fes_clic_a_sobre_d_una_noticia_per_a_poder_editar_o_eliminar_ho">Click on a news item to edit or delete it.</string>
+    <string name="foto_required">A photo must be added for the member!</string>
 </resources>

@@ -23,6 +23,15 @@ class AssaigRecyclerAdapter : RecyclerView.Adapter<AssaigRecyclerAdapter.ViewHol
         this.context = contxt
     }
 
+    //Aquest és el codi del mètode onCreateViewHolder en una classe AssaigRecyclerAdapter. RecyclerView
+    // crida aquest mètode quan necessita un nou ViewHolder per mostrar un element.
+    //Crea un nou objecte ViewHolder inflant un disseny anomenat "DissenyAssaig" mitjançant el mètode
+    // LayoutInflater.from i passant al context del pare. A continuació, retorna l'objecte ViewHolder,
+    // que es crea cridant a DisenyAssaigBinding.inflate(layoutInflater, parent, false).
+    //S'utilitza per crear un nou objecte ViewHolder i inflar el disseny de cada element a la vista del
+    // recycler.
+    //S'encarrega de crear nous objectes ViewHolder i configurar la disposició de cada element a la vista
+    // del recycler.
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AssaigRecyclerAdapter.ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         return AssaigRecyclerAdapter.ViewHolder(
@@ -52,6 +61,19 @@ class AssaigRecyclerAdapter : RecyclerView.Adapter<AssaigRecyclerAdapter.ViewHol
         }
     }
 
+
+    //getItemCount(): retorna la mida de la llista d'assajos, que s'utilitza per determinar el nombre
+    // d'elements a la vista del reciclador.
+    //ViewHolder: és una classe interna de l'AssaigRecyclerAdapter. Crea un objecte ViewHolder que
+    // s'utilitza per mostrar les dades de cada element a la vista del reciclador.
+    //Té un únic constructor que pren un objecte DisenyAssaigBinding com a paràmetre i s'estén des de
+    // la classe RecyclerView.ViewHolder.
+    //Té un mètode anomenat bind, que pren un objecte AssaigModel com a paràmetre, aquest mètode
+    // s'utilitza per vincular les dades de l'objecte assaig a les vistes corresponents del fitxer de
+    // disseny que està associat amb l'objecte DisenyAssaigBinding passat al constructor.
+    //S'utilitza per vincular les dades d'un objecte AssaigModel a les vistes corresponents del fitxer
+    // de disseny.
+    //S'utilitza per mostrar les dades de cada element a la vista del recycler.
     override fun getItemCount(): Int {
         return assajos.size
     }

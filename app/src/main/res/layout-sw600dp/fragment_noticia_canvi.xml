@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/marginpag"
     tools:context=".noticia_canvi">
 
     <com.facebook.shimmer.ShimmerFrameLayout
@@ -44,21 +45,39 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerNoticies"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/diseny_noticia"/>
+        android:layout_height="1170dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/diseny_noticia" />
 
 
     <Button
         android:id="@+id/botoAfegirNoticia"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:minWidth="120dp"
+        android:minHeight="120dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="35dp"
         android:background="@drawable/round_button"
         android:gravity="center"
         android:text="@string/afegir"
         android:textColor="@color/blanc"
-        android:textSize="50dp"
+        android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/fes_clic_a_sobre_d_una_noticia_per_a_poder_editar_o_eliminar_ho"
+        android:textColor="@color/grisFosc"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerNoticies"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

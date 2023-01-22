@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph2"
+    app:startDestination="@id/id_noticies_usuari_fragment">
+    <fragment
+        android:id="@+id/id_noticies_usuari_fragment"
+        android:name="cat.copernic.bergants.noticiesUsuari"
+        android:label="@string/noticies"
+        tools:layout="@layout/fragment_noticies_usuari"/>
+    <fragment
+        android:id="@+id/id_actuacio_usuari_fragment"
+        android:name="cat.copernic.bergants.ActuacioUsuari"
+        android:label="@string/actuacions"
+        tools:layout="@layout/fragment_actuacio_usuari">
+        <action
+            android:id="@+id/action_actuacioUsuari_to_informacioActuacio"
+            app:destination="@id/fragment_informacio_actuacio_user"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/id_assaig_usuari_fragment"
+        android:name="cat.copernic.bergants.assaigUsuari"
+        android:label="@string/assajos"
+        tools:layout="@layout/fragment_assaig_usuari">
+        <action
+            android:id="@+id/action_assaigUsuari_to_fragment_informacio_assaig_user"
+            app:destination="@id/fragment_informacio_assaig_user"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_informacio_actuacio_user"
+        android:name="cat.copernic.bergants.InfoActuacioUsuaris"
+        android:label="@string/informacioActuacio"
+        tools:layout="@layout/fragment_info_actuacio_usuaris" >
+        <argument
+            android:name="CurrentActuacioUser"
+            app:argType="cat.copernic.bergants.model.ActuacioModel" />
+        <action
+            android:id="@+id/action_informacioActuacio_to_actuacioUsuari"
+            app:destination="@id/id_actuacio_usuari_fragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/id_perfil_fragment"
+        android:name="cat.copernic.bergants.perfil"
+        android:label="@string/perfil"
+        tools:layout="@layout/fragment_perfil" />
+    <fragment
+        android:id="@+id/id_configuracio_fragment"
+        android:name="cat.copernic.bergants.Configuracio"
+        android:label="@string/configuracio"
+        tools:layout="@layout/fragment_configuracio" />
+    <fragment
+        android:id="@+id/fragment_informacio_assaig_user"
+        android:name="cat.copernic.bergants.InformacioAssaig"
+        android:label="@string/informacioAssaig"
+        tools:layout="@layout/fragment_informacio_assaig" >
+        <argument
+            android:name="CurrentAssaigUser"
+            app:argType="cat.copernic.bergants.model.AssaigModel" />
+        <action
+            android:id="@+id/action_fragment_informacio_assaig_user_to_assaigUsuari"
+            app:destination="@id/id_assaig_usuari_fragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/id_membres_usuari_fragment"
+        android:name="cat.copernic.bergants.MembresUsuari"
+        android:label="@string/membre"
+        tools:layout="@layout/fragment_membres_usuari"/>
+</navigation>

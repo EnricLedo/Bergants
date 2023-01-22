@@ -89,7 +89,7 @@
     <string name="versio"> Versió de l\'aplicació</string>
     <string name="adrecacontacte"> Adreça de contacte</string>
     <string name="suport"> Suport</string>
-    <string name="num"> 1.0</string>
+    <string name="num">4.1</string>
     <string name="contacte"> info@bergants.cat</string>
     <string name="sup"> app@bergants.cat</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -208,13 +208,14 @@
     <string name="aceptar">Acceptar</string>
     <string name="noticiaWrong">La notícia no s\'ha afegit</string>
     <string name="parametres">Falta indroduir parametres!!!</string>
+    <string name="correuFoto">Cal omplir els camps buits abans d\'afegir la foto!</string>
     <string name="actuacioCorrect">L\'actuació s\'ha afegit correctament</string>
     <string name="actuacioWrong">L\'actuació no s\'ha afegit</string>
     <string name="assaigCorrect">L\'assaig s\'ha afegit correctament</string>
     <string name="assaigWrong">L\'assaig no s\'ha afegit</string>
     <string name="membreCorredct">El membre s\'ha afegit correctament</string>
     <string name="membreWrong">El membre no s\'ha afegit</string>
-    <string name="correuMal">Falta indroduir un correu i una contrasenya!!!</string>
+    <string name="correuMal">Falta introduir un correu i una contrasenya vàlid!!!</string>
     <string name="actuacioEdit">L\'actuació s\'ha editat correctament</string>
     <string name="actuacioNoEdit">L\'actuació no s\'ha editat</string>
     <string name="eliminarActuacio">S\'ha eliminat l\'actuacio amb titol</string>
@@ -258,4 +259,31 @@
     <string name="eliminar">ELIMINAR</string>
     <string name="eliminar2">ELIMINAR</string>
     <string name="sense_respostaok">SENSE RESPOSTA</string>
+    <string name="_27_10_22_9_27">27–10–22 9:27</string>
+    <string name="acces_autocar">Accés Autocar</string>
+    <string name="acces_cotxes">Accés Cotxes</string>
+    <string name="confirmar_assistencia">Confirmar assistència</string>
+    <string name="rebutjar_assistencia">Rebutjar assistència</string>
+    <string name="hora_inici">Hora d\'inici</string>
+    <string name="lloc_esdeveniment">Lloc de l\'esdeveniment</string>
+    <string name="foto_del_bergant">Foto del Bergant</string>
+    <string name="introdueix_el_correu_registrat">Introdueix el correu registrat</string>
+    <string name="confirmar">CONFIRMAR</string>
+    <string name="introdueix_la_contrasenya_registrada">Introdueix la contrasenya registrada</string>
+    <string name="exemple_gmail_com">exemple@gmail.com</string>
+    <string name="password_exemple">abc123</string>
+    <string name="title_activity_main_user">MainActivityUser</string>
+    <string name="foto_required">Cal afegir una foto pel membre!</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="registre_tancat_per_a_crear_un_compte_comunicat_amb_algun_membre_de_l_equip_de_bergants">Registre tancat. Per a crear un compte comunica\'t amb algun membre de l\'equip de Bergants.</string>
+    <string name="fes_clic_a_sobre_d_un_assaig_per_a_poder_editar_o_eliminar_ho">Fes clic a sobre d\'un assaig per a poder editar o eliminar-ho.</string>
+    <string name="fes_clic_a_sobre_d_una_actuaci_per_a_poder_editar_o_eliminar_ho">Fes clic a sobre d\'una actuació per a poder editar o eliminar-la.</string>
+    <string name="fes_clic_a_sobre_d_una_noticia_per_a_poder_editar_o_eliminar_ho">Fes clic a sobre d\'una notícia per a poder editar o eliminar-la.</string>
 </resources>

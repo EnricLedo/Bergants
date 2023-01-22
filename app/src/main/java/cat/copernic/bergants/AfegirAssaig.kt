@@ -40,6 +40,16 @@ class AfegirAssaig : Fragment() {
     private var bd =
         FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
 
+    /**
+
+    Aquest mètode s'executa quan la vista del fragment és creata. Utilitza la classe FragmentAfegirAssaigBinding
+    per inflar la vista del fragment i vincular-la a les dades del fragment.
+    Retorna la vista arrel del binding.
+    @param inflater inflador per utilitzar per inflar la vista del fragment
+    @param container contenidor on s'afegirà la vista del fragment
+    @param savedInstanceState bundle per guardar l'estat de l'aplicació
+    @return vista arrel del binding
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
@@ -48,6 +58,12 @@ class AfegirAssaig : Fragment() {
         return binding.root
     }
 
+    /**
+
+    Aquest mètode llegeix les dades introduïdes per l'usuari i les retorna en un objecte AssaigModel.
+    Les dades són les de titolAssaig, dataAssaig i llocAssaig.
+    @return objecte AssaigModel amb les dades introduïdes per l'usuari.
+     */
     fun llegirDades(): AssaigModel {
         //Guardem les dades introduïdes per l'usuari
         var titolAssaig = titolAssaig.text.toString()
@@ -57,6 +73,15 @@ class AfegirAssaig : Fragment() {
         return AssaigModel(titolAssaig, dataAssaig, llocAssaig)
     }
 
+    /**
+
+    Aquest mètode afegeix un assaig a la base de dades mitjançant Firestore.
+    Utilitza un objecte AssaigModel per obtenir les dades de l'assaig i les afegeix a la col·lecció "Assajos"
+    de la base de dades Firestore. Si l'assaig ja existeix, es sobreescriurà, sinó es crearà un de nou.
+    A més, si l'operació es completa amb èxit, es mostra un diàleg amb un missatge de confirmació i es crida
+    a la funció de notificació. Si l'operació falla, es mostra un diàleg amb un missatge d'error.
+    @param assaig objecte AssaigModel amb les dades de l'assaig a afegir
+     */
     fun afegirAssaig(assaig: AssaigModel) {
         //Seleccionem la col.lecció on volem afegir l'assaig mitjançant la funció collection("Assajos"), si no existeix la col.lecció
         //es crearà, si no la sobreescriurà. Afegim l'assaig a la col.lecció seleccionada amb un id que genera automàticament Firestore
@@ -68,6 +93,11 @@ class AfegirAssaig : Fragment() {
                 "llocAssaig" to llocAssaig.text.toString() //Atribut llocAssaig amb el valor introduït per l'usuari
             )
         )
+            //Aquest codi està afegint oients d'èxit i fracàs a una tasca asíncrona. Si la tasca té
+            // èxit, crea un AlertDialog amb un missatge "assaigCorrect" que té un sol botó "Acceptar"
+            // i el mostra. A continuació, crida al mètode de notificació amb els valors de "titolAssaig"
+            // i "llocAssaig" com a arguments. Si la tasca no té èxit, crea un AlertDialog amb un missatge
+            // "assaigWrong" que té un sol botó "Acceptar" i el mostra.
             .addOnSuccessListener {
                 val builder = AlertDialog.Builder(requireContext())
                 builder.setMessage(getString(R.string.assaigCorrect))
@@ -86,6 +116,18 @@ class AfegirAssaig : Fragment() {
             }
     }
 
+    /**
+
+    Aquest mètode s'executa quan la vista del fragment és creada. Inicialitza les variables per les dades de l'assaig i el botó per guardar l'assaig.
+
+    També configura el comportament del botó per guardar l'assaig. Si les dades de l'assaig estan completes, es desa i es navega a la pantalla de llista d'assajos.
+
+    Si les dades de l'assaig no estan completes, mostra un missatge d'error.
+
+    @param view vista del fragment
+
+    @param savedInstanceState bundle per guardar l'estat de l'aplicació
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -94,6 +136,14 @@ class AfegirAssaig : Fragment() {
         llocAssaig = binding.ubicacioAssaig
         botoAfegir = binding.botoGuardarAssaig
 
+        //Aquest codi està configurant un OnClickListener en un botó "botoAfegir". Quan es fa clic al
+        // botó, crida a una funció "llegirDades()", que llegeix algunes dades de la interfície d'usuari.
+        // A continuació, crea una variable "assaig" i li assigna el valor de retorn de "llegirDades()".
+        // A continuació, comprova si les propietats "titolAssaig", "dataAssaig", "llocAssaig" de l'objecte
+        // "assaig" no estan buides. Si totes les propietats no estan buides, crida a la funció
+        // "afegirAssaig(assaig)" i navega al fragment "assajos_fragment" mitjançant el
+        // "findNavController().navigate(R.id.action_afegir_assaig_fragment_to_assajos_fragment)". En cas
+        // contrari, mostra un Snackbar amb el missatge "paràmetres" a la pantalla.
         botoAfegir.setOnClickListener {
             llegirDades()
             var assaig = llegirDades() //Assaig introduït per l'usuari
@@ -106,12 +156,24 @@ class AfegirAssaig : Fragment() {
         }
     }
 
+    /**
+
+    Aquest mètode crea una notificació amb el títol i contingut especificats. Utilitza la classe NotificationCompat.Builder
+    per construir la notificació i configurar-la amb el títol, contingut i icona. Utilitza NotificationManagerCompat per mostrar
+    la notificació.
+    @param titol títol de la notificació
+    @param contingut contingut de la notificació
+     */
     private fun notification(titol:String, contingut:String) {
         val notification = NotificationCompat.Builder(requireContext(),"1").also{ noti ->
             noti.setContentTitle(titol)
             noti.setContentText(contingut)
             noti.setSmallIcon(R.drawable.logo_bergants)
         }.build()
+        //Aquest codi està creant un objecte NotificationManagerCompat i utilitza el mètode
+        // "from" per inicialitzar-lo amb el context actual. A continuació, utilitza el mètode
+        // "notificar" per mostrar una notificació amb un identificador 1 i l'objecte "notificació"
+        // com a contingut.
         val notificationManageer = NotificationManagerCompat.from(requireContext())
         notificationManageer.notify(1,notification)
     }

@@ -38,6 +38,18 @@ class AfegirNoticia : Fragment() {
     private var bd =
         FirebaseFirestore.getInstance() //Inicialitzem mitjançant el mètode getInstance() de FirebaseFirestore
 
+    /**
+
+    Mètode que s'executa quan es crea la vista del fragment.
+
+    @param inflater inflador per inflar la vista del fragment
+
+    @param container contenidor on s'afegirà la vista
+
+    @param savedInstanceState estat desat anteriorment (pot ser null)
+
+    @return retorna la vista generada
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -47,6 +59,12 @@ class AfegirNoticia : Fragment() {
         return binding.root
     }
 
+    /**
+
+    Aquesta funció llegeix les dades introduïdes per l'usuari i les guarda en variables.
+    Després, aquestes dades són passades a un objecte de la classe NoticiaModel.
+    @return Retorna un objecte de la classe NoticiaModel amb les dades introduïdes per l'usuari.
+     */
     fun llegirDades(): NoticiaModel {
         //Guardem les dades introduïdes per l'usuari
         var titolNoticia = titolNoticia.text.toString()
@@ -56,6 +74,11 @@ class AfegirNoticia : Fragment() {
         return NoticiaModel(titolNoticia, contingutNoticia, dataNoticia)
     }
 
+    /**
+
+    Aquesta funció afegeix una notícia a la base de dades mitjançant Firestore.
+    @param noticia: Objecte de la classe NoticiaModel que conté les dades de la notícia a afegir.
+     */
     fun afegirNoticia(noticia: NoticiaModel) {
         //Seleccionem la col.lecció on volem afegir la notícia mitjançant la funció collection("Noticies"), si no existeix la col.lecció
         //es crearà, si no la sobreescriurà. Afegim la notícia a la col.lecció seleccionada amb un id que genera automàticament Firestore
@@ -67,6 +90,11 @@ class AfegirNoticia : Fragment() {
                 "dataNoticia" to dataNoticia.text.toString() //Atribut dataNoticia amb el valor introduït per l'usuari
             )
         )
+            //Aquest codi està afegint oients d'èxit i fracàs a una tasca asíncrona. Si la tasca té
+            // èxit, crea un AlertDialog amb un missatge "assaigCorrect" que té un sol botó "Acceptar"
+            // i el mostra. A continuació, crida al mètode de notificació amb els valors de "titolAssaig"
+            // i "llocAssaig" com a arguments. Si la tasca no té èxit, crea un AlertDialog amb un missatge
+            // "assaigWrong" que té un sol botó "Acceptar" i el mostra.
             .addOnSuccessListener {
                 val builder = AlertDialog.Builder(requireContext())
                 builder.setMessage(getString(R.string.noticiaProva))
@@ -85,6 +113,14 @@ class AfegirNoticia : Fragment() {
             }
     }
 
+    /**
+
+    Aquest mètode s'executa quan la vista s'ha creat. Es configura un onClickListener per al botó "botoAfegir",
+    que recull les dades introduïdes per l'usuari, les valida i les afegeix a la base de dades mitjançant Firestore.
+    També navega l'usuari a un altre fragment.
+    @param view: Vista associada al fragment.
+    @param savedInstanceState: Bundle amb l'estat guardat anteriorment de la vista.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         titolNoticia = binding.titolNoticia
@@ -92,6 +128,14 @@ class AfegirNoticia : Fragment() {
         dataNoticia = binding.dataNoticia
         botoAfegir = binding.botoGuardarNoticia
 
+        //Aquest codi està configurant un onClickListener per a un botó (botoAfegir) a Kotlin. Quan
+        // es fa clic al botó, el codi executarà primer la funció "llegirDades()" que recull l'entrada
+        // de l'usuari d'un formulari i crea una instància de la classe "NoticiaModel".
+        //Aleshores comprovarà que tots els camps obligatoris del NoticiaModel no estiguin buits, si
+        // és així, cridarà a la funció "afegirNoticia(noticia)" i navegarà l'usuari a la pantalla
+        // "noticia_fragment". Si algun dels camps està buit, mostrarà un missatge de Snackbar amb la
+        // cadena "paràmetres", que probablement sigui un missatge d'error indicant a l'usuari que ompli
+        // els camps obligatoris.
         botoAfegir.setOnClickListener {
             llegirDades()
             var noticia = llegirDades() //Noticia introduida per l'usuari
@@ -103,12 +147,23 @@ class AfegirNoticia : Fragment() {
             }
         }
     }
+
+    /**
+
+    Aquesta funció crea una notificació amb el títol i el contingut passats per paràmetre.
+    @param titol: Títol de la notificació.
+    @param contingut: Contingut de la notificació.
+     */
     private fun notification(titol:String, contingut:String) {
         val notification = NotificationCompat.Builder(requireContext(),"1").also{ noti ->
             noti.setContentTitle(titol)
             noti.setContentText(contingut)
             noti.setSmallIcon(R.drawable.logo_bergants)
         }.build()
+        //Aquest codi està creant un objecte NotificationManagerCompat i utilitza el mètode
+        // "from" per inicialitzar-lo amb el context actual. A continuació, utilitza el mètode
+        // "notificar" per mostrar una notificació amb un identificador 1 i l'objecte "notificació"
+        // com a contingut.
         val notificationManageer = NotificationManagerCompat.from(requireContext())
         notificationManageer.notify(1,notification)
     }
