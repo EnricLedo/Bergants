@@ -126,19 +126,21 @@ class membres : Fragment() {
                     for (document in documents) {
                         val storageRef = Firebase.storage.reference.child("imatge/membre/"+document["correuMembre"].toString())
                         val urlTask = storageRef.downloadUrl
-                        val wallItem = MembreModel(
-                            name = document["nomMembre"].toString(),
-                            malname = document["malnom"].toString(),
-                            espatlles = document["alcadaEspatlles"].toString(),
-                            mans = document["alcadaMans"].toString(),
-                            email = document["correuMembre"].toString(),
-                            adress = document["adrecaMembre"].toString(),
-                            telefon = document["telefonMembre"].toString(),
-                            rol = document["rolMembre"].toString(),
-                            date = document["altaMembre"].toString(),
-                            admin= true,
-                            foto= urlTask.toString()
-                        )
+                        urlTask.addOnSuccessListener { url ->
+                            // Do something with the download URL
+                            val wallItem = MembreModel(
+                                name = document["nomMembre"].toString(),
+                                malname = document["malnom"].toString(),
+                                espatlles = document["alcadaEspatlles"].toString(),
+                                mans = document["alcadaMans"].toString(),
+                                email = document["correuMembre"].toString(),
+                                adress = document["adrecaMembre"].toString(),
+                                telefon = document["telefonMembre"].toString(),
+                                rol = document["rolMembre"].toString(),
+                                date = document["altaMembre"].toString(),
+                                admin= true,
+                                foto= url.toString()
+                            )
                         if (list_multable.isEmpty()) {
                             list_multable.add(wallItem)
                         } else {
@@ -164,5 +166,5 @@ class membres : Fragment() {
             }
         }
     }
-
+    }
 }
