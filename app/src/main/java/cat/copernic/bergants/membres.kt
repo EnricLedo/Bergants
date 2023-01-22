@@ -121,9 +121,10 @@ class membres : Fragment() {
     private fun mostrarMembres() {
         lifecycleScope.launch {
             withContext(Dispatchers.IO){
-                val storageRef = Firebase.storage.reference.child("imatge/membre/")
                 bd.collection("Membres").get().addOnSuccessListener { documents ->
                     for (document in documents) {
+                        val storageRef = Firebase.storage.reference.child("imatge/membre/"+document["correuMembre"].toString())
+                        val uriTask = storageRef.downloadUrl
                         val wallItem = MembreModel(
                             name = document["nomMembre"].toString(),
                             malname = document["malnom"].toString(),
@@ -135,7 +136,7 @@ class membres : Fragment() {
                             rol = document["rolMembre"].toString(),
                             date = document["altaMembre"].toString(),
                             admin= true,
-                            foto= storageRef.toString()+document["correuMembre"].toString()
+                            foto= uriTask.toString()
                         )
                         if (list_multable.isEmpty()) {
                             list_multable.add(wallItem)
