@@ -122,12 +122,9 @@ class membres : Fragment() {
 
     private fun mostrarMembres() {
         lifecycleScope.launch {
-            try {
-                withContext(Dispatchers.IO) {
-                    val documents = bd.collection("Membres").get().await()
+            withContext(Dispatchers.IO){
+                bd.collection("Membres").get().addOnSuccessListener { documents ->
                     for (document in documents) {
-                        val storageRef = Firebase.storage.reference.child("imatge/membre/${document["correuMembre"]}")
-                        val url = storageRef.downloadUrl.await()
                         val wallItem = MembreModel(
                             name = document["nomMembre"].toString(),
                             malname = document["malnom"].toString(),
@@ -138,19 +135,31 @@ class membres : Fragment() {
                             telefon = document["telefonMembre"].toString(),
                             rol = document["rolMembre"].toString(),
                             date = document["altaMembre"].toString(),
-                            admin = true,
-                            foto = url.toString()
+                            admin= true,
+                            foto= "https://firebasestorage.googleapis.com/v0/b/bergants-dam.appspot.com/o/imatge%2Fmembre%2Fadmin%40gmail.com?alt=media&token=fa014a1f-1fc5-4d67-9531-b7412a906b1a"
                         )
-                        if (!list_multable.any { it.nomMembre == wallItem.nomMembre }) {
+                        if (list_multable.isEmpty()) {
                             list_multable.add(wallItem)
+                        } else {
+                            var contador = 0
+                            for (i in list_multable) {
+                                if (wallItem.nomMembre == i.nomMembre) {
+                                    contador++
+                                }
+                            }
+                            if(contador <1){
+                                list_multable.add(wallItem)
+                            }
                         }
                     }
+                    //indiquem que el RV es mostrarà en format llista
                     binding.recyclerMembres.layoutManager = LinearLayoutManager(context)
-                    myAdapter.MembreRecyclerAdapter(list_multable, requireActivity())
+
+                    //generem el adapter
+                    myAdapter.MembreRecyclerAdapter(list_multable,requireActivity())
+                    //assignem el adapter al RV
                     binding.recyclerMembres.adapter = myAdapter
                 }
-            } catch (e: Exception) {
-
             }
         }
     }
