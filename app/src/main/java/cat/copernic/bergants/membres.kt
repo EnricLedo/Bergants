@@ -1,5 +1,6 @@
 package cat.copernic.bergants
 
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -16,19 +17,22 @@ import cat.copernic.bergants.databinding.FragmentNoticiaCanviBinding
 import cat.copernic.bergants.model.AssaigModel
 import cat.copernic.bergants.model.MembreModel
 import cat.copernic.bergants.model.NoticiaModel
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.ktx.storage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
+import java.io.File
 
 @Keep
 class membres : Fragment() {
     private lateinit var binding: FragmentMembresBinding
     private var list_multable: MutableList<MembreModel> = ArrayList()
+
+    private var storage = FirebaseStorage.getInstance()
+    private var storageRef = storage.getReference().child("imatge/membre/")
 
     private val myAdapter: MembreRecyclerAdapter = MembreRecyclerAdapter()
     private var bd =
@@ -122,12 +126,9 @@ class membres : Fragment() {
 
     private fun mostrarMembres() {
         lifecycleScope.launch {
-            try {
-                withContext(Dispatchers.IO) {
-                    val documents = bd.collection("Membres").get().await()
+            withContext(Dispatchers.IO){
+                bd.collection("Membres").get().addOnSuccessListener { documents ->
                     for (document in documents) {
-                        val storageRef = Firebase.storage.reference.child("imatge/membre/${document["correuMembre"]}")
-                        val url = storageRef.downloadUrl.await()
                         val wallItem = MembreModel(
                             name = document["nomMembre"].toString(),
                             malname = document["malnom"].toString(),
@@ -138,20 +139,34 @@ class membres : Fragment() {
                             telefon = document["telefonMembre"].toString(),
                             rol = document["rolMembre"].toString(),
                             date = document["altaMembre"].toString(),
-                            admin = true,
-                            foto = url.toString()
+                            admin= true,
+                            foto= storageRef.child(bd.collection("Membres").document("correuMembre").toString()).toString()
+
                         )
-                        if (!list_multable.any { it.nomMembre == wallItem.nomMembre }) {
+                        if (list_multable.isEmpty()) {
                             list_multable.add(wallItem)
+                        } else {
+                            var contador = 0
+                            for (i in list_multable) {
+                                if (wallItem.nomMembre == i.nomMembre) {
+                                    contador++
+                                }
+                            }
+                            if(contador <1){
+                                list_multable.add(wallItem)
+                            }
                         }
                     }
+                    //indiquem que el RV es mostrarà en format llista
                     binding.recyclerMembres.layoutManager = LinearLayoutManager(context)
-                    myAdapter.MembreRecyclerAdapter(list_multable, requireActivity())
+
+                    //generem el adapter
+                    myAdapter.MembreRecyclerAdapter(list_multable,requireActivity())
+                    //assignem el adapter al RV
                     binding.recyclerMembres.adapter = myAdapter
                 }
-            } catch (e: Exception) {
-
             }
         }
     }
+
 }
