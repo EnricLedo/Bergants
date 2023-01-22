@@ -21,6 +21,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
 
 @Keep
@@ -123,6 +124,8 @@ class membres : Fragment() {
             withContext(Dispatchers.IO){
                 bd.collection("Membres").get().addOnSuccessListener { documents ->
                     for (document in documents) {
+                        val storageRef = Firebase.storage.reference.child("imatge/membre/"+document["correuMembre"].toString())
+                        val urlTask = storageRef.downloadUrl
                         val wallItem = MembreModel(
                             name = document["nomMembre"].toString(),
                             malname = document["malnom"].toString(),
@@ -134,7 +137,7 @@ class membres : Fragment() {
                             rol = document["rolMembre"].toString(),
                             date = document["altaMembre"].toString(),
                             admin= true,
-                            foto= Firebase.storage.reference.child("imatge/membre/"+document["correuMembre"].toString()).downloadUrl.toString()
+                            foto= urlTask.toString()
                         )
                         if (list_multable.isEmpty()) {
                             list_multable.add(wallItem)
