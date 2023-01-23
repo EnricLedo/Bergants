@@ -1,5 +1,6 @@
 package cat.copernic.bergants
 
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -17,14 +18,21 @@ import cat.copernic.bergants.model.AssaigModel
 import cat.copernic.bergants.model.MembreModel
 import cat.copernic.bergants.model.NoticiaModel
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.ktx.storage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.io.File
 
 @Keep
 class membres : Fragment() {
     private lateinit var binding: FragmentMembresBinding
     private var list_multable: MutableList<MembreModel> = ArrayList()
+
+    private var storage = FirebaseStorage.getInstance()
+    private var storageRef = storage.getReference().child("imatge/membre/")
 
     private val myAdapter: MembreRecyclerAdapter = MembreRecyclerAdapter()
     private var bd =
@@ -132,7 +140,8 @@ class membres : Fragment() {
                             rol = document["rolMembre"].toString(),
                             date = document["altaMembre"].toString(),
                             admin= true,
-                            foto= "https://firebasestorage.googleapis.com/v0/b/bergants-dam.appspot.com/o/imatge%2Fmembre%2Fadmin%40gmail.com?alt=media&token=fa014a1f-1fc5-4d67-9531-b7412a906b1a"
+                            foto= storageRef.child(bd.collection("Membres").document("correuMembre").toString()).toString()
+
                         )
                         if (list_multable.isEmpty()) {
                             list_multable.add(wallItem)
