@@ -45,8 +45,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerNoticies"
-        android:layout_width="456dp"
-        android:layout_height="645dp"
+        android:layout_width="361dp"
+        android:layout_height="639dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
